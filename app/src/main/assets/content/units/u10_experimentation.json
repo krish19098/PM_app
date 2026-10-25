@@ -1,0 +1,440 @@
+{
+  "unit": {
+    "id": "u10",
+    "order": 10,
+    "title": "Experimentation",
+    "summary": "Learn causally: A/B test design, the statistical reasoning behind results, and the pitfalls that make experiments mislead.",
+    "level": "ADVANCED",
+    "prerequisites": ["u09"]
+  },
+  "lessons": [
+    {
+      "id": "l_ab_testing",
+      "unitId": "u10",
+      "title": "A/B testing fundamentals",
+      "level": "ADVANCED",
+      "objectives": [
+        "Design an A/B test with a hypothesis, metrics and guardrails",
+        "Explain randomisation and why it enables causal conclusions",
+        "Decide when an A/B test is (and isn't) the right tool"
+      ],
+      "prerequisites": ["l_metric_diagnosis", "l_mvp"],
+      "related": ["l_stat_reasoning", "l_experiment_pitfalls", "l_launches"],
+      "tags": ["a/b testing", "experiments", "causality"],
+      "quick": {
+        "explanation": {
+          "en": "An A/B test randomly splits users into groups: control (A) sees the current experience, treatment (B) sees the change. Because assignment is random, the groups are alike on average, so a difference in outcomes can be attributed to the change. Every test needs a hypothesis, a primary metric decided in advance, guardrail metrics and a planned duration.",
+          "ta": "A/B test users-a random-ah groups-ah pirikkum: control (A) ippo irukkura experience-a paakkum, treatment (B) maatram-a paakkum. Assignment random-aa irukkuradhaala rendu groups-um average-la ore maadhiri; adhanaala outcomes-la varra difference-a andha maatrathukku attribute panna mudiyum. Ovvoru test-kkum hypothesis, munnaadiye decide panna primary metric, guardrail metrics, plan panna duration venum."
+        },
+        "analogy": {
+          "en": "Like a fair medicine trial: patients are randomly given the medicine or a placebo, so any difference in recovery is due to the medicine, not who got it.",
+          "ta": "Oru fair medicine trial maadhiri: patients-ku random-ah medicine illa placebo kudupaanga; appo recovery-la difference irundhaa adhu medicine-aala dhaan, yaarukku kidaichadhu-ngradhaala illa."
+        },
+        "takeaway": {
+          "en": "Decide the hypothesis, primary metric, guardrails and duration before launching — and let the test run to plan.",
+          "ta": "Launch panradhukku munnaadiye hypothesis, primary metric, guardrails, duration decide pannunga — test-a plan-padi odavidunga."
+        }
+      },
+      "deep": [
+        {
+          "title": "Why it exists",
+          "body": "Metrics move for many reasons: seasons, marketing, competitors. Comparing before and after a launch confuses the change's effect with everything else. Randomised experiments isolate the causal effect, which makes them the gold standard for evaluating product changes at scale."
+        },
+        {
+          "title": "Designing a test",
+          "body": "1) Hypothesis: ‘If we show delivery time on restaurant cards, more users will order, because uncertainty about waiting deters them.’ 2) Primary metric: order conversion per session. 3) Guardrails: cancellation rate, complaints, app performance. 4) Unit of randomisation: usually the user (not the session) for a consistent experience. 5) Sample size and duration: calculated from baseline rate and the minimum effect you care about; run full weeks to cover weekday patterns. 6) Decision rule: what result leads to ship, iterate or kill."
+        },
+        {
+          "title": "When not to A/B test",
+          "body": "Small user bases (not enough traffic for meaningful results), big strategic changes that can't be split (a new pricing model with heavy communication), ethically or legally sensitive changes, obvious bug fixes, and network-heavy features where control and treatment users interact (a marketplace or social feature) — these need special designs such as geographic or cluster experiments."
+        },
+        {
+          "title": "Interpreting results",
+          "body": "Look at the primary metric's effect size and its confidence interval, check guardrails, and segment carefully (pre-planned segments only, to avoid fishing). Consider long-term effects: some changes boost short-term clicks but hurt retention. Document results, including failures; negative results are learning too."
+        }
+      ],
+      "example": "Illustrative example: an edtech app tests a shorter onboarding (B) against the current one (A). Users are randomised 50/50 for two weeks. B increases lesson-1 completion from 40% to 44% with a confidence interval that excludes zero, while the guardrail (week-2 retention) is unchanged, so the team ships B.",
+      "counterexample": "Launching a redesign to everyone, seeing sales rise during Diwali week, and claiming the redesign caused it.",
+      "mistakes": [
+        "Choosing the primary metric after seeing results",
+        "Ending the test as soon as results look good",
+        "Ignoring guardrail metrics"
+      ],
+      "keyTerms": [
+        { "term": "Control", "meaning": "The group that sees the existing experience." },
+        { "term": "Treatment", "meaning": "The group that sees the change." },
+        { "term": "Randomisation", "meaning": "Assigning users to groups by chance so the groups are comparable." },
+        { "term": "Unit of randomisation", "meaning": "What gets assigned to a group — usually users." }
+      ],
+      "questions": [
+        {
+          "id": "q_ab_1",
+          "kind": "RECALL",
+          "prompt": "Why does randomisation allow causal conclusions?",
+          "options": [
+            { "text": "It makes the groups comparable on average, so differences come from the change", "correct": true, "why": "Correct." },
+            { "text": "It makes the test faster", "why": "Not the reason." },
+            { "text": "It removes the need for metrics", "why": "No." },
+            { "text": "It guarantees a positive result", "why": "No." }
+          ],
+          "explanation": "Random assignment balances other factors."
+        },
+        {
+          "id": "q_ab_2",
+          "kind": "RECALL",
+          "prompt": "When should the primary metric be chosen?",
+          "options": [
+            { "text": "Before the test starts", "correct": true, "why": "Yes — choosing later invites cherry-picking." },
+            { "text": "After seeing which metric moved", "why": "That's p-hacking." },
+            { "text": "Never; look at all metrics equally", "why": "Leads to false positives." },
+            { "text": "When the CEO asks", "why": "No." }
+          ],
+          "explanation": "Pre-register decisions to avoid bias."
+        },
+        {
+          "id": "q_ab_3",
+          "kind": "APPLICATION",
+          "prompt": "Your B2B app has 300 users. You want to test a new dashboard. What's best?",
+          "options": [
+            { "text": "Run an A/B test for a week", "why": "Too few users for meaningful statistics." },
+            { "text": "Use qualitative methods — usability tests and interviews with key customers — plus careful before/after monitoring", "correct": true, "why": "Right — small samples call for qualitative evidence." },
+            { "text": "Ship without any evaluation", "why": "Still gather evidence." },
+            { "text": "Wait until you have 1 million users", "why": "Impractical." }
+          ],
+          "explanation": "Pick methods that fit your scale."
+        },
+        {
+          "id": "q_ab_4",
+          "kind": "APPLICATION",
+          "prompt": "A test shows +5% clicks on promotions but +3% refund requests. What should you do?",
+          "options": [
+            { "text": "Investigate before shipping; the guardrail suggests users may be misled or unhappy", "correct": true, "why": "Yes — guardrails exist for exactly this." },
+            { "text": "Ship — clicks went up", "why": "Ignores harm." },
+            { "text": "Delete the refund data", "why": "Unethical." },
+            { "text": "Extend the test indefinitely", "why": "Investigate the cause instead." }
+          ],
+          "explanation": "Primary wins don't justify guardrail losses."
+        }
+      ],
+      "exercise": {
+        "scenario": "A movie-ticket app wants to test showing ‘only 5 seats left’ urgency messages.",
+        "prompt": "Write a full test plan: hypothesis, primary metric, two guardrails, unit of randomisation, duration, decision rule and one ethical consideration.",
+        "modelAnswer": "Hypothesis: showing accurate low-seat warnings will increase booking conversion because users act before seats run out. Primary metric: booking conversion per show-page visit. Guardrails: cancellation and refund rate; customer complaints about pressure or inaccuracy. Unit: user. Duration: two full weeks covering weekends. Decision rule: ship if conversion improves significantly and guardrails don't worsen beyond agreed thresholds. Ethics: the message must be truthful (real seat counts) to avoid manipulative dark patterns.",
+        "checklist": [
+          "Clear causal hypothesis",
+          "Pre-defined primary metric and guardrails",
+          "Appropriate unit and duration",
+          "Decision rule defined in advance",
+          "Addresses honesty and ethics"
+        ]
+      }
+    },
+    {
+      "id": "l_stat_reasoning",
+      "unitId": "u10",
+      "title": "Statistical reasoning for PMs",
+      "level": "ADVANCED",
+      "objectives": [
+        "Explain statistical significance, p-values and confidence intervals in plain language",
+        "Understand sample size, power and minimum detectable effect",
+        "Distinguish statistical from practical significance"
+      ],
+      "prerequisites": ["l_ab_testing"],
+      "related": ["l_experiment_pitfalls", "l_metric_diagnosis"],
+      "tags": ["statistics", "significance", "sample size"],
+      "quickMinutes": 6,
+      "deepMinutes": 10,
+      "quick": {
+        "explanation": {
+          "en": "Random noise makes groups differ even when a change does nothing. Statistical significance asks: how surprising would this result be if the change had no effect? A p-value below a threshold (commonly 0.05) means the result would be unusual under ‘no effect’. A confidence interval shows the plausible range of the true effect. Bigger samples detect smaller effects. And a significant result can still be too small to matter.",
+          "ta": "Oru maatram ondrume pannaalum, random noise-aala groups-kulla difference varum. Statistical significance kekkuradhu: maatrathukku effect-e illaina, indha result evlo aachariyamaa irukkum? P-value oru threshold-ku (pala samayam 0.05) keezha irundhaa, ‘effect illa’-na indha result unusual-nu artham. Confidence interval unmaiyaana effect-oda plausible range-a kaattum. Periya samples chinna effects-a kooda kandupidikkum. Significant result kooda mukkiyam illaadha alavukku chinnadhaa irukkalaam."
+        },
+        "analogy": {
+          "en": "Flip a coin 10 times and get 7 heads — not surprising. Get 700 heads in 1,000 flips — very surprising for a fair coin. Sample size changes how much you can trust a pattern.",
+          "ta": "Coin-a 10 thadavai flip panni 7 heads vandhaa — aachariyam illa. 1,000 flip-la 700 heads vandhaa — fair coin-ku romba aachariyam. Sample size oru pattern-a evlo nambalaam-ngradha maathum."
+        },
+        "takeaway": {
+          "en": "Ask three questions: is it real (significance), how big is it (effect size and interval), and does it matter (practical value)?",
+          "ta": "Moonu kelvigal: idhu real-aa (significance), evlo periyadhu (effect size & interval), idhu mukkiyamaa (practical value)?"
+        }
+      },
+      "deep": [
+        {
+          "title": "P-values in plain language",
+          "body": "A p-value is the probability of seeing a difference at least this large if the change truly had no effect. p = 0.03 means: if nothing changed, we'd see a gap this big about 3% of the time. It is NOT the probability that the change works, and it says nothing about how large the effect is."
+        },
+        {
+          "title": "Confidence intervals",
+          "body": "A 95% confidence interval gives a range of plausible values for the true effect: ‘conversion lift +2.1%, 95% CI [+0.4%, +3.8%]’. If the interval excludes zero, the result is significant at that level. Wide intervals mean high uncertainty. Intervals are often more useful for decisions than p-values because they show size and uncertainty together."
+        },
+        {
+          "title": "Sample size and power",
+          "body": "Before testing, choose a minimum detectable effect (MDE): the smallest improvement worth detecting. Smaller MDEs and lower baseline rates require larger samples. Power (commonly 80%) is the chance of detecting a true effect of that size. Underpowered tests often miss real effects and produce noisy ‘wins’ that later disappear."
+        },
+        {
+          "title": "Statistical vs practical significance",
+          "body": "With millions of users, a 0.05% improvement can be statistically significant but not worth the added complexity. With few users, a large real effect may not reach significance. Combine statistics with business judgement: cost to maintain, strategic value and risk."
+        },
+        {
+          "title": "Common misreadings",
+          "body": "‘Not significant’ doesn't prove ‘no effect’ — it may mean not enough data. ‘p = 0.049 is a win, p = 0.051 is a failure’ treats a soft threshold as a cliff. And a 95% significance level still produces false positives about 1 in 20 times when there's no effect, which compounds across many tests and metrics."
+        }
+      ],
+      "example": "Illustrative example: a test shows checkout conversion of 10.0% (control) vs 10.4% (treatment), p = 0.02, 95% CI for the lift [+0.1, +0.7] percentage points. The effect is real but modest; at the company's volume, +0.4 points means meaningful revenue, and the change is simple, so it ships.",
+      "counterexample": "‘The test had p = 0.3, so the feature has no effect — let's never try it again’ — with only 500 users, the test was underpowered.",
+      "mistakes": [
+        "Interpreting the p-value as the chance the change works",
+        "Running underpowered tests",
+        "Ignoring effect size and practical value"
+      ],
+      "keyTerms": [
+        { "term": "P-value", "meaning": "The probability of a result at least this extreme if there were no real effect." },
+        { "term": "Confidence interval", "meaning": "A range of plausible values for the true effect." },
+        { "term": "Statistical power", "meaning": "The probability of detecting a true effect of a given size." },
+        { "term": "MDE", "meaning": "Minimum detectable effect: the smallest effect the test is designed to detect." }
+      ],
+      "questions": [
+        {
+          "id": "q_stats_1",
+          "kind": "RECALL",
+          "prompt": "What does p = 0.03 mean?",
+          "options": [
+            { "text": "If there were no real effect, a difference this large would occur about 3% of the time", "correct": true, "why": "Correct interpretation." },
+            { "text": "There's a 97% chance the change works", "why": "A common misreading." },
+            { "text": "The effect is 3%", "why": "P-values don't measure effect size." },
+            { "text": "3% of users liked it", "why": "No." }
+          ],
+          "explanation": "P-values describe surprise under ‘no effect’."
+        },
+        {
+          "id": "q_stats_2",
+          "kind": "RECALL",
+          "prompt": "What happens to the required sample size if you want to detect a smaller effect?",
+          "options": [
+            { "text": "It increases", "correct": true, "why": "Yes — smaller effects need more data to separate from noise." },
+            { "text": "It decreases", "why": "Opposite." },
+            { "text": "It stays the same", "why": "No." },
+            { "text": "Sample size doesn't matter", "why": "It matters a lot." }
+          ],
+          "explanation": "Smaller MDE → bigger sample."
+        },
+        {
+          "id": "q_stats_3",
+          "kind": "APPLICATION",
+          "prompt": "A test shows +0.02% conversion, p = 0.01, with 50 million users. The change adds significant code complexity. What do you do?",
+          "options": [
+            { "text": "Weigh the business value of +0.02% against maintenance cost; statistically significant isn't automatically worth it", "correct": true, "why": "Right — practical significance matters." },
+            { "text": "Ship automatically because p < 0.05", "why": "Ignores cost and size." },
+            { "text": "Reject because 0.02% is meaningless", "why": "At huge scale it might matter — calculate the value." },
+            { "text": "Rerun forever", "why": "The result is already clear." }
+          ],
+          "explanation": "Combine statistics with judgement."
+        },
+        {
+          "id": "q_stats_4",
+          "kind": "APPLICATION",
+          "prompt": "Your result is ‘not significant’ with a wide confidence interval [−3%, +6%]. What's the right conclusion?",
+          "options": [
+            { "text": "The test is inconclusive — the effect could be negative or positive; you need more data or a bigger effect", "correct": true, "why": "Yes — wide intervals mean uncertainty, not ‘no effect’." },
+            { "text": "The change definitely does nothing", "why": "Absence of evidence isn't evidence of absence." },
+            { "text": "The change works — +6% is possible", "why": "Cherry-picks the upper bound." },
+            { "text": "Statistics are useless", "why": "They just told you the test was underpowered." }
+          ],
+          "explanation": "Read intervals, not just significance labels."
+        }
+      ],
+      "exercise": {
+        "scenario": "Your test result: control 8.0% conversion (n = 20,000), treatment 8.6% (n = 20,000), p = 0.03, 95% CI for the lift [+0.06, +1.14] percentage points.",
+        "prompt": "Explain the result to a non-technical stakeholder in 4–5 sentences, including what it does and doesn't tell you, and your recommendation.",
+        "modelAnswer": "The new version increased conversion from 8.0% to 8.6%. That gap is unlikely to be random chance: if the change did nothing, we'd see a difference this big only about 3% of the time. Our best estimate is a lift of 0.6 points, but the true lift could be anywhere from about 0.1 to 1.1 points. Even at the low end, that's worth it at our volume, and our guardrails were stable. I recommend shipping and monitoring conversion over the next month to confirm the effect holds.",
+        "checklist": [
+          "Explains the effect in plain language",
+          "Interprets the p-value correctly",
+          "Communicates uncertainty with the interval",
+          "Makes a recommendation considering practical value"
+        ]
+      }
+    },
+    {
+      "id": "l_experiment_pitfalls",
+      "unitId": "u10",
+      "title": "Experiment pitfalls and guardrails",
+      "level": "ADVANCED",
+      "objectives": [
+        "Recognise peeking, multiple comparisons and novelty effects",
+        "Detect sample-ratio mismatch and network effects",
+        "Build a trustworthy experimentation practice"
+      ],
+      "prerequisites": ["l_stat_reasoning"],
+      "related": ["l_ab_testing", "l_ai_evaluation"],
+      "tags": ["experiments", "pitfalls", "trustworthy"],
+      "quick": {
+        "explanation": {
+          "en": "Experiments mislead when run carelessly. Peeking (stopping as soon as results look good) inflates false wins. Testing many metrics or segments guarantees some ‘significant’ results by chance. Novelty effects fade. Unequal group sizes (sample-ratio mismatch) signal a broken setup. And when users interact, like in marketplaces, groups contaminate each other.",
+          "ta": "Kavanam illaama oattina experiments mislead pannum. Peeking (results nallaa theriyumbodhe niruthuradhu) false wins-a adhigamaakkum. Neraiya metrics illa segments test pannina, chance-aala sila ‘significant’ results kandippa varum. Novelty effects mangidum. Groups size samamaa illaina (sample-ratio mismatch) setup udaindhirukku-nu artham. Marketplaces maadhiri users interact pannumbodhu, groups onnukkonnu kalandhidum."
+        },
+        "analogy": {
+          "en": "Like judging a new restaurant by its opening week: the novelty crowd isn't the steady crowd, and stopping your judgement on the first good night tells you little.",
+          "ta": "Pudhu restaurant-a opening week-la judge panra maadhiri: novelty-ku varra koottam steady koottam illa; mudhal nalla raathiri-laye mudivu panradhu konjam dhaan sollum."
+        },
+        "takeaway": {
+          "en": "Pre-register, run to plan, check data quality, and be sceptical of surprising wins.",
+          "ta": "Munnaadiye plan pannunga, plan-padi odavidunga, data quality-a check pannunga, aachariyamaana wins mela sandhegamaa irunga."
+        }
+      },
+      "deep": [
+        {
+          "title": "Peeking and early stopping",
+          "body": "Checking results daily and stopping at the first significant moment can raise the false-positive rate far above the nominal 5%, because random fluctuations will cross the threshold at some point. Fix: decide the duration in advance, or use sequential testing methods designed for continuous monitoring."
+        },
+        {
+          "title": "Multiple comparisons",
+          "body": "Testing 20 metrics at the 5% level gives about a 64% chance of at least one false positive when nothing changed. Fix: one pre-registered primary metric, a small set of secondary and guardrail metrics, corrections for multiple tests and pre-planned segments only."
+        },
+        {
+          "title": "Novelty and primacy effects",
+          "body": "Users may click a new design because it's new (novelty) or resist it because it's unfamiliar (primacy). Both fade. Run tests long enough, compare new vs existing users, and check whether the effect shrinks over time."
+        },
+        {
+          "title": "Sample-ratio mismatch (SRM)",
+          "body": "If you planned a 50/50 split but got 52/48 with large samples, something is wrong: bugs in assignment, crashes in one variant, or bots. Results from SRM tests are untrustworthy until fixed. Many platforms run an automatic SRM check."
+        },
+        {
+          "title": "Interference and network effects",
+          "body": "In marketplaces and social products, treatment users affect control users (for example, a surge-pricing test changes driver supply for everyone). Use cluster randomisation (by city or time slot) or switchback designs, and interpret results carefully."
+        }
+      ],
+      "example": "Illustrative example: a test of a new home feed shows +8% engagement in week 1, but by week 3 the lift is +1% — a novelty effect. The team ships with realistic expectations and focuses on the retention metric instead.",
+      "counterexample": "Checking a test every morning, stopping on day 3 when p dips to 0.04, and announcing a 12% win that never shows up after launch.",
+      "mistakes": [
+        "Stopping tests early on good-looking results",
+        "Reporting whichever of many metrics turned significant",
+        "Ignoring sample-ratio mismatch warnings"
+      ],
+      "keyTerms": [
+        { "term": "Peeking", "meaning": "Repeatedly checking results and stopping when they look significant." },
+        { "term": "Novelty effect", "meaning": "A temporary change in behaviour because something is new." },
+        { "term": "Sample-ratio mismatch", "meaning": "When actual group sizes differ significantly from the planned split." },
+        { "term": "Interference", "meaning": "When one group's treatment affects another group's outcomes." }
+      ],
+      "questions": [
+        {
+          "id": "q_pitfalls_1",
+          "kind": "RECALL",
+          "prompt": "Why is peeking a problem?",
+          "options": [
+            { "text": "Random fluctuations will cross the significance threshold at some point, inflating false positives", "correct": true, "why": "Correct." },
+            { "text": "It slows the servers", "why": "No." },
+            { "text": "Users notice you looking", "why": "No." },
+            { "text": "It's not a problem", "why": "It's a major one." }
+          ],
+          "explanation": "Run to plan or use sequential methods."
+        },
+        {
+          "id": "q_pitfalls_2",
+          "kind": "RECALL",
+          "prompt": "A planned 50/50 test shows 55/45 users with large samples. What does it suggest?",
+          "options": [
+            { "text": "A sample-ratio mismatch — the assignment or logging is likely broken", "correct": true, "why": "Yes — don't trust results until it's fixed." },
+            { "text": "Treatment is more popular", "why": "Assignment isn't a popularity contest." },
+            { "text": "Normal randomness", "why": "Unlikely at large samples." },
+            { "text": "Good news", "why": "It's a warning." }
+          ],
+          "explanation": "SRM invalidates results."
+        },
+        {
+          "id": "q_pitfalls_3",
+          "kind": "APPLICATION",
+          "prompt": "You test a driver-incentive change in a ride-hailing app by randomising riders. What's the risk?",
+          "options": [
+            { "text": "Interference — riders share the same driver pool, so control riders are affected too", "correct": true, "why": "Right — consider city-level or time-based randomisation." },
+            { "text": "No risk", "why": "Marketplace effects are real." },
+            { "text": "Too few riders", "why": "Usually there are plenty; the issue is design." },
+            { "text": "Novelty effect only", "why": "Interference is the primary concern." }
+          ],
+          "explanation": "Shared resources break independence."
+        },
+        {
+          "id": "q_pitfalls_4",
+          "kind": "APPLICATION",
+          "prompt": "An analyst reports: ‘No overall effect, but the feature works for iOS users aged 25–30 in Pune.’ What's your response?",
+          "options": [
+            { "text": "Treat it as a hypothesis from post-hoc segmentation — likely chance — and test it separately if it matters", "correct": true, "why": "Yes — slicing until something is significant creates false positives." },
+            { "text": "Launch only for that segment immediately", "why": "Probably chasing noise." },
+            { "text": "Fire the analyst", "why": "No — just apply rigour." },
+            { "text": "Ignore all segments forever", "why": "Pre-planned segments are fine." }
+          ],
+          "explanation": "Beware of the garden of forking paths."
+        }
+      ],
+      "exercise": {
+        "scenario": "Your company runs about 30 A/B tests a month, and leadership is frustrated that many ‘wins’ don't show up after launch.",
+        "prompt": "Write five practices you'd introduce to make experimentation more trustworthy, each tied to a pitfall.",
+        "modelAnswer": "1) Pre-registration: hypothesis, primary metric, duration and decision rule written before launch (prevents p-hacking and moving goalposts). 2) Fixed duration or sequential testing (prevents peeking). 3) One primary metric plus limited guardrails, with multiple-comparison awareness (prevents false positives across many metrics). 4) Automatic SRM and data-quality checks (catches broken assignment). 5) Holdout or post-launch monitoring with a review of novelty effects (verifies durable impact).",
+        "checklist": [
+          "Each practice addresses a named pitfall",
+          "Includes pre-registration",
+          "Includes data-quality checks",
+          "Includes post-launch verification"
+        ]
+      }
+    }
+  ],
+  "checkpoint": {
+    "id": "cp_u10",
+    "title": "Did the new checkout really work?",
+    "scenario": "A team claims their new one-page checkout increased conversion by 9%. They ran the test for 4 days, looked at 15 metrics and stopped when results turned significant. Leadership wants to roll it out to all users.",
+    "minutes": 8,
+    "debrief": "You applied experimental design, statistical reasoning and pitfall awareness to separate a real effect from a lucky result — a core skill for data-informed PMs.",
+    "steps": [
+      {
+        "id": "cp_u10_1",
+        "lessonId": "l_experiment_pitfalls",
+        "kind": "APPLICATION",
+        "prompt": "What's the biggest concern with this test?",
+        "options": [
+          { "text": "Peeking plus many metrics plus a short duration make a false positive quite likely", "correct": true, "why": "Several pitfalls compound." },
+          { "text": "Nine per cent is too small", "why": "Size isn't the main issue." },
+          { "text": "Nothing; significant is significant", "why": "The process undermines the result." }
+        ],
+        "explanation": "How a result was obtained matters."
+      },
+      {
+        "id": "cp_u10_2",
+        "lessonId": "l_ab_testing",
+        "kind": "APPLICATION",
+        "prompt": "How should the rerun be designed?",
+        "options": [
+          { "text": "Pre-registered conversion as the primary metric, refunds and payment errors as guardrails, two full weeks, user-level randomisation", "correct": true, "why": "A sound design." },
+          { "text": "Same as before but longer", "why": "Still has the metric-fishing problem." },
+          { "text": "Launch to everyone and compare before/after", "why": "Loses causal inference." }
+        ],
+        "explanation": "Design before you launch."
+      },
+      {
+        "id": "cp_u10_3",
+        "lessonId": "l_stat_reasoning",
+        "kind": "APPLICATION",
+        "prompt": "The rerun shows +2.5% lift, 95% CI [+0.8%, +4.2%]. How do you interpret it?",
+        "options": [
+          { "text": "A real but smaller effect than claimed; the plausible range is worth shipping", "correct": true, "why": "The interval excludes zero; the size is credible." },
+          { "text": "A failure, because it's not 9%", "why": "Real effects are often smaller than early claims." },
+          { "text": "Inconclusive", "why": "The interval excludes zero." }
+        ],
+        "explanation": "Read the interval, not just the label."
+      },
+      {
+        "id": "cp_u10_4",
+        "lessonId": "l_experiment_pitfalls",
+        "kind": "APPLICATION",
+        "prompt": "After launch, how do you confirm the effect holds?",
+        "options": [
+          { "text": "Keep a small holdout group and monitor conversion for several weeks to rule out novelty effects", "correct": true, "why": "Verifies durable impact." },
+          { "text": "Stop measuring", "why": "Effects can fade." },
+          { "text": "Run 10 more tests at once on checkout", "why": "Overlapping tests complicate attribution." }
+        ],
+        "explanation": "Verify impact after launch."
+      }
+    ]
+  }
+}

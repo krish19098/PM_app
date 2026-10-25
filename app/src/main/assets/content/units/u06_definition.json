@@ -1,0 +1,433 @@
+{
+  "unit": {
+    "id": "u06",
+    "order": 6,
+    "title": "Defining the Product",
+    "summary": "Turn validated problems into buildable plans: MVPs and prototypes, PRDs, user stories and acceptance criteria.",
+    "level": "INTERMEDIATE",
+    "prerequisites": ["u05"]
+  },
+  "lessons": [
+    {
+      "id": "l_mvp",
+      "unitId": "u06",
+      "title": "MVPs and prototyping",
+      "level": "INTERMEDIATE",
+      "objectives": [
+        "Define an MVP as the smallest thing that tests a key assumption",
+        "Choose a prototype fidelity for the question at hand",
+        "Avoid the ‘minimum but not viable’ trap"
+      ],
+      "prerequisites": ["l_problem_validation", "l_moscow_kano"],
+      "related": ["l_prd", "l_usability_testing", "l_ab_testing"],
+      "tags": ["mvp", "prototype", "lean"],
+      "quick": {
+        "explanation": {
+          "en": "An MVP (minimum viable product) is the smallest product that lets you learn whether your riskiest assumption is true, while still delivering real value. It's not ‘version 1 with fewer features’; it's an experiment. Prototypes — sketches, clickable mock-ups, fake-door tests — test ideas even more cheaply before any engineering.",
+          "ta": "MVP (minimum viable product)-na: unga riskiest assumption unmaiyaa-nu kathukka udhavura, aana real value-um tharra mikka chinna product. Idhu ‘konjam features-oda version 1’ illa; idhu oru experiment. Prototypes — sketches, clickable mock-ups, fake-door tests — engineering-ku munnaadiye innum cheap-ah ideas-a test pannum."
+        },
+        "analogy": {
+          "en": "Before building a car, give people a skateboard, then a bicycle — each a complete, usable way to get around that teaches you what they need — rather than one wheel, then two wheels.",
+          "ta": "Car build panradhukku munnaadi, makkalukku skateboard, apram cycle kudunga — ovvonnum mulumaiyaa use panna mudiyura payana vazhi, avangalukku enna venum-nu kathu tharum — oru wheel, apram rendu wheel-nu illa."
+        },
+        "takeaway": {
+          "en": "Name the riskiest assumption first, then build the cheapest thing that tests it with real users.",
+          "ta": "Mudhalla riskiest assumption-a sollunga, apram adha real users kooda test panra mikka cheap-aana vishayatha build pannunga."
+        }
+      },
+      "deep": [
+        {
+          "title": "Why it exists",
+          "body": "Most product risk is in assumptions: will people want it, use it, pay for it, can we deliver it? Building a full product before testing these wastes months. MVPs, popularised by Eric Ries's ‘The Lean Startup’, shorten the build–measure–learn loop."
+        },
+        {
+          "title": "Types of MVP",
+          "body": "Fake door: a button for a feature that doesn't exist yet, to measure interest. Landing page: describe the product and measure sign-ups. Concierge: deliver the service manually. Wizard of Oz: users see an automated product while humans work behind the scenes. Single-feature product: one core job done well. Each tests a different risk at a different cost."
+        },
+        {
+          "title": "Prototype fidelity",
+          "body": "Low fidelity (paper sketches, wireframes): test concepts and flows quickly. Medium (clickable mock-ups in a design tool): test usability and comprehension. High fidelity (realistic visuals, or working code): test detailed interactions, performance or trust. Match fidelity to the question; polished prototypes too early can make people reluctant to criticise."
+        },
+        {
+          "title": "Viable matters",
+          "body": "A ‘minimum’ product that's buggy, confusing or doesn't solve the core job teaches you nothing, because people reject the poor execution rather than the idea. The MVP must be good enough at the one thing it does to give a fair test."
+        },
+        {
+          "title": "Define success before launching",
+          "body": "Write the hypothesis and success criteria up front: ‘We believe working parents will pre-book weekly meal kits. If at least 15% of visitors to the page join the waitlist within two weeks, we'll build the ordering flow.’ This prevents moving the goalposts after the results arrive."
+        }
+      ],
+      "example": "Illustrative example: to test whether housing-society residents want a shared laundry-pickup service, a team creates a WhatsApp number and a simple form, picks up clothes manually for two societies for three weeks and measures repeat orders — a concierge MVP — before building any app.",
+      "counterexample": "Spending six months building a full marketplace app with ratings, payments and chat for a service nobody has tested demand for.",
+      "mistakes": [
+        "Building a smaller version of the full product instead of testing assumptions",
+        "Shipping something too broken to give a fair test",
+        "Not defining success criteria before launch"
+      ],
+      "keyTerms": [
+        { "term": "MVP", "meaning": "Minimum viable product: the smallest thing that tests a key assumption with real value." },
+        { "term": "Wizard of Oz test", "meaning": "Users see an automated product while humans deliver it behind the scenes." },
+        { "term": "Hypothesis", "meaning": "A testable belief with a clear success criterion." }
+      ],
+      "questions": [
+        {
+          "id": "q_mvp_1",
+          "kind": "RECALL",
+          "prompt": "What's the primary purpose of an MVP?",
+          "options": [
+            { "text": "Launch quickly with as many features as possible", "why": "That's not minimum." },
+            { "text": "Test the riskiest assumption with the least effort while delivering real value", "correct": true, "why": "Correct." },
+            { "text": "Impress investors with polish", "why": "Not the purpose." },
+            { "text": "Replace user research", "why": "It complements research." }
+          ],
+          "explanation": "MVP = learning vehicle."
+        },
+        {
+          "id": "q_mvp_2",
+          "kind": "RECALL",
+          "prompt": "Which prototype is most appropriate for testing whether a new flow's concept makes sense?",
+          "options": [
+            { "text": "Low-fidelity sketches or wireframes", "correct": true, "why": "Yes — fast and invite honest feedback on the concept." },
+            { "text": "A production-ready app", "why": "Too expensive for a concept test." },
+            { "text": "A press release", "why": "Not a prototype for flow testing." },
+            { "text": "A database schema", "why": "Not user-facing." }
+          ],
+          "explanation": "Match fidelity to the question."
+        },
+        {
+          "id": "q_mvp_3",
+          "kind": "APPLICATION",
+          "prompt": "You want to know whether small shops will pay for AI-generated product descriptions. The AI isn't built yet. What's a smart MVP?",
+          "options": [
+            { "text": "Build the full AI system first", "why": "Expensive before knowing demand." },
+            { "text": "Wizard of Oz: offer the service and have writers create descriptions manually, charging a small fee", "correct": true, "why": "Right — it tests willingness to pay before building the AI." },
+            { "text": "Ask shops if AI is cool", "why": "Opinion, not behaviour." },
+            { "text": "Wait until competitors launch", "why": "You lose the chance to learn first." }
+          ],
+          "explanation": "Fake the automation to test the value."
+        },
+        {
+          "id": "q_mvp_4",
+          "kind": "APPLICATION",
+          "prompt": "Your MVP got poor results, and users mention constant crashes. What can you conclude?",
+          "options": [
+            { "text": "The idea is bad; kill it", "why": "Crashes may have masked the idea's value." },
+            { "text": "The test was likely unfair; fix the basics enough to retest the core value", "correct": true, "why": "Yes — it wasn't viable enough to test the hypothesis." },
+            { "text": "Users are wrong", "why": "Users experienced real problems." },
+            { "text": "Add more features", "why": "The basics are the issue." }
+          ],
+          "explanation": "Minimum must still be viable."
+        }
+      ],
+      "exercise": {
+        "scenario": "You think college students would rent textbooks from seniors through an app.",
+        "prompt": "State the riskiest assumption, design an MVP that tests it in two weeks, and define the success criterion.",
+        "modelAnswer": "Riskiest assumption: seniors will list books and juniors will trust renting from strangers. MVP: a Google Form for seniors to list books and a WhatsApp group in one college where juniors request books; the team coordinates exchanges manually (concierge). Success: at least 40 books listed and 25 completed rentals in two weeks, with at least 60% of renters saying they'd do it again.",
+        "checklist": [
+          "Identifies the riskiest assumption",
+          "MVP is cheap and fast",
+          "Delivers real value to participants",
+          "Has a pre-defined, measurable success criterion"
+        ]
+      }
+    },
+    {
+      "id": "l_prd",
+      "unitId": "u06",
+      "title": "Writing a PRD",
+      "level": "INTERMEDIATE",
+      "objectives": [
+        "List the essential sections of a PRD",
+        "Write requirements focused on problems and outcomes",
+        "Keep a PRD as a living document"
+      ],
+      "prerequisites": ["l_mvp", "l_okrs"],
+      "related": ["l_user_stories", "l_eng_collab", "l_launches"],
+      "tags": ["prd", "requirements", "documentation"],
+      "quickMinutes": 6,
+      "deepMinutes": 9,
+      "quick": {
+        "explanation": {
+          "en": "A PRD (product requirements document) explains what the team is building and why. It covers the problem, target users, goals and success metrics, scope and non-goals, requirements, user flows, open questions and risks. A good PRD aligns everyone on the problem and the definition of success, while leaving engineers and designers room to find the best solution.",
+          "ta": "PRD (product requirements document) — team enna build pannudhu, en-nu explain pannum. Problem, target users, goals & success metrics, scope & non-goals, requirements, user flows, open questions, risks — idhellam irukkum. Nalla PRD ellarayum problem-layum success definition-layum align pannum; best solution kandupidikka engineers, designers-ku idam vidum."
+        },
+        "analogy": {
+          "en": "Like a brief given to an architect: the family's needs, budget, must-have rooms and constraints — not the exact placement of every brick.",
+          "ta": "Architect-kitta kudukkura brief maadhiri: family-oda needs, budget, kandippa venum-na rooms, constraints — ovvoru sengal-um enga-nu illa."
+        },
+        "takeaway": {
+          "en": "A PRD's most important sections are the problem, the success metrics and the non-goals.",
+          "ta": "PRD-la mukkiyamaana sections: problem, success metrics, non-goals."
+        }
+      },
+      "deep": [
+        {
+          "title": "Why it exists",
+          "body": "As soon as more than a few people work on something, shared understanding breaks down. A PRD gives everyone — engineering, design, QA, marketing, support, leadership — one source of truth about what's being built, why, and what ‘done’ means. It also records decisions so they don't get relitigated."
+        },
+        {
+          "title": "Essential sections",
+          "body": "1) Background and problem (with evidence). 2) Target users and use cases. 3) Goals and success metrics (plus guardrail metrics that must not get worse). 4) Scope and non-goals. 5) Requirements: functional (what it must do) and non-functional (performance, security, accessibility). 6) User flows or designs (linked). 7) Analytics and tracking plan. 8) Dependencies, risks and open questions. 9) Launch plan and rollout. 10) Change log."
+        },
+        {
+          "title": "Writing good requirements",
+          "body": "Write from the user's perspective and focus on behaviour: ‘Users can see the delivery estimate before paying, and it updates if it changes by more than 5 minutes.’ Avoid prescribing implementation (‘use a Redis cache’) unless it's a real constraint. Prioritise requirements (P0/P1/P2) so scope can flex."
+        },
+        {
+          "title": "A living document",
+          "body": "PRDs evolve through discovery and delivery. Keep a change log, update decisions and close open questions. A PRD written once and never updated becomes misleading. Many teams prefer short, collaborative docs over long formal specs."
+        }
+      ],
+      "example": "Illustrative PRD summary — Problem: 30% of first-time users abandon KYC because document upload fails on slow networks (support and analytics data). Goal: KYC completion from 55% to 70% in two months; guardrail: fraud rate doesn't increase. Non-goals: redesigning the whole onboarding; adding new document types. Requirements (P0): resumable uploads, image compression on device, clear error messages; (P1) save progress and resume later.",
+      "counterexample": "A 40-page PRD specifying every pixel and database table, written alone by the PM and never updated after kick-off.",
+      "mistakes": [
+        "Skipping success metrics and non-goals",
+        "Prescribing technical implementation",
+        "Never updating the document"
+      ],
+      "keyTerms": [
+        { "term": "PRD", "meaning": "Product requirements document: the what and why of a product or feature." },
+        { "term": "Non-goal", "meaning": "Something deliberately out of scope, to prevent scope creep." },
+        { "term": "Guardrail metric", "meaning": "A metric that must not degrade while you improve your goal metric." },
+        { "term": "Non-functional requirement", "meaning": "A quality attribute such as performance, security or accessibility." }
+      ],
+      "questions": [
+        {
+          "id": "q_prd_1",
+          "kind": "RECALL",
+          "prompt": "Why include non-goals in a PRD?",
+          "options": [
+            { "text": "To make the document longer", "why": "No." },
+            { "text": "To set clear boundaries and prevent scope creep", "correct": true, "why": "Correct." },
+            { "text": "To list bugs", "why": "No." },
+            { "text": "To blame other teams", "why": "No." }
+          ],
+          "explanation": "Saying what you won't do is as important as what you will."
+        },
+        {
+          "id": "q_prd_2",
+          "kind": "RECALL",
+          "prompt": "Which is a well-written requirement?",
+          "options": [
+            { "text": "Use PostgreSQL with indexes on user_id", "why": "Implementation detail." },
+            { "text": "Users can filter orders by status and see results within 1 second", "correct": true, "why": "Yes — user behaviour plus a measurable quality." },
+            { "text": "Make it nice", "why": "Vague." },
+            { "text": "Add filters", "why": "Too vague to build or test." }
+          ],
+          "explanation": "Requirements describe behaviour and measurable qualities."
+        },
+        {
+          "id": "q_prd_3",
+          "kind": "APPLICATION",
+          "prompt": "You want to increase sign-up conversion by shortening the form. What's a sensible guardrail metric?",
+          "options": [
+            { "text": "Number of designers on the project", "why": "Not a product metric." },
+            { "text": "Fraud or fake-account rate", "correct": true, "why": "Right — shorter forms could let more bad sign-ups through." },
+            { "text": "Sign-up conversion", "why": "That's the goal metric." },
+            { "text": "App size", "why": "Unlikely to be affected." }
+          ],
+          "explanation": "Guardrails catch harmful side-effects."
+        },
+        {
+          "id": "q_prd_4",
+          "kind": "APPLICATION",
+          "prompt": "Mid-development, engineering discovers a requirement is technically very expensive. What do you do with the PRD?",
+          "options": [
+            { "text": "Keep the requirement — it's written down", "why": "PRDs should adapt to new information." },
+            { "text": "Discuss trade-offs, decide (cut, defer or find an alternative), and update the PRD with the decision and reason", "correct": true, "why": "Yes — a living document records decisions." },
+            { "text": "Delete the PRD", "why": "You lose shared understanding." },
+            { "text": "Ask engineering to work weekends", "why": "Unsustainable and avoids the trade-off." }
+          ],
+          "explanation": "PRDs evolve with learning."
+        }
+      ],
+      "exercise": {
+        "scenario": "A train-ticket app wants to let users get a refund automatically when a train is cancelled.",
+        "prompt": "Write a one-page PRD outline: problem, users, goal and guardrail metrics, three P0 requirements, two non-goals and one open question.",
+        "modelAnswer": "Problem: when trains are cancelled, users must file refund requests manually; many don't know how, which leads to lost money, support calls and poor ratings. Users: passengers with cancelled bookings. Goal: 90% of eligible refunds processed automatically within 24 hours. Guardrails: refund errors below 0.1%; no increase in payment-gateway failures. P0: detect cancellations from the railway feed; trigger refunds automatically to the original payment method; notify users with the amount and timeline. Non-goals: refunds for user-initiated cancellations; compensation beyond the ticket price. Open question: what is the reliability and latency of the railway's cancellation feed?",
+        "checklist": [
+          "Problem includes impact",
+          "Has both goal and guardrail metrics",
+          "Requirements are behavioural and prioritised",
+          "Includes non-goals and an open question"
+        ]
+      }
+    },
+    {
+      "id": "l_user_stories",
+      "unitId": "u06",
+      "title": "User stories and acceptance criteria",
+      "level": "INTERMEDIATE",
+      "objectives": [
+        "Write user stories in the standard format",
+        "Write testable acceptance criteria with Given/When/Then",
+        "Split large stories into smaller, valuable slices"
+      ],
+      "prerequisites": ["l_prd"],
+      "related": ["l_agile_scrum", "l_kanban_estimation", "l_eng_collab"],
+      "tags": ["user stories", "acceptance criteria", "agile"],
+      "quick": {
+        "explanation": {
+          "en": "A user story describes a small piece of value from the user's perspective: ‘As a [type of user], I want [capability], so that [benefit].’ Acceptance criteria define exactly when the story is done, often written as Given [context], When [action], Then [outcome]. Good stories are small, testable and valuable on their own.",
+          "ta": "User story — user-oda paarvaila oru chinna value-a describe pannum: ‘Oru [user type]-ah, enakku [capability] venum, appo dhaan [benefit].’ Acceptance criteria — story eppo ‘done’-nu exact-ah define pannum; pala samayam Given [context], When [action], Then [outcome]-nu ezhudhuvom. Nalla stories chinnadhaa, test panna mudiyuradhaa, thaniya value tharradhaa irukkum."
+        },
+        "analogy": {
+          "en": "A restaurant order slip: who it's for, what they want, any special conditions — and the waiter can check the dish against the slip before serving.",
+          "ta": "Restaurant order slip maadhiri: yaarukku, enna venum, special conditions — serve panradhukku munnaadi waiter dish-a slip-oda check panna mudiyum."
+        },
+        "takeaway": {
+          "en": "If you can't write a test for it, the story isn't clear enough to build.",
+          "ta": "Adhukku test ezhudha mudiyalaina, andha story build panra alavukku clear-ah illa."
+        }
+      },
+      "deep": [
+        {
+          "title": "Why it exists",
+          "body": "Large requirements are hard to estimate, build and test. Stories break work into slices that deliver user value, can be completed in a sprint and create shared conversations between PM, design, engineering and QA. The written story is a reminder for a conversation, not a complete spec."
+        },
+        {
+          "title": "INVEST criteria",
+          "body": "Good stories are Independent, Negotiable (details can be discussed), Valuable, Estimable, Small and Testable. If a story fails these, split or rewrite it."
+        },
+        {
+          "title": "Acceptance criteria",
+          "body": "Example story: ‘As a returning customer, I want to reorder a previous order in one tap, so that I save time.’ Criteria: Given I have at least one past order, When I tap ‘Reorder’, Then the same items are added to my cart with current prices. Given an item is out of stock, When I reorder, Then I see which item is unavailable and the rest are added. Include edge cases, errors and non-functional needs."
+        },
+        {
+          "title": "Splitting stories",
+          "body": "Split by workflow steps (search first, then filters), by business-rule variations (UPI first, then cards), by data types, by happy path versus edge cases, or by platform. Avoid splitting by technical layer (‘backend story’, ‘frontend story’), because neither delivers user value on its own."
+        }
+      ],
+      "example": "Illustrative story for a pharmacy app: ‘As a caregiver, I want to set refill reminders for my parent's medicines, so that they never run out.’ Criteria: Given a medicine is in the order history, When I set a reminder for every 30 days, Then I get a notification 3 days before the refill date. Given notifications are disabled, When I set a reminder, Then the app explains how to enable them.",
+      "counterexample": "‘As a user, I want the app to be better.’ — no specific user, capability or testable outcome.",
+      "mistakes": [
+        "Writing stories that are actually tasks (‘create database table’)",
+        "Vague acceptance criteria that can't be tested",
+        "Stories too large to finish in a sprint"
+      ],
+      "keyTerms": [
+        { "term": "User story", "meaning": "A small, user-centred description of desired functionality and its benefit." },
+        { "term": "Acceptance criteria", "meaning": "Testable conditions a story must meet to be considered done." },
+        { "term": "INVEST", "meaning": "Independent, Negotiable, Valuable, Estimable, Small, Testable." }
+      ],
+      "questions": [
+        {
+          "id": "q_user_stories_1",
+          "kind": "RECALL",
+          "prompt": "Which is a well-formed user story?",
+          "options": [
+            { "text": "As a first-time investor, I want to see the risk level of a fund in plain language, so that I can choose confidently", "correct": true, "why": "Yes — user, capability and benefit." },
+            { "text": "Build a risk-level API", "why": "A technical task." },
+            { "text": "Improve the fund page", "why": "Vague." },
+            { "text": "As a developer, I want to refactor code", "why": "Not user value (it may be valid technical work, just not a user story)." }
+          ],
+          "explanation": "Stories centre user value."
+        },
+        {
+          "id": "q_user_stories_2",
+          "kind": "RECALL",
+          "prompt": "What does ‘Testable’ in INVEST mean?",
+          "options": [
+            { "text": "The story has clear criteria to verify it's done", "correct": true, "why": "Correct." },
+            { "text": "It needs a QA team", "why": "Not necessarily." },
+            { "text": "It has been tested in production", "why": "No." },
+            { "text": "It's about testing tools", "why": "No." }
+          ],
+          "explanation": "Clear acceptance criteria make stories testable."
+        },
+        {
+          "id": "q_user_stories_3",
+          "kind": "APPLICATION",
+          "prompt": "‘As a shopper, I want to pay with UPI, cards, wallets, EMI and cash on delivery’ is too large. What's the best split?",
+          "options": [
+            { "text": "Backend story and frontend story", "why": "Technical-layer splits don't deliver value alone." },
+            { "text": "One story per payment method, starting with the most used (e.g. UPI)", "correct": true, "why": "Yes — each slice delivers value independently." },
+            { "text": "Keep it as one story", "why": "Too big to estimate and finish." },
+            { "text": "Split by team member", "why": "Not value-based." }
+          ],
+          "explanation": "Split by business-rule variations or workflows."
+        },
+        {
+          "id": "q_user_stories_4",
+          "kind": "APPLICATION",
+          "prompt": "Which acceptance criterion is most testable for ‘search returns relevant results’?",
+          "options": [
+            { "text": "Search should feel fast and smart", "why": "Subjective." },
+            { "text": "Given I search ‘paracetamol’, When results load, Then products containing paracetamol appear first, within 2 seconds on 4G", "correct": true, "why": "Specific, measurable, verifiable." },
+            { "text": "Search works", "why": "Too vague." },
+            { "text": "Users love search", "why": "Not testable in development." }
+          ],
+          "explanation": "Given/When/Then makes criteria concrete."
+        }
+      ],
+      "exercise": {
+        "scenario": "A society-management app wants residents to pre-approve visitors so guards can let them in quickly.",
+        "prompt": "Write two user stories (resident and guard) with two Given/When/Then acceptance criteria each, including one edge case.",
+        "modelAnswer": "Story 1: As a resident, I want to pre-approve a visitor with a time window, so that they enter without the guard calling me. Criteria: Given I add a visitor's name and phone number for 4–6 pm, When the guard searches the phone number at 5 pm, Then the visitor appears as approved. Edge: Given the visitor arrives at 7 pm, When the guard searches, Then the approval shows as expired and the guard is prompted to call me. Story 2: As a guard, I want to verify pre-approved visitors quickly, so that the gate queue stays short. Criteria: Given a visitor shows an entry code, When I enter it, Then I see the flat number and approval status within 2 seconds. Edge: Given there's no internet, When I enter the code, Then the app checks against the last synced list and marks the entry for later sync.",
+        "checklist": [
+          "Stories follow the As a / I want / so that format",
+          "Each has testable Given/When/Then criteria",
+          "Includes at least one edge case",
+          "Stories deliver value independently"
+        ]
+      }
+    }
+  ],
+  "checkpoint": {
+    "id": "cp_u06",
+    "title": "From validated idea to buildable plan",
+    "scenario": "Research shows that small-town tutors struggle to collect monthly fees from parents. You want to build fee reminders and collection inside your tutoring app.",
+    "minutes": 8,
+    "debrief": "You tested demand cheaply, aligned the team with a PRD that defined success and boundaries, and translated it into small, testable stories. Definition turned insight into action.",
+    "steps": [
+      {
+        "id": "cp_u06_1",
+        "lessonId": "l_mvp",
+        "kind": "APPLICATION",
+        "prompt": "What's the best MVP to test whether tutors will use automated fee reminders?",
+        "options": [
+          { "text": "For 20 tutors, send reminders to parents manually via WhatsApp templates and measure on-time payments and tutor retention", "correct": true, "why": "A concierge test of the core value." },
+          { "text": "Build full payments, reminders and accounting", "why": "Too big before validation." },
+          { "text": "Survey tutors about whether they like reminders", "why": "Opinions, not behaviour." }
+        ],
+        "explanation": "Test value before automating."
+      },
+      {
+        "id": "cp_u06_2",
+        "lessonId": "l_prd",
+        "kind": "APPLICATION",
+        "prompt": "The MVP worked. Which goal and guardrail pair suits the PRD?",
+        "options": [
+          { "text": "Goal: on-time fee payments from 50% to 75%; guardrail: parent opt-out and complaint rate doesn't rise", "correct": true, "why": "An outcome goal plus protection against annoying parents." },
+          { "text": "Goal: send 1 million reminders", "why": "Output." },
+          { "text": "Goal: build quickly", "why": "Not a success metric." }
+        ],
+        "explanation": "Goals and guardrails define success."
+      },
+      {
+        "id": "cp_u06_3",
+        "lessonId": "l_prd",
+        "kind": "APPLICATION",
+        "prompt": "Which is a good non-goal for version 1?",
+        "options": [
+          { "text": "Full accounting and GST invoicing", "correct": true, "why": "Explicitly out of scope prevents creep." },
+          { "text": "Sending reminders", "why": "That's the core." },
+          { "text": "Showing who has paid", "why": "Core to collection." }
+        ],
+        "explanation": "Non-goals protect focus."
+      },
+      {
+        "id": "cp_u06_4",
+        "lessonId": "l_user_stories",
+        "kind": "APPLICATION",
+        "prompt": "Which acceptance criterion is best for the reminder story?",
+        "options": [
+          { "text": "Given a fee is due on the 5th, When it's 9 am on the 3rd and unpaid, Then the parent gets a reminder with a payment link; no reminder is sent once paid", "correct": true, "why": "Specific, testable and covers the paid edge case." },
+          { "text": "Reminders should be smart", "why": "Not testable." },
+          { "text": "Parents love reminders", "why": "Not verifiable in development." }
+        ],
+        "explanation": "Testable criteria remove ambiguity."
+      }
+    ]
+  }
+}

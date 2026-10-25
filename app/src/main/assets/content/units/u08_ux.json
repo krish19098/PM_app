@@ -1,0 +1,427 @@
+{
+  "unit": {
+    "id": "u08",
+    "order": 8,
+    "title": "UX & Design Collaboration",
+    "summary": "Understand what makes products easy and pleasant to use: UX fundamentals, usability testing and accessibility.",
+    "level": "INTERMEDIATE",
+    "prerequisites": ["u03"]
+  },
+  "lessons": [
+    {
+      "id": "l_ux_fundamentals",
+      "unitId": "u08",
+      "title": "UX fundamentals for PMs",
+      "level": "INTERMEDIATE",
+      "objectives": [
+        "Explain core usability principles like clarity, feedback and consistency",
+        "Reduce cognitive load in a flow",
+        "Collaborate with designers through problems rather than pixels"
+      ],
+      "prerequisites": ["l_journey_maps"],
+      "related": ["l_usability_testing", "l_accessibility", "l_funnels"],
+      "tags": ["ux", "design", "usability"],
+      "quick": {
+        "explanation": {
+          "en": "User experience (UX) is how it feels to use a product: is it clear what to do, does it respond to my actions, can I recover from mistakes? Good UX reduces cognitive load — the mental effort needed. PMs don't need to design screens, but they must understand these principles to judge designs by whether users can achieve their goals easily.",
+          "ta": "User experience (UX)-na: oru product-a use pannumbodhu eppadi irukku — enna pannanum-nu clear-aa, en action-ku response varudhaa, thappu pannina thiruthikka mudiyumaa? Nalla UX cognitive load-a, adhaavadhu thevaiyaana mental effort-a kuraikkum. PMs screens design panna thevai illa, aana users avanga goals-a easy-ah achieve panna mudiyudhaa-nu designs-a judge panna indha principles theriyanum."
+        },
+        "analogy": {
+          "en": "A well-designed railway station: clear signs, consistent platform numbering, announcements when trains change — you don't think about the design; you just reach your train.",
+          "ta": "Nalla design panna railway station: clear signs, consistent platform numbers, train maarumbodhu announcements — design pathi yosikka maatteenga; unga train-a poi pidippeenga."
+        },
+        "takeaway": {
+          "en": "Judge a design by whether the target user can complete their key task quickly and confidently — not by whether you like the look.",
+          "ta": "Design-a judge pannumbodhu: target user avanga key task-a vegama, nambikkaiyoda mudikka mudiyudhaa-nu paarunga — look pudichirukkaa-nu illa."
+        }
+      },
+      "deep": [
+        {
+          "title": "Core principles",
+          "body": "Many teams use Jakob Nielsen's usability heuristics. Key ones: visibility of system status (show what's happening — loading, saved, sent); match the real world (use users' words, not internal jargon); user control (undo, back, cancel); consistency (same action, same look); error prevention and clear recovery; recognition over recall (show options rather than making people remember); and minimalist design (every extra element competes for attention)."
+        },
+        {
+          "title": "Cognitive load",
+          "body": "Every decision, field and word costs mental effort. Reduce it by asking only for what's needed, using smart defaults, breaking long tasks into steps, showing progress, and grouping related items. Hick's law: more choices take longer to decide. Fitts's law: small, distant targets are harder to tap, which matters a lot on phones."
+        },
+        {
+          "title": "Working with designers",
+          "body": "Give designers the problem, user, constraints and success metric, not a sketch of the solution. Review designs against user goals (‘can a first-time user find X in under 10 seconds?’), not personal taste. Involve designers in research, and test with real users when you disagree."
+        },
+        {
+          "title": "Context matters",
+          "body": "Design for the real context: one-handed use on a crowded bus, poor networks, older or low-cost phones, bright sunlight, users who prefer their own language. A design that works on a designer's high-end phone in an office may fail in the field."
+        }
+      ],
+      "example": "Illustrative example: a bill-payment app's flow asks for 11 fields. By auto-detecting the provider from the account number, remembering past billers and showing a clear ‘payment successful — receipt saved’ screen, completion rises and ‘did my payment go through?’ support tickets fall.",
+      "counterexample": "An app that shows a spinner forever on slow networks, with no message, no retry option and no idea whether the payment succeeded.",
+      "mistakes": [
+        "Judging designs on personal taste",
+        "Using internal jargon in the interface",
+        "Designing only for ideal conditions"
+      ],
+      "keyTerms": [
+        { "term": "Cognitive load", "meaning": "The mental effort required to use something." },
+        { "term": "Usability heuristics", "meaning": "General principles for usable interfaces, e.g. Nielsen's ten heuristics." },
+        { "term": "Progressive disclosure", "meaning": "Showing advanced options only when they're needed." }
+      ],
+      "questions": [
+        {
+          "id": "q_ux_1",
+          "kind": "RECALL",
+          "prompt": "Showing ‘Uploading… 60%’ during an upload follows which principle?",
+          "options": [
+            { "text": "Visibility of system status", "correct": true, "why": "Correct — users know what's happening." },
+            { "text": "Aesthetic minimalism", "why": "Not the main principle here." },
+            { "text": "Recognition over recall", "why": "That's about showing options." },
+            { "text": "Consistency", "why": "Not the main principle here." }
+          ],
+          "explanation": "Feedback reduces uncertainty."
+        },
+        {
+          "id": "q_ux_2",
+          "kind": "RECALL",
+          "prompt": "What does Hick's law suggest?",
+          "options": [
+            { "text": "More choices increase decision time", "correct": true, "why": "Yes." },
+            { "text": "Bigger buttons are always better", "why": "That's closer to Fitts's law, and only partly." },
+            { "text": "Users read every word", "why": "They usually scan." },
+            { "text": "Colour doesn't matter", "why": "No." }
+          ],
+          "explanation": "Fewer, clearer choices speed decisions."
+        },
+        {
+          "id": "q_ux_3",
+          "kind": "APPLICATION",
+          "prompt": "You dislike the colours in a new design, but tests show users complete the task easily. What should you do?",
+          "options": [
+            { "text": "Insist on your colours", "why": "Personal taste isn't evidence." },
+            { "text": "Accept it — it meets the user goal; raise brand concerns separately if they're real", "correct": true, "why": "Right — judge by user outcomes." },
+            { "text": "Restart the design", "why": "Wasteful when it works." },
+            { "text": "Ask the CEO's opinion", "why": "Evidence beats hierarchy." }
+          ],
+          "explanation": "Evidence over taste."
+        },
+        {
+          "id": "q_ux_4",
+          "kind": "APPLICATION",
+          "prompt": "A delivery app's button says ‘Initiate SLA escalation’. What's the issue?",
+          "options": [
+            { "text": "Internal jargon — users understand something like ‘My order is late’", "correct": true, "why": "Yes — match the user's language." },
+            { "text": "The button is too short", "why": "Not the core issue." },
+            { "text": "It needs an icon", "why": "Icons won't fix unclear words." },
+            { "text": "Nothing", "why": "Most users won't understand it." }
+          ],
+          "explanation": "Speak the user's language."
+        }
+      ],
+      "exercise": {
+        "scenario": "An insurance-claim form in an app has 25 fields on one screen, and many users abandon it.",
+        "prompt": "Propose four UX improvements based on the principles above, each linked to the principle it applies.",
+        "modelAnswer": "1) Split the form into 4 short steps with a progress indicator (reduce cognitive load; visibility of status). 2) Pre-fill known details from the policy (recognition over recall; error prevention). 3) Replace jargon like ‘FIR reference’ with plain language plus a help tip (match the real world). 4) Save drafts automatically and allow resuming later (user control and freedom). Measure completion rate and time to submit.",
+        "checklist": [
+          "Each improvement maps to a principle",
+          "Reduces fields or effort",
+          "Considers recovery and saving progress",
+          "Mentions how success would be measured"
+        ]
+      }
+    },
+    {
+      "id": "l_usability_testing",
+      "unitId": "u08",
+      "title": "Usability testing",
+      "level": "INTERMEDIATE",
+      "objectives": [
+        "Plan a task-based usability test",
+        "Moderate without leading participants",
+        "Turn observations into prioritised fixes"
+      ],
+      "prerequisites": ["l_ux_fundamentals", "l_research_methods"],
+      "related": ["l_mvp", "l_synthesis"],
+      "tags": ["usability testing", "research", "prototype"],
+      "quick": {
+        "explanation": {
+          "en": "In a usability test you watch real users try to complete realistic tasks with your product or prototype, while they think aloud. You don't explain or help; you observe where they hesitate, misunderstand or fail. Testing with about five users per round typically reveals many of the biggest usability problems.",
+          "ta": "Usability test-la, real users unga product illa prototype-la realistic tasks-a mudikka try pannumbodhu, avanga ninaikkuradha sathamaa solla solli neenga paappeenga. Neenga explain panna koodaadhu, help panna koodaadhu; avanga enga thayangraanga, thappa purinjukkuraanga, fail aagraanga-nu observe pannunga. Oru round-ku sumaar anju users-oda test pannina, periya usability problems-la pala theriya varum."
+        },
+        "analogy": {
+          "en": "Like watching a friend try to assemble flat-pack furniture with your instructions: you learn more from their confused pauses than from asking ‘were the instructions clear?’.",
+          "ta": "Unga instructions vechu friend flat-pack furniture assemble panna try panradha paakura maadhiri: ‘instructions clear-ah irundhudhaa?’-nu kekkuradha vida, avanga kuzhambi nikkura idangal-la dhaan adhigam kathukkuveenga."
+        },
+        "takeaway": {
+          "en": "Watch what users do, not what they say they'd do — and test early, with cheap prototypes.",
+          "ta": "Users pannuvom-nu solradha illa, nijamaa pannuradha paarunga — cheap prototypes vechu seekiramaave test pannunga."
+        }
+      },
+      "deep": [
+        {
+          "title": "Why it exists",
+          "body": "Teams know their product too well to see its confusing parts. Watching outsiders use it reveals problems instantly. Fixing them before launch is far cheaper than after."
+        },
+        {
+          "title": "How to run one",
+          "body": "1) Define what you want to learn and which flows to test. 2) Recruit 5 or so representative users per segment. 3) Write realistic task scenarios without hinting at the UI: ‘You want to send ₹500 to your brother’ rather than ‘tap the Send button’. 4) Ask participants to think aloud. 5) Observe silently; if asked for help, reply ‘what would you do if I weren't here?’. 6) Measure task success, time and errors. 7) Debrief: ask what was easy or hard."
+        },
+        {
+          "title": "Analysing results",
+          "body": "List issues with severity: critical (prevents task completion), major (causes significant delay or errors) and minor (cosmetic or a small annoyance). Note how many participants hit each one. Prioritise fixes by severity and frequency, then retest; iteration is the point."
+        },
+        {
+          "title": "Variants",
+          "body": "Moderated (live, in person or remote) gives rich insight; unmoderated (participants record themselves using a tool) is faster and scales. Guerrilla testing — quick tests with people in a café or college canteen — works well for early concepts with broad audiences."
+        }
+      ],
+      "example": "Illustrative example: testing a new bus-pass flow with five commuters, four fail to find where to upload their ID because it's hidden behind a ‘More’ menu. Moving it into the main step fixes the issue; a retest shows all five succeed.",
+      "counterexample": "Showing a prototype and asking ‘Do you like it?’ — participants are polite, say yes, and you learn nothing about whether they can use it.",
+      "mistakes": [
+        "Writing tasks that reveal the answer",
+        "Helping participants when they struggle",
+        "Testing only with colleagues"
+      ],
+      "keyTerms": [
+        { "term": "Think-aloud", "meaning": "Asking participants to say their thoughts while doing tasks." },
+        { "term": "Task success rate", "meaning": "Percentage of participants who complete a task." },
+        { "term": "Severity", "meaning": "How seriously an issue affects users' ability to complete tasks." }
+      ],
+      "questions": [
+        {
+          "id": "q_usability_1",
+          "kind": "RECALL",
+          "prompt": "Which task wording is best for a usability test?",
+          "options": [
+            { "text": "‘Tap the blue Recharge button on the home screen’", "why": "Reveals the UI and tests nothing." },
+            { "text": "‘Your prepaid balance is low. Top up ₹200 before your call tonight.’", "correct": true, "why": "Realistic and doesn't hint at the interface." },
+            { "text": "‘Do you like our recharge feature?’", "why": "An opinion question." },
+            { "text": "‘Explore the app’", "why": "Too vague to measure." }
+          ],
+          "explanation": "Tasks describe goals, not UI steps."
+        },
+        {
+          "id": "q_usability_2",
+          "kind": "RECALL",
+          "prompt": "Roughly how many participants per round often reveal many major usability issues?",
+          "options": [
+            { "text": "About 5", "correct": true, "why": "Yes — a widely used guideline for qualitative rounds; iterate with more rounds." },
+            { "text": "500", "why": "That's for quantitative studies." },
+            { "text": "1", "why": "Too few." },
+            { "text": "Only the CEO", "why": "Not representative." }
+          ],
+          "explanation": "Small, iterative rounds are efficient."
+        },
+        {
+          "id": "q_usability_3",
+          "kind": "APPLICATION",
+          "prompt": "A participant is stuck and asks you how to proceed. What do you say?",
+          "options": [
+            { "text": "‘Tap the menu at the top left’", "why": "Helping invalidates the observation." },
+            { "text": "‘What would you do if I weren't here?’", "correct": true, "why": "Right — keeps the test realistic while being kind." },
+            { "text": "‘Most people find it easily’", "why": "Makes them feel bad and adds pressure." },
+            { "text": "End the session", "why": "You lose valuable data." }
+          ],
+          "explanation": "Stay neutral; the struggle is the data."
+        },
+        {
+          "id": "q_usability_4",
+          "kind": "APPLICATION",
+          "prompt": "Results: issue A blocks 4/5 users from paying; issue B annoys 5/5 with a confusing icon but they still succeed. What do you fix first?",
+          "options": [
+            { "text": "A — critical severity, blocks task completion", "correct": true, "why": "Severity first, then frequency." },
+            { "text": "B — affects more people", "why": "Annoyance is less severe than blocking." },
+            { "text": "Neither", "why": "Both matter; A is urgent." },
+            { "text": "Redesign everything", "why": "Targeted fixes are more efficient." }
+          ],
+          "explanation": "Prioritise by severity × frequency."
+        }
+      ],
+      "exercise": {
+        "scenario": "You've designed a prototype for booking a vaccination slot for a child in a health app.",
+        "prompt": "Write a test plan: learning goal, participant profile, three task scenarios and the metrics you'll capture.",
+        "modelAnswer": "Learning goal: can parents find and book the right vaccine slot without help? Participants: 5 parents of children under 5, mixed tech comfort, including two who prefer Tamil. Tasks: 1) ‘Your daughter's next vaccine is due next week. Book a slot at the nearest centre on Saturday morning.’ 2) ‘You need to change the booking to Sunday.’ 3) ‘Check which vaccines your son has already received.’ Metrics: task success, time per task, errors and confusion points, and confidence rating after each task.",
+        "checklist": [
+          "Clear learning goal",
+          "Representative participants",
+          "Tasks are realistic and don't reveal the UI",
+          "Defines success and time metrics"
+        ]
+      }
+    },
+    {
+      "id": "l_accessibility",
+      "unitId": "u08",
+      "title": "Accessibility",
+      "level": "INTERMEDIATE",
+      "objectives": [
+        "Explain why accessibility matters ethically, legally and commercially",
+        "Apply core practices: contrast, text size, touch targets, screen readers",
+        "Include accessibility in requirements and testing"
+      ],
+      "prerequisites": ["l_ux_fundamentals"],
+      "related": ["l_prd", "l_usability_testing"],
+      "tags": ["accessibility", "a11y", "inclusive design"],
+      "quick": {
+        "explanation": {
+          "en": "Accessibility means people with disabilities — visual, hearing, motor or cognitive — can use your product. Practical basics: sufficient colour contrast, text that scales, touch targets of at least about 48dp on Android, labels for screen readers like TalkBack, not relying on colour alone, and captions for video. Accessible design often improves the experience for everyone.",
+          "ta": "Accessibility-na: disabilities ulla makkal — paarvai, kaadhu, motor, cognitive — unga product-a use panna mudiyanum. Practical basics: pothumaana colour contrast, perusaagura text, Android-la sumaar 48dp-ku kammi illaadha touch targets, TalkBack maadhiri screen readers-ku labels, colour-a mattum nambaama irukkuradhu, video-ku captions. Accessible design pala samayam ellarukkume experience-a improve pannum."
+        },
+        "analogy": {
+          "en": "Ramps at building entrances were made for wheelchairs, but parents with prams, delivery workers and travellers with suitcases all use them.",
+          "ta": "Building entrance ramps wheelchair-ku dhaan pannaanga, aana pram-oda parents, delivery workers, suitcase-oda travellers ellarume use pannuraanga."
+        },
+        "takeaway": {
+          "en": "Make accessibility a requirement from the start; retrofitting is costly and excludes users in the meantime.",
+          "ta": "Accessibility-a aarambathulaye requirement-ah aakkunga; apram serkkuradhu costly, adhuvaraikkum users-a vilakkum."
+        }
+      },
+      "deep": [
+        {
+          "title": "Why it matters",
+          "body": "The WHO estimates that around 1.3 billion people — about 1 in 6 — experience significant disability. Ageing populations add more people with low vision or reduced dexterity. Many countries have accessibility laws for digital services, such as India's Rights of Persons with Disabilities Act, 2016. And temporary or situational limitations (a broken arm, bright sunlight, a noisy room) affect everyone."
+        },
+        {
+          "title": "Core practices",
+          "body": "Perceivable: contrast of at least 4.5:1 for normal text (a WCAG guideline), text that scales with system font size, alternatives for images and captions for video. Operable: large touch targets, no time limits without extension, everything reachable by screen readers and keyboards. Understandable: plain language, clear errors, consistent navigation. Robust: correct use of platform components so assistive technologies work."
+        },
+        {
+          "title": "In the product process",
+          "body": "Add accessibility to PRDs as non-functional requirements, to designs (contrast checks, focus order), to definitions of done and to QA (test with TalkBack and with large font sizes). Include people with disabilities in research and usability testing."
+        },
+        {
+          "title": "Common pitfalls",
+          "body": "Icon-only buttons without labels; information shown only by colour (red or green status); text in images; tiny tap targets; and custom components that screen readers can't interpret."
+        }
+      ],
+      "example": "Illustrative example: a banking app adds proper content descriptions to icon buttons, supports large fonts without breaking layouts, and shows ‘Failed’ as text, not just a red dot. Visually impaired users can now check balances independently, and older users report fewer mistakes.",
+      "counterexample": "A transaction history where successful payments are green and failed payments red, with no text or icon difference — unusable for colour-blind users.",
+      "mistakes": [
+        "Treating accessibility as a later ‘nice to have’",
+        "Relying on colour alone to convey meaning",
+        "Never testing with screen readers or large fonts"
+      ],
+      "keyTerms": [
+        { "term": "WCAG", "meaning": "Web Content Accessibility Guidelines, the widely used accessibility standard." },
+        { "term": "Screen reader", "meaning": "Software that reads the screen aloud, like TalkBack on Android." },
+        { "term": "Contrast ratio", "meaning": "The difference in luminance between text and background." }
+      ],
+      "questions": [
+        {
+          "id": "q_a11y_1",
+          "kind": "RECALL",
+          "prompt": "Which practice helps screen-reader users most directly?",
+          "options": [
+            { "text": "Meaningful labels for buttons and images", "correct": true, "why": "Correct — screen readers read labels aloud." },
+            { "text": "Brighter colours", "why": "Helps sighted users, not screen-reader users." },
+            { "text": "More animations", "why": "Can hinder." },
+            { "text": "Smaller text", "why": "No." }
+          ],
+          "explanation": "Label everything interactive."
+        },
+        {
+          "id": "q_a11y_2",
+          "kind": "RECALL",
+          "prompt": "Why shouldn't status be shown only with colour?",
+          "options": [
+            { "text": "Colour-blind users may not distinguish it", "correct": true, "why": "Yes — add text or icons." },
+            { "text": "Colours are expensive", "why": "No." },
+            { "text": "It's illegal everywhere", "why": "It's an accessibility failure, though legal rules vary." },
+            { "text": "Phones can't show colour", "why": "No." }
+          ],
+          "explanation": "Never rely on colour alone."
+        },
+        {
+          "id": "q_a11y_3",
+          "kind": "APPLICATION",
+          "prompt": "Your team says accessibility will ‘slow down the launch’. What's the best response?",
+          "options": [
+            { "text": "Agree and skip it", "why": "This excludes users and builds costly debt." },
+            { "text": "Build accessibility into the definition of done using platform components, and prioritise the critical flows first", "correct": true, "why": "Right — accessibility from the start is cheaper, and you can focus on what matters most." },
+            { "text": "Delay the launch a year", "why": "Overcorrection." },
+            { "text": "Add a disclaimer", "why": "Doesn't help users." }
+          ],
+          "explanation": "Accessibility is a quality requirement."
+        },
+        {
+          "id": "q_a11y_4",
+          "kind": "APPLICATION",
+          "prompt": "Users with large system font sizes report overlapping text on the payment screen. Severity?",
+          "options": [
+            { "text": "Critical if it prevents completing payment; fix it as a basic expectation", "correct": true, "why": "Yes — if users can't pay, it's critical." },
+            { "text": "Cosmetic", "why": "It may block the task." },
+            { "text": "Their fault for using large fonts", "why": "Large fonts are a legitimate need." },
+            { "text": "Ignore it until next year", "why": "It excludes users now." }
+          ],
+          "explanation": "Severity depends on task impact."
+        }
+      ],
+      "exercise": {
+        "scenario": "You're reviewing a new ‘order history’ screen for a grocery app before launch.",
+        "prompt": "Write five accessibility acceptance criteria for this screen.",
+        "modelAnswer": "1) All text meets at least 4.5:1 contrast against its background. 2) With system font size at maximum, the layout reflows without overlapping or truncating key information. 3) Each order row and icon button has a screen-reader label such as ‘Order of 12 March, ₹540, delivered’. 4) Order status is shown in text (Delivered, Cancelled), not only by colour. 5) Touch targets for actions like ‘Reorder’ are at least 48 by 48 dp.",
+        "checklist": [
+          "Covers contrast and scalable text",
+          "Includes screen-reader labels",
+          "Avoids colour-only meaning",
+          "Specifies touch target sizes",
+          "Criteria are testable"
+        ]
+      }
+    }
+  ],
+  "checkpoint": {
+    "id": "cp_u08",
+    "title": "Fixing a confusing onboarding",
+    "scenario": "A health-insurance app's onboarding has a 30% completion rate. Older users and users of budget phones struggle the most.",
+    "minutes": 8,
+    "debrief": "You diagnosed with UX principles, verified by watching real users and made the fix inclusive. UX work is evidence-driven, not taste-driven.",
+    "steps": [
+      {
+        "id": "cp_u08_1",
+        "lessonId": "l_ux_fundamentals",
+        "kind": "APPLICATION",
+        "prompt": "The onboarding asks for 18 fields with insurance jargon. What's the most likely issue?",
+        "options": [
+          { "text": "High cognitive load and jargon that doesn't match users' language", "correct": true, "why": "Core UX principles are violated." },
+          { "text": "The logo is too small", "why": "Unlikely to cause 70% drop-off." },
+          { "text": "Users are lazy", "why": "Blaming users ignores design." }
+        ],
+        "explanation": "Reduce load; speak the user's language."
+      },
+      {
+        "id": "cp_u08_2",
+        "lessonId": "l_usability_testing",
+        "kind": "APPLICATION",
+        "prompt": "How do you verify where users struggle?",
+        "options": [
+          { "text": "Run task-based usability tests with 5 older users on budget phones, observing silently", "correct": true, "why": "Watch the actual segment struggling." },
+          { "text": "Ask the team to guess", "why": "The team isn't the user." },
+          { "text": "Send an NPS survey", "why": "Doesn't pinpoint flow issues." }
+        ],
+        "explanation": "Test with the segment that struggles."
+      },
+      {
+        "id": "cp_u08_3",
+        "lessonId": "l_accessibility",
+        "kind": "APPLICATION",
+        "prompt": "Tests reveal tiny text and buttons. What's the right fix?",
+        "options": [
+          { "text": "Support system font scaling, minimum 48dp touch targets and sufficient contrast, then retest", "correct": true, "why": "Accessibility basics benefit everyone, especially older users." },
+          { "text": "Add a zoom hint", "why": "A workaround, not a fix." },
+          { "text": "Target only younger users", "why": "Abandons a key segment." }
+        ],
+        "explanation": "Inclusive fixes and retesting."
+      },
+      {
+        "id": "cp_u08_4",
+        "lessonId": "l_usability_testing",
+        "kind": "APPLICATION",
+        "prompt": "After fixes, how do you know it worked?",
+        "options": [
+          { "text": "Retest the tasks and monitor onboarding completion by segment after release", "correct": true, "why": "Qualitative retest plus quantitative confirmation." },
+          { "text": "Assume it worked", "why": "Verify." },
+          { "text": "Ask the designer", "why": "Users are the judge." }
+        ],
+        "explanation": "Iterate and measure."
+      }
+    ]
+  }
+}

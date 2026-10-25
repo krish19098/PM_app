@@ -1,0 +1,550 @@
+{
+  "unit": {
+    "id": "u14",
+    "order": 14,
+    "title": "Advanced Strategy & PM Career",
+    "summary": "Think like a senior PM: moats and platforms, strategic bets under uncertainty, structuring product-sense answers, and building a credible PM portfolio.",
+    "level": "ADVANCED",
+    "prerequisites": ["u12"]
+  },
+  "lessons": [
+    {
+      "id": "l_moats_platforms",
+      "unitId": "u14",
+      "title": "Moats, network effects and platforms",
+      "level": "ADVANCED",
+      "objectives": [
+        "Identify sources of durable competitive advantage",
+        "Explain direct and indirect network effects",
+        "Recognise platform dynamics like the cold-start problem"
+      ],
+      "prerequisites": ["l_competitive", "l_growth_loops"],
+      "related": ["l_strategic_bets", "l_ai_metrics"],
+      "tags": ["moats", "network effects", "platforms", "strategy"],
+      "quick": {
+        "explanation": {
+          "en": "A moat is a durable advantage that protects a product from competitors. Common moats: network effects (the product gets more valuable as more people use it), switching costs (it's painful to leave), economies of scale (lower costs at size), proprietary data, brand and trust. Platforms connect groups — buyers and sellers, riders and drivers — and must solve the cold-start problem: neither side joins without the other.",
+          "ta": "Moat-na competitors-kitta irundhu product-a protect panra durable advantage. Common moats: network effects (adhiga per use panna product-oda value adhigamaagum), switching costs (vittu poradhu kashtam), economies of scale (perusaanaa cost kammi), proprietary data, brand & trust. Platforms groups-a connect pannum — vaangubavar & virpavar, riders & drivers — cold-start problem-a solve pannanum: oru side illaama innoru side join pannaadhu."
+        },
+        "analogy": {
+          "en": "A telephone is useless if you're the only one who has it; each new phone owner makes everyone's phone more valuable. That's a network effect.",
+          "ta": "Ungakitta mattum dhaan phone irundhaa adhu use illa; ovvoru pudhu phone owner-um ellaroda phone-ayum adhiga mathippullaadhaakkuvaanga. Adhu dhaan network effect."
+        },
+        "takeaway": {
+          "en": "Features can be copied; moats can't easily be. Ask what will still protect you when a competitor copies every feature.",
+          "ta": "Features-a copy pannalaam; moats-a easy-ah copy panna mudiyaadhu. Competitor ellaa features-ayum copy pannaalum unga-la edhu protect pannum-nu kelunga."
+        }
+      },
+      "deep": [
+        {
+          "title": "Types of network effects",
+          "body": "Direct: users benefit from more users of the same type (messaging apps). Indirect or two-sided: one side benefits from more of the other side (more restaurants attract more diners and vice versa). Data network effects: more usage produces data that improves the product, though these often plateau. Local network effects: value depends on density in a specific area (food delivery in a neighbourhood), so a global leader can still lose city by city."
+        },
+        {
+          "title": "Other moats",
+          "body": "Switching costs: data lock-in, learned workflows, integrations (accounting software). Scale economies: lower unit costs from volume (logistics networks). Brand and trust: especially in finance and health. Proprietary assets: unique data, licences, regulatory approvals. Moats erode, so product strategy should keep deepening them."
+        },
+        {
+          "title": "The cold-start problem",
+          "body": "Platforms often start by focusing on a small, dense network (one campus, one neighbourhood), subsidising the harder side, providing single-player value (a tool that's useful even before the network exists) or seeding supply manually. Andrew Chen's book ‘The Cold Start Problem’ explores these patterns."
+        },
+        {
+          "title": "Platform responsibilities",
+          "body": "Platforms must balance the sides' interests, maintain quality and trust (ratings, verification), prevent disintermediation and handle governance (policies, fees, disputes). Over-extracting value from one side — very high commissions, for example — can push them to competitors or regulators."
+        }
+      ],
+      "example": "Illustrative example: a hyperlocal services marketplace launches in one Chennai neighbourhood with verified electricians and plumbers recruited manually, plus a free booking tool for professionals (single-player value). Density makes response times fast, which attracts residents, which attracts more professionals — then it expands neighbourhood by neighbourhood.",
+      "counterexample": "Launching a two-sided marketplace across 50 cities at once with thin supply everywhere — users find no providers nearby and churn.",
+      "mistakes": [
+        "Confusing features with moats",
+        "Assuming network effects are global when they're local",
+        "Over-extracting value from one side of a platform"
+      ],
+      "keyTerms": [
+        { "term": "Moat", "meaning": "A durable competitive advantage." },
+        { "term": "Network effect", "meaning": "When a product becomes more valuable as more people use it." },
+        { "term": "Switching cost", "meaning": "The cost or effort for a customer to change to an alternative." },
+        { "term": "Cold-start problem", "meaning": "The difficulty of starting a network when it has too few users to be valuable." }
+      ],
+      "questions": [
+        {
+          "id": "q_moats_1",
+          "kind": "RECALL",
+          "prompt": "More restaurants attract more diners, which attract more restaurants. This is:",
+          "options": [
+            { "text": "An indirect (two-sided) network effect", "correct": true, "why": "Correct." },
+            { "text": "A direct network effect", "why": "Direct is between users of the same type." },
+            { "text": "A switching cost", "why": "No." },
+            { "text": "Economies of scale", "why": "Related, but not the main effect here." }
+          ],
+          "explanation": "Two-sided platforms have cross-side effects."
+        },
+        {
+          "id": "q_moats_2",
+          "kind": "RECALL",
+          "prompt": "Why might a strong national food-delivery brand lose in one city?",
+          "options": [
+            { "text": "Network effects are local — a rival with denser restaurants and riders in that city can offer better service", "correct": true, "why": "Yes." },
+            { "text": "Brands never matter", "why": "They do, but local density matters a lot." },
+            { "text": "Apps can't work in cities", "why": "No." },
+            { "text": "Because of the logo", "why": "No." }
+          ],
+          "explanation": "Local density beats global size in local markets."
+        },
+        {
+          "id": "q_moats_3",
+          "kind": "APPLICATION",
+          "prompt": "A competitor copies your app's main features. Which asset protects you best?",
+          "options": [
+            { "text": "Deep integrations and customer data that make switching costly, plus trust built over time", "correct": true, "why": "Moats survive feature copying." },
+            { "text": "Your colour scheme", "why": "Easily copied." },
+            { "text": "A slightly faster animation", "why": "Easily copied." },
+            { "text": "Your launch date", "why": "Being first isn't a moat by itself." }
+          ],
+          "explanation": "Invest in moats, not just features."
+        },
+        {
+          "id": "q_moats_4",
+          "kind": "APPLICATION",
+          "prompt": "You're launching a tutor marketplace. How do you solve cold start?",
+          "options": [
+            { "text": "Start in one city and subject, recruit quality tutors manually, and give tutors a free scheduling tool useful even without new students", "correct": true, "why": "Density, seeded supply and single-player value." },
+            { "text": "Launch nationally on day one", "why": "Thin supply everywhere." },
+            { "text": "Wait for tutors to find you", "why": "Cold start requires deliberate effort." },
+            { "text": "Charge both sides high fees from the start", "why": "Discourages early adoption." }
+          ],
+          "explanation": "Concentrate, seed and provide standalone value."
+        }
+      ],
+      "exercise": {
+        "scenario": "You're PM at a B2B invoicing software company competing with bigger players.",
+        "prompt": "Identify two moats you could build, how product decisions would deepen them, and one risk of over-relying on lock-in.",
+        "modelAnswer": "Moat 1: switching costs through integrations — connect deeply with banks, GST filing and accounting tools so businesses' workflows depend on us; deepen by adding the integrations most requested by retained customers. Moat 2: a data network effect — anonymised payment-behaviour data that improves ‘likely to pay late’ predictions for all customers; deepen by encouraging more invoices to flow through the platform with useful insights. Risk: relying on lock-in instead of value breeds resentment — if customers feel trapped (for example, hard data export), they leave when an alternative appears and may warn others. Keep export easy and win on value.",
+        "checklist": [
+          "Names real moat types",
+          "Links product decisions to deepening each moat",
+          "Identifies a lock-in risk",
+          "Prioritises customer value"
+        ]
+      }
+    },
+    {
+      "id": "l_strategic_bets",
+      "unitId": "u14",
+      "title": "Strategic bets under uncertainty",
+      "level": "ADVANCED",
+      "objectives": [
+        "Distinguish reversible from irreversible decisions",
+        "Use expected value and pre-mortems to reason about bets",
+        "Build a portfolio of core, adjacent and transformational bets"
+      ],
+      "prerequisites": ["l_vision_strategy", "l_influence"],
+      "related": ["l_moats_platforms", "l_feedback_iteration", "l_rice"],
+      "tags": ["decision making", "uncertainty", "strategy", "bets"],
+      "quickMinutes": 6,
+      "quick": {
+        "explanation": {
+          "en": "Senior PMs make decisions with incomplete information. Separate reversible decisions (‘two-way doors’ — decide fast, learn, adjust) from irreversible ones (‘one-way doors’ — slow down, gather evidence). Estimate expected value (probability × payoff) across scenarios, run a pre-mortem to imagine why a bet might fail, and balance a portfolio of safe core improvements with a few bigger, riskier bets.",
+          "ta": "Senior PMs mulumaiyaana information illaama decisions edukkanum. Reversible decisions-a (‘two-way doors’ — vegama decide panni, kathukittu, adjust pannunga) irreversible decisions-la irundhu (‘one-way doors’ — mella po, evidence serkka) pirichu paarunga. Scenarios-kulla expected value (probability × payoff) estimate pannunga, oru bet en fail aagalaam-nu pre-mortem pannunga, safe core improvements-um sila periya risky bets-um balance panra portfolio vechukkonga."
+        },
+        "analogy": {
+          "en": "Choosing a restaurant for dinner is a two-way door — if it's bad, try another next week. Buying a house is a one-way door — inspect carefully before committing.",
+          "ta": "Dinner-ku restaurant choose panradhu two-way door — mosamaa irundhaa adutha vaaram vera try pannalaam. Veedu vaanguradhu one-way door — commit panradhukku munnaadi nalla inspect pannanum."
+        },
+        "takeaway": {
+          "en": "Move fast on reversible decisions, slow down on irreversible ones, and always write down what would change your mind.",
+          "ta": "Reversible decisions-la vegama ponga, irreversible-la mella ponga; unga mudivai edhu maathum-nu eppovume ezhudhi vechukkonga."
+        }
+      },
+      "deep": [
+        {
+          "title": "One-way and two-way doors",
+          "body": "This framing, popularised by Amazon's shareholder letters, warns against treating every decision with the same heavy process. Most product decisions — copy, layouts, feature flags — are reversible and should be made quickly by the people closest to the work. Irreversible ones — pricing architecture, platform migrations, entering regulated markets, brand changes — deserve careful analysis."
+        },
+        {
+          "title": "Expected value and scenarios",
+          "body": "Lay out scenarios with rough probabilities and payoffs. Bet A: 70% chance of a modest +5% revenue, 30% chance of nothing. Bet B: 20% chance of +40%, 80% chance of nothing. Expected values: A ≈ +3.5%, B ≈ +8%. B has higher expected value but more variance — whether to take it depends on the company's risk tolerance, runway and the ability to stage the bet (start small and expand on positive signals)."
+        },
+        {
+          "title": "Pre-mortems and kill criteria",
+          "body": "A pre-mortem (from psychologist Gary Klein) imagines the project has failed in a year and asks why. It surfaces risks people hesitate to mention. Pair it with kill criteria: signals that would make you stop, such as ‘if fewer than 10% of pilot users repeat within 30 days, we pause’. This counters sunk-cost bias."
+        },
+        {
+          "title": "Portfolio thinking",
+          "body": "Balance work across horizons: core (optimise today's product, high confidence), adjacent (extend to new segments or features) and transformational (new business lines, high uncertainty). Many organisations lean heavily toward core with a smaller share of adjacent and transformational bets; the right mix depends on stage, competition and strategy."
+        }
+      ],
+      "example": "Illustrative example: a fintech app considers launching credit cards (one-way door: regulatory, partner contracts, brand risk). It runs a pre-mortem (risks: defaults, partner dependency, support load), stages the bet with a waitlist and a small pilot through a bank partner, and defines kill criteria on default rates and activation before scaling.",
+      "counterexample": "Spending three months of meetings on button copy (a two-way door) while committing to a five-year exclusive vendor contract after one call (a one-way door).",
+      "mistakes": [
+        "Applying heavy process to reversible decisions",
+        "Ignoring variance and risk tolerance when comparing bets",
+        "Starting big bets without kill criteria"
+      ],
+      "keyTerms": [
+        { "term": "Two-way door", "meaning": "A reversible decision that can be undone cheaply." },
+        { "term": "Expected value", "meaning": "The probability-weighted average outcome of a decision." },
+        { "term": "Pre-mortem", "meaning": "Imagining a future failure to identify risks in advance." },
+        { "term": "Kill criteria", "meaning": "Pre-agreed signals that would cause you to stop an initiative." }
+      ],
+      "questions": [
+        {
+          "id": "q_bets_1",
+          "kind": "RECALL",
+          "prompt": "Which decision is most clearly a one-way door?",
+          "options": [
+            { "text": "Signing a multi-year exclusive partnership with heavy penalties for exit", "correct": true, "why": "Hard and costly to reverse." },
+            { "text": "Changing onboarding copy", "why": "Easily reversible." },
+            { "text": "Testing a new button colour", "why": "Reversible." },
+            { "text": "Enabling a feature flag for 1% of users", "why": "Reversible." }
+          ],
+          "explanation": "Irreversibility deserves rigour."
+        },
+        {
+          "id": "q_bets_2",
+          "kind": "RECALL",
+          "prompt": "What is a pre-mortem?",
+          "options": [
+            { "text": "Imagining the project has failed and listing the reasons why, before starting", "correct": true, "why": "Correct." },
+            { "text": "A review after a project fails", "why": "That's a post-mortem." },
+            { "text": "A financial forecast", "why": "No." },
+            { "text": "A legal review", "why": "No." }
+          ],
+          "explanation": "Surface risks before they happen."
+        },
+        {
+          "id": "q_bets_3",
+          "kind": "APPLICATION",
+          "prompt": "Bet X: 50% chance of +10, else 0. Bet Y: 10% chance of +60, else 0. Which has the higher expected value?",
+          "options": [
+            { "text": "Y (6 vs 5), though with much higher variance", "correct": true, "why": "EV: X = 5, Y = 6." },
+            { "text": "X", "why": "Recalculate: 0.5 × 10 = 5; 0.1 × 60 = 6." },
+            { "text": "They're equal", "why": "No." },
+            { "text": "Can't be calculated", "why": "It can." }
+          ],
+          "explanation": "Compare EV, then consider risk tolerance."
+        },
+        {
+          "id": "q_bets_4",
+          "kind": "APPLICATION",
+          "prompt": "Leadership wants to commit fully to a transformational bet with low evidence. What's the strongest recommendation?",
+          "options": [
+            { "text": "Stage it: a small, time-boxed pilot with clear success and kill criteria before scaling investment", "correct": true, "why": "Limits downside while preserving upside." },
+            { "text": "Refuse because it's risky", "why": "Some transformational bets are necessary." },
+            { "text": "Commit everything immediately", "why": "High risk without evidence." },
+            { "text": "Wait for certainty", "why": "Certainty rarely arrives." }
+          ],
+          "explanation": "Stage big bets."
+        }
+      ],
+      "exercise": {
+        "scenario": "Your edtech company is debating whether to launch live cohort-based courses alongside its self-paced app.",
+        "prompt": "Classify the decision, outline two scenarios with rough probabilities and payoffs, list three pre-mortem risks, and define kill criteria for a pilot.",
+        "modelAnswer": "Classification: partly a one-way door — hiring instructors and brand positioning are costly to reverse — but it can be staged as a pilot. Scenarios: 30% chance of strong demand (high-priced cohorts become a significant revenue line), 70% chance of weak demand (pilot cost lost, some learning gained). Pre-mortem risks: instructors' quality varies; learners can't commit to fixed schedules; live courses cannibalise app subscriptions without net revenue gain. Pilot kill criteria: fewer than 60% of enrolled learners attending 70% of sessions, a completion NPS below 30, or less than 20% net-new revenue after two cohorts.",
+        "checklist": [
+          "Classifies reversibility with nuance",
+          "Scenarios include probabilities and payoffs",
+          "Pre-mortem risks are specific",
+          "Kill criteria are measurable"
+        ]
+      }
+    },
+    {
+      "id": "l_product_sense_answers",
+      "unitId": "u14",
+      "title": "Structuring product-sense answers",
+      "level": "ADVANCED",
+      "objectives": [
+        "Use a flexible structure for product design and improvement questions",
+        "Prioritise users and problems explicitly",
+        "Communicate trade-offs and metrics in interviews"
+      ],
+      "prerequisites": ["l_problem_first", "l_personas_segments", "l_prioritisation_basics", "l_north_star"],
+      "related": ["l_metric_diagnosis", "l_strategic_bets"],
+      "tags": ["interview", "product sense", "design question"],
+      "quickMinutes": 6,
+      "deepMinutes": 9,
+      "quick": {
+        "explanation": {
+          "en": "Product-sense interviews (‘Design X for Y’ or ‘How would you improve Z?’) test how you think, not whether you find one right answer. A flexible structure: clarify the goal and constraints → choose a target user segment → identify and prioritise their problems → generate a few solutions → prioritise one with reasoning → define success metrics → discuss risks and trade-offs. Think aloud and justify each choice.",
+          "ta": "Product-sense interviews (‘Y-ku X design pannunga’ illa ‘Z-a eppadi improve pannuveenga?’) neenga eppadi yosikkireenga-nu test pannum, ore sariyaana answer kandupidikkureengalaa-nu illa. Flexible structure: goal & constraints clarify → target user segment choose → avanga problems-a identify panni prioritise → sila solutions generate → reasoning-oda onna prioritise → success metrics define → risks & trade-offs discuss. Sathamaa yosinga, ovvoru choice-ayum justify pannunga."
+        },
+        "analogy": {
+          "en": "Like an architect sketching on a whiteboard with a client: asking about the family first, then showing options, explaining why one fits best — the reasoning is the product.",
+          "ta": "Client kooda whiteboard-la sketch panra architect maadhiri: mudhalla family pathi kettu, apram options kaatti, edhu best fit-nu explain pannuvaanga — reasoning dhaan product."
+        },
+        "takeaway": {
+          "en": "Narrow down deliberately — one goal, one segment, one top problem — and justify every narrowing step.",
+          "ta": "Deliberate-ah narrow pannunga — ore goal, ore segment, ore top problem — ovvoru narrowing step-ayum justify pannunga."
+        }
+      },
+      "deep": [
+        {
+          "title": "Why structure helps (and when it hurts)",
+          "body": "A structure keeps you from jumping to features and shows the interviewer a clear chain of reasoning. But reciting a memorised framework mechanically sounds hollow. Use the structure as scaffolding; adapt it to the question and spend the most time where the interesting decisions are."
+        },
+        {
+          "title": "Step by step",
+          "body": "1) Clarify: what's the goal (engagement, revenue, new market)? Any constraints (platform, timeline)? State assumptions. 2) Users: list two or three segments, pick one with a reason (pain, size, strategic fit). 3) Problems: list their key pain points from a user's perspective, then prioritise by frequency and severity. 4) Solutions: brainstorm three or so, from simple to bold. 5) Prioritise: pick one using impact versus effort and strategic fit. 6) Metrics: one primary success metric plus a guardrail. 7) Risks and next steps: what could go wrong, and how you'd validate cheaply (an MVP)."
+        },
+        {
+          "title": "Communication tips",
+          "body": "Signpost (‘I'll first clarify, then pick a user…’), check in with the interviewer at key choices, summarise at the end, and be explicit about trade-offs (‘I'm deprioritising power users because…’). Use concrete details from real contexts, like Indian payment habits or low-end devices, to show product intuition."
+        },
+        {
+          "title": "Common failure modes",
+          "body": "Starting with features; designing for ‘everyone’; listing ten solutions without choosing; ignoring metrics; forgetting constraints like cost, privacy or feasibility; and not adapting when the interviewer adds a twist."
+        }
+      ],
+      "example": "Illustrative answer outline — ‘Design a product to help elderly people in India manage medicines.’ Goal: medication adherence and safety. Segment: elderly people living alone in cities with adult children elsewhere (high risk, a clear caregiver ally). Problems: forgetting doses (most frequent), confusion between similar pills (most severe), refill gaps. Solutions: voice reminders in their language; a photo-based pill identifier; caregiver alerts when doses are missed; auto-refill. Pick: voice reminders plus caregiver alerts — high impact, low effort, works on basic phones. Metric: doses confirmed on time; guardrail: alert fatigue for caregivers. Risks: privacy, a false sense of safety. MVP: IVR calls for 50 families.",
+      "counterexample": "‘I'd build an AI app with reminders, chat, telemedicine, a marketplace and social features for all users.’",
+      "mistakes": [
+        "Jumping to solutions before users and problems",
+        "Not choosing — listing everything",
+        "Skipping metrics and trade-offs"
+      ],
+      "keyTerms": [
+        { "term": "Product sense", "meaning": "The ability to understand users and design valuable products for them." },
+        { "term": "Signposting", "meaning": "Telling the listener the structure you'll follow." }
+      ],
+      "questions": [
+        {
+          "id": "q_psense_1",
+          "kind": "RECALL",
+          "prompt": "What should usually come first in a product design answer?",
+          "options": [
+            { "text": "Clarifying the goal, constraints and assumptions", "correct": true, "why": "Correct." },
+            { "text": "Listing features", "why": "Too early." },
+            { "text": "Drawing the UI", "why": "Too early." },
+            { "text": "Naming the technology stack", "why": "Not relevant at first." }
+          ],
+          "explanation": "Clarify before designing."
+        },
+        {
+          "id": "q_psense_2",
+          "kind": "RECALL",
+          "prompt": "Why pick one user segment instead of designing for everyone?",
+          "options": [
+            { "text": "Focus enables specific problems and better solutions — and shows prioritisation skill", "correct": true, "why": "Yes." },
+            { "text": "Interviewers dislike big markets", "why": "No." },
+            { "text": "It saves time only", "why": "It's about quality of thinking." },
+            { "text": "It's required by law", "why": "No." }
+          ],
+          "explanation": "Designing for everyone means designing for no one."
+        },
+        {
+          "id": "q_psense_3",
+          "kind": "APPLICATION",
+          "prompt": "Mid-answer, the interviewer says: ‘Assume these users only have basic feature phones.’ What do you do?",
+          "options": [
+            { "text": "Acknowledge it, re-evaluate solutions (e.g. IVR or SMS instead of an app) and explain how the choice changes", "correct": true, "why": "Adapting to constraints shows real product thinking." },
+            { "text": "Ignore it and continue with the app", "why": "Fails the constraint." },
+            { "text": "Start over from scratch silently", "why": "Explain your adaptation." },
+            { "text": "Argue that everyone has smartphones", "why": "Accept the constraint." }
+          ],
+          "explanation": "Constraints test adaptability."
+        },
+        {
+          "id": "q_psense_4",
+          "kind": "APPLICATION",
+          "prompt": "You've proposed a solution. What makes the ending strongest?",
+          "options": [
+            { "text": "A primary metric, a guardrail, key risks and a cheap way to validate — then a brief summary", "correct": true, "why": "Shows outcome focus and judgement." },
+            { "text": "Listing five more features", "why": "Unfocused." },
+            { "text": "Saying ‘that's it’", "why": "Misses metrics and risks." },
+            { "text": "Asking what the right answer was", "why": "There isn't one." }
+          ],
+          "explanation": "End with metrics, risks and validation."
+        }
+      ],
+      "exercise": {
+        "scenario": "Interview question: ‘How would you improve the experience of booking a doctor's appointment in a city like Coimbatore?’",
+        "prompt": "Write a structured outline: clarifying assumptions, chosen segment with reason, top three problems prioritised, three solutions, your pick with reasoning, success metric plus guardrail, and one risk with an MVP test.",
+        "modelAnswer": "Clarify: assume the goal is to reduce the time and uncertainty of getting a specialist appointment, and that we're a health-booking app. Segment: working parents booking for children or elderly parents — frequent bookers with high time pressure. Problems: 1) long, unpredictable waiting at the clinic (most painful); 2) unclear availability (calling multiple clinics); 3) forgetting follow-ups. Solutions: live queue-position tracking with ‘leave home now’ alerts; real-time slot availability across nearby clinics; automatic follow-up reminders. Pick: live queue tracking — it solves the most painful problem, clinics already run token queues, and it needs a simple clinic-side tool. Metric: average wait time at the clinic after arrival; guardrail: no-show rate for clinics. Risk: clinics don't update the queue; MVP: pilot with 10 clinics using a simple tablet app where the receptionist taps ‘next token’.",
+        "checklist": [
+          "Clarifies goal and assumptions",
+          "Chooses and justifies a segment",
+          "Prioritises problems",
+          "Selects one solution with reasoning",
+          "Defines a metric and guardrail",
+          "Addresses risk and validation"
+        ]
+      }
+    },
+    {
+      "id": "l_portfolio",
+      "unitId": "u14",
+      "title": "Building a credible PM portfolio",
+      "level": "ADVANCED",
+      "objectives": [
+        "Choose portfolio projects that demonstrate PM skills",
+        "Write a case study that shows reasoning and impact",
+        "Present your work honestly and compellingly"
+      ],
+      "prerequisites": ["l_prd", "l_feedback_iteration"],
+      "related": ["l_product_sense_answers", "l_influence"],
+      "tags": ["career", "portfolio", "case study", "interview"],
+      "quick": {
+        "explanation": {
+          "en": "Aspiring PMs without the title can show PM skills through a portfolio: two or three case studies that walk through a real or self-initiated product problem — research, insight, prioritisation, solution, metrics and what you learned. Interviewers look for your reasoning and judgement, not polish. Be honest about what was hypothetical, what you actually built or tested, and what the results were.",
+          "ta": "PM title illaadha aspiring PMs oru portfolio moolama PM skills-a kaattalaam: rendu moonu case studies — oru real illa neengale aarambicha product problem — research, insight, prioritisation, solution, metrics, enna kathukkitteenga. Interviewers unga reasoning, judgement-a dhaan paappaanga, polish-a illa. Edhu hypothetical, edha nijamaave build illa test panneenga, results enna — idhula honest-ah irunga."
+        },
+        "analogy": {
+          "en": "Like an architecture student's portfolio: not just pretty renderings, but the site analysis, constraints, sketches, iterations and why the final design works.",
+          "ta": "Architecture student portfolio maadhiri: azhagaana renderings mattum illa — site analysis, constraints, sketches, iterations, final design en work aagudhu-nu."
+        },
+        "takeaway": {
+          "en": "Show your thinking: problem → evidence → decision → result → learning, with honest labels on what was real.",
+          "ta": "Unga yosanaiya kaattunga: problem → evidence → decision → result → learning; edhu real-nu honest labels-oda."
+        }
+      },
+      "deep": [
+        {
+          "title": "Choosing projects",
+          "body": "Strong options: a product you shipped (even a small side project or an internal tool), a feature you influenced in your current role (as an engineer, analyst or designer), a self-initiated deep dive into a real product with user interviews and a prototype, or a hackathon project with real users. Pick projects that show different skills: discovery, analytics, execution, AI."
+        },
+        {
+          "title": "Case-study structure",
+          "body": "1) Context and your role. 2) The problem and why it mattered (with evidence). 3) Research and insights. 4) Options considered and how you prioritised. 5) The solution (with visuals: flows, wireframes). 6) Metrics and results — or, if not launched, how you'd measure success and what testing showed. 7) What you learned and what you'd do differently. Keep it scannable: one page or a short slide deck."
+        },
+        {
+          "title": "Honesty and ethics",
+          "body": "Label hypothetical or self-initiated work clearly (‘independent concept, not affiliated with the company’). Don't claim credit for team outcomes you didn't drive, don't invent metrics, and respect confidentiality — remove sensitive data from work projects. Credibility is the whole point of a portfolio."
+        },
+        {
+          "title": "Using it in interviews",
+          "body": "Prepare a 2-minute and a 10-minute version of each case. Expect probing questions: ‘Why that segment?’, ‘What would you do if the metric dropped?’, ‘What surprised you?’. Connect each case to behavioural stories (conflict, failure, influence) using a structure such as STAR (Situation, Task, Action, Result)."
+        }
+      ],
+      "example": "Illustrative example: an engineer aspiring to PM builds a small app for their apartment's water-tanker scheduling, interviews 12 residents, launches it to 40 households, measures the reduction in WhatsApp coordination messages and missed deliveries, and writes a one-page case study on what worked and what didn't — including an honest note that adoption stalled among older residents.",
+      "counterexample": "A portfolio with a redesign of a famous app that's only polished screens, with no research, no metrics, no trade-offs and a claim of ‘30% engagement increase’ that was never measured.",
+      "mistakes": [
+        "Showing visuals without reasoning",
+        "Inventing or inflating results",
+        "Not labelling hypothetical or independent work"
+      ],
+      "keyTerms": [
+        { "term": "Case study", "meaning": "A structured story of a problem, your decisions and the results." },
+        { "term": "STAR", "meaning": "Situation, Task, Action, Result — a structure for behavioural answers." }
+      ],
+      "questions": [
+        {
+          "id": "q_portfolio_1",
+          "kind": "RECALL",
+          "prompt": "What do interviewers value most in a PM portfolio case study?",
+          "options": [
+            { "text": "Clear reasoning from problem and evidence to decisions, results and learning", "correct": true, "why": "Correct." },
+            { "text": "Beautiful visuals only", "why": "Visuals without reasoning don't show PM skill." },
+            { "text": "The number of pages", "why": "Concise is better." },
+            { "text": "Big company names", "why": "Reasoning matters more." }
+          ],
+          "explanation": "Show the thinking."
+        },
+        {
+          "id": "q_portfolio_2",
+          "kind": "RECALL",
+          "prompt": "How should you present a self-initiated redesign of a real company's app?",
+          "options": [
+            { "text": "Clearly label it as an independent concept, not affiliated with the company, and show your research and assumptions", "correct": true, "why": "Honest and credible." },
+            { "text": "Imply you worked there", "why": "Misleading." },
+            { "text": "Use their internal data", "why": "You don't have it, and inventing it is dishonest." },
+            { "text": "Hide that it's hypothetical", "why": "Damages trust." }
+          ],
+          "explanation": "Honesty builds credibility."
+        },
+        {
+          "id": "q_portfolio_3",
+          "kind": "APPLICATION",
+          "prompt": "Your side project didn't reach its adoption target. Should it be in your portfolio?",
+          "options": [
+            { "text": "Yes — show what you learned, how you diagnosed the shortfall and what you'd change", "correct": true, "why": "Learning from failure shows maturity." },
+            { "text": "No — only show successes", "why": "Thoughtful failures are valuable evidence." },
+            { "text": "Yes, but change the numbers", "why": "Never invent results." },
+            { "text": "Only if you blame others", "why": "Ownership matters." }
+          ],
+          "explanation": "Learning is impact too."
+        },
+        {
+          "id": "q_portfolio_4",
+          "kind": "APPLICATION",
+          "prompt": "You're a software engineer aiming for PM. Which portfolio piece is strongest?",
+          "options": [
+            { "text": "A feature where you went beyond coding — talked to users, proposed a change based on data, and measured the result", "correct": true, "why": "Shows PM behaviours in a real context." },
+            { "text": "A list of programming languages", "why": "Not PM evidence." },
+            { "text": "A certificate alone", "why": "Shows learning, not application." },
+            { "text": "A mock-up of a famous app with no reasoning", "why": "Weak evidence." }
+          ],
+          "explanation": "Demonstrate PM behaviours."
+        }
+      ],
+      "exercise": {
+        "scenario": "Plan your first portfolio case study using what you've learned in this app.",
+        "prompt": "Choose a real problem you can access, outline the seven case-study sections with what you'll do in each, and write the honesty label you'll use.",
+        "modelAnswer": "Problem: students in my college struggle to find study partners for competitive exams. 1) Context and role: independent project; I'm the PM, designer and builder. 2) Problem: interview 10 students; survey 100 about how they find partners today. 3) Insights: affinity-map the interviews and pick the top problem. 4) Options: WhatsApp group matching, a simple web form or an app; prioritise with RICE and effort. 5) Solution: a concierge MVP — a form plus manual matching for 30 students. 6) Metrics: matched pairs still studying together after 3 weeks; guardrail: complaints. 7) Learnings: what worked and what I'd change. Honesty label: ‘Independent project with real student participants; results come from a 30-person pilot over 3 weeks.’",
+        "checklist": [
+          "Real, accessible problem",
+          "Covers all seven sections",
+          "Includes real research and measurable outcomes",
+          "Has a clear honesty label"
+        ]
+      }
+    }
+  ],
+  "checkpoint": {
+    "id": "cp_u14",
+    "title": "The senior PM decision",
+    "scenario": "You're a senior PM at a growing food-delivery app. Leadership asks whether to launch a new quick-commerce (10-minute grocery) business. Competitors have done it, it's expensive, and you must present a recommendation.",
+    "minutes": 10,
+    "debrief": "You combined moats, decision-making under uncertainty, structured product thinking and honest communication — what senior PM judgement looks like.",
+    "steps": [
+      {
+        "id": "cp_u14_1",
+        "lessonId": "l_moats_platforms",
+        "kind": "APPLICATION",
+        "prompt": "Which advantage might make quick-commerce a better fit for you than for a new entrant?",
+        "options": [
+          { "text": "Existing dense rider networks and customer base in key cities — local density you can reuse", "correct": true, "why": "Leverages existing moats." },
+          { "text": "Your app's colour scheme", "why": "Not a moat." },
+          { "text": "Being second to market", "why": "Not inherently an advantage." }
+        ],
+        "explanation": "Reuse moats when entering adjacent markets."
+      },
+      {
+        "id": "cp_u14_2",
+        "lessonId": "l_strategic_bets",
+        "kind": "APPLICATION",
+        "prompt": "How should you frame the decision?",
+        "options": [
+          { "text": "Largely a one-way door — warehouses and leases are costly to reverse — so stage it: pilot in one city with kill criteria on order frequency and contribution margin", "correct": true, "why": "Staged bet with clear criteria." },
+          { "text": "A two-way door; launch everywhere tomorrow", "why": "It's expensive to reverse." },
+          { "text": "Too risky; never consider it", "why": "Ignores potential upside." }
+        ],
+        "explanation": "Match process to reversibility."
+      },
+      {
+        "id": "cp_u14_3",
+        "lessonId": "l_product_sense_answers",
+        "kind": "APPLICATION",
+        "prompt": "Which target segment would you pick for the pilot?",
+        "options": [
+          { "text": "Existing customers in dense apartment clusters who already order food frequently — reachable, high order frequency and efficient delivery", "correct": true, "why": "A focused segment with a clear rationale." },
+          { "text": "Everyone in India", "why": "Unfocused." },
+          { "text": "Rural customers first", "why": "Low density makes 10-minute delivery hard." }
+        ],
+        "explanation": "Choose and justify."
+      },
+      {
+        "id": "cp_u14_4",
+        "lessonId": "l_influence",
+        "kind": "APPLICATION",
+        "prompt": "How do you open your recommendation to leadership?",
+        "options": [
+          { "text": "‘I recommend a 3-month pilot in one city, not a national launch. Three reasons… Here are the kill criteria and the decision I need today.’", "correct": true, "why": "Pyramid principle with an explicit ask." },
+          { "text": "Start with a history of quick-commerce worldwide", "why": "Buries the recommendation." },
+          { "text": "‘It depends’", "why": "Not a recommendation." }
+        ],
+        "explanation": "Answer first, then reasons, then the ask."
+      }
+    ]
+  }
+}

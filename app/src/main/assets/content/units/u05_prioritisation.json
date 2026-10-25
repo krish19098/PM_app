@@ -1,0 +1,549 @@
+{
+  "unit": {
+    "id": "u05",
+    "order": 5,
+    "title": "Prioritisation & Trade-offs",
+    "summary": "Decide what to do now, later or never: opportunity cost, RICE, MoSCoW and Kano, and sizing opportunities.",
+    "level": "INTERMEDIATE",
+    "prerequisites": ["u04"]
+  },
+  "lessons": [
+    {
+      "id": "l_prioritisation_basics",
+      "unitId": "u05",
+      "title": "Prioritisation is about trade-offs",
+      "level": "INTERMEDIATE",
+      "objectives": [
+        "Explain opportunity cost in product decisions",
+        "Separate urgency from importance",
+        "Make and communicate a trade-off decision"
+      ],
+      "prerequisites": ["l_vision_strategy"],
+      "related": ["l_rice", "l_moscow_kano", "l_influence"],
+      "tags": ["prioritisation", "opportunity cost", "trade-offs"],
+      "quick": {
+        "explanation": {
+          "en": "Every yes is a no to something else. Prioritisation means choosing what creates the most value for your strategy with limited time and people. The hidden cost of any project is its opportunity cost: the value of the best alternative you didn't do. Frameworks help, but the core skill is making trade-offs explicit and explaining them.",
+          "ta": "Ovvoru ‘yes’-um vera edhukko oru ‘no’. Prioritisation-na: konjam time, konjam people vechu unga strategy-ku adhigama value tharra vishayatha choose panradhu. Endha project-ukkum maraivaana cost — opportunity cost: neenga pannaama vitta best alternative-oda value. Frameworks help pannum, aana core skill — trade-offs-a explicit-ah aakki, explain panradhu."
+        },
+        "analogy": {
+          "en": "You have ₹1,000 and one evening. A movie, a course book or saving it — choosing one means giving up the others. Teams face the same choice with engineering time every sprint.",
+          "ta": "Ungakitta ₹1,000-um oru saayangaalamum irukku. Movie, course book, illa save panradhu — onna choose panna mathadha vidanum. Teams-um ovvoru sprint-layum engineering time vechu idhe choice-a face pannuraanga."
+        },
+        "takeaway": {
+          "en": "Make the trade-off visible: ‘If we do X now, Y waits until next quarter — here's why that's the right call.’",
+          "ta": "Trade-off-a velippadaiya sollunga: ‘X-a ippo panna, Y adutha quarter varai wait pannum — adhu en sari-nu idho.’"
+        }
+      },
+      "deep": [
+        {
+          "title": "Why it's hard",
+          "body": "Requests arrive from customers, sales, leadership, engineering and data, each with good reasons. Without a shared method, the loudest or most senior voice wins. Prioritisation provides a transparent way to compare options against strategy."
+        },
+        {
+          "title": "Urgent vs important",
+          "body": "The Eisenhower matrix separates urgency (time pressure) from importance (impact on goals). Urgent and important: do now (an outage). Important but not urgent: schedule deliberately (retention work). Urgent but not important: minimise or delegate. Neither: drop. Many teams live in ‘urgent’ and never invest in ‘important’."
+        },
+        {
+          "title": "Inputs to a good decision",
+          "body": "Value to users (how many, how much), value to the business, strategic fit, confidence in the evidence, effort and cost, risk, dependencies (what it unblocks) and timing (seasonality, deadlines). Frameworks like RICE combine some of these into a score; judgement handles the rest."
+        },
+        {
+          "title": "Communicating trade-offs",
+          "body": "Share the options you considered, your criteria and why you chose this one. Acknowledge what you're giving up and when you'll revisit it. People accept no much better when they understand the reasoning and see that their input was weighed fairly."
+        }
+      ],
+      "example": "Illustrative example: a team can either fix a checkout bug affecting 3% of orders or build a wishlist that sales requested. The bug fix has measurable revenue impact and high confidence; the wishlist's value is speculative. The PM prioritises the fix, schedules wishlist discovery for next sprint, and explains this to sales with the numbers.",
+      "counterexample": "Deciding by who sent the most messages this week, or saying yes to everyone and missing every deadline.",
+      "mistakes": [
+        "Ignoring opportunity cost",
+        "Letting urgency crowd out important work forever",
+        "Making decisions without explaining the reasoning"
+      ],
+      "keyTerms": [
+        { "term": "Opportunity cost", "meaning": "The value of the best alternative you give up by choosing something." },
+        { "term": "Eisenhower matrix", "meaning": "A 2×2 grid separating urgent from important work." }
+      ],
+      "questions": [
+        {
+          "id": "q_prio_basics_1",
+          "kind": "RECALL",
+          "prompt": "What is opportunity cost?",
+          "options": [
+            { "text": "The money spent on a project", "why": "That's direct cost." },
+            { "text": "The value of the best alternative you didn't choose", "correct": true, "why": "Correct." },
+            { "text": "The cost of hiring", "why": "No." },
+            { "text": "The price of the product", "why": "No." }
+          ],
+          "explanation": "Every choice has a hidden cost: what you didn't do."
+        },
+        {
+          "id": "q_prio_basics_2",
+          "kind": "RECALL",
+          "prompt": "Retention improvements that aren't time-pressured but drive long-term growth are:",
+          "options": [
+            { "text": "Urgent and important", "why": "Not urgent." },
+            { "text": "Important but not urgent — schedule them deliberately", "correct": true, "why": "Yes — these get crowded out unless protected." },
+            { "text": "Urgent but not important", "why": "They are important." },
+            { "text": "Neither", "why": "They matter." }
+          ],
+          "explanation": "Protect important, non-urgent work."
+        },
+        {
+          "id": "q_prio_basics_3",
+          "kind": "APPLICATION",
+          "prompt": "Your VP asks you to add a feature mid-sprint. The sprint is full. What's the best response?",
+          "options": [
+            { "text": "Add it silently and let the team work overtime", "why": "Unsustainable and hides the trade-off." },
+            { "text": "Show what would be displaced, compare value, and agree on what to swap or defer", "correct": true, "why": "Right — make the trade-off explicit and decide together." },
+            { "text": "Say no without discussion", "why": "Understand the urgency first." },
+            { "text": "Start a new sprint", "why": "That disrupts the team without resolving priorities." }
+          ],
+          "explanation": "Capacity is fixed; something must give."
+        },
+        {
+          "id": "q_prio_basics_4",
+          "kind": "APPLICATION",
+          "prompt": "Two options score equally on value. Option A unblocks three future features; option B doesn't. Which factor should break the tie?",
+          "options": [
+            { "text": "Dependencies — A unblocks future value", "correct": true, "why": "Yes — enabling work multiplies value." },
+            { "text": "Alphabetical order", "why": "Arbitrary." },
+            { "text": "Whichever the PM likes", "why": "Personal preference isn't a criterion." },
+            { "text": "Neither; do both at half quality", "why": "Splitting usually delivers neither well." }
+          ],
+          "explanation": "Consider what each option enables."
+        }
+      ],
+      "exercise": {
+        "scenario": "Your team of 4 engineers has one sprint. Options: (a) fix a crash affecting 5% of Android users, (b) build the referral programme marketing wants, (c) refactor the slow search service engineering is worried about, (d) add a festive theme for Diwali next month.",
+        "prompt": "Prioritise the four options, explain the reasoning and the trade-offs, and write two sentences to stakeholders about what's deferred.",
+        "modelAnswer": "1) Crash fix — urgent and important: it affects retention and ratings, with high confidence. 2) Search refactor — important; slowness affects conversion and future work; schedule part of it if it fits. 3) Diwali theme — time-bound but lower impact; a small version if capacity remains. 4) Referral programme — potentially valuable but needs discovery on incentives and evidence first. Message: ‘This sprint we're fixing the Android crash and starting the search speed work, because both affect every user's experience. Referrals move to discovery next sprint so we design incentives that actually work.’",
+        "checklist": [
+          "Uses explicit criteria (impact, urgency, confidence, effort)",
+          "Acknowledges what's deferred and why",
+          "Considers time-bound items realistically",
+          "Communicates clearly to stakeholders"
+        ]
+      }
+    },
+    {
+      "id": "l_rice",
+      "unitId": "u05",
+      "title": "RICE scoring",
+      "level": "INTERMEDIATE",
+      "objectives": [
+        "Calculate a RICE score",
+        "Estimate reach, impact, confidence and effort sensibly",
+        "Recognise when RICE misleads"
+      ],
+      "prerequisites": ["l_prioritisation_basics"],
+      "related": ["l_moscow_kano", "l_opportunity_sizing", "l_roadmaps"],
+      "tags": ["rice", "prioritisation", "scoring"],
+      "quickMinutes": 6,
+      "quick": {
+        "explanation": {
+          "en": "RICE is a scoring method: (Reach × Impact × Confidence) ÷ Effort. Reach = how many users are affected in a period. Impact = how much it helps each one (often 0.25 minimal, 0.5 low, 1 medium, 2 high, 3 massive). Confidence = how sure you are (100%, 80%, 50%). Effort = person-months of work. Higher scores suggest more value per unit of effort.",
+          "ta": "RICE oru scoring method: (Reach × Impact × Confidence) ÷ Effort. Reach = oru period-la evlo users-ku affect aagum. Impact = ovvoruthar-kum evlo help (pala samayam 0.25 minimal, 0.5 low, 1 medium, 2 high, 3 massive). Confidence = evlo uruthiya irukkeenga (100%, 80%, 50%). Effort = evlo person-months velai. Score adhigam-na, effort-ku adhigama value-nu artham."
+        },
+        "analogy": {
+          "en": "Like choosing which shop to open first: how many customers walk by (reach), how much each spends (impact), how sure you are about the footfall data (confidence) and the setup cost (effort).",
+          "ta": "Endha kadai-a first thirakkalaam-nu choose panra maadhiri: evlo customers kadandhu poraanga (reach), ovvoruthar evlo selavu pannuvaanga (impact), footfall data mela evlo nambikkai (confidence), setup cost (effort)."
+        },
+        "takeaway": {
+          "en": "RICE structures the debate and exposes assumptions; it doesn't replace judgement about strategy.",
+          "ta": "RICE vivaadhatha structure pannum, assumptions-a velikkaattum; strategy pathina judgement-a replace pannaadhu."
+        }
+      },
+      "deep": [
+        {
+          "title": "Why it exists",
+          "body": "Comparing ideas by gut feel is inconsistent and political. RICE, popularised by Intercom, forces each idea to state its assumptions in the same units, so discussions focus on whether the estimates are right rather than whose idea it is."
+        },
+        {
+          "title": "Worked example",
+          "body": "Idea A: improve search. Reach 8,000 users/month, impact 1 (medium), confidence 80%, effort 2 person-months → (8000 × 1 × 0.8) ÷ 2 = 3,200. Idea B: new onboarding. Reach 3,000 new users/month, impact 2 (high), confidence 50%, effort 3 → (3000 × 2 × 0.5) ÷ 3 = 1,000. Idea A scores higher, but notice that B's low confidence could rise with research — a reason to run discovery on B, not to dismiss it."
+        },
+        {
+          "title": "Estimating well",
+          "body": "Reach: use real data for the same time window across ideas. Impact: tie it to the goal metric and use a consistent scale. Confidence: lower it when estimates are based on opinions; raise it with data or tests. Effort: get rough estimates from engineering and design, including testing and rollout."
+        },
+        {
+          "title": "When RICE misleads",
+          "body": "It undervalues strategic bets with low confidence but huge potential, enabling work (infrastructure, tech debt) whose value is indirect, and must-do items (legal, security). It can also be gamed by inflating impact. Use it to inform a decision, then apply judgement and strategy."
+        }
+      ],
+      "example": "Illustrative example: a learning app compares ‘offline downloads’ (reach 20,000/month among commuters with patchy networks, impact 2, confidence 80%, effort 4 → 8,000) with ‘leaderboards’ (reach 30,000, impact 0.5, confidence 50%, effort 2 → 3,750). Offline downloads win, matching qualitative evidence that commuters lose lessons in tunnels.",
+      "counterexample": "Setting every idea's impact to 3 and confidence to 100% so the PM's favourite wins.",
+      "mistakes": [
+        "Using different time windows for reach",
+        "Ignoring confidence or always setting it to 100%",
+        "Treating the score as the decision instead of an input"
+      ],
+      "keyTerms": [
+        { "term": "Reach", "meaning": "Number of people or events affected in a defined period." },
+        { "term": "Impact", "meaning": "How much each affected person benefits, on a consistent scale." },
+        { "term": "Confidence", "meaning": "How much evidence supports the estimates." },
+        { "term": "Effort", "meaning": "Total work required, usually in person-months." }
+      ],
+      "questions": [
+        {
+          "id": "q_rice_1",
+          "kind": "RECALL",
+          "prompt": "Reach 1,000, Impact 2, Confidence 50%, Effort 1. What's the RICE score?",
+          "options": [
+            { "text": "1,000", "correct": true, "why": "Correct: (1000 × 2 × 0.5) ÷ 1 = 1,000." },
+            { "text": "2,000", "why": "You forgot confidence." },
+            { "text": "500", "why": "Check the multiplication." },
+            { "text": "4,000", "why": "Too high." }
+          ],
+          "explanation": "RICE = R × I × C ÷ E."
+        },
+        {
+          "id": "q_rice_2",
+          "kind": "RECALL",
+          "prompt": "What does a low confidence score signal?",
+          "options": [
+            { "text": "The idea is bad", "why": "Not necessarily — it may just lack evidence." },
+            { "text": "Estimates rest on weak evidence; research could change the score", "correct": true, "why": "Yes — it points to where discovery is needed." },
+            { "text": "Effort is high", "why": "Effort is separate." },
+            { "text": "Reach is small", "why": "Reach is separate." }
+          ],
+          "explanation": "Confidence measures evidence, not idea quality."
+        },
+        {
+          "id": "q_rice_3",
+          "kind": "APPLICATION",
+          "prompt": "A security patch scores low on RICE because reach and impact seem small. What should you do?",
+          "options": [
+            { "text": "Skip it — the score is low", "why": "Some work is mandatory regardless of score." },
+            { "text": "Treat it as a must-do outside the scoring, because the risk of not doing it is severe", "correct": true, "why": "Right — RICE doesn't capture compliance and risk well." },
+            { "text": "Inflate the impact to 3", "why": "Gaming the framework undermines trust." },
+            { "text": "Ask users to vote", "why": "Users can't weigh security risk." }
+          ],
+          "explanation": "Mandatory and risk-driven work sits outside RICE."
+        },
+        {
+          "id": "q_rice_4",
+          "kind": "APPLICATION",
+          "prompt": "Idea A scores 3,000 with 100% confidence. Idea B scores 2,500 with 30% confidence but would be transformative if true. What's a smart move?",
+          "options": [
+            { "text": "Do A only and forget B", "why": "Ignores B's upside." },
+            { "text": "Do A, and run a cheap experiment to raise confidence in B", "correct": true, "why": "Yes — take the safe win and de-risk the big bet." },
+            { "text": "Do B only", "why": "Low confidence means high risk." },
+            { "text": "Average the scores", "why": "Meaningless." }
+          ],
+          "explanation": "Use low confidence as a prompt for discovery."
+        }
+      ],
+      "exercise": {
+        "scenario": "A food-delivery app is considering: (1) live order-tracking improvements, (2) a group-ordering feature, (3) a loyalty programme.",
+        "prompt": "Estimate R, I, C and E for each (state your assumptions), calculate the scores, and say what you'd do beyond the scores.",
+        "modelAnswer": "1) Tracking: reach 500k orders/month, impact 1, confidence 80%, effort 3 → 133,333. 2) Group ordering: reach 50k orders, impact 2, confidence 50%, effort 4 → 12,500. 3) Loyalty: reach 300k users, impact 1, confidence 50%, effort 6 → 25,000. Beyond the scores: tracking wins with strong evidence. Loyalty has strategic retention value but low confidence, so run a pilot in one city. Group ordering needs interviews with office users to raise confidence before investing.",
+        "checklist": [
+          "States assumptions behind each estimate",
+          "Uses consistent units and time windows",
+          "Calculates scores correctly",
+          "Applies judgement beyond the scores"
+        ]
+      }
+    },
+    {
+      "id": "l_moscow_kano",
+      "unitId": "u05",
+      "title": "MoSCoW and the Kano model",
+      "level": "INTERMEDIATE",
+      "objectives": [
+        "Use MoSCoW to scope a release",
+        "Classify features with the Kano model",
+        "Choose between prioritisation frameworks for a situation"
+      ],
+      "prerequisites": ["l_prioritisation_basics"],
+      "related": ["l_rice", "l_mvp", "l_user_stories"],
+      "tags": ["moscow", "kano", "scope"],
+      "quick": {
+        "explanation": {
+          "en": "MoSCoW sorts the scope of a release into Must have (it fails without it), Should have (important but not vital), Could have (nice if time allows) and Won't have this time. The Kano model classifies features by how they affect satisfaction: basic expectations (absence causes anger), performance features (more is better) and delighters (unexpected joy). Basics must be met before delighters matter.",
+          "ta": "MoSCoW oru release-oda scope-a pirikkum: Must have (idhu illaama fail), Should have (important, aana vital illa), Could have (time irundhaa nalladhu), Won't have this time. Kano model features-a satisfaction-a eppadi affect pannudhu-nu classify pannum: basic expectations (illana kovam varum), performance features (adhigam-na better), delighters (ethirpaakaadha santhosham). Basics meet pannina apram dhaan delighters-ku mathippu."
+        },
+        "analogy": {
+          "en": "A hotel room: a clean bed is basic (nobody praises it, everyone complains without it), faster Wi-Fi is performance, and a handwritten welcome note is a delighter.",
+          "ta": "Hotel room: clean bed — basic (yaarum paaraatta maattaanga, illana ellarum complain pannuvaanga), fast Wi-Fi — performance, kai-ezhuthu welcome note — delighter."
+        },
+        "takeaway": {
+          "en": "Use MoSCoW to cut scope for a deadline; use Kano to understand which features actually change satisfaction.",
+          "ta": "Deadline-ku scope cut panna MoSCoW; endha features nijamaave satisfaction-a maathudhu-nu purinjukka Kano."
+        }
+      },
+      "deep": [
+        {
+          "title": "MoSCoW in practice",
+          "body": "Use it with stakeholders when scoping a time-boxed release. Be strict: Must haves are things without which the release is useless, illegal or unsafe. A common guide is to keep Musts to around 60% of capacity, leaving room for surprises. Writing an explicit Won't list prevents scope creep and sets expectations."
+        },
+        {
+          "title": "Kano categories",
+          "body": "Basic (must-be): expected; their absence creates dissatisfaction, their presence creates no extra joy (login works, payments are secure). Performance (one-dimensional): satisfaction rises with quality (speed, battery life). Delighters (attractive): unexpected features that create joy (a smart suggestion). Indifferent: nobody cares. Reverse: some users dislike it (forced social sharing). Over time, delighters become basics."
+        },
+        {
+          "title": "Choosing a framework",
+          "body": "RICE: comparing many ideas in a backlog with data. MoSCoW: scoping a release with a fixed deadline. Kano: understanding the customer's perception of features. Opportunity scoring and cost of delay are alternatives. Frameworks are tools; pick the one that fits the decision."
+        },
+        {
+          "title": "Limitations",
+          "body": "MoSCoW easily inflates (‘everything is a Must’). Kano requires customer research — usually a paired-question survey — to classify features properly; guessing categories defeats the purpose."
+        }
+      ],
+      "example": "Illustrative example: for a bus-booking app's festival-season release — Must: seat booking and payment work under peak load. Should: live bus tracking. Could: a seat-preference memory. Won't: loyalty points. Through Kano, reliable booking is basic, faster checkout is performance, and an automatic ‘your bus is 10 minutes late’ alert is a delighter.",
+      "counterexample": "A release plan with 25 Must haves and no Won't list.",
+      "mistakes": [
+        "Marking almost everything as Must",
+        "Investing in delighters while basics are broken",
+        "Classifying Kano features from opinion instead of research"
+      ],
+      "keyTerms": [
+        { "term": "MoSCoW", "meaning": "Must, Should, Could, Won't — a release-scoping method." },
+        { "term": "Kano model", "meaning": "Classifies features by their effect on customer satisfaction." },
+        { "term": "Scope creep", "meaning": "Uncontrolled growth of a project's scope." }
+      ],
+      "questions": [
+        {
+          "id": "q_moscow_kano_1",
+          "kind": "RECALL",
+          "prompt": "In the Kano model, secure payments in a banking app are:",
+          "options": [
+            { "text": "A delighter", "why": "Users expect it." },
+            { "text": "A basic expectation", "correct": true, "why": "Correct — absence causes anger, presence is assumed." },
+            { "text": "Indifferent", "why": "Users care deeply." },
+            { "text": "Reverse", "why": "Nobody dislikes security." }
+          ],
+          "explanation": "Basics prevent dissatisfaction but don't create delight."
+        },
+        {
+          "id": "q_moscow_kano_2",
+          "kind": "RECALL",
+          "prompt": "Why include a ‘Won't have’ list in MoSCoW?",
+          "options": [
+            { "text": "To annoy stakeholders", "why": "No." },
+            { "text": "To set expectations and prevent scope creep", "correct": true, "why": "Yes." },
+            { "text": "It's optional decoration", "why": "It's one of the most useful parts." },
+            { "text": "To list bugs", "why": "No." }
+          ],
+          "explanation": "Explicitly saying ‘not this time’ protects focus."
+        },
+        {
+          "id": "q_moscow_kano_3",
+          "kind": "APPLICATION",
+          "prompt": "Users complain the app crashes often, and the team proposes animated stickers as a delighter. What does Kano suggest?",
+          "options": [
+            { "text": "Ship the stickers to boost satisfaction", "why": "Delighters can't compensate for broken basics." },
+            { "text": "Fix the crashes first; basic expectations must be met before delighters matter", "correct": true, "why": "Right." },
+            { "text": "Do both equally", "why": "Basics come first." },
+            { "text": "Ignore the complaints", "why": "Crashes drive churn." }
+          ],
+          "explanation": "Basics before delight."
+        },
+        {
+          "id": "q_moscow_kano_4",
+          "kind": "APPLICATION",
+          "prompt": "You must ship a tax-filing feature before the 31 July deadline, and the backlog is too big. Which framework fits best?",
+          "options": [
+            { "text": "MoSCoW — scope the release to the Musts that make filing work", "correct": true, "why": "Yes — a fixed deadline calls for scope prioritisation." },
+            { "text": "Kano survey first", "why": "Too slow for a fixed deadline." },
+            { "text": "No framework; build everything", "why": "That won't fit." },
+            { "text": "Delay the deadline", "why": "Regulatory deadlines don't move." }
+          ],
+          "explanation": "Fixed time → flex scope."
+        }
+      ],
+      "exercise": {
+        "scenario": "You're launching a first version of a doctor-appointment app for clinics in two weeks.",
+        "prompt": "Write a MoSCoW list with at least two items per category, then label each Must as a Kano basic, performance or delighter.",
+        "modelAnswer": "Must: book an appointment slot (basic); confirmation SMS to patient (basic); clinic can view the day's bookings (basic). Should: reschedule or cancel; reminders a day before (performance). Could: doctor profile photos; queue-position updates (delighter). Won't: online payments; video consultations; ratings. All Musts are basics, because without them the product fails its core job.",
+        "checklist": [
+          "Musts are truly essential",
+          "Includes an explicit Won't list",
+          "Kano labels are reasoned",
+          "Scope realistically fits two weeks"
+        ]
+      }
+    },
+    {
+      "id": "l_opportunity_sizing",
+      "unitId": "u05",
+      "title": "Opportunity and market sizing",
+      "level": "INTERMEDIATE",
+      "objectives": [
+        "Explain TAM, SAM and SOM",
+        "Size an opportunity with a top-down and a bottom-up estimate",
+        "Make assumptions explicit and sanity-check them"
+      ],
+      "prerequisites": ["l_rice", "l_problem_validation"],
+      "related": ["l_business_models", "l_gtm_pmf"],
+      "tags": ["market sizing", "tam", "estimation", "fermi"],
+      "quickMinutes": 6,
+      "deepMinutes": 9,
+      "quick": {
+        "explanation": {
+          "en": "Sizing estimates how big an opportunity is, so you can compare bets. TAM (total addressable market) is everyone who could possibly use it, SAM (serviceable available market) is the part you can realistically serve, and SOM (serviceable obtainable market) is what you could win soon. Bottom-up estimates (users × usage × value) are usually more trustworthy than top-down percentages.",
+          "ta": "Sizing — oru opportunity evlo periyadhu-nu estimate pannum; appo bets-a compare panna mudiyum. TAM — use panna vaaippulla ellarum; SAM — neenga realistic-ah serve panna mudiyura part; SOM — seekiram jeyikka mudiyuradhu. Bottom-up estimates (users × usage × value) top-down percentages-a vida adhigama nambikkaiyaanadhu."
+        },
+        "analogy": {
+          "en": "Opening a tea stall: everyone in the city drinks tea (TAM), people passing your street (SAM), and those you can realistically serve each morning given your stall size (SOM).",
+          "ta": "Tea kadai thirakkura maadhiri: ooru muzhukka tea kudikkiraanga (TAM), unga street vazhiya poravanga (SAM), unga kadai size-ku kaalaila realistic-ah serve panna mudiyuravanga (SOM)."
+        },
+        "takeaway": {
+          "en": "The value of a sizing is in explicit assumptions you can check, not in a precise-looking number.",
+          "ta": "Sizing-oda value — check panna mudiyura explicit assumptions-la dhaan; precise-ah theriyura number-la illa."
+        }
+      },
+      "deep": [
+        {
+          "title": "Why it exists",
+          "body": "Two problems may be equally painful, but one affects ten times more people or money. Sizing prevents spending a year on a niche, and it's essential for strategy, investment cases and interviews (estimation questions)."
+        },
+        {
+          "title": "Top-down vs bottom-up",
+          "body": "Top-down: start from a big published number and apply percentages (‘India has X smartphone users; 10% might want this’). Fast but easy to inflate. Bottom-up: build from units you understand (‘number of target clinics × appointments per day × fee per appointment × days’). Slower but more grounded. Doing both and comparing them is a good sanity check."
+        },
+        {
+          "title": "Worked bottom-up example",
+          "body": "Opportunity: an appointment app for small clinics in one state. Assume 20,000 small clinics; 30% use smartphones for bookings and are reachable (6,000); each handles 40 appointments a day; you charge ₹2 per booking; 300 working days a year. Revenue potential = 6,000 × 40 × 2 × 300 = ₹14.4 crore per year (SAM-level). If you can win 10% in two years, SOM ≈ ₹1.44 crore."
+        },
+        {
+          "title": "Estimation (Fermi) questions",
+          "body": "Interviewers ask questions like ‘How many cups of tea are sold in Chennai daily?’ They care about structure: clarify scope, segment the population, state assumptions with rounded numbers, calculate step by step, and sanity-check the result. Precision matters less than reasoning."
+        }
+      ],
+      "example": "Illustrative example: sizing an EV-charging-finder feature — city EV owners × charging sessions per week × share who search for chargers → expected weekly searches, used as reach for prioritisation.",
+      "counterexample": "‘The Indian food market is worth billions; if we capture 1%, we'll be huge’ — a top-down guess with no grounded assumptions.",
+      "mistakes": [
+        "Relying on ‘we just need 1% of a huge market’",
+        "Hiding assumptions",
+        "Never sanity-checking against reality"
+      ],
+      "keyTerms": [
+        { "term": "TAM", "meaning": "Total addressable market: total demand if everyone who could use it did." },
+        { "term": "SAM", "meaning": "Serviceable available market: the part you can actually serve with your product and channels." },
+        { "term": "SOM", "meaning": "Serviceable obtainable market: the share you can realistically capture soon." },
+        { "term": "Fermi estimate", "meaning": "A rough estimate built from reasoned assumptions." }
+      ],
+      "questions": [
+        {
+          "id": "q_sizing_1",
+          "kind": "RECALL",
+          "prompt": "Which is the narrowest measure?",
+          "options": [
+            { "text": "TAM", "why": "The broadest." },
+            { "text": "SAM", "why": "Narrower than TAM, broader than SOM." },
+            { "text": "SOM", "correct": true, "why": "Correct — what you can realistically win soon." },
+            { "text": "GDP", "why": "Not a market-sizing tier." }
+          ],
+          "explanation": "TAM ⊃ SAM ⊃ SOM."
+        },
+        {
+          "id": "q_sizing_2",
+          "kind": "RECALL",
+          "prompt": "Why are bottom-up estimates often preferred?",
+          "options": [
+            { "text": "They always produce bigger numbers", "why": "Usually smaller and more realistic." },
+            { "text": "They're built from understandable units with explicit, checkable assumptions", "correct": true, "why": "Yes." },
+            { "text": "They need no assumptions", "why": "They need many — explicitly." },
+            { "text": "Investors don't read top-down", "why": "Not the reason." }
+          ],
+          "explanation": "Grounded assumptions make estimates trustworthy."
+        },
+        {
+          "id": "q_sizing_3",
+          "kind": "APPLICATION",
+          "prompt": "Estimate daily orders for a tiffin service in a city of 1 million working adults. Which first step is best?",
+          "options": [
+            { "text": "Guess 50,000", "why": "Jumps to a number without structure." },
+            { "text": "Segment: what share of working adults eat lunch outside home food, and what share would order tiffin vs canteen vs restaurants?", "correct": true, "why": "Right — segment, then apply assumptions step by step." },
+            { "text": "Search for the answer online", "why": "In interviews and most real cases, reasoning is what's needed." },
+            { "text": "Say it's impossible to know", "why": "Estimation is about reasoned approximation." }
+          ],
+          "explanation": "Structure first, numbers second."
+        },
+        {
+          "id": "q_sizing_4",
+          "kind": "APPLICATION",
+          "prompt": "Your bottom-up estimate is ₹5 crore but your top-down estimate is ₹500 crore. What should you do?",
+          "options": [
+            { "text": "Present ₹500 crore — it's exciting", "why": "Choosing the bigger number isn't analysis." },
+            { "text": "Investigate which assumptions differ so much and reconcile them", "correct": true, "why": "Yes — big gaps reveal faulty assumptions." },
+            { "text": "Average them to ₹252 crore", "why": "Averaging hides the problem." },
+            { "text": "Drop sizing entirely", "why": "The gap itself is useful information." }
+          ],
+          "explanation": "Triangulate estimates."
+        }
+      ],
+      "exercise": {
+        "scenario": "Estimate the annual revenue opportunity for a premium (paid) PM-learning app in India.",
+        "prompt": "Build a bottom-up estimate with at least four explicit assumptions, then give one sanity check.",
+        "modelAnswer": "Assumptions: 1) about 300,000 people in India actively aspire to move into PM roles each year (students, engineers, analysts); 2) 20% are reachable through digital channels and willing to try an app (60,000); 3) 10% of those convert to paid (6,000); 4) price ₹2,000 per year. Revenue ≈ 6,000 × ₹2,000 = ₹1.2 crore per year. Sanity check: compare with paid users of existing PM courses and communities; if leading courses have tens of thousands of learners at higher prices, the estimate is plausible and conservative.",
+        "checklist": [
+          "Builds from units (people × conversion × price)",
+          "States assumptions explicitly",
+          "Calculates correctly",
+          "Includes a sanity check"
+        ]
+      }
+    }
+  ],
+  "checkpoint": {
+    "id": "cp_u05",
+    "title": "The quarterly planning crunch",
+    "scenario": "Your e-commerce team has capacity for about three medium projects next quarter. On the table: faster checkout, a loyalty programme, a seller-analytics dashboard, a compliance update due in six weeks and a festive-season theme.",
+    "minutes": 9,
+    "debrief": "You treated mandatory work separately, used RICE to compare options transparently, sized uncertain bets before committing, and scoped the release with MoSCoW. Frameworks informed judgement rather than replacing it.",
+    "steps": [
+      {
+        "id": "cp_u05_1",
+        "lessonId": "l_prioritisation_basics",
+        "kind": "APPLICATION",
+        "prompt": "How do you treat the compliance update?",
+        "options": [
+          { "text": "As a must-do with a fixed deadline, taken out of capacity first, with the trade-off communicated", "correct": true, "why": "Mandatory, time-bound work is non-negotiable." },
+          { "text": "Score it with RICE like everything else", "why": "It's mandatory regardless of score." },
+          { "text": "Push it to next quarter", "why": "Misses the deadline." }
+        ],
+        "explanation": "Handle mandatory work explicitly."
+      },
+      {
+        "id": "cp_u05_2",
+        "lessonId": "l_rice",
+        "kind": "APPLICATION",
+        "prompt": "Faster checkout: reach 200k, impact 1, confidence 80%, effort 2. Loyalty: reach 150k, impact 2, confidence 40%, effort 4. Which ranks higher by RICE?",
+        "options": [
+          { "text": "Faster checkout (80,000 vs 30,000)", "correct": true, "why": "(200k × 1 × 0.8) ÷ 2 = 80,000; (150k × 2 × 0.4) ÷ 4 = 30,000." },
+          { "text": "Loyalty", "why": "Recalculate with confidence and effort." },
+          { "text": "They're equal", "why": "Not equal." }
+        ],
+        "explanation": "Compute consistently."
+      },
+      {
+        "id": "cp_u05_3",
+        "lessonId": "l_opportunity_sizing",
+        "kind": "APPLICATION",
+        "prompt": "Leadership believes loyalty is a big strategic bet despite low confidence. What's your move?",
+        "options": [
+          { "text": "Size the opportunity bottom-up and propose a small pilot to raise confidence before full investment", "correct": true, "why": "De-risk the big bet with evidence." },
+          { "text": "Commit the whole quarter to loyalty", "why": "High risk with low confidence." },
+          { "text": "Refuse to discuss it", "why": "Strategic input deserves analysis." }
+        ],
+        "explanation": "Low confidence → learn cheaply."
+      },
+      {
+        "id": "cp_u05_4",
+        "lessonId": "l_moscow_kano",
+        "kind": "APPLICATION",
+        "prompt": "Faster checkout's scope is too big for the quarter. How do you scope it?",
+        "options": [
+          { "text": "MoSCoW: Must = remove the biggest drop-off step and save payment methods; Won't = redesigning the whole cart", "correct": true, "why": "A fixed timeframe → prioritise scope." },
+          { "text": "Do everything at lower quality", "why": "Quality basics matter." },
+          { "text": "Add the festive theme to checkout", "why": "Unrelated scope creep." }
+        ],
+        "explanation": "Fix time, flex scope."
+      }
+    ]
+  }
+}

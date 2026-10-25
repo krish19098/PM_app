@@ -1,0 +1,545 @@
+{
+  "unit": {
+    "id": "u12",
+    "order": 12,
+    "title": "Leadership, Launches & Execution",
+    "summary": "Lead through others and ship well: stakeholder management, influence and communication, launching products, and post-launch iteration.",
+    "level": "ADVANCED",
+    "prerequisites": ["u07"]
+  },
+  "lessons": [
+    {
+      "id": "l_stakeholders",
+      "unitId": "u12",
+      "title": "Stakeholder management",
+      "level": "ADVANCED",
+      "objectives": [
+        "Map stakeholders by influence and interest",
+        "Tailor communication to different stakeholders",
+        "Handle disagreement constructively"
+      ],
+      "prerequisites": ["l_pm_role", "l_roadmaps"],
+      "related": ["l_influence", "l_pm_vs_project", "l_launches"],
+      "tags": ["stakeholders", "communication", "alignment"],
+      "quick": {
+        "explanation": {
+          "en": "Stakeholders are people who affect or are affected by your product: leadership, sales, support, legal, finance, partner teams and users. Stakeholder management means understanding what each cares about, involving them at the right time and keeping them informed so there are no surprises. A simple map — influence versus interest — tells you whom to manage closely and whom to keep informed.",
+          "ta": "Stakeholders-na: unga product-a affect panravanga illa adhaala affect aagravanga: leadership, sales, support, legal, finance, partner teams, users. Stakeholder management-na ovvoruthar edha mukkiyamaa ninaikkiraanga-nu purinjukittu, sariyaana neram involve panni, surprises illaama inform pannikitte irukkuradhu. Simple map — influence vs interest — yaarai closely manage pannanum, yaarai inform panninaa podhum-nu sollum."
+        },
+        "analogy": {
+          "en": "Planning a family wedding: elders with decision power need early consultation, close relatives want regular updates, and distant guests just need the invitation and venue details.",
+          "ta": "Kudumba kalyaanam plan panra maadhiri: mudivu edukkura periyavangala munnaadiye kalandhaalosikkanum, nerungiya sondhakkaarangalukku adikkadi update venum, dhoora guests-ku invitation-um venue details-um podhum."
+        },
+        "takeaway": {
+          "en": "No surprises: involve high-influence stakeholders early, and keep everyone appropriately informed.",
+          "ta": "Surprises venaam: adhiga influence ulla stakeholders-a munnaadiye involve pannunga, ellarayum yetha alavukku inform pannunga."
+        }
+      },
+      "deep": [
+        {
+          "title": "Why it matters",
+          "body": "PMs rarely have formal authority over the people whose help they need. Projects fail not only from bad ideas but from late objections: legal blocks a launch, sales feels blindsided, support isn't trained. Good stakeholder management prevents these and builds trust for future decisions."
+        },
+        {
+          "title": "Stakeholder mapping",
+          "body": "Plot stakeholders on influence (power over the outcome) and interest (how much it affects them). High influence, high interest: manage closely — involve them in key decisions. High influence, low interest: keep satisfied — short, focused updates. Low influence, high interest: keep informed — regular updates, invite feedback. Low, low: monitor. Note what each cares about: revenue, risk, workload, customer experience."
+        },
+        {
+          "title": "Communication cadence",
+          "body": "Use a predictable rhythm: weekly written updates (what shipped, what's next, risks, asks), monthly reviews with leadership and ad-hoc conversations for decisions. Tailor depth: executives want outcomes, risks and decisions needed; engineering partners want context and detail; sales wants what to tell customers and when."
+        },
+        {
+          "title": "Handling disagreement",
+          "body": "Seek to understand the underlying concern (‘what worries you about this?’), share evidence and trade-offs, look for options that address both goals, and agree how the decision will be made. If you still disagree, ‘disagree and commit’ once a decision is made, and escalate only with a clear, shared framing of the trade-off."
+        }
+      ],
+      "example": "Illustrative example: before changing the refund policy flow, a PM meets the legal and finance leads early (high influence), runs a demo for support agents (high interest) and adds a short note to the weekly update for marketing. At launch, there are no surprises and support is ready.",
+      "counterexample": "Announcing a pricing change in an all-hands meeting before telling sales, who learn about it from customers.",
+      "mistakes": [
+        "Involving key stakeholders too late",
+        "Using the same communication for every audience",
+        "Treating disagreement as conflict rather than information"
+      ],
+      "keyTerms": [
+        { "term": "Stakeholder map", "meaning": "A grid of stakeholders by influence and interest." },
+        { "term": "Disagree and commit", "meaning": "Supporting a decision fully after voicing disagreement." },
+        { "term": "RACI", "meaning": "Responsible, Accountable, Consulted, Informed — a way to clarify roles in decisions." }
+      ],
+      "questions": [
+        {
+          "id": "q_stakeholders_1",
+          "kind": "RECALL",
+          "prompt": "A stakeholder with high influence but low interest should be:",
+          "options": [
+            { "text": "Kept satisfied with concise, focused updates", "correct": true, "why": "Correct." },
+            { "text": "Ignored", "why": "They can block you." },
+            { "text": "Involved in every daily decision", "why": "Too much for their interest level." },
+            { "text": "Only told after launch", "why": "Risky." }
+          ],
+          "explanation": "Match engagement to influence and interest."
+        },
+        {
+          "id": "q_stakeholders_2",
+          "kind": "RECALL",
+          "prompt": "What does ‘A’ stand for in RACI?",
+          "options": [
+            { "text": "Accountable — the one person who owns the final decision or outcome", "correct": true, "why": "Yes." },
+            { "text": "Assisting", "why": "No." },
+            { "text": "Approving everything", "why": "Not quite — one accountable owner." },
+            { "text": "Absent", "why": "No." }
+          ],
+          "explanation": "RACI clarifies decision roles."
+        },
+        {
+          "id": "q_stakeholders_3",
+          "kind": "APPLICATION",
+          "prompt": "The head of sales strongly opposes your plan to remove a rarely used feature that one big client likes. What's the best first step?",
+          "options": [
+            { "text": "Understand their concern — revenue risk, the client relationship — and share usage data and alternatives such as migration support", "correct": true, "why": "Right — understand, share evidence, find options." },
+            { "text": "Remove it anyway", "why": "Damages trust and may harm the client." },
+            { "text": "Escalate immediately to the CEO", "why": "Try to resolve it first." },
+            { "text": "Abandon the plan", "why": "Understand first; the plan may still be right." }
+          ],
+          "explanation": "Disagreement is information."
+        },
+        {
+          "id": "q_stakeholders_4",
+          "kind": "APPLICATION",
+          "prompt": "What should a weekly stakeholder update contain?",
+          "options": [
+            { "text": "Progress on outcomes, what's next, risks and any decisions or help needed", "correct": true, "why": "Concise and actionable." },
+            { "text": "Every ticket closed this week", "why": "Too much detail." },
+            { "text": "Only good news", "why": "Hiding risks erodes trust." },
+            { "text": "Nothing; updates are a waste", "why": "They prevent surprises." }
+          ],
+          "explanation": "Updates should be short, honest and action-oriented."
+        }
+      ],
+      "exercise": {
+        "scenario": "You're launching a new ‘buy now, pay later’ option in an e-commerce app.",
+        "prompt": "List six stakeholders, place each in the influence/interest grid, note what each cares about and how you'll engage them.",
+        "modelAnswer": "1) CFO or finance (high influence, high interest): credit risk and revenue — manage closely in decision reviews. 2) Legal and compliance (high, high): RBI rules, disclosures — involve early in design. 3) Lending partner (high, high): default rates, integration — weekly sync. 4) Customer support (low influence, high interest): new queries — training and FAQs before launch. 5) Marketing (medium, high): messaging — keep informed, co-create the launch plan. 6) CEO (high influence, lower day-to-day interest): strategic fit and risk — keep satisfied with monthly summaries.",
+        "checklist": [
+          "Covers internal and external stakeholders",
+          "Places each on influence and interest",
+          "Notes each stakeholder's concerns",
+          "Engagement matches their position"
+        ]
+      }
+    },
+    {
+      "id": "l_influence",
+      "unitId": "u12",
+      "title": "Influence without authority and communicating decisions",
+      "level": "ADVANCED",
+      "objectives": [
+        "Build influence through trust, evidence and shared goals",
+        "Communicate recommendations with the pyramid principle",
+        "Write a clear decision document"
+      ],
+      "prerequisites": ["l_stakeholders", "l_prioritisation_basics"],
+      "related": ["l_strategic_bets", "l_stakeholders"],
+      "tags": ["influence", "communication", "executive", "decision docs"],
+      "quick": {
+        "explanation": {
+          "en": "PMs lead without formal authority, so influence comes from trust (you keep commitments), evidence (data and customer insight), shared goals (framing decisions around what others care about) and clear communication. When presenting a recommendation, lead with the answer, then the supporting reasons, then the details — the pyramid principle — so busy people get the point first.",
+          "ta": "PMs formal authority illaama lead pannuvaanga; adhanaala influence varradhu nambikkai (sonnadha seiyuradhu), evidence (data, customer insight), shared goals (mathavanga mukkiyamaa ninaikkuradha vechu decisions-a frame panradhu), clear communication — idhula irundhu. Recommendation present pannumbodhu, mudhalla answer, apram supporting reasons, apram details — pyramid principle — busy-aana makkalukku point mudhalla kidaikkum."
+        },
+        "analogy": {
+          "en": "A newspaper headline gives the story in one line; the first paragraph summarises it; details come later. Executives read like newspaper readers.",
+          "ta": "Newspaper headline ore line-la seidhiya sollidum; mudhal paragraph summary; details apram. Executives newspaper padikkura maadhiri dhaan padippaanga."
+        },
+        "takeaway": {
+          "en": "Lead with the recommendation, back it with two or three reasons and evidence, and make the ask explicit.",
+          "ta": "Recommendation-oda aarambinga, rendu moonu reasons, evidence vechu support pannunga, ungal ask-a velippadaiya sollunga."
+        }
+      },
+      "deep": [
+        {
+          "title": "Sources of influence",
+          "body": "Credibility: deep knowledge of customers, data and the market. Reliability: doing what you say. Relationships: understanding colleagues' goals and helping them succeed. Framing: connecting your proposal to their priorities (‘this reduces support tickets by 20%’ for the support lead). Inclusion: people support what they help create, so involve them early."
+        },
+        {
+          "title": "The pyramid principle",
+          "body": "Popularised by Barbara Minto: start with the main point (the recommendation), then group supporting arguments (usually three), then supporting data. Example: ‘We should launch in Pune before Hyderabad. Three reasons: higher demand signals, existing partner restaurants and lower delivery costs. Here's the data…’ It respects executives' time and makes your logic easy to check."
+        },
+        {
+          "title": "Decision documents",
+          "body": "A one- or two-page doc: context and problem; options considered (including doing nothing) with pros, cons and risks; recommendation and rationale; what we'll measure; open questions; and the decision needed with a date. Writing forces clear thinking and creates a record that prevents the same debate later."
+        },
+        {
+          "title": "Saying no gracefully",
+          "body": "Acknowledge the request and its value, explain the trade-off against current priorities, offer an alternative (a smaller version, a later date, a workaround) and keep the door open with criteria for when you'd revisit it."
+        }
+      ],
+      "example": "Illustrative example: in a 10-minute leadership slot, a PM opens: ‘I recommend we pause the loyalty programme and fix delivery reliability first. Late deliveries are our top churn driver (data), loyalty won't retain users who had bad experiences (research), and the fix costs half as much (estimate). I need approval to move two engineers for six weeks.’",
+      "counterexample": "A 30-slide deck building up chronologically from background data, reaching the recommendation on slide 28 when the meeting is out of time.",
+      "mistakes": [
+        "Burying the recommendation",
+        "Relying on authority or pressure instead of evidence and shared goals",
+        "Not stating the decision or help needed"
+      ],
+      "keyTerms": [
+        { "term": "Pyramid principle", "meaning": "Communicate the main point first, then supporting arguments, then details." },
+        { "term": "Decision document", "meaning": "A short written record of the options, recommendation and rationale for a decision." }
+      ],
+      "questions": [
+        {
+          "id": "q_influence_1",
+          "kind": "RECALL",
+          "prompt": "According to the pyramid principle, what comes first?",
+          "options": [
+            { "text": "The main recommendation or answer", "correct": true, "why": "Correct." },
+            { "text": "Background history", "why": "That comes later, if needed." },
+            { "text": "Raw data tables", "why": "Supporting detail." },
+            { "text": "Team introductions", "why": "No." }
+          ],
+          "explanation": "Answer first."
+        },
+        {
+          "id": "q_influence_2",
+          "kind": "RECALL",
+          "prompt": "Which option should a decision document always include?",
+          "options": [
+            { "text": "‘Do nothing’ as a baseline, with its consequences", "correct": true, "why": "Yes — it clarifies the cost of inaction." },
+            { "text": "Only the recommended option", "why": "Readers need alternatives to trust the choice." },
+            { "text": "Gossip about other teams", "why": "No." },
+            { "text": "A 50-page appendix", "why": "Keep it concise." }
+          ],
+          "explanation": "Options and trade-offs make decisions credible."
+        },
+        {
+          "id": "q_influence_3",
+          "kind": "APPLICATION",
+          "prompt": "You need the support team's help to test a new flow, but they're busy. What's the most influential framing?",
+          "options": [
+            { "text": "‘This flow should cut “where is my refund” tickets by about 30% — your input will make sure it actually does’", "correct": true, "why": "Connects to their goals and invites ownership." },
+            { "text": "‘The VP said you have to’", "why": "Borrowed authority builds resentment." },
+            { "text": "‘It's important for my OKRs’", "why": "Self-focused." },
+            { "text": "‘Please help, it'll be quick’", "why": "Polite, but it doesn't show their benefit." }
+          ],
+          "explanation": "Frame around their priorities."
+        },
+        {
+          "id": "q_influence_4",
+          "kind": "APPLICATION",
+          "prompt": "A senior leader asks for a feature you believe is low-value. How do you say no?",
+          "options": [
+            { "text": "Acknowledge the goal, explain the trade-off with current priorities and evidence, offer an alternative, and agree when to revisit", "correct": true, "why": "Respectful, transparent and constructive." },
+            { "text": "Ignore the request", "why": "Damages trust." },
+            { "text": "Agree and quietly never build it", "why": "Dishonest." },
+            { "text": "Say ‘that's a bad idea’", "why": "Dismissive." }
+          ],
+          "explanation": "Graceful no = acknowledge, explain, offer, revisit."
+        }
+      ],
+      "exercise": {
+        "scenario": "You want leadership to invest one quarter in rebuilding search, which is slow and returns poor results.",
+        "prompt": "Write the opening 4–6 sentences of your pitch using the pyramid principle, ending with a clear ask.",
+        "modelAnswer": "I recommend we dedicate next quarter's core team to rebuilding search. Three reasons: first, search users convert at twice the rate of browsers, yet 35% of searches return no useful results; second, search latency of 3 seconds is our top complaint in app reviews; third, every category expansion planned this year depends on better search. We estimate a 10–15% lift in search conversion, which is worth more than the two features we'd defer. I'm asking for approval to move four engineers onto search for 12 weeks, with a checkpoint review at week 6.",
+        "checklist": [
+          "Recommendation in the first sentence",
+          "Two or three supporting reasons with evidence",
+          "Acknowledges the trade-off",
+          "Ends with a specific ask"
+        ]
+      }
+    },
+    {
+      "id": "l_launches",
+      "unitId": "u12",
+      "title": "Launching products",
+      "level": "ADVANCED",
+      "objectives": [
+        "Plan a staged rollout with success criteria",
+        "Use a launch-readiness checklist",
+        "Prepare rollback and incident plans"
+      ],
+      "prerequisites": ["l_prd", "l_eng_collab"],
+      "related": ["l_feedback_iteration", "l_gtm_pmf", "l_ab_testing"],
+      "tags": ["launch", "rollout", "checklist"],
+      "quick": {
+        "explanation": {
+          "en": "A launch is more than pressing ‘release’. Plan a staged rollout (internal → beta → small percentage → everyone), define success and stop criteria for each stage, make sure support, marketing and operations are ready, and prepare a rollback plan. Launch readiness is a checklist: quality, analytics, documentation, communication, legal and monitoring.",
+          "ta": "Launch-na ‘release’ button azhuthuradhu mattum illa. Staged rollout plan pannunga (internal → beta → chinna percentage → ellarukkum), ovvoru stage-kkum success, stop criteria define pannunga, support, marketing, operations ready-aa-nu paarunga, rollback plan vechukkonga. Launch readiness oru checklist: quality, analytics, documentation, communication, legal, monitoring."
+        },
+        "analogy": {
+          "en": "Like opening a new metro line: test runs without passengers, a soft opening with limited hours, then full service — with staff trained and a plan if something fails.",
+          "ta": "Pudhu metro line thirakkura maadhiri: passengers illaama test runs, kammi neram soft opening, apram full service — staff training-oda, edhaavadhu fail aanaa plan-oda."
+        },
+        "takeaway": {
+          "en": "Launch in stages with clear stop criteria, and be ready to roll back quickly.",
+          "ta": "Clear stop criteria-oda stages-ah launch pannunga, seekiram rollback panna ready-ah irunga."
+        }
+      },
+      "deep": [
+        {
+          "title": "Why staged rollouts",
+          "body": "No test environment perfectly matches real users, devices and load. Gradual rollouts limit the blast radius of problems, let you watch real metrics and make rollback cheap. Feature flags make this possible without new app releases."
+        },
+        {
+          "title": "Launch-readiness checklist",
+          "body": "Product: acceptance criteria met, edge cases tested, accessibility checked. Engineering: load tested, monitoring and alerts set up, feature flag and rollback ready. Analytics: events tracked and dashboard ready. Support: FAQs, macros and training. Marketing and comms: messaging, in-app announcements, timing. Legal and compliance: terms, privacy, approvals. Operations: partner readiness, capacity. Ownership: who is on call during launch."
+        },
+        {
+          "title": "Success and stop criteria",
+          "body": "For each stage, define what ‘good’ looks like (adoption, primary metric) and what triggers a pause or rollback (crash rate above X, error rate above Y, complaints above Z). Decide these before launch so you're not debating while things break."
+        },
+        {
+          "title": "Launch types",
+          "body": "Silent launch: ship without announcement to verify stability. Beta: opt-in early users giving feedback. Phased: by percentage, region or user segment. Big-bang: everyone at once with a marketing push — reserve for low-risk changes or when timing demands it, and still have monitoring and rollback."
+        }
+      ],
+      "example": "Illustrative example: a bank app's new UPI-lite feature goes to employees first (1 week), then 1% of users in two cities, then 10%, then everyone. Stop criteria: payment-failure rate above 2% or a fraud signal. At 10%, a spike in failures on one phone model triggers a pause; a fix ships and the rollout resumes.",
+      "counterexample": "Releasing a new payments flow to 100% of users on a Friday evening before a holiday, with support unaware and no rollback switch.",
+      "mistakes": [
+        "Launching to everyone at once without monitoring",
+        "Not defining stop criteria in advance",
+        "Forgetting support and operations readiness"
+      ],
+      "keyTerms": [
+        { "term": "Staged rollout", "meaning": "Gradually exposing a release to more users." },
+        { "term": "Rollback", "meaning": "Reverting to the previous version or turning a feature off." },
+        { "term": "Blast radius", "meaning": "How many users are affected if something goes wrong." },
+        { "term": "Launch readiness", "meaning": "Confirmation that all teams and systems are prepared for launch." }
+      ],
+      "questions": [
+        {
+          "id": "q_launches_1",
+          "kind": "RECALL",
+          "prompt": "Why define stop criteria before launch?",
+          "options": [
+            { "text": "So decisions to pause or roll back are fast and objective when problems appear", "correct": true, "why": "Correct." },
+            { "text": "To impress leadership", "why": "No." },
+            { "text": "Because it's legally required everywhere", "why": "Not the reason." },
+            { "text": "They're unnecessary", "why": "They prevent slow, emotional decisions." }
+          ],
+          "explanation": "Decide thresholds in calm conditions."
+        },
+        {
+          "id": "q_launches_2",
+          "kind": "RECALL",
+          "prompt": "What does a feature flag enable during launch?",
+          "options": [
+            { "text": "Turning the feature on for a percentage of users and off quickly if needed", "correct": true, "why": "Yes." },
+            { "text": "Faster app downloads", "why": "No." },
+            { "text": "Automatic marketing", "why": "No." },
+            { "text": "Translating text", "why": "No." }
+          ],
+          "explanation": "Flags make rollouts and rollbacks cheap."
+        },
+        {
+          "id": "q_launches_3",
+          "kind": "APPLICATION",
+          "prompt": "At the 10% rollout stage, crash rates double on older Android phones. What do you do?",
+          "options": [
+            { "text": "Pause or roll back for affected devices per the stop criteria, investigate, fix and resume", "correct": true, "why": "Right — follow the plan." },
+            { "text": "Continue to 100% — most users are fine", "why": "Harms a segment and risks ratings." },
+            { "text": "Ignore it until the next release", "why": "Users are crashing now." },
+            { "text": "Blame the phones", "why": "Users still crash." }
+          ],
+          "explanation": "Stop criteria exist for this moment."
+        },
+        {
+          "id": "q_launches_4",
+          "kind": "APPLICATION",
+          "prompt": "Two days before launch, support says they haven't seen the feature. What's the right move?",
+          "options": [
+            { "text": "Run a quick demo, share FAQs and escalation paths, and consider delaying if support can't be ready", "correct": true, "why": "Support readiness is part of launch readiness." },
+            { "text": "Launch anyway; they'll learn", "why": "Customers suffer." },
+            { "text": "Send them the PRD and hope", "why": "Not enough." },
+            { "text": "Cancel the launch permanently", "why": "Overreaction." }
+          ],
+          "explanation": "Launch readiness spans teams."
+        }
+      ],
+      "exercise": {
+        "scenario": "You're launching a new ‘schedule your delivery slot’ feature for a grocery app across 5 cities.",
+        "prompt": "Write a rollout plan with stages, success and stop criteria, and a launch-readiness checklist with at least six items.",
+        "modelAnswer": "Stages: 1) internal employees in one city, 1 week; 2) 5% of users in one city, 1 week; 3) 25% in two cities; 4) 100% in all five cities. Success: at least 15% of orders use scheduling; on-time-to-slot above 92%. Stop: slot-miss rate above 15%, checkout errors up more than 1 point, or complaint spike. Checklist: acceptance criteria and edge cases tested; slot capacity integrated with warehouse operations; feature flag and rollback tested; analytics events and dashboard live; support FAQs and training; in-app announcement and notification copy; on-call engineer and ops contact during each stage.",
+        "checklist": [
+          "Stages expand gradually",
+          "Success and stop criteria are specific",
+          "Checklist covers product, engineering, ops, support and comms",
+          "Includes rollback readiness"
+        ]
+      }
+    },
+    {
+      "id": "l_feedback_iteration",
+      "unitId": "u12",
+      "title": "Feedback loops and iteration",
+      "level": "ADVANCED",
+      "objectives": [
+        "Run a post-launch review against success criteria",
+        "Build continuous feedback channels",
+        "Decide whether to iterate, scale or stop"
+      ],
+      "prerequisites": ["l_launches", "l_metric_diagnosis"],
+      "related": ["l_lifecycle", "l_synthesis", "l_strategic_bets"],
+      "tags": ["iteration", "post-launch", "retrospective"],
+      "quick": {
+        "explanation": {
+          "en": "Launch is the start of learning, not the end. After launch, compare results with the success criteria, gather qualitative feedback, and decide: iterate (promising but needs improvement), scale (working — invest more), or stop (not working — free up the team). Continuous feedback channels like in-app feedback, support tags and regular user conversations keep learning going.",
+          "ta": "Launch learning-oda aarambam, mudivu illa. Launch-ku apram, results-a success criteria-oda compare pannunga, qualitative feedback vaangunga, mudivu pannunga: iterate (nambikkai irukku, improve pannanum), scale (work aagudhu — innum invest pannunga), stop (work aagala — team-a free pannunga). In-app feedback, support tags, regular user conversations maadhiri continuous feedback channels learning-a thodara vaikkum."
+        },
+        "analogy": {
+          "en": "A cricket team reviews match footage after every game — what worked, what didn't — and adjusts strategy for the next one, whether they won or lost.",
+          "ta": "Cricket team ovvoru match-kkum apram footage-a review pannum — edhu work aachu, edhu aagala — jeyichaalum thothaalum, adutha match-ku strategy-a adjust pannum."
+        },
+        "takeaway": {
+          "en": "Schedule the post-launch review before launching, and be willing to stop things that don't work.",
+          "ta": "Launch panradhukku munnaadiye post-launch review-a schedule pannunga; work aagaadhadha niruthavum ready-ah irunga."
+        }
+      },
+      "deep": [
+        {
+          "title": "Post-launch review",
+          "body": "Two to six weeks after launch (depending on usage frequency), review: did we hit the success metrics? Guardrails? Which segments responded differently? What did qualitative feedback reveal? What surprised us? Then decide the next step and record learnings. Blameless retrospectives also cover the process: what helped or hurt execution."
+        },
+        {
+          "title": "Continuous feedback channels",
+          "body": "In-app feedback prompts at relevant moments (not random pop-ups), tagged support tickets, app-store review monitoring, NPS or CSAT surveys with open-ended follow-ups, user advisory groups or beta communities, and regular customer calls. Route insights into a shared repository linked to roadmap items."
+        },
+        {
+          "title": "Iterate, scale or stop",
+          "body": "Iterate: the signal is positive but below target and you have hypotheses for improvement. Scale: targets met, with headroom to grow by expanding segments or investing. Stop: results are flat or negative after reasonable iteration, or the opportunity cost is too high. Sunk cost — ‘we already spent six months’ — is not a reason to continue."
+        },
+        {
+          "title": "Closing the loop",
+          "body": "Tell users when their feedback led to changes (‘you asked, we built’). It encourages more feedback and builds loyalty. Internally, share learnings so other teams don't repeat mistakes."
+        }
+      ],
+      "example": "Illustrative example: six weeks after launching voice search in regional languages, usage is 8% of searches (target 10%), but accuracy complaints are high in Tamil. The team iterates on Tamil speech models and adds a ‘did you mean’ correction; four weeks later usage reaches 12%, and they scale to more languages.",
+      "counterexample": "A feature misses every target for six months, but the team keeps adding to it because a senior leader proposed it and the team has ‘already invested so much’.",
+      "mistakes": [
+        "Treating launch as the finish line",
+        "Continuing because of sunk cost",
+        "Collecting feedback but never acting on it or closing the loop"
+      ],
+      "keyTerms": [
+        { "term": "Post-launch review", "meaning": "A structured evaluation of a launch against its success criteria." },
+        { "term": "Sunk cost fallacy", "meaning": "Continuing because of past investment rather than future value." },
+        { "term": "CSAT", "meaning": "Customer satisfaction score, usually from a short survey after an interaction." }
+      ],
+      "questions": [
+        {
+          "id": "q_feedback_1",
+          "kind": "RECALL",
+          "prompt": "What is the sunk cost fallacy?",
+          "options": [
+            { "text": "Continuing because of past investment rather than expected future value", "correct": true, "why": "Correct." },
+            { "text": "Spending too little on marketing", "why": "No." },
+            { "text": "Stopping too early", "why": "That's a different risk." },
+            { "text": "A pricing strategy", "why": "No." }
+          ],
+          "explanation": "Decide on future value, not past spend."
+        },
+        {
+          "id": "q_feedback_2",
+          "kind": "RECALL",
+          "prompt": "When is a good time to schedule the post-launch review?",
+          "options": [
+            { "text": "Before launch, at a date matching the product's usage frequency", "correct": true, "why": "Yes — it makes the review a commitment." },
+            { "text": "Only if something goes wrong", "why": "Successes need review too." },
+            { "text": "A year later", "why": "Usually too late." },
+            { "text": "Never", "why": "You lose learning." }
+          ],
+          "explanation": "Plan the review in advance."
+        },
+        {
+          "id": "q_feedback_3",
+          "kind": "APPLICATION",
+          "prompt": "A feature reached 60% of its adoption target, and users who adopt it retain better. What's the likely decision?",
+          "options": [
+            { "text": "Iterate — the value is real; investigate barriers to adoption such as discoverability", "correct": true, "why": "A positive signal below target suggests iteration." },
+            { "text": "Stop — it missed the target", "why": "Ignores the positive retention signal." },
+            { "text": "Scale massively immediately", "why": "Fix adoption barriers first." },
+            { "text": "Do nothing", "why": "There's clear learning to act on." }
+          ],
+          "explanation": "Interpret results in context."
+        },
+        {
+          "id": "q_feedback_4",
+          "kind": "APPLICATION",
+          "prompt": "Which feedback channel gives the richest ‘why’ behind a post-launch metric?",
+          "options": [
+            { "text": "Follow-up interviews or calls with users who tried the feature", "correct": true, "why": "Qualitative depth explains the numbers." },
+            { "text": "The download count", "why": "Says nothing about why." },
+            { "text": "Server logs alone", "why": "What, not why." },
+            { "text": "Competitor reviews", "why": "Not your users' experience." }
+          ],
+          "explanation": "Pair metrics with conversations."
+        }
+      ],
+      "exercise": {
+        "scenario": "Four weeks ago you launched ‘split bill’ in a payments app. Target: 5% of group-dinner payments use it. Actual: 2%. Users who use it rate it highly, but many don't know it exists.",
+        "prompt": "Write a short post-launch review: results vs target, key learnings, decision (iterate, scale or stop) with reasoning, and next steps.",
+        "modelAnswer": "Results: 2% adoption vs a 5% target; satisfaction among users is high (4.5/5); no guardrail issues. Learnings: the value is there for people who find it, but discoverability is low — it's hidden in a menu, and interviews show users don't think of the app at the bill moment. Decision: iterate, because the positive satisfaction signal suggests the problem is awareness, not value. Next steps: test a prompt after payments above ₹1,000 at restaurants, add a split option on the payment-success screen, and review again in three weeks with the same target.",
+        "checklist": [
+          "Compares results with the target",
+          "Draws learnings from quantitative and qualitative data",
+          "Makes a clear decision with reasoning",
+          "Sets concrete next steps and a review date"
+        ]
+      }
+    }
+  ],
+  "checkpoint": {
+    "id": "cp_u12",
+    "title": "Launching a risky change",
+    "scenario": "You're launching a redesigned checkout for an e-commerce app. Legal must approve new consent text, sales worries about B2B customers, and leadership wants it live before a festive sale.",
+    "minutes": 9,
+    "debrief": "You aligned stakeholders early, communicated clearly, launched safely in stages and committed to learning after launch — execution leadership in action.",
+    "steps": [
+      {
+        "id": "cp_u12_1",
+        "lessonId": "l_stakeholders",
+        "kind": "APPLICATION",
+        "prompt": "How should you handle legal and sales first?",
+        "options": [
+          { "text": "Involve legal early in the design and review the B2B impact with sales before finalising — both are high influence, high interest", "correct": true, "why": "Prevents late blockers." },
+          { "text": "Tell them at launch", "why": "Recipe for surprises." },
+          { "text": "Ignore sales; checkout is a consumer feature", "why": "B2B customers use checkout too." }
+        ],
+        "explanation": "Engage high-influence stakeholders early."
+      },
+      {
+        "id": "cp_u12_2",
+        "lessonId": "l_influence",
+        "kind": "APPLICATION",
+        "prompt": "Leadership asks for a one-minute status update. What do you say first?",
+        "options": [
+          { "text": "‘We're on track for a staged launch one week before the sale; one risk — legal sign-off by Friday — and I need your help to prioritise it’", "correct": true, "why": "Answer first, risk, explicit ask." },
+          { "text": "A chronological account of every meeting", "why": "Buries the point." },
+          { "text": "‘Everything's fine’", "why": "Hides the risk." }
+        ],
+        "explanation": "Pyramid principle: answer first."
+      },
+      {
+        "id": "cp_u12_3",
+        "lessonId": "l_launches",
+        "kind": "APPLICATION",
+        "prompt": "What's the safest rollout given the sale deadline?",
+        "options": [
+          { "text": "Roll out in stages behind a flag two weeks before the sale, with stop criteria and rollback, reaching 100% only if metrics are healthy", "correct": true, "why": "Reduces risk while meeting the deadline." },
+          { "text": "Launch to everyone on sale day", "why": "Maximum risk at maximum traffic." },
+          { "text": "Skip the sale", "why": "Unnecessary if planned well." }
+        ],
+        "explanation": "Stage, monitor, be ready to roll back."
+      },
+      {
+        "id": "cp_u12_4",
+        "lessonId": "l_feedback_iteration",
+        "kind": "APPLICATION",
+        "prompt": "After the sale, conversion is up but B2B order errors rose slightly. What next?",
+        "options": [
+          { "text": "Hold the post-launch review, investigate B2B errors with sales and customers, and iterate on that flow", "correct": true, "why": "Learn and fix guardrail issues." },
+          { "text": "Declare victory and move on", "why": "Ignores a guardrail problem." },
+          { "text": "Roll back everything", "why": "Overreaction to a targeted issue." }
+        ],
+        "explanation": "Launch is the start of learning."
+      }
+    ]
+  }
+}

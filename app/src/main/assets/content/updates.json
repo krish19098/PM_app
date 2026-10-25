@@ -1,0 +1,175 @@
+[
+ {
+  "id": "u_mcp",
+  "title": "Anthropic open-sources the Model Context Protocol (MCP)",
+  "date": "2024-11-25",
+  "summary": "Anthropic released MCP, an open standard for connecting AI assistants to data sources and tools through one common interface instead of custom integrations for each system.",
+  "whyItMatters": "For AI PMs, standard connectors reduce integration cost and make tool-using assistants easier to build — but each connected tool also expands the permissions and security surface you must design for.",
+  "lessonIds": [
+   "l_rag_agents",
+   "l_ai_safety"
+  ],
+  "source": {
+   "title": "Introducing the Model Context Protocol",
+   "url": "https://www.anthropic.com/news/model-context-protocol",
+   "publisher": "Anthropic"
+  }
+ },
+ {
+  "id": "u_effective_agents",
+  "title": "‘Building effective agents’: workflows vs agents",
+  "date": "2024-12-19",
+  "summary": "Anthropic published guidance distinguishing workflows (LLMs and tools orchestrated through predefined code paths) from agents (LLMs that dynamically direct their own process), recommending the simplest approach that works.",
+  "whyItMatters": "A practical framing for scoping AI features: start with predictable workflows and add autonomy only when it clearly improves outcomes, because agents add cost, latency and failure modes.",
+  "lessonIds": [
+   "l_rag_agents",
+   "l_ai_cost_latency"
+  ],
+  "source": {
+   "title": "Building effective agents",
+   "url": "https://www.anthropic.com/research/building-effective-agents",
+   "publisher": "Anthropic"
+  }
+ },
+ {
+  "id": "u_computer_use",
+  "title": "Claude 3.5 models and ‘computer use’ in public beta",
+  "date": "2024-10-22",
+  "summary": "Anthropic announced an upgraded Claude 3.5 Sonnet, Claude 3.5 Haiku and a beta capability for the model to operate a computer interface (viewing screens, moving a cursor, typing).",
+  "whyItMatters": "Agents that act through user interfaces broaden what can be automated, but raise the stakes for confirmation steps, permission limits and prompt-injection defences.",
+  "lessonIds": [
+   "l_ai_safety",
+   "l_rag_agents"
+  ],
+  "source": {
+   "title": "Introducing computer use, a new Claude 3.5 Sonnet, and Claude 3.5 Haiku",
+   "url": "https://www.anthropic.com/news/3-5-models-and-computer-use",
+   "publisher": "Anthropic"
+  }
+ },
+ {
+  "id": "u_claude37",
+  "title": "Claude 3.7 Sonnet and Claude Code announced",
+  "date": "2025-02-24",
+  "summary": "Anthropic introduced Claude 3.7 Sonnet, a model that can answer quickly or reason step by step for longer, along with Claude Code, an agentic coding tool.",
+  "whyItMatters": "‘Thinking time’ becomes a product choice: longer reasoning can raise quality on hard tasks at the cost of latency and tokens, so PMs must decide where it's worth it.",
+  "lessonIds": [
+   "l_ai_cost_latency",
+   "l_llm_fundamentals"
+  ],
+  "source": {
+   "title": "Claude 3.7 Sonnet and Claude Code",
+   "url": "https://www.anthropic.com/news/claude-3-7-sonnet",
+   "publisher": "Anthropic"
+  }
+ },
+ {
+  "id": "u_o1",
+  "title": "OpenAI introduces o1 reasoning models",
+  "date": "2024-09-12",
+  "summary": "OpenAI described o1, a model series trained to spend more time reasoning before responding, with stronger results on complex maths, science and coding tasks.",
+  "whyItMatters": "Reasoning models shift the cost–latency–quality trade-off: they can solve harder problems but are slower and costlier per request, which affects model routing decisions.",
+  "lessonIds": [
+   "l_ai_cost_latency"
+  ],
+  "source": {
+   "title": "Learning to reason with LLMs",
+   "url": "https://openai.com/index/learning-to-reason-with-llms/",
+   "publisher": "OpenAI"
+  }
+ },
+ {
+  "id": "u_deepseek_r1",
+  "title": "DeepSeek releases R1 open-weight reasoning model",
+  "date": "2025-01-20",
+  "summary": "DeepSeek released DeepSeek-R1, an open-weight reasoning model, publishing the weights and a technical report.",
+  "whyItMatters": "Capable open-weight models change build-vs-buy decisions: teams can self-host for privacy or cost at scale, but take on infrastructure, evaluation and safety work themselves.",
+  "lessonIds": [
+   "l_ai_metrics",
+   "l_ai_cost_latency"
+  ],
+  "source": {
+   "title": "DeepSeek-R1 repository",
+   "url": "https://github.com/deepseek-ai/DeepSeek-R1",
+   "publisher": "DeepSeek (GitHub)"
+  }
+ },
+ {
+  "id": "u_a2a",
+  "title": "Google announces the Agent2Agent (A2A) protocol",
+  "date": "2025-04-09",
+  "summary": "Google announced A2A, an open protocol intended to let AI agents built by different vendors communicate and coordinate. It was later contributed to the Linux Foundation.",
+  "whyItMatters": "Interoperability standards for agents may shape future platform strategy — but standards are still evolving, so avoid hard dependencies until adoption is clear.",
+  "lessonIds": [
+   "l_rag_agents",
+   "l_moats_platforms"
+  ],
+  "source": {
+   "title": "Announcing the Agent2Agent Protocol (A2A)",
+   "url": "https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/",
+   "publisher": "Google Developers Blog"
+  }
+ },
+ {
+  "id": "u_gpt5",
+  "title": "OpenAI launches GPT-5",
+  "date": "2025-08-07",
+  "summary": "OpenAI announced GPT-5, describing it as a unified system that decides when to respond quickly and when to reason longer, made available to ChatGPT users and developers.",
+  "whyItMatters": "Automatic routing between fast and deep modes is becoming a built-in product pattern; PMs still need their own evals because general benchmarks don't guarantee quality on your tasks.",
+  "lessonIds": [
+   "l_ai_evaluation",
+   "l_ai_cost_latency"
+  ],
+  "source": {
+   "title": "Introducing GPT-5",
+   "url": "https://openai.com/index/introducing-gpt-5/",
+   "publisher": "OpenAI"
+  }
+ },
+ {
+  "id": "u_eu_ai_act",
+  "title": "EU AI Act enters into force with phased obligations",
+  "date": "2024-08-01",
+  "summary": "Regulation (EU) 2024/1689, the AI Act, entered into force on 1 August 2024. Obligations apply in phases: prohibited practices from February 2025, general-purpose AI model obligations from August 2025, and most other rules from August 2026.",
+  "whyItMatters": "Products serving EU users must classify AI use cases by risk and meet transparency and documentation duties. Involve legal early and check the current official timelines.",
+  "lessonIds": [
+   "l_ai_safety"
+  ],
+  "source": {
+   "title": "Regulation (EU) 2024/1689 (Artificial Intelligence Act)",
+   "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+   "publisher": "EUR-Lex, Official Journal of the EU"
+  }
+ },
+ {
+  "id": "u_nist_genai",
+  "title": "NIST publishes the Generative AI Profile of its AI RMF",
+  "date": "2024-07-26",
+  "summary": "NIST released AI 600-1, a companion to the AI Risk Management Framework that describes risks unique to or worsened by generative AI and suggests actions to manage them.",
+  "whyItMatters": "A voluntary, practical checklist for AI risk reviews — useful when building your own safety and evaluation processes.",
+  "lessonIds": [
+   "l_ai_safety",
+   "l_ai_evaluation"
+  ],
+  "source": {
+   "title": "NIST AI 600-1: Generative AI Profile",
+   "url": "https://doi.org/10.6028/NIST.AI.600-1",
+   "publisher": "NIST"
+  }
+ },
+ {
+  "id": "u_dpdp_rules",
+  "title": "India notifies the Digital Personal Data Protection Rules, 2025",
+  "date": "2025-11-17",
+  "summary": "The Government of India notified the DPDP Rules, 2025 under the Digital Personal Data Protection Act, 2023, with most obligations phased in over roughly 18 months.",
+  "whyItMatters": "Indian products handling personal data — including learner histories and AI prompts — need consent, security, breach-reporting and data-minimisation practices. Verify exact dates and obligations in the official text.",
+  "lessonIds": [
+   "l_ai_safety"
+  ],
+  "source": {
+   "title": "DPDP Rules, 2025 (PIB document)",
+   "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/nov/doc20251117695301.pdf",
+   "publisher": "Press Information Bureau, Government of India"
+  }
+ }
+]

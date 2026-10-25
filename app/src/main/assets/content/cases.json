@@ -1,0 +1,662 @@
+[
+  {
+    "id": "case_food_eta",
+    "title": "The late-night delivery promise",
+    "scenarioType": "HYPOTHETICAL",
+    "label": "Hypothetical scenario set in Indian food delivery. Not based on any company's internal data.",
+    "level": "BEGINNER",
+    "minutes": 10,
+    "context": "You're a PM at a food-delivery app in a large Indian city. Orders placed after 11 pm have a 2x higher cancellation rate than daytime orders. Late-night orders are a growing share of revenue, mainly from students and young professionals.",
+    "constraints": [
+      "Fewer restaurants and riders are active after 11 pm",
+      "Engineering capacity: one squad for one quarter",
+      "Leadership wants late-night revenue to grow, not shrink"
+    ],
+    "decisions": [
+      {
+        "id": "case_food_eta_1",
+        "lessonId": "l_problem_first",
+        "kind": "APPLICATION",
+        "prompt": "What's the best way to frame the problem before choosing a solution?",
+        "options": [
+          { "text": "‘Late-night customers cancel after ordering, likely because delivery takes longer than they expected; we need to confirm why’", "correct": true, "why": "A user-centred, solution-free framing that admits what's unknown." },
+          { "text": "‘We need more riders at night’", "why": "A solution hidden in the problem statement." },
+          { "text": "‘Students are impatient’", "why": "Blames users and hides the cause." }
+        ],
+        "explanation": "Frame before you fix."
+      },
+      {
+        "id": "case_food_eta_2",
+        "lessonId": "l_metric_diagnosis",
+        "kind": "APPLICATION",
+        "prompt": "Data shows cancellations peak when the ETA increases after payment. Riders are scarce in some zones. What do you investigate next?",
+        "options": [
+          { "text": "Segment by zone and restaurant: are cancellations concentrated where rider supply is thin or where restaurants accept orders they can't prepare quickly?", "correct": true, "why": "Segmentation locates the root cause." },
+          { "text": "Redesign the app's colours for night mode", "why": "Unrelated to the cause." },
+          { "text": "Run a nationwide survey", "why": "Too slow and unfocused." }
+        ],
+        "explanation": "Segment to find where the problem concentrates."
+      },
+      {
+        "id": "case_food_eta_3",
+        "lessonId": "l_prioritisation_basics",
+        "kind": "APPLICATION",
+        "prompt": "You have three options: (a) honest, zone-aware ETAs shown before ordering, (b) rider incentives at night, (c) a night-only restaurant curation of fast kitchens. With one squad for a quarter, what do you choose first?",
+        "options": [
+          { "text": "(a) first — cheap, fast, builds trust and reduces cancellations even before supply improves; test (b) in parallel with operations", "correct": true, "why": "High impact, low effort and complementary to the operational lever." },
+          { "text": "(c) only — curation solves everything", "why": "Valuable, but doesn't fix misleading ETAs." },
+          { "text": "Do nothing until supply grows", "why": "Leaves the trust problem untouched." }
+        ],
+        "explanation": "Prioritise by impact, effort and confidence, and make the trade-offs explicit."
+      }
+    ],
+    "alternatives": "Other teams might cap late-night orders in thin zones (protecting experience at the cost of volume), add a ‘schedule for 12:30’ option, or partner with cloud kitchens open overnight. Each trades growth, trust and cost differently.",
+    "takeaway": "Trust is a basic expectation: an honest promise beats a fast-sounding one that breaks. Diagnose with segmentation before investing in supply.",
+    "lessonIds": ["l_problem_first", "l_metric_diagnosis", "l_prioritisation_basics"]
+  },
+  {
+    "id": "case_upi_failures",
+    "title": "Payments that fail at the last step",
+    "scenarioType": "HYPOTHETICAL",
+    "label": "Hypothetical scenario in Indian digital payments. Numbers are illustrative.",
+    "level": "INTERMEDIATE",
+    "minutes": 10,
+    "context": "Your e-commerce app's checkout conversion dropped from 62% to 55% over two weeks. Most of the drop happens after users select UPI and are sent to their UPI app.",
+    "constraints": [
+      "Several payment gateways and UPI apps are involved",
+      "A festive sale starts in three weeks",
+      "Support tickets about ‘money deducted but order not placed’ are rising"
+    ],
+    "decisions": [
+      {
+        "id": "case_upi_failures_1",
+        "lessonId": "l_funnels",
+        "kind": "APPLICATION",
+        "prompt": "Where should you look first in the funnel?",
+        "options": [
+          { "text": "Break down the step from ‘UPI selected’ to ‘payment confirmed’ by UPI app, bank, gateway, platform and app version", "correct": true, "why": "Precise funnel segmentation isolates the failing path." },
+          { "text": "The home page banner", "why": "The drop is at payment." },
+          { "text": "Sign-up conversion", "why": "Unrelated to the drop location." }
+        ],
+        "explanation": "Locate the leak precisely."
+      },
+      {
+        "id": "case_upi_failures_2",
+        "lessonId": "l_metric_diagnosis",
+        "kind": "APPLICATION",
+        "prompt": "Failures are concentrated on one gateway since its SDK update two weeks ago. What's the right response?",
+        "options": [
+          { "text": "Route UPI traffic away from that gateway where possible, escalate with the gateway, and fix reconciliation for ‘money deducted’ cases", "correct": true, "why": "Mitigate now, fix the root cause, and protect affected users." },
+          { "text": "Wait for the gateway to notice", "why": "The sale is three weeks away." },
+          { "text": "Remove UPI from checkout", "why": "UPI is the most used method." }
+        ],
+        "explanation": "Internal change + timing = likely cause."
+      },
+      {
+        "id": "case_upi_failures_3",
+        "lessonId": "l_eng_collab",
+        "kind": "APPLICATION",
+        "prompt": "Engineering proposes automatic gateway failover, which needs two sprints. How do you decide?",
+        "options": [
+          { "text": "Prioritise it — it reduces single-vendor risk before the sale; release it behind a flag and load-test it", "correct": true, "why": "A reliability investment with clear business impact and a safe rollout." },
+          { "text": "Refuse — features first", "why": "Payment reliability is a basic expectation." },
+          { "text": "Build it after the sale", "why": "The sale is when failures cost the most." }
+        ],
+        "explanation": "Technical reliability is product value."
+      }
+    ],
+    "alternatives": "Some teams would add clear ‘payment pending’ states and auto-refund messaging first to reduce support load, or encourage alternative methods temporarily with small incentives.",
+    "takeaway": "Segment funnels until the cause is obvious, mitigate quickly, and invest in resilience before peak events.",
+    "lessonIds": ["l_funnels", "l_metric_diagnosis", "l_eng_collab"]
+  },
+  {
+    "id": "case_music_discovery",
+    "title": "Helping listeners discover new music",
+    "scenarioType": "HYPOTHETICAL",
+    "label": "Hypothetical scenario inspired by music-streaming products in general. No company data used.",
+    "level": "INTERMEDIATE",
+    "minutes": 10,
+    "context": "Your music app's users mostly replay the same songs. Leadership believes discovery will increase long-term retention. You're asked to design a discovery feature.",
+    "constraints": [
+      "Licensing costs are per stream, regardless of song",
+      "Many users listen in Tamil, Telugu, Hindi and English",
+      "The recommendation team can ship one major change per quarter"
+    ],
+    "decisions": [
+      {
+        "id": "case_music_discovery_1",
+        "lessonId": "l_jtbd",
+        "kind": "APPLICATION",
+        "prompt": "Which job statement best guides the design?",
+        "options": [
+          { "text": "When I'm bored of my usual songs, I want new music that still fits my taste and language, so I enjoy listening without the effort of searching", "correct": true, "why": "Situation, motivation and outcome, with a language nuance." },
+          { "text": "I want an AI playlist feature", "why": "Solution-specific." },
+          { "text": "Users aged 18–25", "why": "Demographics." }
+        ],
+        "explanation": "Design for the job."
+      },
+      {
+        "id": "case_music_discovery_2",
+        "lessonId": "l_north_star",
+        "kind": "APPLICATION",
+        "prompt": "Which success metric best reflects discovery value?",
+        "options": [
+          { "text": "Share of weekly listeners who save or replay at least one newly discovered song", "correct": true, "why": "Captures discovery that users actually valued." },
+          { "text": "Number of recommendations shown", "why": "Output, not value." },
+          { "text": "Total streams", "why": "Could rise without discovery." }
+        ],
+        "explanation": "Measure valued discovery."
+      },
+      {
+        "id": "case_music_discovery_3",
+        "lessonId": "l_ab_testing",
+        "kind": "APPLICATION",
+        "prompt": "How do you evaluate a new weekly personalised playlist?",
+        "options": [
+          { "text": "An A/B test with user-level randomisation over several weeks, measuring saves of new songs and retention, with skip rate as a guardrail", "correct": true, "why": "Causal, long enough for habit effects, with guardrails." },
+          { "text": "Launch to everyone and compare with last month", "why": "Confounded by seasonality." },
+          { "text": "Ask five users if they like it", "why": "Too small and opinion-based." }
+        ],
+        "explanation": "Test causally and long enough."
+      }
+    ],
+    "alternatives": "Others might prioritise social discovery (friends' playlists), language-mix radio, or artist-led curation. Each optimises different jobs and costs.",
+    "takeaway": "Define the job precisely, measure value (not exposure) and test long enough to capture habit change.",
+    "lessonIds": ["l_jtbd", "l_north_star", "l_ab_testing"]
+  },
+  {
+    "id": "case_edtech_retention",
+    "title": "Learners who stop after week one",
+    "scenarioType": "HYPOTHETICAL",
+    "label": "Hypothetical edtech scenario. Numbers are illustrative.",
+    "level": "INTERMEDIATE",
+    "minutes": 10,
+    "context": "A coding-learning app sees 45% of new learners active in week 1 but only 12% in week 4. Most churned learners joined from social-media ads promising ‘get a job in 30 days’.",
+    "constraints": [
+      "Marketing budget is fixed for this quarter",
+      "Content team can create 10 new lessons per month",
+      "Leadership wants a plan within two weeks"
+    ],
+    "decisions": [
+      {
+        "id": "case_edtech_retention_1",
+        "lessonId": "l_retention_cohorts",
+        "kind": "APPLICATION",
+        "prompt": "What analysis comes first?",
+        "options": [
+          { "text": "Compare cohort retention by acquisition channel and by learner goal", "correct": true, "why": "Tests whether low retention comes from a mismatched promise or the product itself." },
+          { "text": "Total monthly active users", "why": "Hides cohort decay." },
+          { "text": "App rating", "why": "Too coarse." }
+        ],
+        "explanation": "Cohorts by channel reveal acquisition mismatches."
+      },
+      {
+        "id": "case_edtech_retention_2",
+        "lessonId": "l_personas_segments",
+        "kind": "APPLICATION",
+        "prompt": "Retention is much higher for working professionals upskilling slowly than for ad-driven ‘job in 30 days’ learners. What do you do?",
+        "options": [
+          { "text": "Focus on the high-retention segment, adjust ads to set honest expectations and tailor onboarding to realistic goals", "correct": true, "why": "Aligns the promise, the segment and the product." },
+          { "text": "Ignore segments", "why": "Misses the key insight." },
+          { "text": "Promise even faster jobs", "why": "Worsens the mismatch and trust." }
+        ],
+        "explanation": "Segment, then focus."
+      },
+      {
+        "id": "case_edtech_retention_3",
+        "lessonId": "l_mvp",
+        "kind": "APPLICATION",
+        "prompt": "You hypothesise that a weekly project with peer review will improve week-4 retention. What's the fastest test?",
+        "options": [
+          { "text": "A concierge pilot: invite 100 new learners to a WhatsApp cohort with weekly projects reviewed by mentors; compare retention with similar learners", "correct": true, "why": "Tests the value cheaply before building features." },
+          { "text": "Build a full peer-review platform first", "why": "Expensive before validation." },
+          { "text": "Survey learners about projects", "why": "Opinions, not behaviour." }
+        ],
+        "explanation": "Test value before building."
+      }
+    ],
+    "alternatives": "Teams could also shorten lessons, add spaced review (as this app does), or build a placement-test start to avoid boring experienced learners.",
+    "takeaway": "Retention problems often start with acquisition promises. Fix the segment–promise–product fit, then test improvements cheaply.",
+    "lessonIds": ["l_retention_cohorts", "l_personas_segments", "l_mvp"]
+  },
+  {
+    "id": "case_quick_commerce",
+    "title": "10-minute delivery economics",
+    "scenarioType": "HYPOTHETICAL",
+    "label": "Hypothetical quick-commerce scenario with illustrative numbers.",
+    "level": "INTERMEDIATE",
+    "minutes": 10,
+    "context": "A quick-commerce startup's average order is ₹350. Per order: product margin ₹70, delivery cost ₹45, payment and packaging ₹10, discounts ₹30. Leadership wants to expand to five new cities.",
+    "constraints": [
+      "Investors expect a path to positive contribution margin within a year",
+      "Dark-store rent is a fixed cost per city",
+      "Customers are price-sensitive"
+    ],
+    "decisions": [
+      {
+        "id": "case_quick_commerce_1",
+        "lessonId": "l_unit_economics",
+        "kind": "APPLICATION",
+        "prompt": "What's the contribution per order, and what does it imply?",
+        "options": [
+          { "text": "−₹15; each order loses money, so expansion would multiply losses unless unit economics improve", "correct": true, "why": "₹70 − ₹45 − ₹10 − ₹30 = −₹15." },
+          { "text": "+₹70; it's profitable", "why": "Ignores costs." },
+          { "text": "+₹15", "why": "Check the signs." }
+        ],
+        "explanation": "Compute contribution before scaling."
+      },
+      {
+        "id": "case_quick_commerce_2",
+        "lessonId": "l_business_models",
+        "kind": "APPLICATION",
+        "prompt": "Which change most directly improves contribution while respecting price sensitivity?",
+        "options": [
+          { "text": "Raise basket size with smart bundles and a small-cart fee below a threshold, and reduce blanket discounts in favour of targeted ones", "correct": true, "why": "Increases margin per order with value-aligned pricing." },
+          { "text": "Double discounts to grow faster", "why": "Deepens losses." },
+          { "text": "Add a hidden convenience fee", "why": "Damages trust." }
+        ],
+        "explanation": "Align pricing with value and cost."
+      },
+      {
+        "id": "case_quick_commerce_3",
+        "lessonId": "l_unit_economics",
+        "kind": "APPLICATION",
+        "prompt": "What should gate expansion to new cities?",
+        "options": [
+          { "text": "Demonstrated positive contribution in mature dark stores, with a clear payback model for new stores", "correct": true, "why": "Expand what works economically." },
+          { "text": "Competitors expanding", "why": "Reactive, not economic." },
+          { "text": "Total downloads", "why": "Vanity." }
+        ],
+        "explanation": "Prove economics, then replicate."
+      }
+    ],
+    "alternatives": "Some companies accept losses temporarily to win share, but that bet depends on a believable path to profit, sufficient funding and density effects that lower delivery cost.",
+    "takeaway": "Growth that loses money per order isn't scale — it's a bigger hole. Fix contribution first.",
+    "lessonIds": ["l_unit_economics", "l_business_models"]
+  },
+  {
+    "id": "case_chat_sellers",
+    "title": "Small sellers who sell on chat",
+    "scenarioType": "HYPOTHETICAL",
+    "label": "Hypothetical scenario about small businesses selling through messaging apps.",
+    "level": "BEGINNER",
+    "minutes": 9,
+    "context": "Many small sellers — home bakers, boutique owners — take orders through messaging-app chats. Your team wonders whether to build a simple ordering tool for them.",
+    "constraints": [
+      "Sellers are busy and not very tech-savvy",
+      "They already use chat apps daily",
+      "Your team can build an MVP in four weeks"
+    ],
+    "decisions": [
+      {
+        "id": "case_chat_sellers_1",
+        "lessonId": "l_jtbd",
+        "kind": "APPLICATION",
+        "prompt": "What's the core job sellers hire a tool for?",
+        "options": [
+          { "text": "When orders pile up in chats, I want to track who ordered what and who has paid, so I don't lose money or disappoint customers", "correct": true, "why": "Captures the real struggle and outcome." },
+          { "text": "I want a website", "why": "A solution." },
+          { "text": "I want AI", "why": "A technology, not a job." }
+        ],
+        "explanation": "Jobs reveal real needs."
+      },
+      {
+        "id": "case_chat_sellers_2",
+        "lessonId": "l_problem_validation",
+        "kind": "APPLICATION",
+        "prompt": "What's the strongest validation signal?",
+        "options": [
+          { "text": "Sellers already keep notebooks or spreadsheets of orders and payments and still make mistakes", "correct": true, "why": "Workarounds show real pain." },
+          { "text": "Sellers say ‘sounds nice’", "why": "Politeness." },
+          { "text": "A competitor exists", "why": "Not evidence about these sellers." }
+        ],
+        "explanation": "Look for workarounds."
+      },
+      {
+        "id": "case_chat_sellers_3",
+        "lessonId": "l_mvp",
+        "kind": "APPLICATION",
+        "prompt": "What's the best four-week MVP?",
+        "options": [
+          { "text": "A simple order-list and payment-tracker that works alongside chat (share a link, mark paid), tested with 20 sellers", "correct": true, "why": "Fits existing behaviour, tests the core value." },
+          { "text": "A full e-commerce storefront with inventory and shipping", "why": "Too big; changes behaviour too much." },
+          { "text": "A marketing campaign before any product", "why": "Nothing to test value with." }
+        ],
+        "explanation": "Fit the MVP into existing habits."
+      }
+    ],
+    "alternatives": "Alternatives include a chat-bot for order capture, a ledger app focused only on payments, or partnering with payment providers for automatic reconciliation.",
+    "takeaway": "Meet users where they already are; validate with workarounds; build the smallest tool that fits existing habits.",
+    "lessonIds": ["l_jtbd", "l_problem_validation", "l_mvp"]
+  },
+  {
+    "id": "case_ai_support",
+    "title": "The AI support assistant that made things up",
+    "scenarioType": "HYPOTHETICAL",
+    "label": "Hypothetical AI product scenario. Not based on any specific company.",
+    "level": "ADVANCED",
+    "minutes": 12,
+    "context": "Your travel app launched an AI assistant for booking questions. After two weeks, some customers report that it invented cancellation rules, and one complaint went viral. Leadership asks whether to shut it down.",
+    "constraints": [
+      "The assistant handles a large share of support chats",
+      "The support team is short-staffed",
+      "Policies differ by airline and fare type"
+    ],
+    "decisions": [
+      {
+        "id": "case_ai_support_1",
+        "lessonId": "l_rag_agents",
+        "kind": "APPLICATION",
+        "prompt": "What's the most likely root cause?",
+        "options": [
+          { "text": "Answers weren't grounded in the specific fare's policy — retrieval missed the right document or the model answered from general knowledge", "correct": true, "why": "Ungrounded answers produce plausible inventions." },
+          { "text": "Customers asked wrong questions", "why": "Blames users." },
+          { "text": "The app's colours", "why": "Unrelated." }
+        ],
+        "explanation": "Hallucinations often trace to grounding."
+      },
+      {
+        "id": "case_ai_support_2",
+        "lessonId": "l_ai_evaluation",
+        "kind": "APPLICATION",
+        "prompt": "What do you put in place before re-expanding the assistant?",
+        "options": [
+          { "text": "An eval set of real policy questions per airline and fare, measuring groundedness and correctness, with targets that must be met", "correct": true, "why": "Measured quality gates." },
+          { "text": "A longer system prompt saying ‘don't lie’", "why": "Doesn't supply facts or measure anything." },
+          { "text": "Nothing; the viral complaint will be forgotten", "why": "Trust and real harm matter." }
+        ],
+        "explanation": "Evals before re-launch."
+      },
+      {
+        "id": "case_ai_support_3",
+        "lessonId": "l_ai_safety",
+        "kind": "APPLICATION",
+        "prompt": "What should the experience do for refund and cancellation questions now?",
+        "options": [
+          { "text": "Show the exact policy text from the booking with a citation, compute refunds with rules, and hand off to a human for edge cases", "correct": true, "why": "Grounding, deterministic calculation and human oversight for high-stakes answers." },
+          { "text": "Let the AI estimate refunds freely", "why": "That's what failed." },
+          { "text": "Remove all AI forever", "why": "Overreaction; the assistant can still help with low-risk questions." }
+        ],
+        "explanation": "Scale oversight to stakes."
+      }
+    ],
+    "alternatives": "Some teams would temporarily limit the assistant to booking status and FAQs while rebuilding policy retrieval, keeping humans on refunds.",
+    "takeaway": "Ground AI in the user's actual data and policies, measure groundedness, and keep humans in the loop for consequential answers.",
+    "lessonIds": ["l_rag_agents", "l_ai_evaluation", "l_ai_safety"]
+  },
+  {
+    "id": "case_tutor_marketplace",
+    "title": "Starting a home-tutor marketplace",
+    "scenarioType": "HYPOTHETICAL",
+    "label": "Hypothetical marketplace scenario.",
+    "level": "ADVANCED",
+    "minutes": 10,
+    "context": "You're launching a marketplace connecting parents with home tutors for school students. Parents want verified, nearby tutors; tutors want steady students without paying agents.",
+    "constraints": [
+      "No existing users on either side",
+      "Trust and safety are critical (tutors visit homes)",
+      "Seed funding for 12 months"
+    ],
+    "decisions": [
+      {
+        "id": "case_tutor_marketplace_1",
+        "lessonId": "l_moats_platforms",
+        "kind": "APPLICATION",
+        "prompt": "How do you approach the cold-start problem?",
+        "options": [
+          { "text": "Launch in a few dense neighbourhoods of one city with manually verified tutors, plus a free scheduling and fee tool tutors value on their own", "correct": true, "why": "Density, seeded supply and single-player value." },
+          { "text": "Launch nationwide with paid ads", "why": "Thin liquidity everywhere." },
+          { "text": "Wait for organic sign-ups", "why": "Cold start needs deliberate effort." }
+        ],
+        "explanation": "Concentrate and seed."
+      },
+      {
+        "id": "case_tutor_marketplace_2",
+        "lessonId": "l_gtm_pmf",
+        "kind": "APPLICATION",
+        "prompt": "What's the strongest early sign of product-market fit?",
+        "options": [
+          { "text": "Parents rebooking the same tutor monthly and referring other parents in their apartment", "correct": true, "why": "Retention and organic referral." },
+          { "text": "Many tutor sign-ups", "why": "Supply alone isn't fit." },
+          { "text": "Press coverage", "why": "Not behaviour." }
+        ],
+        "explanation": "Retention and referrals signal fit."
+      },
+      {
+        "id": "case_tutor_marketplace_3",
+        "lessonId": "l_moats_platforms",
+        "kind": "APPLICATION",
+        "prompt": "Parents start paying tutors directly after the first month. How do you respond?",
+        "options": [
+          { "text": "Add ongoing platform value — verified reviews, progress reports, replacement guarantees, easy payments — and keep fees fair", "correct": true, "why": "Reduces disintermediation by making the platform worth staying on." },
+          { "text": "Raise commission", "why": "Increases leakage." },
+          { "text": "Ban tutors who share phone numbers", "why": "Heavy-handed; trust suffers." }
+        ],
+        "explanation": "Keep creating value for both sides."
+      }
+    ],
+    "alternatives": "Others might start with school partnerships, online tutoring (removing locality constraints) or a subscription model for parents.",
+    "takeaway": "Marketplaces win locally first: seed supply, deliver standalone value and keep earning both sides' loyalty.",
+    "lessonIds": ["l_moats_platforms", "l_gtm_pmf"]
+  },
+  {
+    "id": "case_senior_banking",
+    "title": "Banking app for older customers",
+    "scenarioType": "HYPOTHETICAL",
+    "label": "Hypothetical UX and accessibility scenario.",
+    "level": "INTERMEDIATE",
+    "minutes": 9,
+    "context": "A bank's app has low adoption among customers over 60, who keep visiting branches for simple tasks like checking balances and paying electricity bills.",
+    "constraints": [
+      "Many use budget phones with large system fonts",
+      "Fraud concerns are high in this segment",
+      "Branch visits are costly for the bank"
+    ],
+    "decisions": [
+      {
+        "id": "case_senior_banking_1",
+        "lessonId": "l_usability_testing",
+        "kind": "APPLICATION",
+        "prompt": "How do you find out why older customers struggle?",
+        "options": [
+          { "text": "Task-based usability tests with older customers on their own phones, e.g. ‘pay your electricity bill’", "correct": true, "why": "Observes real behaviour in real conditions." },
+          { "text": "An app-store rating analysis only", "why": "Too indirect." },
+          { "text": "Ask young employees to role-play", "why": "Not representative." }
+        ],
+        "explanation": "Test with the real segment on their real devices."
+      },
+      {
+        "id": "case_senior_banking_2",
+        "lessonId": "l_accessibility",
+        "kind": "APPLICATION",
+        "prompt": "Tests show text overlapping at large font sizes and tiny icons without labels. What's the fix?",
+        "options": [
+          { "text": "Support font scaling with reflowing layouts, larger touch targets, text labels on icons and sufficient contrast", "correct": true, "why": "Core accessibility practices." },
+          { "text": "Tell users to reduce font size", "why": "Puts the burden on users who need it." },
+          { "text": "Add a tutorial video", "why": "Doesn't fix the UI." }
+        ],
+        "explanation": "Accessibility is a basic expectation."
+      },
+      {
+        "id": "case_senior_banking_3",
+        "lessonId": "l_accessibility",
+        "kind": "APPLICATION",
+        "prompt": "How do you address fraud fears while keeping things simple?",
+        "options": [
+          { "text": "Clear confirmations in plain language, a trusted-contact option, and visible security cues without extra complex steps", "correct": true, "why": "Builds confidence without adding cognitive load." },
+          { "text": "Add five extra OTP steps", "why": "Adds friction without clarity." },
+          { "text": "Hide security information", "why": "Undermines trust." }
+        ],
+        "explanation": "Design for confidence."
+      }
+    ],
+    "alternatives": "Banks might also offer a simplified ‘essentials’ mode, voice-assisted flows or assisted onboarding in branches.",
+    "takeaway": "Accessibility and trust design unlock whole segments — and reduce costs elsewhere.",
+    "lessonIds": ["l_usability_testing", "l_accessibility"]
+  },
+  {
+    "id": "case_freemium_pricing",
+    "title": "Pricing a premium plan",
+    "scenarioType": "HYPOTHETICAL",
+    "label": "Hypothetical pricing scenario with illustrative numbers.",
+    "level": "ADVANCED",
+    "minutes": 10,
+    "context": "A note-taking app has 2 million free users and 0.8% paid conversion. The team is debating price and which features to put behind the paywall.",
+    "constraints": [
+      "Most users are students and early-career professionals",
+      "A competitor offers a cheaper plan",
+      "Pricing changes affect brand perception"
+    ],
+    "decisions": [
+      {
+        "id": "case_freemium_pricing_1",
+        "lessonId": "l_business_models",
+        "kind": "APPLICATION",
+        "prompt": "What should guide what goes behind the paywall?",
+        "options": [
+          { "text": "Features whose value grows with heavy use (e.g. sync across many devices, large storage, collaboration), keeping the core free", "correct": true, "why": "Value-metric aligned freemium." },
+          { "text": "The core note-taking itself", "why": "Kills adoption." },
+          { "text": "Whatever is cheapest to build", "why": "Not value-based." }
+        ],
+        "explanation": "Paywall the value metric."
+      },
+      {
+        "id": "case_freemium_pricing_2",
+        "lessonId": "l_ab_testing",
+        "kind": "APPLICATION",
+        "prompt": "How do you test two price points safely?",
+        "options": [
+          { "text": "Randomise new visitors to price points for a fixed period, measure conversion and revenue per visitor, and honour any price a user saw", "correct": true, "why": "Causal and fair to users." },
+          { "text": "Change prices for existing subscribers randomly", "why": "Unfair and damages trust." },
+          { "text": "Ask users what they'd pay", "why": "Stated prices are unreliable." }
+        ],
+        "explanation": "Test carefully and ethically."
+      },
+      {
+        "id": "case_freemium_pricing_3",
+        "lessonId": "l_stat_reasoning",
+        "kind": "APPLICATION",
+        "prompt": "The higher price shows lower conversion but higher revenue per visitor, with a confidence interval that includes zero. What's your conclusion?",
+        "options": [
+          { "text": "Inconclusive on revenue — extend the test or increase sample size before deciding", "correct": true, "why": "An interval including zero means you can't be confident of the revenue effect." },
+          { "text": "Raise the price — revenue went up", "why": "The effect may be noise." },
+          { "text": "Lower the price", "why": "Not supported either." }
+        ],
+        "explanation": "Read intervals before deciding."
+      }
+    ],
+    "alternatives": "Student discounts, annual plans, regional pricing or usage-based upgrades are other levers.",
+    "takeaway": "Price around the value metric, test causally and ethically, and don't decide on inconclusive results.",
+    "lessonIds": ["l_business_models", "l_ab_testing", "l_stat_reasoning"]
+  },
+  {
+    "id": "case_ai_cost_spike",
+    "title": "When the AI bill arrives",
+    "scenarioType": "HYPOTHETICAL",
+    "label": "Hypothetical AI product scenario.",
+    "level": "ADVANCED",
+    "minutes": 10,
+    "context": "Your app's free AI writing assistant became popular. Usage tripled in a month, and the AI provider bill now exceeds the revenue of the paid plan.",
+    "constraints": [
+      "Users love the feature",
+      "The paid plan has modest conversion",
+      "Quality must not visibly drop"
+    ],
+    "decisions": [
+      {
+        "id": "case_ai_cost_spike_1",
+        "lessonId": "l_ai_cost_latency",
+        "kind": "APPLICATION",
+        "prompt": "Which change reduces cost fastest without visible quality loss?",
+        "options": [
+          { "text": "Trim prompt context, cap output length, cache repeated requests and route simple rewrites to a smaller model validated on your evals", "correct": true, "why": "Targets tokens and model choice with quality checks." },
+          { "text": "Switch everything to the cheapest model without testing", "why": "Risks visible quality drops." },
+          { "text": "Ignore it", "why": "Unsustainable." }
+        ],
+        "explanation": "Optimise tokens and routing, verified by evals."
+      },
+      {
+        "id": "case_ai_cost_spike_2",
+        "lessonId": "l_ai_metrics",
+        "kind": "APPLICATION",
+        "prompt": "Which metric should now be on the feature's dashboard?",
+        "options": [
+          { "text": "Cost per active user and per accepted suggestion, alongside acceptance rate and retention", "correct": true, "why": "Links cost to value delivered." },
+          { "text": "Only total requests", "why": "Doesn't show value or cost efficiency." },
+          { "text": "Model parameter count", "why": "Irrelevant." }
+        ],
+        "explanation": "AI metrics include cost."
+      },
+      {
+        "id": "case_ai_cost_spike_3",
+        "lessonId": "l_ai_metrics",
+        "kind": "APPLICATION",
+        "prompt": "How do you align monetisation with the feature's value?",
+        "options": [
+          { "text": "Generous but fair free limits, with heavier or advanced use in the paid plan — communicated transparently", "correct": true, "why": "Aligns cost, value and pricing honestly." },
+          { "text": "Silently degrade free quality", "why": "Damages trust." },
+          { "text": "Remove the feature", "why": "Throws away proven value." }
+        ],
+        "explanation": "Monetise value, transparently."
+      }
+    ],
+    "alternatives": "Some teams negotiate volume pricing with providers, consider open-weight models on their own infrastructure at scale, or add ads — each with trade-offs.",
+    "takeaway": "AI features have real marginal costs. Track cost per unit of value and design pricing around it.",
+    "lessonIds": ["l_ai_cost_latency", "l_ai_metrics"]
+  },
+  {
+    "id": "case_roadmap_conflict",
+    "title": "Two VPs, one roadmap",
+    "scenarioType": "HYPOTHETICAL",
+    "label": "Hypothetical leadership scenario.",
+    "level": "ADVANCED",
+    "minutes": 10,
+    "context": "The VP of Sales wants enterprise features to close big deals. The VP of Growth wants onboarding improvements for self-serve users. Your team can do one major initiative this quarter.",
+    "constraints": [
+      "Company strategy for the year emphasises self-serve growth",
+      "Two enterprise deals depend on the features",
+      "Both VPs are influential"
+    ],
+    "decisions": [
+      {
+        "id": "case_roadmap_conflict_1",
+        "lessonId": "l_stakeholders",
+        "kind": "APPLICATION",
+        "prompt": "What's your first move?",
+        "options": [
+          { "text": "Meet each VP to understand their goals, evidence and the real deadline behind their request", "correct": true, "why": "Understand before deciding." },
+          { "text": "Pick whoever is more senior", "why": "Hierarchy isn't a decision method." },
+          { "text": "Split the team in half", "why": "Often delivers neither well." }
+        ],
+        "explanation": "Understand interests first."
+      },
+      {
+        "id": "case_roadmap_conflict_2",
+        "lessonId": "l_roadmaps",
+        "kind": "APPLICATION",
+        "prompt": "How do you lay out the options?",
+        "options": [
+          { "text": "Show both initiatives' expected impact, confidence and fit with the self-serve strategy, plus what moves to Next for each choice", "correct": true, "why": "Transparent trade-offs tied to strategy." },
+          { "text": "Hide one option", "why": "Undermines trust." },
+          { "text": "Promise both this quarter", "why": "Overpromising." }
+        ],
+        "explanation": "Make trade-offs visible."
+      },
+      {
+        "id": "case_roadmap_conflict_3",
+        "lessonId": "l_influence",
+        "kind": "APPLICATION",
+        "prompt": "How do you present the recommendation?",
+        "options": [
+          { "text": "Lead with the recommendation (e.g. onboarding now, with a minimal enterprise workaround for the two deals), give reasons and evidence, and ask for a decision", "correct": true, "why": "Pyramid principle with a creative option that addresses both concerns." },
+          { "text": "Present 40 slides of data with no recommendation", "why": "No clear point." },
+          { "text": "Email the decision without discussion", "why": "Misses alignment." }
+        ],
+        "explanation": "Recommend clearly, address concerns creatively."
+      }
+    ],
+    "alternatives": "Other options: a time-boxed enterprise spike, partnering with a solutions team to customise for the two clients, or revisiting strategy if enterprise demand proves larger.",
+    "takeaway": "Resolve conflicts by anchoring on strategy, making trade-offs visible and looking for creative options — then recommend clearly.",
+    "lessonIds": ["l_stakeholders", "l_roadmaps", "l_influence"]
+  }
+]

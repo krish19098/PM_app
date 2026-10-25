@@ -1,0 +1,487 @@
+[
+ {
+  "id": "g_acceptance_criteria",
+  "term": "Acceptance criteria",
+  "definition": "Testable conditions a user story must meet to be considered done, often written as Given/When/Then.",
+  "lessonId": "l_user_stories"
+ },
+ {
+  "id": "g_activation",
+  "term": "Activation",
+  "definition": "The moment a new user first experiences the product's core value, defined by a behaviour that predicts retention.",
+  "lessonId": "l_funnels"
+ },
+ {
+  "id": "g_agile",
+  "term": "Agile",
+  "definition": "An approach to building products in small increments with frequent feedback and adaptation.",
+  "lessonId": "l_agile_scrum"
+ },
+ {
+  "id": "g_a_b_test",
+  "term": "A/B test",
+  "definition": "A randomised experiment comparing a control experience with a changed one to measure causal impact.",
+  "lessonId": "l_ab_testing"
+ },
+ {
+  "id": "g_aarrr",
+  "term": "AARRR",
+  "definition": "Acquisition, Activation, Retention, Referral, Revenue — the ‘pirate metrics’ lifecycle framework.",
+  "lessonId": "l_growth_loops"
+ },
+ {
+  "id": "g_agent_ai",
+  "term": "Agent (AI)",
+  "definition": "A system where a language model decides its own steps and tool use to reach a goal.",
+  "lessonId": "l_rag_agents"
+ },
+ {
+  "id": "g_backlog",
+  "term": "Backlog",
+  "definition": "An ordered list of work a team may do, owned and prioritised by the product owner or PM.",
+  "lessonId": "l_agile_scrum"
+ },
+ {
+  "id": "g_build_vs_buy",
+  "term": "Build vs buy",
+  "definition": "The decision between developing a capability in-house or using an external product or API.",
+  "lessonId": "l_ai_metrics"
+ },
+ {
+  "id": "g_cac",
+  "term": "CAC",
+  "definition": "Customer acquisition cost: marketing and sales spend divided by new customers acquired.",
+  "lessonId": "l_unit_economics"
+ },
+ {
+  "id": "g_churn",
+  "term": "Churn",
+  "definition": "The share of users or customers who stop using or paying for a product in a period.",
+  "lessonId": "l_retention_cohorts"
+ },
+ {
+  "id": "g_cohort",
+  "term": "Cohort",
+  "definition": "A group of users who share a starting period or characteristic, analysed together over time.",
+  "lessonId": "l_retention_cohorts"
+ },
+ {
+  "id": "g_cognitive_load",
+  "term": "Cognitive load",
+  "definition": "The mental effort required to use an interface or complete a task.",
+  "lessonId": "l_ux_fundamentals"
+ },
+ {
+  "id": "g_cold_start_problem",
+  "term": "Cold-start problem",
+  "definition": "The difficulty of launching a network product when it has too few users on either side to be valuable.",
+  "lessonId": "l_moats_platforms"
+ },
+ {
+  "id": "g_confidence_interval",
+  "term": "Confidence interval",
+  "definition": "A range of plausible values for the true effect of a change, given the data.",
+  "lessonId": "l_stat_reasoning"
+ },
+ {
+  "id": "g_context_window",
+  "term": "Context window",
+  "definition": "The maximum number of tokens a language model can consider in one request.",
+  "lessonId": "l_llm_fundamentals"
+ },
+ {
+  "id": "g_contribution_margin",
+  "term": "Contribution margin",
+  "definition": "Revenue minus variable costs for an order or customer.",
+  "lessonId": "l_unit_economics"
+ },
+ {
+  "id": "g_definition_of_done",
+  "term": "Definition of done",
+  "definition": "The shared quality standard work must meet before it counts as complete.",
+  "lessonId": "l_agile_scrum"
+ },
+ {
+  "id": "g_desirability_viability_feasibility",
+  "term": "Desirability, viability, feasibility",
+  "definition": "The three lenses of a good product idea: users want it, the business benefits, the team can build it.",
+  "lessonId": "l_product_thinking"
+ },
+ {
+  "id": "g_embedding",
+  "term": "Embedding",
+  "definition": "A numeric vector that represents the meaning of text or other content, enabling search by meaning.",
+  "lessonId": "l_llm_fundamentals"
+ },
+ {
+  "id": "g_eval_set",
+  "term": "Eval set",
+  "definition": "A curated collection of test inputs with expected behaviour, used to measure AI quality.",
+  "lessonId": "l_ai_evaluation"
+ },
+ {
+  "id": "g_feature_flag",
+  "term": "Feature flag",
+  "definition": "A switch that turns a feature on or off for some users without releasing a new app version.",
+  "lessonId": "l_eng_collab"
+ },
+ {
+  "id": "g_five_whys",
+  "term": "Five whys",
+  "definition": "Asking ‘why?’ repeatedly to move from a symptom to its root cause.",
+  "lessonId": "l_problem_first"
+ },
+ {
+  "id": "g_freemium",
+  "term": "Freemium",
+  "definition": "A business model with a free core product and paid premium features.",
+  "lessonId": "l_business_models"
+ },
+ {
+  "id": "g_funnel",
+  "term": "Funnel",
+  "definition": "A sequence of steps toward a goal with conversion measured at each step.",
+  "lessonId": "l_funnels"
+ },
+ {
+  "id": "g_go_to_market_gtm",
+  "term": "Go-to-market (GTM)",
+  "definition": "The plan for reaching and winning customers: segment, positioning, pricing, channels and launch.",
+  "lessonId": "l_gtm_pmf"
+ },
+ {
+  "id": "g_goodhart_s_law",
+  "term": "Goodhart's law",
+  "definition": "When a measure becomes a target, it stops being a good measure.",
+  "lessonId": "l_metrics_basics"
+ },
+ {
+  "id": "g_groundedness",
+  "term": "Groundedness",
+  "definition": "Whether an AI answer's claims are supported by the sources it was given.",
+  "lessonId": "l_ai_evaluation"
+ },
+ {
+  "id": "g_growth_loop",
+  "term": "Growth loop",
+  "definition": "A self-reinforcing cycle where users' activity brings in new users.",
+  "lessonId": "l_growth_loops"
+ },
+ {
+  "id": "g_guardrail_metric",
+  "term": "Guardrail metric",
+  "definition": "A metric that must not get worse while you improve the primary metric.",
+  "lessonId": "l_prd"
+ },
+ {
+  "id": "g_hallucination",
+  "term": "Hallucination",
+  "definition": "A confident AI output that is false or unsupported.",
+  "lessonId": "l_ai_evaluation"
+ },
+ {
+  "id": "g_how_might_we",
+  "term": "How might we",
+  "definition": "A question format that turns an insight into an open design challenge.",
+  "lessonId": "l_synthesis"
+ },
+ {
+  "id": "g_human_in_the_loop",
+  "term": "Human-in-the-loop",
+  "definition": "A design where people review, approve or correct AI outputs.",
+  "lessonId": "l_ai_safety"
+ },
+ {
+  "id": "g_jobs_to_be_done_jtbd",
+  "term": "Jobs to Be Done (JTBD)",
+  "definition": "The idea that people ‘hire’ products to make progress in specific situations.",
+  "lessonId": "l_jtbd"
+ },
+ {
+  "id": "g_journey_map",
+  "term": "Journey map",
+  "definition": "A visualisation of the steps, thoughts and emotions a user goes through to reach a goal.",
+  "lessonId": "l_journey_maps"
+ },
+ {
+  "id": "g_kano_model",
+  "term": "Kano model",
+  "definition": "A model classifying features as basic expectations, performance features or delighters.",
+  "lessonId": "l_moscow_kano"
+ },
+ {
+  "id": "g_kanban",
+  "term": "Kanban",
+  "definition": "A flow-based method that visualises work and limits work in progress.",
+  "lessonId": "l_kanban_estimation"
+ },
+ {
+  "id": "g_kpi",
+  "term": "KPI",
+  "definition": "Key performance indicator: a metric used to track whether things are going well.",
+  "lessonId": "l_metrics_basics"
+ },
+ {
+  "id": "g_latency",
+  "term": "Latency",
+  "definition": "The time between a request and its response.",
+  "lessonId": "l_ai_cost_latency"
+ },
+ {
+  "id": "g_leading_indicator",
+  "term": "Leading indicator",
+  "definition": "A metric that predicts future outcomes, such as early activation predicting retention.",
+  "lessonId": "l_metrics_basics"
+ },
+ {
+  "id": "g_llm",
+  "term": "LLM",
+  "definition": "Large language model: a model trained on large text datasets to generate and understand language.",
+  "lessonId": "l_llm_fundamentals"
+ },
+ {
+  "id": "g_ltv",
+  "term": "LTV",
+  "definition": "Lifetime value: the total contribution a customer generates over their relationship with the product.",
+  "lessonId": "l_unit_economics"
+ },
+ {
+  "id": "g_moat",
+  "term": "Moat",
+  "definition": "A durable competitive advantage that protects a product from competitors.",
+  "lessonId": "l_moats_platforms"
+ },
+ {
+  "id": "g_moscow",
+  "term": "MoSCoW",
+  "definition": "Must, Should, Could, Won't — a method for scoping a release.",
+  "lessonId": "l_moscow_kano"
+ },
+ {
+  "id": "g_mvp",
+  "term": "MVP",
+  "definition": "Minimum viable product: the smallest product that tests a key assumption while delivering real value.",
+  "lessonId": "l_mvp"
+ },
+ {
+  "id": "g_network_effect",
+  "term": "Network effect",
+  "definition": "When a product becomes more valuable as more people use it.",
+  "lessonId": "l_moats_platforms"
+ },
+ {
+  "id": "g_north_star_metric",
+  "term": "North Star Metric",
+  "definition": "The single metric that best captures the core value delivered to customers and predicts long-term success.",
+  "lessonId": "l_north_star"
+ },
+ {
+  "id": "g_okr",
+  "term": "OKR",
+  "definition": "Objectives and Key Results: a qualitative objective with measurable outcome-based key results.",
+  "lessonId": "l_okrs"
+ },
+ {
+  "id": "g_opportunity_cost",
+  "term": "Opportunity cost",
+  "definition": "The value of the best alternative you give up when you choose something.",
+  "lessonId": "l_prioritisation_basics"
+ },
+ {
+  "id": "g_outcome_vs_output",
+  "term": "Outcome vs output",
+  "definition": "Outcomes are changes in behaviour or results; outputs are the things built.",
+  "lessonId": "l_pm_role"
+ },
+ {
+  "id": "g_p_value",
+  "term": "P-value",
+  "definition": "The probability of seeing a result at least this extreme if the change had no real effect.",
+  "lessonId": "l_stat_reasoning"
+ },
+ {
+  "id": "g_persona",
+  "term": "Persona",
+  "definition": "A research-based profile representing a user segment.",
+  "lessonId": "l_personas_segments"
+ },
+ {
+  "id": "g_positioning",
+  "term": "Positioning",
+  "definition": "The distinct place a product occupies in the target customer's mind.",
+  "lessonId": "l_competitive"
+ },
+ {
+  "id": "g_prd",
+  "term": "PRD",
+  "definition": "Product requirements document: what is being built, for whom, why and how success is measured.",
+  "lessonId": "l_prd"
+ },
+ {
+  "id": "g_pre_mortem",
+  "term": "Pre-mortem",
+  "definition": "Imagining a project has failed in the future to identify risks in advance.",
+  "lessonId": "l_strategic_bets"
+ },
+ {
+  "id": "g_product_market_fit_pmf",
+  "term": "Product-market fit (PMF)",
+  "definition": "When a product satisfies a strong need in a specific market so well that users stay and recommend it.",
+  "lessonId": "l_gtm_pmf"
+ },
+ {
+  "id": "g_prompt_injection",
+  "term": "Prompt injection",
+  "definition": "Malicious text in inputs or retrieved content that tries to override an AI model's instructions.",
+  "lessonId": "l_ai_safety"
+ },
+ {
+  "id": "g_pyramid_principle",
+  "term": "Pyramid principle",
+  "definition": "Communicating the main point first, then supporting reasons, then details.",
+  "lessonId": "l_influence"
+ },
+ {
+  "id": "g_rag",
+  "term": "RAG",
+  "definition": "Retrieval-augmented generation: retrieving relevant documents and giving them to a model to ground its answer.",
+  "lessonId": "l_rag_agents"
+ },
+ {
+  "id": "g_retention",
+  "term": "Retention",
+  "definition": "How many users keep using a product over time.",
+  "lessonId": "l_retention_cohorts"
+ },
+ {
+  "id": "g_rice",
+  "term": "RICE",
+  "definition": "Reach × Impact × Confidence ÷ Effort — a prioritisation scoring method.",
+  "lessonId": "l_rice"
+ },
+ {
+  "id": "g_roadmap",
+  "term": "Roadmap",
+  "definition": "A communication tool showing the direction of a product: priorities, problems and expected outcomes over time.",
+  "lessonId": "l_roadmaps"
+ },
+ {
+  "id": "g_sample_ratio_mismatch",
+  "term": "Sample-ratio mismatch",
+  "definition": "When actual experiment group sizes differ significantly from the planned split, signalling a broken setup.",
+  "lessonId": "l_experiment_pitfalls"
+ },
+ {
+  "id": "g_segmentation",
+  "term": "Segmentation",
+  "definition": "Dividing users into groups with distinct needs or behaviours.",
+  "lessonId": "l_personas_segments"
+ },
+ {
+  "id": "g_spaced_repetition",
+  "term": "Spaced repetition",
+  "definition": "Reviewing material at increasing intervals to strengthen long-term memory — used by this app's review engine."
+ },
+ {
+  "id": "g_sprint",
+  "term": "Sprint",
+  "definition": "A fixed time-box in which a Scrum team builds a usable increment.",
+  "lessonId": "l_agile_scrum"
+ },
+ {
+  "id": "g_stakeholder",
+  "term": "Stakeholder",
+  "definition": "Anyone who affects or is affected by the product.",
+  "lessonId": "l_stakeholders"
+ },
+ {
+  "id": "g_story_points",
+  "term": "Story points",
+  "definition": "A relative estimate of the effort, complexity and uncertainty of a piece of work.",
+  "lessonId": "l_kanban_estimation"
+ },
+ {
+  "id": "g_sunk_cost_fallacy",
+  "term": "Sunk cost fallacy",
+  "definition": "Continuing something because of past investment rather than its expected future value.",
+  "lessonId": "l_feedback_iteration"
+ },
+ {
+  "id": "g_tam_sam_som",
+  "term": "TAM / SAM / SOM",
+  "definition": "Total, serviceable and obtainable market — tiers of market size.",
+  "lessonId": "l_opportunity_sizing"
+ },
+ {
+  "id": "g_technical_debt",
+  "term": "Technical debt",
+  "definition": "The future cost of past shortcuts or outdated technical decisions.",
+  "lessonId": "l_eng_collab"
+ },
+ {
+  "id": "g_temperature",
+  "term": "Temperature",
+  "definition": "A model setting that controls how random or varied the outputs are.",
+  "lessonId": "l_llm_fundamentals"
+ },
+ {
+  "id": "g_token",
+  "term": "Token",
+  "definition": "A unit of text (a word or word-piece) that language models process; used for limits and pricing.",
+  "lessonId": "l_llm_fundamentals"
+ },
+ {
+  "id": "g_tool_calling",
+  "term": "Tool calling",
+  "definition": "A language model requesting structured actions that application code executes.",
+  "lessonId": "l_rag_agents"
+ },
+ {
+  "id": "g_two_way_door",
+  "term": "Two-way door",
+  "definition": "A reversible decision that can be undone cheaply, so it can be made quickly.",
+  "lessonId": "l_strategic_bets"
+ },
+ {
+  "id": "g_unit_economics",
+  "term": "Unit economics",
+  "definition": "The revenue and costs associated with a single unit — a customer or an order.",
+  "lessonId": "l_unit_economics"
+ },
+ {
+  "id": "g_usability_testing",
+  "term": "Usability testing",
+  "definition": "Watching real users attempt realistic tasks to find usability problems.",
+  "lessonId": "l_usability_testing"
+ },
+ {
+  "id": "g_user_story",
+  "term": "User story",
+  "definition": "A short description of functionality from a user's perspective: As a…, I want…, so that….",
+  "lessonId": "l_user_stories"
+ },
+ {
+  "id": "g_value_metric",
+  "term": "Value metric",
+  "definition": "The unit of value a customer pays for, which grows with their success.",
+  "lessonId": "l_business_models"
+ },
+ {
+  "id": "g_vanity_metric",
+  "term": "Vanity metric",
+  "definition": "A metric that looks impressive but doesn't inform decisions, such as total downloads.",
+  "lessonId": "l_metrics_basics"
+ },
+ {
+  "id": "g_wcag",
+  "term": "WCAG",
+  "definition": "Web Content Accessibility Guidelines, the widely used standard for accessible digital content.",
+  "lessonId": "l_accessibility"
+ },
+ {
+  "id": "g_wip_limit",
+  "term": "WIP limit",
+  "definition": "A cap on how many work items can be in progress at once.",
+  "lessonId": "l_kanban_estimation"
+ }
+]

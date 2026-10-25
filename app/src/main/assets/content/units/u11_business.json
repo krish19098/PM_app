@@ -1,0 +1,551 @@
+{
+  "unit": {
+    "id": "u11",
+    "order": 11,
+    "title": "Business Models & Growth",
+    "summary": "How products make money and grow: business models and pricing, unit economics, growth loops, go-to-market and product-market fit.",
+    "level": "INTERMEDIATE",
+    "prerequisites": ["u09"]
+  },
+  "lessons": [
+    {
+      "id": "l_business_models",
+      "unitId": "u11",
+      "title": "Business models and monetisation",
+      "level": "INTERMEDIATE",
+      "objectives": [
+        "Describe common business models: subscription, transaction, marketplace, freemium and ads",
+        "Explain value-based pricing",
+        "Match a monetisation model to user behaviour and value"
+      ],
+      "prerequisites": ["l_opportunity_sizing", "l_north_star"],
+      "related": ["l_unit_economics", "l_gtm_pmf"],
+      "tags": ["business model", "pricing", "monetisation"],
+      "quickMinutes": 6,
+      "quick": {
+        "explanation": {
+          "en": "A business model describes how a product creates, delivers and captures value. Common models: subscriptions (recurring fee), transactions (a fee per use), marketplaces (a commission on trades between buyers and sellers), freemium (free core with paid upgrades) and advertising (users pay with attention). Good monetisation charges in a way that aligns with the value users get.",
+          "ta": "Business model-na: oru product eppadi value-a create panni, deliver panni, capture pannudhu-nu describe pannum. Common models: subscription (adikkadi kattura fee), transaction (ovvoru use-kkum fee), marketplace (vaangubavar–virpavar trade-la commission), freemium (core free, upgrades-ku kaasu), advertising (users attention-aala kaasu kattuvaanga). Nalla monetisation, users-ku kidaikkura value-oda align aagura vazhila charge pannum."
+        },
+        "analogy": {
+          "en": "A gym can charge monthly (subscription), per visit (transaction), take a cut from personal trainers (marketplace), or offer free outdoor sessions and paid classes (freemium).",
+          "ta": "Gym maasa fee vaangalaam (subscription), ovvoru visit-kkum (transaction), personal trainers-kitta cut edukkalaam (marketplace), illa free outdoor sessions-um paid classes-um (freemium)."
+        },
+        "takeaway": {
+          "en": "Charge for the value metric customers care about, in a way that grows as they get more value.",
+          "ta": "Customers mukkiyamaa ninaikkura value metric-ku charge pannunga — avangalukku value adhigamaaga, kattanam-um adhigamaagura maadhiri."
+        }
+      },
+      "deep": [
+        {
+          "title": "Why it matters for PMs",
+          "body": "Product decisions shape revenue: what's free versus paid, when the paywall appears, what's included in each plan. A brilliant product with the wrong monetisation can fail, and aggressive monetisation can destroy trust and retention."
+        },
+        {
+          "title": "Models and their trade-offs",
+          "body": "Subscription: predictable revenue; must deliver ongoing value or churn rises. Transaction fees: scale with usage; sensitive to competition. Marketplace commission (‘take rate’): must create value for both sides; disintermediation risk (users take deals offline). Freemium: wide adoption; typically only a small share converts, so the free tier must create upgrade demand without being useless. Advertising: free for users; needs huge scale and risks a worse experience and privacy concerns."
+        },
+        {
+          "title": "Pricing approaches",
+          "body": "Cost-plus (cost + margin) ignores value. Competitor-based follows the market. Value-based prices according to the value delivered to customers, ideally tied to a ‘value metric’ — per seat, per transaction, per GB — that grows with customer success. Test willingness to pay through research methods such as Van Westendorp surveys, pricing-page experiments or sales conversations."
+        },
+        {
+          "title": "Context: Indian markets",
+          "body": "Price sensitivity, UPI-driven small payments, sachet pricing (small, frequent purchases), and strong free alternatives shape monetisation. Many products in India succeed with low-priced plans, pay-per-use options and annual plans timed to salary or festival cycles."
+        }
+      ],
+      "example": "Illustrative example: a photo-editing app offers basic editing free, with premium filters and high-resolution export in a paid plan. Its value metric is exports: casual users stay free, while creators who export often see clear value in paying.",
+      "counterexample": "A note-taking app that puts a paywall on the second note — users never experience enough value to want to pay.",
+      "mistakes": [
+        "Pricing by cost instead of value",
+        "A free tier so generous nobody upgrades, or so limited nobody stays",
+        "Ignoring how monetisation affects retention and trust"
+      ],
+      "keyTerms": [
+        { "term": "Freemium", "meaning": "A free core product with paid premium features." },
+        { "term": "Take rate", "meaning": "The percentage a marketplace keeps from each transaction." },
+        { "term": "Value metric", "meaning": "The unit of value customers pay for, which grows with their success." }
+      ],
+      "questions": [
+        {
+          "id": "q_biz_models_1",
+          "kind": "RECALL",
+          "prompt": "Which model makes money from commissions on trades between buyers and sellers?",
+          "options": [
+            { "text": "Marketplace", "correct": true, "why": "Correct." },
+            { "text": "Advertising", "why": "Advertising monetises attention." },
+            { "text": "Subscription", "why": "Subscriptions charge recurring fees." },
+            { "text": "Hardware", "why": "No." }
+          ],
+          "explanation": "Marketplaces earn a take rate."
+        },
+        {
+          "id": "q_biz_models_2",
+          "kind": "RECALL",
+          "prompt": "What is value-based pricing?",
+          "options": [
+            { "text": "Pricing according to the value customers receive", "correct": true, "why": "Yes." },
+            { "text": "Cost plus a fixed margin", "why": "That's cost-plus." },
+            { "text": "Always the cheapest price", "why": "No." },
+            { "text": "Copying competitor prices", "why": "Competitor-based." }
+          ],
+          "explanation": "Price reflects value delivered."
+        },
+        {
+          "id": "q_biz_models_3",
+          "kind": "APPLICATION",
+          "prompt": "A freemium app converts 0.3% of users to paid; most say the free version does everything they need. What's the best lever?",
+          "options": [
+            { "text": "Rethink the free/paid boundary so premium features target the needs of the most engaged users", "correct": true, "why": "Right — the paywall boundary determines upgrade demand." },
+            { "text": "Remove the free tier entirely", "why": "Risks losing adoption." },
+            { "text": "Add more ads", "why": "May hurt the experience without fixing conversion." },
+            { "text": "Double the price", "why": "Doesn't create upgrade demand." }
+          ],
+          "explanation": "Design the free tier to create upgrade moments."
+        },
+        {
+          "id": "q_biz_models_4",
+          "kind": "APPLICATION",
+          "prompt": "In a home-services marketplace, many customers book a plumber once and then contact them directly. What's this risk, and a response?",
+          "options": [
+            { "text": "Disintermediation — add ongoing value through the platform: guarantees, easy payments, rebooking, insurance", "correct": true, "why": "Yes — make staying on the platform worth it for both sides." },
+            { "text": "Churn from bad UX", "why": "The issue is leakage off-platform." },
+            { "text": "Raise commission to compensate", "why": "Increases the incentive to leave." },
+            { "text": "Ban phone numbers entirely", "why": "Heavy-handed and often ineffective." }
+          ],
+          "explanation": "Marketplaces must keep creating value for both sides."
+        }
+      ],
+      "exercise": {
+        "scenario": "You're designing monetisation for a PM-learning app like this one.",
+        "prompt": "Propose a model, define the free and paid tiers, choose a value metric and name one risk with mitigation.",
+        "modelAnswer": "Model: freemium subscription. Free: the full foundations curriculum, daily lessons and spaced reviews — enough to build the habit and trust. Paid (monthly or annual, priced for Indian learners): advanced units (AI PM, strategy), unlimited interview mock sessions with detailed feedback, and portfolio case templates. Value metric: interview-preparation depth, which grows as users near job searches. Risk: users pay only around interview season and churn after. Mitigation: annual plans with a discount, and career-stage content (first 90 days as a PM) that extends value after landing a job.",
+        "checklist": [
+          "Model fits user behaviour",
+          "Free tier creates real value",
+          "Paid tier aligns with a value metric",
+          "Identifies a risk with mitigation"
+        ]
+      }
+    },
+    {
+      "id": "l_unit_economics",
+      "unitId": "u11",
+      "title": "Unit economics: CAC, LTV and margins",
+      "level": "INTERMEDIATE",
+      "objectives": [
+        "Calculate CAC, LTV and contribution margin",
+        "Interpret the LTV:CAC ratio and payback period",
+        "Use unit economics in product decisions"
+      ],
+      "prerequisites": ["l_business_models", "l_retention_cohorts"],
+      "related": ["l_growth_loops", "l_ai_cost_latency"],
+      "tags": ["unit economics", "cac", "ltv", "margin"],
+      "quickMinutes": 6,
+      "deepMinutes": 9,
+      "quick": {
+        "explanation": {
+          "en": "Unit economics asks whether you make or lose money on each customer or order. CAC (customer acquisition cost) is what you spend to win a customer. LTV (lifetime value) is the profit a customer brings over their lifetime — roughly margin per period × expected lifetime. If LTV is comfortably above CAC (a common rule of thumb is 3:1), growth is sustainable.",
+          "ta": "Unit economics kekkuradhu: ovvoru customer illa order-la laabamaa nashtamaa? CAC (customer acquisition cost) — oru customer-a pidikka neenga selavu panradhu. LTV (lifetime value) — oru customer avanga lifetime-la kondu varra laabam — sumaar ovvoru period margin × ethirpaakkura lifetime. LTV, CAC-a vida comfortable-ah adhigam-na (common rule of thumb 3:1), growth sustainable."
+        },
+        "analogy": {
+          "en": "A tea stall owner who spends ₹50 on flyers to attract a customer who buys one ₹10 tea and never returns is losing money on every customer.",
+          "ta": "₹50 flyers-ku selavu panni, ore oru ₹10 tea kudichittu thirumba varaadha customer-a pidikkura tea kadai owner, ovvoru customer-layum nashtam paarkiraar."
+        },
+        "takeaway": {
+          "en": "Growth only creates value when each customer is worth more than they cost to acquire and serve.",
+          "ta": "Ovvoru customer-um avangala pidikka, serve panna aagura selavai vida adhiga mathippu kondadhaa irundhaa dhaan growth value create pannum."
+        }
+      },
+      "deep": [
+        {
+          "title": "Key formulas",
+          "body": "CAC = total acquisition spend ÷ new customers acquired in the period. Contribution margin per order = revenue − variable costs (delivery, payment fees, discounts, support). Simple LTV = average contribution margin per month × average customer lifetime in months (lifetime ≈ 1 ÷ monthly churn rate). Payback period = CAC ÷ monthly contribution margin per customer."
+        },
+        {
+          "title": "Worked example",
+          "body": "A subscription app spends ₹6,00,000 on marketing and gains 2,000 subscribers: CAC = ₹300. Each pays ₹199 per month with ₹40 variable cost, so contribution is ₹159 per month. Monthly churn of 10% gives an expected lifetime of about 10 months, so LTV ≈ ₹1,590. LTV:CAC ≈ 5.3:1, and payback ≈ 300 ÷ 159 ≈ 1.9 months — healthy, if the churn estimate holds."
+        },
+        {
+          "title": "How product decisions move unit economics",
+          "body": "Retention improvements raise LTV. Better onboarding and referrals lower CAC. Operational efficiency (batching deliveries, cheaper payment methods, fewer support contacts) raises margin. Discounts lower margin and can attract low-retention users. PMs should model the economic effect of major features."
+        },
+        {
+          "title": "Pitfalls",
+          "body": "Blended CAC hides expensive channels — calculate it per channel. LTV based on optimistic, unproven lifetimes. Ignoring the time value of money and long paybacks. And confusing revenue with contribution: high-revenue orders can still lose money."
+        }
+      ],
+      "example": "Illustrative example: a quick-commerce service finds that orders below ₹200 have negative contribution after delivery cost. It introduces a small-cart fee and bundles suggestions to raise basket size, improving contribution without hurting overall order volume much.",
+      "counterexample": "Celebrating growth from a ₹500 cashback campaign while each acquired user spends ₹300 in total before churning.",
+      "mistakes": [
+        "Using blended CAC only",
+        "Assuming lifetimes without cohort data",
+        "Ignoring variable costs like discounts and delivery"
+      ],
+      "keyTerms": [
+        { "term": "CAC", "meaning": "Customer acquisition cost: spend to acquire one customer." },
+        { "term": "LTV", "meaning": "Lifetime value: total contribution a customer generates over their lifetime." },
+        { "term": "Contribution margin", "meaning": "Revenue minus variable costs for an order or customer." },
+        { "term": "Payback period", "meaning": "Time to recover CAC from a customer's contribution." }
+      ],
+      "questions": [
+        {
+          "id": "q_unit_econ_1",
+          "kind": "RECALL",
+          "prompt": "₹10 lakh marketing spend brings 5,000 new customers. What's the CAC?",
+          "options": [
+            { "text": "₹200", "correct": true, "why": "₹10,00,000 ÷ 5,000 = ₹200." },
+            { "text": "₹2,000", "why": "Check the division." },
+            { "text": "₹50", "why": "Too low." },
+            { "text": "₹500", "why": "No." }
+          ],
+          "explanation": "CAC = spend ÷ new customers."
+        },
+        {
+          "id": "q_unit_econ_2",
+          "kind": "RECALL",
+          "prompt": "With 5% monthly churn, what's the approximate average customer lifetime?",
+          "options": [
+            { "text": "20 months", "correct": true, "why": "1 ÷ 0.05 = 20." },
+            { "text": "5 months", "why": "That would be 20% churn." },
+            { "text": "50 months", "why": "That would be 2% churn." },
+            { "text": "12 months", "why": "No." }
+          ],
+          "explanation": "Lifetime ≈ 1 ÷ churn rate."
+        },
+        {
+          "id": "q_unit_econ_3",
+          "kind": "APPLICATION",
+          "prompt": "Channel A: CAC ₹150, LTV ₹600. Channel B: CAC ₹400, LTV ₹500. Where should you shift budget?",
+          "options": [
+            { "text": "Toward A (4:1) and away from B (1.25:1), while checking A can scale", "correct": true, "why": "Right — compare LTV:CAC per channel." },
+            { "text": "Toward B because LTV is similar", "why": "B's CAC is much higher." },
+            { "text": "Split equally", "why": "Ignores the economics." },
+            { "text": "Stop all marketing", "why": "A is profitable." }
+          ],
+          "explanation": "Analyse unit economics per channel."
+        },
+        {
+          "id": "q_unit_econ_4",
+          "kind": "APPLICATION",
+          "prompt": "A feature reduces monthly churn from 10% to 8%. What happens to LTV (all else equal)?",
+          "options": [
+            { "text": "It rises about 25% (lifetime goes from 10 to 12.5 months)", "correct": true, "why": "Yes — small churn improvements have big LTV effects." },
+            { "text": "It rises 2%", "why": "Underestimates the compounding effect." },
+            { "text": "No change", "why": "Lifetime increases." },
+            { "text": "It falls", "why": "Opposite." }
+          ],
+          "explanation": "Retention is a powerful LTV lever."
+        }
+      ],
+      "exercise": {
+        "scenario": "A meal-subscription startup charges ₹2,500 per month. Food and delivery cost ₹1,900 per month per customer. Monthly churn is 12%. CAC is ₹3,000.",
+        "prompt": "Calculate contribution, lifetime, LTV, LTV:CAC and payback, assess health, and propose two product levers.",
+        "modelAnswer": "Contribution = ₹2,500 − ₹1,900 = ₹600 per month. Lifetime ≈ 1 ÷ 0.12 ≈ 8.3 months. LTV ≈ ₹600 × 8.3 ≈ ₹5,000. LTV:CAC ≈ 1.7:1 — weak. Payback = ₹3,000 ÷ ₹600 = 5 months, which is a large share of the 8-month lifetime. Levers: 1) reduce churn with menu personalisation and easy pause instead of cancel (raises lifetime); 2) lower delivery cost by batching deliveries by neighbourhood and time slot (raises contribution). Also check CAC per channel and push referrals, which tend to be cheaper.",
+        "checklist": [
+          "Calculations are correct",
+          "Interprets LTV:CAC and payback",
+          "Levers target LTV, margin or CAC",
+          "Levers are product-driven"
+        ]
+      }
+    },
+    {
+      "id": "l_growth_loops",
+      "unitId": "u11",
+      "title": "Growth: AARRR and growth loops",
+      "level": "INTERMEDIATE",
+      "objectives": [
+        "Use the AARRR (pirate metrics) framework",
+        "Explain growth loops and why they beat linear funnels",
+        "Design a referral or content loop"
+      ],
+      "prerequisites": ["l_funnels", "l_unit_economics"],
+      "related": ["l_gtm_pmf", "l_moats_platforms"],
+      "tags": ["growth", "aarrr", "loops", "referral"],
+      "quick": {
+        "explanation": {
+          "en": "AARRR maps the customer lifecycle: Acquisition (they find you), Activation (first value), Retention (they come back), Referral (they bring others) and Revenue (they pay). Growth loops are cycles where the output of one user's activity brings in new users — for example, shared content attracting new viewers who also create and share. Loops compound; one-off campaigns don't.",
+          "ta": "AARRR customer lifecycle-a map pannum: Acquisition (ungala kandupidikkiraanga), Activation (mudhal value), Retention (thirumba varaanga), Referral (mathavangala kootittu varaanga), Revenue (kaasu kattuvaanga). Growth loops-na: oru user-oda activity-oda output pudhu users-a kondu varra cycle — udhaaranam share panna content pudhu viewers-a izhukkum, avangalum create panni share pannuvaanga. Loops compound aagum; one-time campaigns aagaadhu."
+        },
+        "analogy": {
+          "en": "A campaign is like pushing a swing once; a loop is like a swing that pumps itself higher each time.",
+          "ta": "Campaign oru thadavai oonjal-a thallura maadhiri; loop ovvoru thadavaiyum thaane innum uyarama poga pump panra oonjal maadhiri."
+        },
+        "takeaway": {
+          "en": "Find the stage where users leak most, and look for loops where user activity naturally brings new users.",
+          "ta": "Users adhigama ozhugura stage-a kandupidinga; user activity iyalbaave pudhu users-a kondu varra loops-a thedunga."
+        }
+      },
+      "deep": [
+        {
+          "title": "AARRR as a diagnostic",
+          "body": "Dave McClure's ‘pirate metrics’ help locate the bottleneck. Huge acquisition with poor activation means the onboarding or value promise is broken. Good activation with poor retention means the ongoing value is weak. Fix stages in order of impact; pouring users into a leaky retention stage wastes money."
+        },
+        {
+          "title": "Types of growth loops",
+          "body": "Viral loops: users invite others because the product works better together (payments, messaging) or for rewards (referral credits). Content loops: users create content that search engines or social platforms surface to new users (reviews, Q&A). Paid loops: revenue from users funds more acquisition — works when LTV exceeds CAC. Sales loops: customers expand usage, producing case studies that win more customers."
+        },
+        {
+          "title": "Designing a referral loop",
+          "body": "1) A natural sharing moment (after a success, such as a completed order). 2) Clear value for both sides (a double-sided reward or inherent value of being together). 3) Low friction (one-tap share via WhatsApp). 4) Smooth onboarding for the invited person. 5) Measurement: invites sent per user, invite acceptance, activation of invited users. Viral coefficient K = invites per user × conversion; K > 1 means self-sustaining growth, which is rare."
+        },
+        {
+          "title": "Growth ethics",
+          "body": "Avoid dark patterns: spammy contact uploads, misleading rewards, guilt-tripping notifications. They may boost short-term numbers but damage trust and retention, and they can violate privacy laws."
+        }
+      ],
+      "example": "Illustrative example: a UPI payments app has a built-in viral loop — to pay a friend, the friend may need the app or a compatible UPI app; every payment exposes the brand to new users. A cashback referral adds an incentive on top of the inherent loop.",
+      "counterexample": "A referral programme offering ₹200 to both sides that attracts users who cash out the bonus and never return, raising CAC without retention.",
+      "mistakes": [
+        "Spending on acquisition while retention is broken",
+        "Referral rewards that attract fraud or low-intent users",
+        "Dark-pattern growth tactics"
+      ],
+      "keyTerms": [
+        { "term": "AARRR", "meaning": "Acquisition, Activation, Retention, Referral, Revenue — pirate metrics." },
+        { "term": "Growth loop", "meaning": "A self-reinforcing cycle where user activity produces new users." },
+        { "term": "Viral coefficient (K)", "meaning": "New users each user brings in: invites per user × conversion rate." }
+      ],
+      "questions": [
+        {
+          "id": "q_growth_1",
+          "kind": "RECALL",
+          "prompt": "A product gets many sign-ups, but few users experience core value. Which AARRR stage is weak?",
+          "options": [
+            { "text": "Activation", "correct": true, "why": "Correct." },
+            { "text": "Acquisition", "why": "Sign-ups are fine." },
+            { "text": "Revenue", "why": "Not the first issue." },
+            { "text": "Referral", "why": "Not the first issue." }
+          ],
+          "explanation": "Locate the bottleneck stage."
+        },
+        {
+          "id": "q_growth_2",
+          "kind": "RECALL",
+          "prompt": "Each user sends 4 invites, and 20% convert. What's K?",
+          "options": [
+            { "text": "0.8", "correct": true, "why": "4 × 0.2 = 0.8." },
+            { "text": "4", "why": "Ignores conversion." },
+            { "text": "0.2", "why": "Ignores invites." },
+            { "text": "1.2", "why": "No." }
+          ],
+          "explanation": "K = invites × conversion."
+        },
+        {
+          "id": "q_growth_3",
+          "kind": "APPLICATION",
+          "prompt": "A recipe app wants a content loop. Which design fits best?",
+          "options": [
+            { "text": "Let users publish recipes and reviews that are searchable on the web, linking new visitors to the app", "correct": true, "why": "User content is discovered by new users who create more content." },
+            { "text": "Buy more ads", "why": "That's paid acquisition, not a content loop." },
+            { "text": "Email existing users more often", "why": "Retention tactic, not a loop." },
+            { "text": "Add a dark mode", "why": "Unrelated." }
+          ],
+          "explanation": "Content loops turn creation into acquisition."
+        },
+        {
+          "id": "q_growth_4",
+          "kind": "APPLICATION",
+          "prompt": "Retention after week 1 is 8%. Marketing wants to double the acquisition budget. What's your advice?",
+          "options": [
+            { "text": "Fix activation and retention first; more acquisition into a leaky bucket wastes money", "correct": true, "why": "Right." },
+            { "text": "Triple the budget", "why": "Worsens unit economics." },
+            { "text": "Start a referral programme now", "why": "Users who don't stay won't refer much." },
+            { "text": "Change the logo", "why": "Unrelated." }
+          ],
+          "explanation": "Retention before acquisition."
+        }
+      ],
+      "exercise": {
+        "scenario": "A study-group app helps college students prepare for exams together.",
+        "prompt": "Identify a natural growth loop, describe its steps, list the metrics you'd track and one risk.",
+        "modelAnswer": "Loop: a student creates a study group for an upcoming exam → invites classmates via WhatsApp (they need the app to join the shared notes and quizzes) → invited classmates join, study and later create groups for other subjects → those groups invite more classmates. Metrics: groups created per active user, invites per group, invite acceptance rate, activation of invited users (joined a session within 48 hours), and groups created by invited users. Risk: spammy invites annoying students — mitigate by keeping invites user-initiated and context-specific.",
+        "checklist": [
+          "Loop is natural to the product's value",
+          "Steps form a cycle",
+          "Metrics cover each loop step",
+          "Identifies a risk"
+        ]
+      }
+    },
+    {
+      "id": "l_gtm_pmf",
+      "unitId": "u11",
+      "title": "Go-to-market and product-market fit",
+      "level": "INTERMEDIATE",
+      "objectives": [
+        "Explain product-market fit and how to measure it",
+        "Outline a go-to-market plan: segment, positioning, channels, pricing",
+        "Recognise when to scale versus keep iterating"
+      ],
+      "prerequisites": ["l_growth_loops", "l_competitive"],
+      "related": ["l_launches", "l_lifecycle", "l_personas_segments"],
+      "tags": ["go-to-market", "pmf", "launch"],
+      "quickMinutes": 6,
+      "quick": {
+        "explanation": {
+          "en": "Product-market fit (PMF) means a product satisfies a strong need for a specific market so well that users keep coming back and recommend it. Signals: retention curves that flatten, organic word of mouth and the ‘very disappointed’ test (a common benchmark: 40%+ of users would be very disappointed if they could no longer use it). Go-to-market (GTM) is how you bring a product to customers: target segment, positioning, channels, pricing and launch plan.",
+          "ta": "Product-market fit (PMF)-na: oru specific market-oda strong need-a product evlo nallaa satisfy pannudhu-na, users thirumba thirumba varaanga, mathavangalukku recommend pannuraanga. Signals: flat aagura retention curves, organic word of mouth, ‘very disappointed’ test (common benchmark: 40%+ users ‘idhu illaina romba disappointed aaven’-nu solluvaanga). Go-to-market (GTM) — product-a customers-kitta eppadi kondu poradhu: target segment, positioning, channels, pricing, launch plan."
+        },
+        "analogy": {
+          "en": "PMF is when the restaurant has a queue outside without advertising; GTM is how you got the first people in the door.",
+          "ta": "Advertisement illaama restaurant veliya queue nikkudhu-na adhu PMF; mudhal customers-a ulla kondu vandha vazhi dhaan GTM."
+        },
+        "takeaway": {
+          "en": "Don't scale go-to-market spend before retention shows real fit in your target segment.",
+          "ta": "Target segment-la retention real fit-a kaattura varai GTM spend-a scale pannaadheenga."
+        }
+      },
+      "deep": [
+        {
+          "title": "Measuring PMF",
+          "body": "No single number proves PMF. Combine: retention curves that flatten at a healthy level for your category; the Sean Ellis survey (‘How would you feel if you could no longer use this product?’ — the 40% ‘very disappointed’ benchmark is a rule of thumb); organic growth through referrals; and qualitative pull (customers asking for more, complaining when it's down). Measure within your target segment, not across all users."
+        },
+        {
+          "title": "Before PMF vs after PMF",
+          "body": "Before: focus on learning, a narrow segment, rapid iteration, manual tactics that don't scale (personal onboarding, founder-led sales). After: focus on scaling acquisition channels, operational reliability, adjacent segments and efficiency. Scaling before PMF burns money and can bury the signal."
+        },
+        {
+          "title": "GTM plan components",
+          "body": "1) Target segment and ideal customer profile. 2) Positioning and messaging. 3) Pricing and packaging. 4) Channels: product-led (self-serve, viral), sales-led (B2B), partnerships, community, content, paid. 5) Launch sequencing: beta, limited release, general availability. 6) Success metrics for each stage. 7) Readiness: support, documentation, sales enablement."
+        },
+        {
+          "title": "Product-led vs sales-led",
+          "body": "Product-led growth relies on users discovering, trying and buying the product themselves (common for low-price, simple products). Sales-led relies on sales teams (common for complex, high-price B2B). Many companies blend them: self-serve for small teams, sales for enterprises."
+        }
+      ],
+      "example": "Illustrative example: a B2B invoicing tool for Indian freelancers finds strong retention among designers and developers who invoice foreign clients. It narrows GTM to that segment: positioning around ‘get paid internationally, GST-ready’, channels through freelancer communities and YouTube tutorials, and a low monthly price with a free trial.",
+      "counterexample": "Spending crores on TV ads for an app whose 30-day retention is 3%.",
+      "mistakes": [
+        "Scaling marketing before PMF",
+        "Measuring PMF across all users instead of the target segment",
+        "Choosing channels that don't match the product's price and complexity"
+      ],
+      "keyTerms": [
+        { "term": "PMF", "meaning": "Product-market fit: strong demand and retention in a specific market." },
+        { "term": "GTM", "meaning": "Go-to-market: the plan for reaching and winning customers." },
+        { "term": "Product-led growth", "meaning": "Growth driven by users adopting the product themselves." },
+        { "term": "ICP", "meaning": "Ideal customer profile: the customer type you can best serve and win." }
+      ],
+      "questions": [
+        {
+          "id": "q_gtm_1",
+          "kind": "RECALL",
+          "prompt": "Which is the strongest evidence of PMF?",
+          "options": [
+            { "text": "Retention curves flattening at a healthy level in the target segment, plus organic referrals", "correct": true, "why": "Behavioural evidence of lasting value." },
+            { "text": "A big launch-day spike", "why": "Spikes fade." },
+            { "text": "Positive press coverage", "why": "Not user behaviour." },
+            { "text": "Investor interest", "why": "Not proof of fit." }
+          ],
+          "explanation": "Retention and organic pull signal fit."
+        },
+        {
+          "id": "q_gtm_2",
+          "kind": "RECALL",
+          "prompt": "When does product-led growth typically fit best?",
+          "options": [
+            { "text": "Simple, lower-priced products users can adopt on their own", "correct": true, "why": "Yes." },
+            { "text": "Complex enterprise systems needing long procurement", "why": "Usually sales-led." },
+            { "text": "Products with no free trial", "why": "PLG relies on self-serve trials." },
+            { "text": "Hardware for hospitals", "why": "Usually sales-led." }
+          ],
+          "explanation": "Match the channel to the product's complexity and price."
+        },
+        {
+          "id": "q_gtm_3",
+          "kind": "APPLICATION",
+          "prompt": "Survey: 22% of all users say ‘very disappointed’, but 48% of freelance designers do. What's the implication?",
+          "options": [
+            { "text": "You may have PMF in the freelance-designer segment; focus GTM there", "correct": true, "why": "Right — fit is segment-specific." },
+            { "text": "No PMF anywhere", "why": "The segment shows strong signals." },
+            { "text": "Expand to every segment equally", "why": "Dilutes focus." },
+            { "text": "The survey is broken", "why": "Segment differences are expected." }
+          ],
+          "explanation": "Find where fit is strongest."
+        },
+        {
+          "id": "q_gtm_4",
+          "kind": "APPLICATION",
+          "prompt": "Your app has strong retention in Bengaluru. Leadership wants to launch in 20 cities next month. What's prudent?",
+          "options": [
+            { "text": "Expand in stages — a few similar cities first — checking that retention and operations hold before scaling further", "correct": true, "why": "Validates fit in new markets while limiting risk." },
+            { "text": "Launch all 20 at once", "why": "High operational and fit risk." },
+            { "text": "Never expand", "why": "Expansion is the next step after fit." },
+            { "text": "Expand only to international markets", "why": "Different contexts and higher risk." }
+          ],
+          "explanation": "Fit in one market doesn't guarantee fit in all."
+        }
+      ],
+      "exercise": {
+        "scenario": "You're launching an AI-powered resume-review feature in a job app for fresh graduates.",
+        "prompt": "Write a mini GTM plan: segment, positioning statement, two channels, pricing approach, launch stages and success metrics per stage.",
+        "modelAnswer": "Segment: final-year engineering and commerce students in tier-1 and tier-2 cities applying for first jobs. Positioning: ‘For final-year students applying for their first job, ResumeCheck gives instant, specific feedback that makes your resume recruiter-ready in 10 minutes. Unlike generic templates, it explains what to fix and why.’ Channels: college placement-cell partnerships; short Instagram and YouTube tutorials. Pricing: 2 free reviews, then a low-priced pack during placement season. Stages: beta with 3 colleges (metric: users who apply edits and rate feedback useful), limited launch in 20 colleges (week-2 return rate, paid conversion), general launch (organic referrals, interview-call self-reports).",
+        "checklist": [
+          "Specific segment",
+          "Positioning names the target, benefit and differentiator",
+          "Channels fit the segment",
+          "Staged launch with metrics per stage"
+        ]
+      }
+    }
+  ],
+  "checkpoint": {
+    "id": "cp_u11",
+    "title": "Growth or burn?",
+    "scenario": "A grocery-delivery startup grew orders 5x in six months with heavy discounts. Investors ask whether the business is healthy. Contribution per order is negative, and retention without discounts is unclear.",
+    "minutes": 9,
+    "debrief": "You looked past headline growth to unit economics, retention-based fit, sustainable loops and the right monetisation — the full business picture a PM must understand.",
+    "steps": [
+      {
+        "id": "cp_u11_1",
+        "lessonId": "l_unit_economics",
+        "kind": "APPLICATION",
+        "prompt": "Contribution per order is −₹40. What does that mean for scaling?",
+        "options": [
+          { "text": "Each additional order loses money; scaling without fixing margins increases losses", "correct": true, "why": "Negative unit economics worsen with scale." },
+          { "text": "Scale fixes it automatically", "why": "Only if costs fall with scale — prove that first." },
+          { "text": "It doesn't matter if orders grow", "why": "Losses grow too." }
+        ],
+        "explanation": "Fix unit economics before scaling."
+      },
+      {
+        "id": "cp_u11_2",
+        "lessonId": "l_gtm_pmf",
+        "kind": "APPLICATION",
+        "prompt": "How do you test whether there's real PMF beneath the discounts?",
+        "options": [
+          { "text": "Compare retention of cohorts with reduced discounts and survey the most retained segment", "correct": true, "why": "Removes the subsidy to reveal true demand." },
+          { "text": "Increase discounts to see if orders grow", "why": "Measures discount appetite, not fit." },
+          { "text": "Count downloads", "why": "Vanity." }
+        ],
+        "explanation": "Fit must survive without subsidies."
+      },
+      {
+        "id": "cp_u11_3",
+        "lessonId": "l_growth_loops",
+        "kind": "APPLICATION",
+        "prompt": "Which growth approach is more sustainable than discounts?",
+        "options": [
+          { "text": "A neighbourhood loop: shared group orders and referrals in housing societies that also batch deliveries", "correct": true, "why": "A loop that adds users and lowers delivery cost together." },
+          { "text": "Bigger cashback", "why": "Deepens losses." },
+          { "text": "More TV ads", "why": "Paid acquisition into weak economics." }
+        ],
+        "explanation": "Loops that improve economics compound."
+      },
+      {
+        "id": "cp_u11_4",
+        "lessonId": "l_business_models",
+        "kind": "APPLICATION",
+        "prompt": "Which monetisation change best aligns price with value?",
+        "options": [
+          { "text": "A delivery membership for frequent users plus a small-cart fee, so heavy users get value and small orders cover costs", "correct": true, "why": "Aligns pricing with usage and cost." },
+          { "text": "Free delivery forever for everyone", "why": "Unsustainable." },
+          { "text": "Hidden fees at checkout", "why": "Destroys trust." }
+        ],
+        "explanation": "Charge in line with value and cost."
+      }
+    ]
+  }
+}

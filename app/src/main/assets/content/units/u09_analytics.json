@@ -1,0 +1,681 @@
+{
+  "unit": {
+    "id": "u09",
+    "order": 9,
+    "title": "Product Analytics & Metrics",
+    "summary": "Measure what matters: KPIs, North Star metrics, funnels and activation, retention and cohorts, and diagnosing metric changes (with SQL literacy).",
+    "level": "INTERMEDIATE",
+    "prerequisites": ["u04"]
+  },
+  "lessons": [
+    {
+      "id": "l_metrics_basics",
+      "unitId": "u09",
+      "title": "Metrics: KPIs, inputs and outputs",
+      "level": "INTERMEDIATE",
+      "objectives": [
+        "Distinguish input and output metrics, and leading and lagging indicators",
+        "Recognise vanity metrics",
+        "Choose a metric that reflects real user value"
+      ],
+      "prerequisites": ["l_okrs"],
+      "related": ["l_north_star", "l_funnels", "l_ai_metrics"],
+      "tags": ["metrics", "kpi", "analytics"],
+      "quickMinutes": 6,
+      "quick": {
+        "explanation": {
+          "en": "A KPI (key performance indicator) is a metric you track to judge whether things are going well. Output metrics show results (revenue, retention); input metrics are things the team can influence directly that drive those results (search success rate, delivery time). Leading indicators predict the future; lagging ones confirm the past. Vanity metrics — like total downloads — look good but don't guide decisions.",
+          "ta": "KPI (key performance indicator) — vishayangal nalla poguthaa-nu judge panna track panra metric. Output metrics results-a kaattum (revenue, retention); input metrics — team nerdiyaa influence panna mudiyura, andha results-a drive panra vishayangal (search success rate, delivery time). Leading indicators future-a predict pannum; lagging indicators past-a confirm pannum. Vanity metrics — total downloads maadhiri — paakka nallaa irukkum, aana decisions-ku guide pannaadhu."
+        },
+        "analogy": {
+          "en": "Your weight is a lagging output; daily steps and meals are leading inputs you can control. Owning a gym membership is a vanity metric.",
+          "ta": "Unga weight — lagging output; daily steps, saapaadu — neenga control panna mudiyura leading inputs. Gym membership vechirukkuradhu — vanity metric."
+        },
+        "takeaway": {
+          "en": "Pick metrics that change when users get real value and that the team can act on.",
+          "ta": "Users-ku real value kidaikkumbodhu maarura, team act panna mudiyura metrics-a choose pannunga."
+        }
+      },
+      "deep": [
+        {
+          "title": "Why it exists",
+          "body": "Without metrics, teams can't tell whether their work helps. With the wrong metrics, they optimise the wrong thing — Goodhart's law: when a measure becomes a target, it stops being a good measure. Choosing metrics well is a core PM skill."
+        },
+        {
+          "title": "Types of metrics",
+          "body": "Output vs input: revenue (output) is driven by conversion, order frequency and basket size (inputs). Leading vs lagging: week-1 activation (leading) predicts 3-month retention (lagging). Counts vs rates: ‘10,000 orders’ (count) vs ‘order conversion of 4%’ (rate) — rates normalise for scale. Guardrails: metrics that must not degrade, such as crash rate, refunds or complaints."
+        },
+        {
+          "title": "Vanity vs actionable metrics",
+          "body": "Vanity: cumulative sign-ups, page views, app downloads — they only go up and hide problems. Actionable: metrics tied to user behaviour and decisions, such as the percentage of new users who complete a first order within 7 days, or the repeat-purchase rate. Ask: if this metric changed, would we do anything differently?"
+        },
+        {
+          "title": "Good metric checklist",
+          "body": "Clear definition (what counts, the time window), tied to user value, sensitive enough to move within weeks, hard to game, segmentable (by platform, cohort, city) and paired with guardrails."
+        }
+      ],
+      "example": "Illustrative example: a ride app's output metric is completed trips per week. Inputs include driver availability within 5 minutes, ETA accuracy and payment success rate. The team improving ETA accuracy tracks ETA error (input), expects cancellations (leading) to drop, and later checks completed trips (lagging output).",
+      "counterexample": "Celebrating 1 million downloads while 85% of users uninstall within a week.",
+      "mistakes": [
+        "Tracking only cumulative counts",
+        "Choosing metrics the team can't influence",
+        "Optimising one metric without guardrails"
+      ],
+      "keyTerms": [
+        { "term": "KPI", "meaning": "Key performance indicator: a metric used to track success." },
+        { "term": "Leading indicator", "meaning": "A metric that predicts future outcomes." },
+        { "term": "Vanity metric", "meaning": "A metric that looks impressive but doesn't inform decisions." },
+        { "term": "Goodhart's law", "meaning": "When a measure becomes a target, it stops being a good measure." }
+      ],
+      "questions": [
+        {
+          "id": "q_metrics_basics_1",
+          "kind": "RECALL",
+          "prompt": "Which is a vanity metric?",
+          "options": [
+            { "text": "Total cumulative app downloads", "correct": true, "why": "Yes — it only goes up and says nothing about value." },
+            { "text": "Week-4 retention rate", "why": "Actionable." },
+            { "text": "Checkout conversion rate", "why": "Actionable." },
+            { "text": "Repeat-purchase rate", "why": "Actionable." }
+          ],
+          "explanation": "Vanity metrics don't guide decisions."
+        },
+        {
+          "id": "q_metrics_basics_2",
+          "kind": "RECALL",
+          "prompt": "For a food-delivery business, which is an input metric?",
+          "options": [
+            { "text": "Quarterly revenue", "why": "Output." },
+            { "text": "Average delivery time", "correct": true, "why": "Correct — the team can influence it, and it drives outcomes." },
+            { "text": "Annual profit", "why": "Output." },
+            { "text": "Market share", "why": "Output." }
+          ],
+          "explanation": "Inputs are levers; outputs are results."
+        },
+        {
+          "id": "q_metrics_basics_3",
+          "kind": "APPLICATION",
+          "prompt": "A team is told to maximise ‘notifications sent’. What's the likely outcome?",
+          "options": [
+            { "text": "Spam that annoys users and may raise uninstalls — Goodhart's law", "correct": true, "why": "Right — optimising an activity metric causes harm." },
+            { "text": "Better engagement forever", "why": "Over-notification usually backfires." },
+            { "text": "No change", "why": "Behaviour follows incentives." },
+            { "text": "Lower costs", "why": "Unrelated." }
+          ],
+          "explanation": "Targets shape behaviour; choose them carefully."
+        },
+        {
+          "id": "q_metrics_basics_4",
+          "kind": "APPLICATION",
+          "prompt": "You want to improve search in an e-commerce app. Which metric best reflects user value?",
+          "options": [
+            { "text": "Number of searches performed", "why": "More searches could mean users can't find things." },
+            { "text": "Percentage of searches leading to a product view and add-to-cart within the session", "correct": true, "why": "Yes — it measures whether search helps users find what they want." },
+            { "text": "Time spent on the search page", "why": "Ambiguous — longer could be worse." },
+            { "text": "Search bar size", "why": "Not a metric of value." }
+          ],
+          "explanation": "Measure success, not activity."
+        }
+      ],
+      "exercise": {
+        "scenario": "You're PM for a podcast app.",
+        "prompt": "Define one output metric, three input metrics, one leading indicator and one guardrail metric, with precise definitions.",
+        "modelAnswer": "Output: weekly listening hours per active user. Inputs: 1) percentage of app opens where playback starts within 30 seconds; 2) recommendation click-through rate; 3) episode download success rate. Leading indicator: percentage of new users who follow at least 3 podcasts in week 1 (predicts long-term retention). Guardrail: notification opt-out rate, which shouldn't rise as we push recommendations.",
+        "checklist": [
+          "Metrics have precise definitions",
+          "Inputs are levers the team controls",
+          "Leading indicator plausibly predicts the output",
+          "Includes a guardrail"
+        ]
+      }
+    },
+    {
+      "id": "l_north_star",
+      "unitId": "u09",
+      "title": "The North Star Metric",
+      "level": "INTERMEDIATE",
+      "objectives": [
+        "Define a North Star Metric and its purpose",
+        "Evaluate candidate North Stars",
+        "Break a North Star into input metrics"
+      ],
+      "prerequisites": ["l_metrics_basics"],
+      "related": ["l_okrs", "l_growth_loops", "l_ai_metrics"],
+      "tags": ["north star", "metrics", "strategy"],
+      "quick": {
+        "explanation": {
+          "en": "A North Star Metric is the single metric that best captures the core value your product delivers to customers, and that predicts long-term business success. It aligns teams: each team works on input metrics that drive it. A good North Star measures value delivered (for example, ‘nights booked’), not just activity or revenue.",
+          "ta": "North Star Metric-na: unga product customers-ku kodukkura core value-a best-ah capture panra, long-term business success-a predict panra ore metric. Idhu teams-a align pannum: ovvoru team-um adha drive panra input metrics mela velai seiyum. Nalla North Star delivered value-a measure pannum (udhaaranam ‘book aana nights’), activity illa revenue mattum illa."
+        },
+        "analogy": {
+          "en": "Sailors used the North Star to keep direction; each crew member has a different job, but they steer toward the same point.",
+          "ta": "Maalumigal direction-ku North Star-a paathaanga; crew-la ovvoruthar velaiyum vera, aana ellarum ore pakkam dhaan kappal-a selutharaanga."
+        },
+        "takeaway": {
+          "en": "Your North Star should rise only when customers get more of the value you promise.",
+          "ta": "Neenga promise panra value customers-ku adhigama kidaikkumbodhu mattum dhaan unga North Star yeranum."
+        }
+      },
+      "deep": [
+        {
+          "title": "Why it exists",
+          "body": "Different teams optimising different metrics can pull in opposite directions: growth spams users while retention tries to reduce churn. A shared North Star gives everyone a common definition of value and success."
+        },
+        {
+          "title": "Characteristics of a good North Star",
+          "body": "It reflects customer value (users benefit when it rises), leads to revenue (it predicts business success), is measurable and understandable, and can be influenced by teams through input metrics. Examples often cited publicly: an accommodation marketplace's ‘nights booked’, or a messaging product's ‘messages sent’. These illustrate the idea; companies' internal metrics vary and change."
+        },
+        {
+          "title": "From North Star to inputs",
+          "body": "Decompose it into drivers. For ‘weekly orders delivered on time’: number of active customers × orders per customer × on-time delivery rate. Teams then own inputs: growth owns new active customers, the customer experience team owns reorder frequency, logistics owns the on-time rate."
+        },
+        {
+          "title": "Pitfalls",
+          "body": "Choosing revenue as the North Star (it's an outcome of value, and it can be grown in harmful ways), choosing a metric that's easy to game, ignoring guardrails like quality or trust, and changing the North Star too often."
+        }
+      ],
+      "example": "Illustrative example: a learning app considers ‘daily active users’, ‘minutes watched’ and ‘lessons completed with passing quiz scores per week’. The last one best captures real learning value, because users can be active or watch without learning. It becomes the North Star, with streak-pressure notifications kept in check by a guardrail on notification opt-outs.",
+      "counterexample": "Making ‘time spent in app’ the North Star for a payments app, where users want to finish as quickly as possible.",
+      "mistakes": [
+        "Choosing revenue or a vanity metric",
+        "Picking a metric users wouldn't recognise as value",
+        "Having no input-metric breakdown"
+      ],
+      "keyTerms": [
+        { "term": "North Star Metric", "meaning": "The single metric that best captures the core customer value and predicts long-term success." },
+        { "term": "Input tree", "meaning": "A breakdown of the North Star into the drivers teams can influence." }
+      ],
+      "questions": [
+        {
+          "id": "q_north_star_1",
+          "kind": "RECALL",
+          "prompt": "What makes a good North Star Metric?",
+          "options": [
+            { "text": "It captures the core value customers get and predicts long-term success", "correct": true, "why": "Correct." },
+            { "text": "It's the biggest number on the dashboard", "why": "Size isn't value." },
+            { "text": "It changes every week", "why": "It should be stable." },
+            { "text": "Only finance understands it", "why": "It should be widely understood." }
+          ],
+          "explanation": "Value + predictive power + clarity."
+        },
+        {
+          "id": "q_north_star_2",
+          "kind": "RECALL",
+          "prompt": "Why is revenue usually a poor North Star?",
+          "options": [
+            { "text": "It's a lagging outcome and can be grown in ways that hurt users", "correct": true, "why": "Yes — value should drive revenue, not the other way round." },
+            { "text": "Revenue isn't important", "why": "It's very important — just not the best North Star." },
+            { "text": "It can't be measured", "why": "It can." },
+            { "text": "It's too small", "why": "Irrelevant." }
+          ],
+          "explanation": "North Stars measure value delivered."
+        },
+        {
+          "id": "q_north_star_3",
+          "kind": "APPLICATION",
+          "prompt": "Which is the best North Star for a ride-hailing app?",
+          "options": [
+            { "text": "App opens per day", "why": "Activity, not value." },
+            { "text": "Completed rides per week", "correct": true, "why": "Right — each completed ride is value for riders and drivers." },
+            { "text": "Number of drivers registered", "why": "Supply count, not value delivered." },
+            { "text": "Marketing spend", "why": "A cost, not value." }
+          ],
+          "explanation": "Pick the unit of delivered value."
+        },
+        {
+          "id": "q_north_star_4",
+          "kind": "APPLICATION",
+          "prompt": "Your North Star is ‘weekly orders delivered’. Which is the best input metric for the logistics team?",
+          "options": [
+            { "text": "Percentage of orders delivered within the promised time", "correct": true, "why": "Yes — logistics can influence it, and it drives repeat orders." },
+            { "text": "Total company revenue", "why": "Not directly controllable by logistics." },
+            { "text": "Number of app installs", "why": "That's a growth metric." },
+            { "text": "Office headcount", "why": "Unrelated." }
+          ],
+          "explanation": "Inputs map North Star drivers to team ownership."
+        }
+      ],
+      "exercise": {
+        "scenario": "You're PM at a job-matching platform connecting employers and job seekers.",
+        "prompt": "Propose a North Star Metric, explain why it's better than two alternatives, and break it into three input metrics with an owning team each.",
+        "modelAnswer": "North Star: successful hires per week (a job seeker accepts an offer through the platform). Better than ‘applications submitted’ (activity, which can be spammy) and ‘jobs posted’ (supply only). Inputs: 1) relevant applications per job — matching team; 2) interview-to-offer rate — employer tools team; 3) active job seekers with complete profiles — growth and onboarding team. Guardrail: employer satisfaction with candidate quality.",
+        "checklist": [
+          "North Star reflects value for both sides",
+          "Compares alternatives with reasoning",
+          "Breaks it into controllable inputs",
+          "Assigns team ownership"
+        ]
+      }
+    },
+    {
+      "id": "l_funnels",
+      "unitId": "u09",
+      "title": "Funnels and activation",
+      "level": "INTERMEDIATE",
+      "objectives": [
+        "Build and read a conversion funnel",
+        "Define activation and the ‘aha moment’",
+        "Find and prioritise the biggest drop-off"
+      ],
+      "prerequisites": ["l_metrics_basics", "l_journey_maps"],
+      "related": ["l_retention_cohorts", "l_growth_loops", "l_ux_fundamentals"],
+      "tags": ["funnel", "activation", "conversion"],
+      "quick": {
+        "explanation": {
+          "en": "A funnel tracks how many users move through the sequence of steps toward a goal — for example, open app → search → view product → add to cart → pay. The step with the biggest drop is often the best place to improve. Activation is when a new user first experiences the product's core value (the ‘aha moment’), such as completing their first order.",
+          "ta": "Funnel — oru goal-a nokki pogura steps-la evlo users munneraanga-nu track pannum — udhaaranam app open → search → product paakuradhu → cart-la podradhu → pay. Adhigama drop aagura step pala samayam improve panna best idam. Activation-na: pudhu user mudhal thadavai product-oda core value-a anubavikkura moment (‘aha moment’), udhaaranam mudhal order complete panradhu."
+        },
+        "analogy": {
+          "en": "Like a leaky pipe: water enters at the top, and you look for the biggest leak first rather than polishing the tap.",
+          "ta": "Ozhugura pipe maadhiri: mela thanni ulla pogudhu; tap-a polish panradha vida, periya leak-a mudhalla kandupidikkanum."
+        },
+        "takeaway": {
+          "en": "Find the biggest leak in the funnel, understand why it happens, and get new users to their aha moment fast.",
+          "ta": "Funnel-la periya leak-a kandupidinga, adhu en nadakkudhu-nu purinjukkonga, pudhu users-a seekiram aha moment-ku kondu vaanga."
+        }
+      },
+      "deep": [
+        {
+          "title": "Building a funnel",
+          "body": "Define the goal and each step as a tracked event, choose a time window (for example within one session or 7 days) and a starting cohort. Calculate step-to-step and overall conversion. Example: 10,000 opened → 6,000 searched (60%) → 3,000 viewed a product (50%) → 900 added to cart (30%) → 600 paid (67%). The biggest relative drop is view → cart."
+        },
+        {
+          "title": "Diagnosing drop-offs",
+          "body": "Segment by platform, device, city, traffic source and new vs returning users; drops often concentrate in one segment (for example older Android phones). Then use session recordings, usability tests and interviews to learn why. Check instrumentation too: sometimes a ‘drop’ is a tracking bug."
+        },
+        {
+          "title": "Activation and the aha moment",
+          "body": "Activation is the first experience of core value, defined by a behaviour that correlates with retention, such as ‘added 3 friends in week 1’ or ‘completed the first lesson and quiz’. Find it by comparing retained and churned users' early behaviour, then validate it with experiments, because correlation isn't causation. Reduce time-to-value: remove steps between sign-up and aha."
+        },
+        {
+          "title": "Pitfalls",
+          "body": "Optimising late steps while early steps leak more; forcing users through steps that inflate one metric but hurt the experience; and confusing correlation with causation when defining activation."
+        }
+      ],
+      "example": "Illustrative example: a mutual-fund app finds that 70% of sign-ups never finish KYC. Segmenting shows the drop is worst at document upload on low-end phones. Compressing images and allowing resume later raises KYC completion, and more users reach their aha moment: seeing their first investment.",
+      "counterexample": "Redesigning the payment success animation while 60% of users abandon at sign-up.",
+      "mistakes": [
+        "Looking only at overall conversion",
+        "Not segmenting drop-offs",
+        "Defining activation without checking its link to retention"
+      ],
+      "keyTerms": [
+        { "term": "Funnel", "meaning": "A sequence of steps toward a goal, with conversion measured at each step." },
+        { "term": "Activation", "meaning": "A new user's first experience of the product's core value." },
+        { "term": "Time-to-value", "meaning": "How long it takes a new user to experience core value." }
+      ],
+      "questions": [
+        {
+          "id": "q_funnels_1",
+          "kind": "RECALL",
+          "prompt": "Funnel: 1,000 → 800 → 200 → 150. Which step has the biggest relative drop?",
+          "options": [
+            { "text": "Step 2 → 3 (800 → 200, 25% conversion)", "correct": true, "why": "Correct — 75% are lost there." },
+            { "text": "Step 1 → 2", "why": "80% convert." },
+            { "text": "Step 3 → 4", "why": "75% convert." },
+            { "text": "All equal", "why": "No." }
+          ],
+          "explanation": "Compare step-to-step conversion."
+        },
+        {
+          "id": "q_funnels_2",
+          "kind": "RECALL",
+          "prompt": "What defines a good activation event?",
+          "options": [
+            { "text": "An early behaviour that strongly correlates with long-term retention and reflects core value", "correct": true, "why": "Yes." },
+            { "text": "Opening the app once", "why": "Too shallow." },
+            { "text": "Seeing the splash screen", "why": "No value." },
+            { "text": "Granting notification permission", "why": "Not core value." }
+          ],
+          "explanation": "Activation = first real value."
+        },
+        {
+          "id": "q_funnels_3",
+          "kind": "APPLICATION",
+          "prompt": "Checkout conversion dropped sharply yesterday, but only on iOS. What's the best first step?",
+          "options": [
+            { "text": "Check for a recent iOS release or tracking change and investigate errors on that platform", "correct": true, "why": "Right — a sudden platform-specific drop suggests a bug or instrumentation issue." },
+            { "text": "Redesign checkout", "why": "Premature." },
+            { "text": "Run a survey", "why": "Too slow for a sudden drop." },
+            { "text": "Ignore it", "why": "Sudden drops need investigation." }
+          ],
+          "explanation": "Segment, then check releases and instrumentation."
+        },
+        {
+          "id": "q_funnels_4",
+          "kind": "APPLICATION",
+          "prompt": "Retained users mostly ‘save 3 recipes in week 1’. Can you conclude saving recipes causes retention?",
+          "options": [
+            { "text": "Not yet — it's a correlation; test it, e.g. by nudging some new users to save recipes and comparing retention", "correct": true, "why": "Yes — validate causation with an experiment." },
+            { "text": "Yes, force everyone to save 3 recipes", "why": "Forcing behaviour may not create value." },
+            { "text": "No, data is useless", "why": "It's a useful hypothesis." },
+            { "text": "Only if users say so", "why": "Experiments are better evidence." }
+          ],
+          "explanation": "Correlation suggests; experiments confirm."
+        }
+      ],
+      "exercise": {
+        "scenario": "A ride-hailing app funnel for new users: install 100,000 → sign-up 70,000 → add payment 35,000 → first ride requested 28,000 → first ride completed 21,000.",
+        "prompt": "Calculate step conversions, identify the biggest drop, propose two hypotheses for it and how you'd test one.",
+        "modelAnswer": "Conversions: install→sign-up 70%; sign-up→payment 50%; payment→request 80%; request→completed 75%. Biggest drop: adding a payment method (50%). Hypotheses: 1) users don't want to add a card before they've tried the service; 2) the payment setup fails or is confusing for UPI users. Test 1: an A/B test allowing cash or UPI on the first ride without upfront payment setup, measuring first-ride completion and payment failure as a guardrail.",
+        "checklist": [
+          "Calculates step conversions correctly",
+          "Identifies the biggest drop",
+          "Gives plausible hypotheses",
+          "Proposes a test with a metric and guardrail"
+        ]
+      }
+    },
+    {
+      "id": "l_retention_cohorts",
+      "unitId": "u09",
+      "title": "Retention, churn and cohorts",
+      "level": "INTERMEDIATE",
+      "objectives": [
+        "Read a cohort retention table and curve",
+        "Explain churn and why retention drives growth",
+        "Identify healthy vs unhealthy retention shapes"
+      ],
+      "prerequisites": ["l_funnels"],
+      "related": ["l_metric_diagnosis", "l_unit_economics", "l_gtm_pmf"],
+      "tags": ["retention", "churn", "cohorts"],
+      "quickMinutes": 6,
+      "quick": {
+        "explanation": {
+          "en": "Retention measures how many users keep coming back over time; churn is the share who stop. A cohort is a group of users who started in the same period (for example, everyone who signed up in January). Comparing cohorts shows whether the product is improving. A healthy retention curve flattens out — some users stay for the long term — instead of falling toward zero.",
+          "ta": "Retention — kaalam poga poga evlo users thirumbi varaanga-nu measure pannum; churn — niruthuravanga share. Cohort-na ore period-la start panna users group (udhaaranam January-la sign up panna ellarum). Cohorts-a compare pannina product improve aagudhaa-nu theriyum. Healthy retention curve zero-ku vizhaama flat aagum — sila users long-term-ah iruppaanga."
+        },
+        "analogy": {
+          "en": "A gym's January joiners: many stop by February, but if a steady group still comes in June, the gym has real value for them.",
+          "ta": "Gym-la January-la serndhavanga: February-kulla neraiya per niruthiduvaanga, aana June-la kooda oru steady group varudhu-na, avangalukku gym-la real value irukku."
+        },
+        "takeaway": {
+          "en": "Retention is the clearest signal of value — growth without retention is filling a leaking bucket.",
+          "ta": "Retention dhaan value-oda clear-aana signal — retention illaadha growth ozhugura bucket-a nirappura maadhiri."
+        }
+      },
+      "deep": [
+        {
+          "title": "Why retention matters",
+          "body": "Acquiring users costs money. If they leave quickly, growth requires ever more spending. Retained users generate repeat revenue, referrals and data. Small retention improvements compound: they raise lifetime value and make every acquisition channel more efficient."
+        },
+        {
+          "title": "Reading a cohort table",
+          "body": "Rows are cohorts (January, February, March sign-ups); columns are periods since start (week 1, week 2…); cells show the percentage still active. Read across a row to see how one cohort decays; read down a column to see whether newer cohorts retain better at the same age — evidence that product changes are working."
+        },
+        {
+          "title": "Curve shapes",
+          "body": "Declining to zero: no lasting value (a product-market-fit problem). Flattening: a core of users finds lasting value — the height of the plateau matters. Smiling (rising later): users return, for example through new features or network effects. Compare against your category: a daily-use messaging app and a once-a-year tax app have very different natural frequencies."
+        },
+        {
+          "title": "Defining ‘active’ and churn",
+          "body": "Match the definition to the natural frequency of use: weekly for groceries, monthly for bill payments. For subscriptions, churn means cancellation; distinguish voluntary churn (chose to leave) from involuntary (payment failed). Reducing involuntary churn — retrying failed payments, reminding users about expiring cards — is often a quick win."
+        }
+      ],
+      "example": "Illustrative example: a meditation app's January cohort retains 40% → 20% → 12% → 11% → 11% at weeks 1–5, flattening around 11%. After adding personalised short sessions, the April cohort flattens around 16% — evidence that the change improved lasting value.",
+      "counterexample": "Reporting ‘monthly active users grew 30%’ while each new cohort retains worse than the last, hidden by heavy marketing spend.",
+      "mistakes": [
+        "Looking only at total active users instead of cohorts",
+        "Using the wrong activity frequency for your product",
+        "Ignoring involuntary churn"
+      ],
+      "keyTerms": [
+        { "term": "Cohort", "meaning": "A group of users who share a starting period or characteristic." },
+        { "term": "Churn rate", "meaning": "The percentage of users or customers who stop using or paying in a period." },
+        { "term": "Retention curve", "meaning": "A chart of the percentage of a cohort still active over time." }
+      ],
+      "questions": [
+        {
+          "id": "q_retention_1",
+          "kind": "RECALL",
+          "prompt": "A retention curve that flattens at 25% suggests:",
+          "options": [
+            { "text": "A core group finds lasting value", "correct": true, "why": "Yes — the plateau represents retained users." },
+            { "text": "The product is failing completely", "why": "A curve falling to zero would suggest that." },
+            { "text": "Tracking is broken", "why": "Not necessarily." },
+            { "text": "Everyone will churn eventually", "why": "A plateau suggests the opposite." }
+          ],
+          "explanation": "Look for curves that flatten."
+        },
+        {
+          "id": "q_retention_2",
+          "kind": "RECALL",
+          "prompt": "Why compare cohorts instead of only total active users?",
+          "options": [
+            { "text": "New sign-ups can hide worsening retention in totals", "correct": true, "why": "Correct." },
+            { "text": "Cohorts are easier to spell", "why": "No." },
+            { "text": "Totals are always wrong", "why": "They're useful, just incomplete." },
+            { "text": "Investors prefer cohorts", "why": "Not the core reason." }
+          ],
+          "explanation": "Cohorts isolate product improvements from growth effects."
+        },
+        {
+          "id": "q_retention_3",
+          "kind": "APPLICATION",
+          "prompt": "Many subscription cancellations come from failed card renewals. What's a high-impact fix?",
+          "options": [
+            { "text": "Retry failed payments, offer UPI autopay and notify users before cards expire", "correct": true, "why": "Right — this reduces involuntary churn." },
+            { "text": "Raise prices", "why": "Unrelated and may worsen churn." },
+            { "text": "Add more content", "why": "Doesn't address payment failures." },
+            { "text": "Ignore it; users chose to leave", "why": "They didn't choose — their payments failed." }
+          ],
+          "explanation": "Separate voluntary from involuntary churn."
+        },
+        {
+          "id": "q_retention_4",
+          "kind": "APPLICATION",
+          "prompt": "For a tax-filing app used once a year, which retention metric fits?",
+          "options": [
+            { "text": "Daily active users", "why": "Doesn't match the natural frequency." },
+            { "text": "Year-over-year returning filers", "correct": true, "why": "Yes — match the measurement to how often the product is naturally used." },
+            { "text": "Weekly sessions", "why": "Wrong frequency." },
+            { "text": "Minutes per day", "why": "Irrelevant." }
+          ],
+          "explanation": "Define ‘active’ by natural usage frequency."
+        }
+      ],
+      "exercise": {
+        "scenario": "Week-4 retention by sign-up month for a grocery app: Jan 18%, Feb 17%, Mar 15%, Apr 14%. Total active users grew 40% over the same period because of heavy discounts.",
+        "prompt": "Interpret the data, explain the risk to leadership and propose two investigations.",
+        "modelAnswer": "Interpretation: each new cohort retains worse even though total users grew, so growth is driven by discount-acquired users who don't stay. Risk: rising acquisition costs with falling value per user — growth isn't sustainable. Investigations: 1) compare retention of discount-acquired vs organic users to see whether the discount attracts low-intent users; 2) analyse early experience in recent cohorts (delivery times, stock-outs) to check whether quality fell as volume grew.",
+        "checklist": [
+          "Reads the cohort trend correctly",
+          "Explains why totals mislead",
+          "Communicates business risk clearly",
+          "Proposes targeted investigations"
+        ]
+      }
+    },
+    {
+      "id": "l_metric_diagnosis",
+      "unitId": "u09",
+      "title": "Diagnosing metric changes (and SQL literacy)",
+      "level": "INTERMEDIATE",
+      "objectives": [
+        "Follow a structured approach to explain a metric drop",
+        "Separate internal from external causes",
+        "Read basic SQL queries used by analysts"
+      ],
+      "prerequisites": ["l_retention_cohorts"],
+      "related": ["l_ab_testing", "l_experiment_pitfalls"],
+      "tags": ["root cause", "analytics", "sql", "interview"],
+      "quickMinutes": 6,
+      "deepMinutes": 10,
+      "quick": {
+        "explanation": {
+          "en": "When a metric suddenly changes, don't guess. First check whether it's real (tracking bugs, data delays). Then define it precisely, check the time pattern (sudden or gradual, seasonal?), segment it (platform, region, new vs returning), look for internal causes (releases, experiments, pricing) and external ones (competitors, holidays, outages), and break the metric into its components to locate the change.",
+          "ta": "Oru metric thideernu maarina, guess pannaadheenga. Mudhalla adhu real-aa-nu check pannunga (tracking bugs, data delays). Apram precise-ah define pannunga, time pattern paarunga (thideernu-aa, mella-vaa, seasonal-aa?), segment pannunga (platform, region, new vs returning), internal causes (releases, experiments, pricing), external causes (competitors, holidays, outages) paarunga, metric-a components-ah pirichu maatram enga-nu kandupidinga."
+        },
+        "analogy": {
+          "en": "Like a doctor with a patient's fever: confirm the thermometer works, ask when it started, check other symptoms, and rule out causes systematically.",
+          "ta": "Fever-oda vandha patient-a paakura doctor maadhiri: thermometer sariya work aagudhaa-nu confirm panni, eppo aarambichadhu-nu kettu, mathha symptoms paathu, kaaranangalai ondru ondraa rule out pannuvaanga."
+        },
+        "takeaway": {
+          "en": "Validate the data, segment, decompose, then check internal and external causes — in that order.",
+          "ta": "Data-va validate pannunga, segment pannunga, decompose pannunga, apram internal & external causes — indha order-la."
+        }
+      },
+      "deep": [
+        {
+          "title": "A structured framework",
+          "body": "1) Clarify: exact metric definition, how big the change is, and the time frame. 2) Validate: tracking changes, data pipeline delays, definition changes. 3) Time pattern: sudden drops suggest releases, outages or bugs; gradual ones suggest competition or quality decay; repeating ones suggest seasonality. 4) Segment: platform, app version, geography, user type, channel. 5) Decompose: for example revenue = users × conversion × average order value — which component moved? 6) Internal causes: releases, experiments, pricing, marketing changes. 7) External causes: holidays, weather, competitors, regulations, news. 8) Form hypotheses, test them, and recommend actions."
+        },
+        {
+          "title": "Worked example",
+          "body": "‘Daily orders fell 15% this week.’ Validate: tracking is fine. Time: sudden drop starting Tuesday. Segment: only Android, only app version 5.2. Internal: version 5.2 was released Tuesday and changed the address screen. Hypothesis: a bug in the new address flow. Check: error logs show address validation failures for certain PIN codes. Action: hotfix, roll back the flag, monitor recovery."
+        },
+        {
+          "title": "SQL literacy for PMs",
+          "body": "SQL is the language used to query databases. Reading it helps you verify analyses and self-serve answers. Core parts: SELECT (which columns), FROM (which table), WHERE (filters), GROUP BY (aggregate by a category), COUNT/SUM/AVG (aggregations), JOIN (combine tables) and ORDER BY (sort). Example: SELECT platform, COUNT(*) AS orders FROM orders WHERE order_date = '2025-03-04' GROUP BY platform; — orders per platform for one day. Watch for pitfalls: counting duplicates (use COUNT(DISTINCT user_id)), time zones and filters that silently exclude data."
+        },
+        {
+          "title": "Interview angle",
+          "body": "‘Metric X dropped by Y% — what do you do?’ is a classic execution question. Interviewers look for structure, clarifying questions, hypotheses ranked by likelihood and a plan to confirm them. Don't jump to one cause."
+        }
+      ],
+      "example": "Illustrative example: weekly active users of a learning app fall 8%. Segmenting shows the drop is entirely in one state; checking the calendar reveals school exams that week. Comparing with last year's exam season shows a similar dip. Conclusion: seasonal, no product fix needed, but consider exam-friendly short revision content.",
+      "counterexample": "Seeing a drop and immediately announcing ‘the new design is bad’ without checking tracking, segments or seasonality.",
+      "mistakes": [
+        "Jumping to a single cause",
+        "Not checking data validity first",
+        "Forgetting external factors and seasonality"
+      ],
+      "keyTerms": [
+        { "term": "Decomposition", "meaning": "Breaking a metric into component factors to see which one changed." },
+        { "term": "Seasonality", "meaning": "Regular, predictable patterns tied to time (weekends, festivals, exams)." },
+        { "term": "SQL", "meaning": "Structured Query Language, used to query relational databases." }
+      ],
+      "questions": [
+        {
+          "id": "q_diagnosis_1",
+          "kind": "RECALL",
+          "prompt": "What should you check first when a metric suddenly drops?",
+          "options": [
+            { "text": "Whether the data and tracking are correct", "correct": true, "why": "Yes — rule out measurement issues first." },
+            { "text": "Who to blame", "why": "Unhelpful." },
+            { "text": "Competitor pricing", "why": "Later." },
+            { "text": "Redesign ideas", "why": "Premature." }
+          ],
+          "explanation": "Validate before you diagnose."
+        },
+        {
+          "id": "q_diagnosis_2",
+          "kind": "RECALL",
+          "prompt": "What does this SQL return? SELECT city, COUNT(DISTINCT user_id) FROM orders GROUP BY city;",
+          "options": [
+            { "text": "The number of unique ordering users per city", "correct": true, "why": "Correct." },
+            { "text": "Total revenue per city", "why": "That would need SUM of an amount column." },
+            { "text": "All orders sorted by city", "why": "GROUP BY aggregates; it doesn't list rows." },
+            { "text": "The number of cities", "why": "No." }
+          ],
+          "explanation": "GROUP BY + COUNT(DISTINCT) = unique counts per group."
+        },
+        {
+          "id": "q_diagnosis_3",
+          "kind": "APPLICATION",
+          "prompt": "Revenue fell 10%. Users and conversion are unchanged. Where do you look next?",
+          "options": [
+            { "text": "Average order value — prices, discounts or basket mix", "correct": true, "why": "Right — decomposition points to the remaining component." },
+            { "text": "Sign-up flow", "why": "Users are unchanged." },
+            { "text": "Push-notification copy", "why": "Conversion is unchanged." },
+            { "text": "Server costs", "why": "Revenue, not cost, changed." }
+          ],
+          "explanation": "Revenue = users × conversion × AOV."
+        },
+        {
+          "id": "q_diagnosis_4",
+          "kind": "APPLICATION",
+          "prompt": "Sessions dropped 20% on one Sunday across all platforms and cities, recovering on Monday. The most likely cause type is:",
+          "options": [
+            { "text": "An external event (e.g. a major national event or holiday) or a broad outage", "correct": true, "why": "Uniform, short-lived drops point to external factors or system-wide issues." },
+            { "text": "A bug in one Android version", "why": "It would be platform-specific." },
+            { "text": "A gradual quality decline", "why": "It recovered the next day." },
+            { "text": "A new competitor", "why": "Competitor effects are usually gradual and persistent." }
+          ],
+          "explanation": "Patterns point to cause types."
+        }
+      ],
+      "exercise": {
+        "scenario": "Interview question: ‘Food orders on our app dropped 12% week-over-week. How would you investigate?’",
+        "prompt": "Write a structured answer covering clarifying questions, data validation, segmentation, decomposition, internal and external causes, and next steps.",
+        "modelAnswer": "Clarify: is it orders placed or delivered? All cities? Sudden or gradual? Validate: any tracking or pipeline changes, delays in data? Time pattern: compare with the same week last year (festival, cricket match, monsoon). Segment: platform, app version, city, new vs returning, restaurant category. Decompose: orders = active users × order rate; check whether fewer users opened or fewer converted. Internal: releases, experiments, delivery-fee or pricing changes, restaurant supply issues. External: competitor promotions, weather, local restrictions. Next: rank hypotheses, confirm with data, fix or roll back if internal, and set up an alert for early detection.",
+        "checklist": [
+          "Starts with clarifying questions",
+          "Validates data before diagnosing",
+          "Segments and decomposes the metric",
+          "Covers internal and external causes",
+          "Ends with prioritised next steps"
+        ]
+      }
+    }
+  ],
+  "checkpoint": {
+    "id": "cp_u09",
+    "title": "The metrics review",
+    "scenario": "You present a quarterly review for a language-learning app. Leadership is excited about 2 million downloads, but revenue is flat and the CEO asks what's really happening.",
+    "minutes": 9,
+    "debrief": "You replaced a vanity metric with value-based metrics, located the leak in the funnel, used cohorts to see real retention trends and diagnosed the change systematically.",
+    "steps": [
+      {
+        "id": "cp_u09_1",
+        "lessonId": "l_metrics_basics",
+        "kind": "APPLICATION",
+        "prompt": "What's the problem with leading the review with ‘2 million downloads’?",
+        "options": [
+          { "text": "It's a vanity metric that hides whether users get value", "correct": true, "why": "Downloads don't show learning or retention." },
+          { "text": "The number is too small", "why": "Size isn't the issue." },
+          { "text": "Nothing; downloads are great", "why": "They don't explain flat revenue." }
+        ],
+        "explanation": "Lead with value metrics."
+      },
+      {
+        "id": "cp_u09_2",
+        "lessonId": "l_north_star",
+        "kind": "APPLICATION",
+        "prompt": "Which North Star would you propose?",
+        "options": [
+          { "text": "Weekly learners completing at least 3 lessons with passing quiz scores", "correct": true, "why": "Captures real learning value and predicts retention." },
+          { "text": "Total downloads", "why": "Vanity." },
+          { "text": "Ad impressions", "why": "Not user value." }
+        ],
+        "explanation": "North Stars measure delivered value."
+      },
+      {
+        "id": "cp_u09_3",
+        "lessonId": "l_funnels",
+        "kind": "APPLICATION",
+        "prompt": "The funnel shows 60% of new users never finish lesson 1. What do you prioritise?",
+        "options": [
+          { "text": "Diagnose and fix the lesson-1 drop to speed up time-to-value", "correct": true, "why": "The biggest leak blocks activation." },
+          { "text": "Redesign the premium paywall", "why": "Few users reach it." },
+          { "text": "Increase ad spend", "why": "Pours more water into a leaky funnel." }
+        ],
+        "explanation": "Fix the biggest leak first."
+      },
+      {
+        "id": "cp_u09_4",
+        "lessonId": "l_retention_cohorts",
+        "kind": "APPLICATION",
+        "prompt": "Recent cohorts retain worse than earlier ones. What's the likely implication?",
+        "options": [
+          { "text": "New users are lower intent or the early experience got worse — investigate acquisition channels and onboarding changes", "correct": true, "why": "Cohort decline points to acquisition mix or experience changes." },
+          { "text": "Retention doesn't matter", "why": "It drives revenue." },
+          { "text": "Everything is fine because totals grew", "why": "Totals hide cohort decay." }
+        ],
+        "explanation": "Cohorts reveal what totals hide."
+      },
+      {
+        "id": "cp_u09_5",
+        "lessonId": "l_metric_diagnosis",
+        "kind": "APPLICATION",
+        "prompt": "Paid conversions dropped last month. What's the most structured first move?",
+        "options": [
+          { "text": "Validate tracking, then segment by platform, country and acquisition channel, and decompose conversion into paywall views × purchase rate", "correct": true, "why": "Systematic diagnosis." },
+          { "text": "Cut prices immediately", "why": "Jumps to a fix." },
+          { "text": "Blame the payment provider", "why": "Unverified." }
+        ],
+        "explanation": "Validate → segment → decompose."
+      }
+    ]
+  }
+}

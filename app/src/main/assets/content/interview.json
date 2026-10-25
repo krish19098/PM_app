@@ -1,0 +1,810 @@
+[
+  {
+    "id": "iq_what_pm_does",
+    "category": "BEHAVIOURAL",
+    "level": "BEGINNER",
+    "roles": ["APM", "PM"],
+    "sourceType": "ORIGINAL",
+    "prompt": "In your own words, what does a product manager do — and why do you want to be one?",
+    "lessonIds": ["l_pm_role"],
+    "approach": [
+      "Define the role in one sentence: accountable for customer and business outcomes",
+      "Name the core activities: discover problems, prioritise, align, measure",
+      "Connect to a real example from your experience where you did PM-like work",
+      "Explain your motivation with specifics, not clichés"
+    ],
+    "rubric": ["Clear, accurate definition of the role", "Mentions outcomes over outputs", "Backs claims with a concrete personal example", "Motivation is specific and credible"],
+    "signals": [{ "label": "Mentions outcomes or impact", "keywords": ["outcome", "impact", "value", "result"] }],
+    "pitfalls": ["Saying ‘the PM is the CEO of the product’ without nuance", "Generic motivation like ‘I like technology’"],
+    "followUps": ["What's a PM decision you disagree with in an app you use?", "What part of the role do you expect to find hardest?"]
+  },
+  {
+    "id": "iq_favourite_product",
+    "category": "PRODUCT_SENSE",
+    "level": "BEGINNER",
+    "roles": ["APM", "PM"],
+    "sourceType": "ORIGINAL",
+    "prompt": "What's your favourite product, and how would you improve it?",
+    "lessonIds": ["l_product_thinking", "l_problem_first"],
+    "approach": [
+      "Pick a product you genuinely use and name its target user",
+      "Explain why it works: the problem it solves and its key design choices",
+      "Identify a specific user segment with an unmet problem",
+      "Propose one focused improvement, with a metric and a trade-off"
+    ],
+    "rubric": ["Explains the product's value from the user's perspective", "Chooses a specific segment and problem", "Improvement is focused and justified", "Includes a success metric and a trade-off"],
+    "pitfalls": ["Listing many features without prioritising", "Praising aesthetics only"],
+    "followUps": ["How would you measure whether your improvement worked?", "What would the company lose by building it?"]
+  },
+  {
+    "id": "iq_design_elderly_meds",
+    "category": "PRODUCT_SENSE",
+    "level": "INTERMEDIATE",
+    "roles": ["APM", "PM"],
+    "sourceType": "ORIGINAL",
+    "prompt": "Design a product that helps elderly people in India manage their medicines.",
+    "lessonIds": ["l_product_sense_answers", "l_personas_segments", "l_jtbd"],
+    "approach": [
+      "Clarify the goal (adherence, safety) and constraints (devices, language)",
+      "Segment users and pick one, e.g. elderly living alone with remote caregivers",
+      "List and prioritise problems: forgetting doses, confusing pills, refills",
+      "Brainstorm solutions, pick one with reasoning (e.g. voice reminders plus caregiver alerts)",
+      "Define a metric (on-time dose confirmation) and guardrail (alert fatigue), then risks and an MVP"
+    ],
+    "rubric": ["Clarifies goal and constraints", "Chooses and justifies a segment", "Prioritises problems", "Solution fits context (devices, language)", "Defines metrics and risks"],
+    "pitfalls": ["Designing a smartphone-only app without considering feature phones", "Ignoring caregivers"],
+    "followUps": ["How does your design change if users can't read?", "How would you prevent a false sense of safety?"]
+  },
+  {
+    "id": "iq_improve_metro",
+    "category": "PRODUCT_SENSE",
+    "level": "INTERMEDIATE",
+    "roles": ["APM", "PM"],
+    "sourceType": "ORIGINAL",
+    "prompt": "How would you improve the experience of commuting by metro rail in an Indian city?",
+    "lessonIds": ["l_journey_maps", "l_product_sense_answers"],
+    "approach": [
+      "Clarify scope: app, station experience or both",
+      "Map the commuter journey from planning to exit",
+      "Choose a segment, e.g. daily office commuters",
+      "Prioritise the biggest pain (e.g. queues at ticketing or crowding uncertainty)",
+      "Propose a solution, a metric and an MVP"
+    ],
+    "rubric": ["Uses the end-to-end journey", "Prioritises pains with reasoning", "Solution addresses a moment that matters", "Includes metrics"],
+    "pitfalls": ["Only redesigning the app UI", "No prioritisation among many pains"],
+    "followUps": ["What would you do for first-time tourists instead?", "What data would you need from the metro operator?"]
+  },
+  {
+    "id": "iq_swiggy_late_night",
+    "category": "PRODUCT_SENSE",
+    "level": "INTERMEDIATE",
+    "roles": ["APM", "PM"],
+    "company": "Swiggy",
+    "sourceType": "REPRESENTATIVE",
+    "prompt": "Practice in the context of a food-delivery company like Swiggy: how would you grow late-night orders without hurting customer experience?",
+    "lessonIds": ["l_problem_first", "l_prioritisation_basics", "l_metrics_basics"],
+    "approach": [
+      "Clarify the goal: order growth vs experience guardrails",
+      "Identify late-night segments (students, shift workers) and their problems",
+      "Diagnose supply constraints (restaurants, riders) vs demand",
+      "Prioritise solutions such as honest ETAs, curated fast kitchens, rider incentives",
+      "Define the success metric and guardrails (cancellations, delivery time)"
+    ],
+    "rubric": ["Balances growth with experience", "Considers both supply and demand", "Prioritises with reasoning", "Defines metrics and guardrails"],
+    "pitfalls": ["Only adding discounts", "Ignoring rider supply"],
+    "followUps": ["How would you test this in one city?", "What if restaurant partners resist late hours?"]
+  },
+  {
+    "id": "iq_zomato_reviews",
+    "category": "PRODUCT_SENSE",
+    "level": "INTERMEDIATE",
+    "roles": ["PM"],
+    "company": "Zomato",
+    "sourceType": "REPRESENTATIVE",
+    "prompt": "Practice in the context of a restaurant-discovery app like Zomato: how would you make restaurant reviews more trustworthy?",
+    "lessonIds": ["l_problem_first", "l_moats_platforms", "l_ux_fundamentals"],
+    "approach": [
+      "Clarify who suffers from untrustworthy reviews: diners, restaurants, the platform",
+      "Identify causes: fake reviews, outdated reviews, unclear reviewer credibility",
+      "Prioritise one cause and design interventions (verified orders, recency weighting)",
+      "Measure trust (e.g. review helpfulness votes, conversion after reading reviews)",
+      "Discuss trade-offs with review volume and restaurant relations"
+    ],
+    "rubric": ["Multi-sided view", "Root causes identified", "Feasible interventions", "Trust metric defined", "Trade-offs discussed"],
+    "pitfalls": ["Only AI moderation without product changes", "Ignoring restaurant incentives"],
+    "followUps": ["How would you detect fake reviews?", "How would restaurants react?"]
+  },
+  {
+    "id": "iq_flipkart_returns",
+    "category": "EXECUTION",
+    "level": "INTERMEDIATE",
+    "roles": ["PM"],
+    "company": "Flipkart",
+    "sourceType": "REPRESENTATIVE",
+    "prompt": "Practice in the context of an e-commerce company like Flipkart: return rates for fashion are rising. How would you investigate and reduce them?",
+    "lessonIds": ["l_metric_diagnosis", "l_funnels", "l_unit_economics"],
+    "approach": [
+      "Clarify the metric definition and the time frame",
+      "Segment returns by category, brand, size, region and reason code",
+      "Form hypotheses: size mismatch, quality gap, misleading images",
+      "Prioritise fixes such as better size guidance or photo standards",
+      "Measure return rate with guardrails on conversion"
+    ],
+    "rubric": ["Validates and segments the metric", "Ranks hypotheses", "Connects returns to unit economics", "Defines metrics and guardrails"],
+    "pitfalls": ["Making returns harder (hurts trust)", "Jumping to one cause"],
+    "followUps": ["How would you test a size-recommendation feature?", "What's the cost of a return?"]
+  },
+  {
+    "id": "iq_orders_drop",
+    "category": "METRICS",
+    "level": "INTERMEDIATE",
+    "roles": ["APM", "PM", "Product Analyst"],
+    "sourceType": "ORIGINAL",
+    "prompt": "Daily orders on our app dropped 12% week-over-week. Walk me through how you'd investigate.",
+    "lessonIds": ["l_metric_diagnosis", "l_retention_cohorts"],
+    "approach": [
+      "Clarify the metric and the size and timing of the drop",
+      "Validate data and tracking",
+      "Check the time pattern and seasonality",
+      "Segment by platform, version, region and user type",
+      "Decompose the metric; check internal and external causes; rank hypotheses"
+    ],
+    "rubric": ["Starts with clarification", "Validates data first", "Segments and decomposes", "Covers internal and external causes", "Ends with prioritised next steps"],
+    "signals": [{ "label": "Checks data validity", "keywords": ["tracking", "data", "instrument", "logging", "pipeline"] }, { "label": "Segments the drop", "keywords": ["segment", "platform", "region", "version", "cohort"] }],
+    "pitfalls": ["Guessing a single cause", "Forgetting seasonality"],
+    "followUps": ["What if the drop is only on Android version 5.2?", "How would you set up alerts to catch this earlier?"]
+  },
+  {
+    "id": "iq_north_star_ride",
+    "category": "METRICS",
+    "level": "INTERMEDIATE",
+    "roles": ["PM", "Product Analyst"],
+    "company": "Uber",
+    "sourceType": "REPRESENTATIVE",
+    "prompt": "Practice in the context of a ride-hailing company like Uber: what North Star Metric would you choose, and how would you break it down?",
+    "lessonIds": ["l_north_star", "l_metrics_basics"],
+    "approach": [
+      "Define the core value for riders and drivers",
+      "Propose a North Star (e.g. completed trips per week) and compare alternatives",
+      "Break it into inputs: active riders, request rate, match rate, completion rate",
+      "Assign team ownership and guardrails (safety incidents, driver earnings)"
+    ],
+    "rubric": ["North Star reflects two-sided value", "Compares alternatives", "Clear input tree", "Includes guardrails"],
+    "pitfalls": ["Choosing revenue", "Ignoring the driver side"],
+    "followUps": ["How would this differ for a food-delivery business?", "Which input would you invest in first?"]
+  },
+  {
+    "id": "iq_metric_success_feature",
+    "category": "METRICS",
+    "level": "BEGINNER",
+    "roles": ["APM", "Product Analyst"],
+    "sourceType": "ORIGINAL",
+    "prompt": "We launched a ‘save for later’ feature in our shopping app. How would you measure its success?",
+    "lessonIds": ["l_metrics_basics", "l_funnels"],
+    "approach": [
+      "State the feature's purpose and the user problem",
+      "Choose a primary metric linked to value (e.g. purchases from saved items)",
+      "Add adoption and engagement metrics",
+      "Add guardrails (cart conversion, page speed)",
+      "Explain how you'd attribute impact (A/B test)"
+    ],
+    "rubric": ["Ties metrics to the feature's purpose", "Primary metric reflects value", "Includes guardrails", "Considers causal measurement"],
+    "pitfalls": ["Only counting how many items were saved", "No guardrails"],
+    "followUps": ["What if saves go up but purchases don't?", "How long would you run the test?"]
+  },
+  {
+    "id": "iq_ab_test_design",
+    "category": "METRICS",
+    "level": "ADVANCED",
+    "roles": ["PM", "Product Analyst"],
+    "sourceType": "ORIGINAL",
+    "prompt": "Design an A/B test for a new one-page checkout. What could go wrong?",
+    "lessonIds": ["l_ab_testing", "l_stat_reasoning", "l_experiment_pitfalls"],
+    "approach": [
+      "State the hypothesis and primary metric",
+      "Choose guardrails, unit of randomisation and duration (full weeks)",
+      "Explain sample-size reasoning and the minimum detectable effect",
+      "List pitfalls: peeking, multiple metrics, novelty, SRM",
+      "Define the decision rule in advance"
+    ],
+    "rubric": ["Complete test design", "Understands power and sample size", "Names real pitfalls and mitigations", "Pre-registered decision rule"],
+    "signals": [{ "label": "Mentions sample size or power", "keywords": ["sample", "power", "mde", "significan"] }],
+    "pitfalls": ["Stopping when results look good", "Choosing the metric after the test"],
+    "followUps": ["The result is +1% with p = 0.08. What now?", "How would you test this with only 2,000 users a week?"]
+  },
+  {
+    "id": "iq_prioritise_backlog",
+    "category": "PRIORITISATION",
+    "level": "BEGINNER",
+    "roles": ["APM", "PM"],
+    "sourceType": "ORIGINAL",
+    "prompt": "You have five feature requests from sales, support, leadership and engineering, and capacity for two. How do you decide?",
+    "lessonIds": ["l_prioritisation_basics", "l_rice"],
+    "approach": [
+      "Anchor on strategy and goals",
+      "Gather evidence for each request: users affected, impact, confidence",
+      "Estimate effort with engineering",
+      "Use a framework (e.g. RICE) to compare, then apply judgement for strategy and risk",
+      "Communicate the decision and what's deferred, with reasons"
+    ],
+    "rubric": ["Anchors on strategy", "Uses evidence and a framework", "Applies judgement beyond scores", "Communicates trade-offs"],
+    "pitfalls": ["Deciding by seniority", "Ignoring must-do items like compliance"],
+    "followUps": ["Leadership's request scores lowest. What do you do?", "How do you say no to sales?"]
+  },
+  {
+    "id": "iq_rice_calc",
+    "category": "PRIORITISATION",
+    "level": "INTERMEDIATE",
+    "roles": ["APM", "PM"],
+    "sourceType": "ORIGINAL",
+    "prompt": "Walk me through how you'd use RICE to compare an onboarding redesign and a referral programme. Where might RICE mislead you?",
+    "lessonIds": ["l_rice", "l_prioritisation_basics"],
+    "approach": [
+      "Define reach, impact, confidence and effort for each, with assumptions",
+      "Calculate the scores",
+      "Interpret differences in confidence",
+      "Explain RICE's blind spots: strategic bets, enabling work, mandatory items"
+    ],
+    "rubric": ["Correct use of RICE", "Explicit assumptions", "Interprets confidence", "Knows limitations"],
+    "pitfalls": ["Treating scores as the final decision", "Unrealistic estimates"],
+    "followUps": ["How would you raise confidence in the referral estimate?", "What if the CEO insists on the lower score?"]
+  },
+  {
+    "id": "iq_cut_scope",
+    "category": "EXECUTION",
+    "level": "INTERMEDIATE",
+    "roles": ["PM"],
+    "sourceType": "ORIGINAL",
+    "prompt": "Two weeks before a fixed launch date, engineering says you can only deliver 60% of the scope. What do you do?",
+    "lessonIds": ["l_moscow_kano", "l_kanban_estimation", "l_stakeholders"],
+    "approach": [
+      "Understand what's at risk and why",
+      "Re-scope using MoSCoW: what must ship for the launch to be valuable and safe",
+      "Consider alternatives: phased release, feature flags",
+      "Communicate early with stakeholders, with options and trade-offs",
+      "Plan the follow-up release and learn from the estimation miss"
+    ],
+    "rubric": ["Protects core value and quality", "Uses scope prioritisation", "Communicates proactively", "Considers phased options"],
+    "pitfalls": ["Pressuring engineers to work overtime", "Hiding the problem until launch"],
+    "followUps": ["Marketing has already announced a feature you're cutting. Now what?", "How do you prevent this next time?"]
+  },
+  {
+    "id": "iq_launch_plan",
+    "category": "EXECUTION",
+    "level": "INTERMEDIATE",
+    "roles": ["PM"],
+    "sourceType": "ORIGINAL",
+    "prompt": "How would you plan the launch of a new payment method in an app with millions of users?",
+    "lessonIds": ["l_launches", "l_stakeholders"],
+    "approach": [
+      "Define success and stop criteria",
+      "Plan a staged rollout behind flags",
+      "Cover the readiness checklist: support, legal, ops, analytics, monitoring",
+      "Prepare rollback and incident response",
+      "Schedule a post-launch review"
+    ],
+    "rubric": ["Staged rollout", "Clear success and stop criteria", "Cross-functional readiness", "Rollback plan"],
+    "pitfalls": ["Big-bang launch", "Ignoring support readiness"],
+    "followUps": ["At 10% rollout, failures spike on one bank. What now?", "How do you announce it to users?"]
+  },
+  {
+    "id": "iq_conflict_engineer",
+    "category": "BEHAVIOURAL",
+    "level": "INTERMEDIATE",
+    "roles": ["APM", "PM"],
+    "sourceType": "ORIGINAL",
+    "prompt": "Tell me about a time you disagreed with an engineer or designer. How did you resolve it?",
+    "lessonIds": ["l_eng_collab", "l_stakeholders"],
+    "approach": [
+      "Use STAR: situation, task, action, result",
+      "Show that you sought to understand their perspective",
+      "Explain how evidence or user data helped resolve it",
+      "Share the outcome and what you learned"
+    ],
+    "rubric": ["Clear STAR structure", "Shows empathy and curiosity", "Uses evidence to resolve", "Reflects on learning"],
+    "signals": [{ "label": "Uses a STAR structure", "keywords": ["situation", "result", "learned", "outcome"] }],
+    "pitfalls": ["Making the other person look bad", "A story where you simply overruled them"],
+    "followUps": ["What would you do differently?", "What if you'd been wrong?"]
+  },
+  {
+    "id": "iq_failure",
+    "category": "BEHAVIOURAL",
+    "level": "BEGINNER",
+    "roles": ["APM", "PM"],
+    "sourceType": "ORIGINAL",
+    "prompt": "Tell me about a project that failed. What did you learn?",
+    "lessonIds": ["l_feedback_iteration", "l_portfolio"],
+    "approach": [
+      "Pick a genuine failure where you had ownership",
+      "Explain what you expected and what happened",
+      "Analyse the root cause honestly, including your role",
+      "Share concrete changes in how you work now"
+    ],
+    "rubric": ["Genuine ownership", "Honest root-cause analysis", "Specific learning", "Applied the learning later"],
+    "pitfalls": ["A fake failure (‘I work too hard’)", "Blaming others"],
+    "followUps": ["How did you communicate the failure?", "What signal did you miss early?"]
+  },
+  {
+    "id": "iq_influence",
+    "category": "BEHAVIOURAL",
+    "level": "ADVANCED",
+    "roles": ["PM", "Senior PM"],
+    "sourceType": "ORIGINAL",
+    "prompt": "Describe a time you influenced a decision without having authority.",
+    "lessonIds": ["l_influence", "l_stakeholders"],
+    "approach": [
+      "Set the context and why the decision mattered",
+      "Explain how you understood stakeholders' goals",
+      "Describe how you used evidence and framing",
+      "Share the outcome and relationships afterwards"
+    ],
+    "rubric": ["Understands others' incentives", "Evidence-based persuasion", "Clear outcome", "Maintained trust"],
+    "pitfalls": ["Relying on escalation", "No measurable outcome"],
+    "followUps": ["What if they still said no?", "How did you handle the people who disagreed?"]
+  },
+  {
+    "id": "iq_strategy_enter_market",
+    "category": "STRATEGY",
+    "level": "ADVANCED",
+    "roles": ["PM", "Senior PM"],
+    "sourceType": "ORIGINAL",
+    "prompt": "Should a food-delivery company enter the 10-minute grocery delivery market?",
+    "lessonIds": ["l_strategic_bets", "l_unit_economics", "l_moats_platforms"],
+    "approach": [
+      "Clarify the company's goals and current assets",
+      "Assess the market, competition and customer need",
+      "Analyse unit economics and capability fit (rider network, density)",
+      "Frame as a staged bet with risks and kill criteria",
+      "Make a clear recommendation"
+    ],
+    "rubric": ["Clear recommendation", "Uses unit economics", "Considers existing advantages", "Risk-aware staging"],
+    "pitfalls": ["‘It depends’ without a recommendation", "Ignoring economics"],
+    "followUps": ["What would make you stop the pilot?", "How would you sequence cities?"]
+  },
+  {
+    "id": "iq_spotify_india",
+    "category": "STRATEGY",
+    "level": "ADVANCED",
+    "roles": ["PM", "Senior PM"],
+    "company": "Spotify",
+    "sourceType": "REPRESENTATIVE",
+    "prompt": "Practice in the context of a music-streaming company like Spotify: how would you increase paid subscriptions in India?",
+    "lessonIds": ["l_business_models", "l_gtm_pmf", "l_personas_segments"],
+    "approach": [
+      "Clarify the goal and the current funnel (free → paid)",
+      "Segment users by willingness to pay and listening habits",
+      "Identify barriers: price sensitivity, payment methods, perceived value",
+      "Propose levers: sachet or short-term plans, UPI autopay, family plans, regional content",
+      "Define metrics and test plans"
+    ],
+    "rubric": ["Segmented view of users", "Considers Indian payment and price context", "Concrete, testable levers", "Metrics defined"],
+    "pitfalls": ["Only cutting prices", "Ignoring free-tier value"],
+    "followUps": ["How would you avoid cannibalising existing plans?", "Which experiment would you run first?"]
+  },
+  {
+    "id": "iq_competitor_launch",
+    "category": "STRATEGY",
+    "level": "INTERMEDIATE",
+    "roles": ["PM"],
+    "sourceType": "ORIGINAL",
+    "prompt": "A major competitor just launched a feature similar to your next big release. What do you do?",
+    "lessonIds": ["l_competitive", "l_vision_strategy"],
+    "approach": [
+      "Assess facts: what exactly launched, for whom, early reception",
+      "Revisit your positioning and differentiation",
+      "Decide whether to accelerate, differentiate or change course",
+      "Communicate calmly to the team and stakeholders"
+    ],
+    "rubric": ["Evidence before reaction", "Strategy-consistent response", "Clear differentiation thinking", "Calm communication"],
+    "pitfalls": ["Panic copying", "Ignoring it entirely"],
+    "followUps": ["What if their version is clearly better?", "How would you know if users are switching?"]
+  },
+  {
+    "id": "iq_estimate_chai",
+    "category": "ESTIMATION",
+    "level": "BEGINNER",
+    "roles": ["APM", "PM", "Product Analyst"],
+    "sourceType": "ORIGINAL",
+    "prompt": "Estimate how many cups of tea are sold in Chennai on a typical day.",
+    "lessonIds": ["l_opportunity_sizing"],
+    "approach": [
+      "Clarify scope: sold (not home-made), city population basis",
+      "Segment population: working adults, students, others",
+      "Assume tea-drinking share and cups bought outside per day",
+      "Calculate step by step with rounded numbers",
+      "Sanity-check (e.g. number of tea stalls × cups per stall)"
+    ],
+    "rubric": ["Clarifies scope", "Logical segmentation", "Explicit assumptions", "Sanity check"],
+    "pitfalls": ["Jumping to a number", "No sanity check"],
+    "followUps": ["How would your estimate change in winter?", "How would you size the market for a tea-delivery app?"]
+  },
+  {
+    "id": "iq_estimate_evs",
+    "category": "ESTIMATION",
+    "level": "INTERMEDIATE",
+    "roles": ["PM", "Product Analyst"],
+    "sourceType": "ORIGINAL",
+    "prompt": "Estimate the market size for an EV-charging finder app in Bengaluru.",
+    "lessonIds": ["l_opportunity_sizing", "l_business_models"],
+    "approach": [
+      "Define the market (users, searches or revenue)",
+      "Estimate EV owners by type (two-wheelers, cars, fleets)",
+      "Estimate charging behaviour and how often public charging is needed",
+      "Convert to app usage and revenue with a business model",
+      "Compare top-down and bottom-up"
+    ],
+    "rubric": ["Clear market definition", "Segments vehicle types", "Links to a business model", "Triangulates"],
+    "pitfalls": ["Ignoring home charging", "Unclear revenue model"],
+    "followUps": ["Who would pay — drivers or charging operators?", "How fast is this market growing?"]
+  },
+  {
+    "id": "iq_ai_feature_choose",
+    "category": "AI_PM",
+    "level": "INTERMEDIATE",
+    "roles": ["PM", "AI PM"],
+    "sourceType": "ORIGINAL",
+    "prompt": "Your CEO wants to ‘add AI’ to your expense-management app. How do you decide what to build?",
+    "lessonIds": ["l_ai_vs_software", "l_problem_first", "l_prioritisation_basics"],
+    "approach": [
+      "Start from user problems, not the technology",
+      "Identify tasks where AI's flexibility adds value (receipt extraction, categorisation)",
+      "Assess the error cost and oversight needed for each",
+      "Prioritise by impact, feasibility, cost and risk",
+      "Define quality metrics and an MVP"
+    ],
+    "rubric": ["Problem-first, not AI-first", "Considers error costs", "Prioritises realistically", "Defines quality evaluation"],
+    "signals": [{ "label": "Considers errors or human review", "keywords": ["error", "wrong", "review", "human", "confidence", "hallucin"] }],
+    "pitfalls": ["Building a chatbot by default", "Ignoring accuracy and cost"],
+    "followUps": ["How would you measure receipt-extraction quality?", "What if extraction is wrong 10% of the time?"]
+  },
+  {
+    "id": "iq_ai_eval_plan",
+    "category": "AI_PM",
+    "level": "ADVANCED",
+    "roles": ["AI PM"],
+    "sourceType": "ORIGINAL",
+    "prompt": "How would you evaluate an LLM-powered customer-support assistant before launch?",
+    "lessonIds": ["l_ai_evaluation", "l_rag_agents"],
+    "approach": [
+      "Define quality dimensions: correctness, groundedness, tone, safety, resolution",
+      "Build an eval set from real tickets, including edge and adversarial cases and all languages",
+      "Choose grading methods: programmatic, human, LLM-as-judge (validated)",
+      "Set launch thresholds and plan online monitoring",
+      "Feed production failures back into evals"
+    ],
+    "rubric": ["Multi-dimensional quality definition", "Representative eval set", "Appropriate grading methods", "Launch thresholds and monitoring"],
+    "signals": [{ "label": "Mentions an eval set or test cases", "keywords": ["eval", "test set", "golden", "examples", "benchmark"] }, { "label": "Addresses hallucination or grounding", "keywords": ["hallucin", "ground", "citation", "source"] }],
+    "pitfalls": ["Judging from a few demos", "Only English test cases"],
+    "followUps": ["How would you validate an LLM judge?", "What metric would you show leadership weekly?"]
+  },
+  {
+    "id": "iq_ai_rag_vs_finetune",
+    "category": "AI_PM",
+    "level": "ADVANCED",
+    "roles": ["AI PM"],
+    "sourceType": "ORIGINAL",
+    "prompt": "An internal knowledge assistant gives outdated answers. Would you use RAG, fine-tuning or both? Why?",
+    "lessonIds": ["l_rag_agents", "l_llm_fundamentals"],
+    "approach": [
+      "Diagnose: knowledge freshness vs behaviour or style problems",
+      "Explain RAG for current, citable knowledge",
+      "Explain fine-tuning for consistent behaviour or format, not for frequently changing facts",
+      "Recommend (likely RAG first) and define evaluation"
+    ],
+    "rubric": ["Correct distinction between RAG and fine-tuning", "Diagnosis drives the choice", "Considers cost and maintenance", "Evaluation plan"],
+    "pitfalls": ["Fine-tuning to inject frequently changing facts", "Ignoring retrieval quality"],
+    "followUps": ["How would you keep documents fresh?", "How do you handle access permissions for documents?"]
+  },
+  {
+    "id": "iq_ai_cost",
+    "category": "AI_PM",
+    "level": "ADVANCED",
+    "roles": ["AI PM", "PM"],
+    "sourceType": "ORIGINAL",
+    "prompt": "Your AI feature's costs are growing faster than revenue. What do you do?",
+    "lessonIds": ["l_ai_cost_latency", "l_unit_economics", "l_ai_metrics"],
+    "approach": [
+      "Measure cost per user and per successful task",
+      "Identify drivers: tokens, model choice, call frequency, abuse",
+      "Apply optimisations: trimming context, caching, routing, output limits — validated with evals",
+      "Revisit monetisation and fair-use limits",
+      "Monitor the quality and cost dashboard"
+    ],
+    "rubric": ["Quantifies unit cost", "Concrete optimisations", "Protects quality with evals", "Aligns pricing with value"],
+    "pitfalls": ["Silently degrading quality", "Ignoring abuse or heavy users"],
+    "followUps": ["When would you consider hosting an open-weight model?", "How would you communicate usage limits?"]
+  },
+  {
+    "id": "iq_ai_safety_agent",
+    "category": "AI_PM",
+    "level": "ADVANCED",
+    "roles": ["AI PM", "Senior PM"],
+    "sourceType": "ORIGINAL",
+    "prompt": "You're building an AI agent that can send emails and schedule meetings for users. What risks do you design for?",
+    "lessonIds": ["l_ai_safety", "l_rag_agents"],
+    "approach": [
+      "List risks: wrong actions, prompt injection via emails, privacy leaks, over-reliance",
+      "Match oversight to risk: confirmations for sending, undo windows",
+      "Limit tool permissions and treat email content as untrusted data",
+      "Add logging, kill switch and user controls",
+      "Include red-team tests in evaluation"
+    ],
+    "rubric": ["Identifies AI-specific risks", "Human-in-the-loop design", "Prompt-injection defences", "Recovery and controls"],
+    "signals": [{ "label": "Mentions prompt injection", "keywords": ["injection", "malicious", "untrusted"] }, { "label": "Requires confirmation", "keywords": ["confirm", "approval", "undo", "review"] }],
+    "pitfalls": ["Full autonomy from day one", "No defence against malicious emails"],
+    "followUps": ["Which actions would you allow without confirmation?", "How would you detect misuse?"]
+  },
+  {
+    "id": "iq_ai_hallucination",
+    "category": "AI_PM",
+    "level": "INTERMEDIATE",
+    "roles": ["AI PM", "PM"],
+    "sourceType": "ORIGINAL",
+    "prompt": "Users report that your AI assistant sometimes makes things up. How do you respond?",
+    "lessonIds": ["l_ai_evaluation", "l_ai_safety"],
+    "approach": [
+      "Collect and categorise examples",
+      "Find root causes: missing grounding, retrieval misses, prompt issues",
+      "Apply fixes: grounding, citations, abstention, lower temperature",
+      "Measure hallucination rate with evals",
+      "Design the UX for residual errors"
+    ],
+    "rubric": ["Systematic diagnosis", "Correct mitigations", "Measurement", "UX for residual risk"],
+    "pitfalls": ["Just telling the model ‘don't hallucinate’", "Ignoring measurement"],
+    "followUps": ["What hallucination rate is acceptable?", "How would you communicate this to users?"]
+  },
+  {
+    "id": "iq_ai_metrics_copilot",
+    "category": "AI_PM",
+    "level": "ADVANCED",
+    "roles": ["AI PM"],
+    "company": "Microsoft",
+    "sourceType": "REPRESENTATIVE",
+    "prompt": "Practice in the context of a productivity-software company like Microsoft: how would you measure the success of an AI writing assistant inside a document editor?",
+    "lessonIds": ["l_ai_metrics", "l_north_star"],
+    "approach": [
+      "Define the user value: faster, better documents",
+      "Build a metric stack: quality, product, operational, business",
+      "Choose a primary metric such as accepted suggestions per active user, with edit distance",
+      "Add guardrails: error reports, latency, cost",
+      "Plan causal measurement"
+    ],
+    "rubric": ["Layered metric stack", "Primary metric reflects value", "Includes cost and latency", "Causal evaluation"],
+    "pitfalls": ["Counting prompts sent", "No quality measure"],
+    "followUps": ["Acceptance is high, but retention is flat. Why?", "How would enterprise customers judge value?"]
+  },
+  {
+    "id": "iq_google_maps_offline",
+    "category": "PRODUCT_SENSE",
+    "level": "INTERMEDIATE",
+    "roles": ["APM", "PM"],
+    "company": "Google",
+    "sourceType": "REPRESENTATIVE",
+    "prompt": "Practice in the context of a maps product like Google Maps: how would you improve navigation for two-wheeler riders in Indian cities?",
+    "lessonIds": ["l_product_sense_answers", "l_journey_maps", "l_ux_fundamentals"],
+    "approach": [
+      "Clarify the goal and the rider segment (commuters, delivery riders)",
+      "Map the riding journey and its pain points (glancing at the phone, narrow lanes, noise)",
+      "Prioritise a key problem (e.g. safe, glanceable guidance)",
+      "Propose solutions such as voice-first guidance and two-wheeler routes",
+      "Define metrics and safety guardrails"
+    ],
+    "rubric": ["Context-aware user understanding", "Safety considered", "Focused solution", "Metrics and guardrails"],
+    "pitfalls": ["Designing for car drivers", "Ignoring safety"],
+    "followUps": ["How would you measure safety?", "What data would you need?"]
+  },
+  {
+    "id": "iq_amazon_customer_obsession",
+    "category": "BEHAVIOURAL",
+    "level": "INTERMEDIATE",
+    "roles": ["PM"],
+    "company": "Amazon",
+    "sourceType": "REPRESENTATIVE",
+    "prompt": "Practice in the context of a customer-obsessed culture like Amazon's: tell me about a time you went deep to understand a customer problem.",
+    "lessonIds": ["l_user_interviews", "l_synthesis"],
+    "approach": [
+      "STAR structure",
+      "Show how you gathered evidence directly from customers",
+      "Explain the insight and how it changed the decision",
+      "Quantify the result where possible"
+    ],
+    "rubric": ["Direct customer evidence", "Clear insight", "Decision changed by the insight", "Measured result"],
+    "pitfalls": ["Vague claims of ‘talking to users’", "No outcome"],
+    "followUps": ["What would you do differently?", "How did you know the insight was representative?"]
+  },
+  {
+    "id": "iq_razorpay_onboarding",
+    "category": "EXECUTION",
+    "level": "INTERMEDIATE",
+    "roles": ["PM"],
+    "company": "Razorpay",
+    "sourceType": "REPRESENTATIVE",
+    "prompt": "Practice in the context of a payments company like Razorpay: small merchants drop off during account activation. How would you improve activation?",
+    "lessonIds": ["l_funnels", "l_problem_validation", "l_user_stories"],
+    "approach": [
+      "Map the activation funnel (sign-up, KYC, bank verification, first payment)",
+      "Find the biggest drop and segment it",
+      "Research why merchants struggle (documents, jargon, waiting)",
+      "Prioritise fixes and write stories with acceptance criteria",
+      "Measure time-to-first-payment"
+    ],
+    "rubric": ["Funnel-based diagnosis", "Merchant research", "Prioritised fixes", "Activation metric"],
+    "pitfalls": ["Skipping compliance constraints", "Only UI tweaks"],
+    "followUps": ["How do you balance fraud checks and speed?", "What's your activation definition?"]
+  },
+  {
+    "id": "iq_phonepe_feature_phones",
+    "category": "PRODUCT_SENSE",
+    "level": "ADVANCED",
+    "roles": ["PM"],
+    "company": "PhonePe",
+    "sourceType": "REPRESENTATIVE",
+    "prompt": "Practice in the context of a digital-payments company like PhonePe: how would you design payments for users with feature phones?",
+    "lessonIds": ["l_personas_segments", "l_accessibility", "l_product_sense_answers"],
+    "approach": [
+      "Clarify constraints: no smartphone app, limited screens, possible low literacy",
+      "Segment users and their payment jobs",
+      "Consider channels: voice (IVR), SMS-based flows",
+      "Design for trust and error prevention",
+      "Define adoption and safety metrics"
+    ],
+    "rubric": ["Respects constraints", "Inclusive design", "Trust and fraud considerations", "Metrics"],
+    "pitfalls": ["Assuming smartphones", "Ignoring fraud risk"],
+    "followUps": ["How would you onboard users?", "How would you handle disputes?"]
+  },
+  {
+    "id": "iq_zoho_smb",
+    "category": "STRATEGY",
+    "level": "INTERMEDIATE",
+    "roles": ["PM"],
+    "company": "Zoho",
+    "sourceType": "REPRESENTATIVE",
+    "prompt": "Practice in the context of a business-software company like Zoho: how would you win small businesses in tier-2 Indian cities?",
+    "lessonIds": ["l_gtm_pmf", "l_personas_segments", "l_competitive"],
+    "approach": [
+      "Segment small businesses by type and digital maturity",
+      "Identify their jobs and current alternatives (paper, spreadsheets, chat)",
+      "Craft positioning and pricing for affordability",
+      "Choose channels (local partners, regional language content)",
+      "Define activation and retention metrics"
+    ],
+    "rubric": ["Segmented approach", "Competes with real alternatives", "Context-fit GTM", "Metrics"],
+    "pitfalls": ["Feature-led pitch", "Ignoring language and trust"],
+    "followUps": ["Product-led or sales-led?", "How do you reduce churn after the trial?"]
+  },
+  {
+    "id": "iq_freshworks_churn",
+    "category": "METRICS",
+    "level": "ADVANCED",
+    "roles": ["PM", "Senior PM"],
+    "company": "Freshworks",
+    "sourceType": "REPRESENTATIVE",
+    "prompt": "Practice in the context of a B2B SaaS company like Freshworks: churn among small customers rose this quarter. How would you analyse and address it?",
+    "lessonIds": ["l_retention_cohorts", "l_metric_diagnosis", "l_unit_economics"],
+    "approach": [
+      "Define churn (logo vs revenue) and validate data",
+      "Cohort and segment churn (plan, size, tenure, industry)",
+      "Separate voluntary from involuntary churn",
+      "Research reasons with churned customers",
+      "Prioritise fixes and estimate LTV impact"
+    ],
+    "rubric": ["Precise churn definitions", "Cohort analysis", "Root-cause research", "Economic impact"],
+    "pitfalls": ["Blaming the economy without analysis", "Discounts as the only fix"],
+    "followUps": ["Which churn is easiest to reduce quickly?", "How would you build an early-warning score?"]
+  },
+  {
+    "id": "iq_cred_engagement",
+    "category": "PRODUCT_SENSE",
+    "level": "ADVANCED",
+    "roles": ["PM"],
+    "company": "CRED",
+    "sourceType": "REPRESENTATIVE",
+    "prompt": "Practice in the context of a credit-card-payments app like CRED: how would you increase engagement beyond bill payments without becoming cluttered?",
+    "lessonIds": ["l_jtbd", "l_ux_fundamentals", "l_north_star"],
+    "approach": [
+      "Clarify why engagement matters for the business",
+      "Identify adjacent jobs for the target users (managing money, rewards)",
+      "Prioritise a job that fits trust and brand",
+      "Design with progressive disclosure to avoid clutter",
+      "Define meaningful engagement metrics"
+    ],
+    "rubric": ["Engagement tied to value", "JTBD-based expansion", "UX restraint", "Meaningful metrics"],
+    "pitfalls": ["Adding many unrelated features", "Measuring app opens only"],
+    "followUps": ["How do you avoid hurting the core experience?", "Which experiment first?"]
+  },
+  {
+    "id": "iq_meta_groups",
+    "category": "PRODUCT_SENSE",
+    "level": "INTERMEDIATE",
+    "roles": ["APM", "PM"],
+    "company": "Meta",
+    "sourceType": "REPRESENTATIVE",
+    "prompt": "Practice in the context of a social-platform company like Meta: design a feature that helps neighbourhood community groups organise local events.",
+    "lessonIds": ["l_product_sense_answers", "l_growth_loops", "l_personas_segments"],
+    "approach": [
+      "Clarify the goal: meaningful local connection, safety",
+      "Identify users: organisers, attendees, group admins",
+      "Prioritise organiser pain points",
+      "Design the feature and its growth loop",
+      "Define success metrics and safety guardrails"
+    ],
+    "rubric": ["Multi-user perspective", "Prioritised problems", "Natural growth loop", "Safety and metrics"],
+    "pitfalls": ["Ignoring safety and privacy", "No prioritisation"],
+    "followUps": ["How would you prevent spam events?", "What does success look like in 6 months?"]
+  },
+  {
+    "id": "iq_okr_write",
+    "category": "EXECUTION",
+    "level": "BEGINNER",
+    "roles": ["APM", "PM"],
+    "sourceType": "ORIGINAL",
+    "prompt": "Write OKRs for the onboarding team of a mutual-fund app for next quarter.",
+    "lessonIds": ["l_okrs", "l_metrics_basics"],
+    "approach": [
+      "State the objective qualitatively",
+      "Write 2–3 outcome-based key results with baselines and targets",
+      "Separate initiatives from KRs",
+      "Add a guardrail"
+    ],
+    "rubric": ["Inspiring objective", "Outcome-based KRs", "Baselines and targets", "Initiatives separated"],
+    "pitfalls": ["Task lists as KRs", "Vanity metrics"],
+    "followUps": ["Which KR is most at risk?", "How would you track progress weekly?"]
+  },
+  {
+    "id": "iq_prd_outline",
+    "category": "EXECUTION",
+    "level": "BEGINNER",
+    "roles": ["APM"],
+    "sourceType": "ORIGINAL",
+    "prompt": "Outline a PRD for adding ‘schedule a ride for later’ to a cab app.",
+    "lessonIds": ["l_prd", "l_user_stories"],
+    "approach": [
+      "Problem and evidence",
+      "Users and use cases",
+      "Goals, success metrics and guardrails",
+      "Scope and non-goals",
+      "Requirements and edge cases, open questions"
+    ],
+    "rubric": ["Problem with evidence", "Metrics and guardrails", "Clear non-goals", "Edge cases"],
+    "pitfalls": ["Implementation details", "No non-goals"],
+    "followUps": ["What if no driver accepts the scheduled ride?", "How would you price it?"]
+  },
+  {
+    "id": "iq_stakeholder_no",
+    "category": "BEHAVIOURAL",
+    "level": "INTERMEDIATE",
+    "roles": ["PM"],
+    "sourceType": "ORIGINAL",
+    "prompt": "A senior leader asks you to build something you believe is low-value. How do you handle it?",
+    "lessonIds": ["l_influence", "l_prioritisation_basics"],
+    "approach": [
+      "Understand the goal behind the request",
+      "Bring evidence and the opportunity cost",
+      "Offer alternatives that address the goal",
+      "Agree on a decision and revisit criteria",
+      "Disagree and commit if overruled"
+    ],
+    "rubric": ["Seeks the underlying goal", "Evidence-based", "Constructive alternatives", "Maturity in disagreement"],
+    "pitfalls": ["Refusing flatly", "Agreeing then not doing it"],
+    "followUps": ["What if they insist?", "How do you keep the relationship strong?"]
+  },
+  {
+    "id": "iq_lifecycle_sunset",
+    "category": "STRATEGY",
+    "level": "INTERMEDIATE",
+    "roles": ["PM"],
+    "sourceType": "ORIGINAL",
+    "prompt": "How would you decide whether to sunset a feature used by 3% of users?",
+    "lessonIds": ["l_lifecycle", "l_stakeholders", "l_unit_economics"],
+    "approach": [
+      "Understand who the 3% are and how much they value it",
+      "Quantify maintenance cost and opportunity cost",
+      "Consider alternatives and migration paths",
+      "Plan communication and timelines",
+      "Decide with clear criteria"
+    ],
+    "rubric": ["User-impact analysis", "Cost analysis", "Responsible migration", "Communication plan"],
+    "pitfalls": ["Removing abruptly", "Keeping everything forever"],
+    "followUps": ["What if the 3% are your highest-paying customers?", "How do you announce it?"]
+  }
+]

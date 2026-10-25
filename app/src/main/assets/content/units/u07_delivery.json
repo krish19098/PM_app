@@ -1,0 +1,429 @@
+{
+  "unit": {
+    "id": "u07",
+    "order": 7,
+    "title": "Delivery & Engineering Collaboration",
+    "summary": "Ship iteratively and well: Agile and Scrum, Kanban and estimation, and working effectively with engineers on trade-offs and tech debt.",
+    "level": "INTERMEDIATE",
+    "prerequisites": ["u06"]
+  },
+  "lessons": [
+    {
+      "id": "l_agile_scrum",
+      "unitId": "u07",
+      "title": "Agile and Scrum",
+      "level": "INTERMEDIATE",
+      "objectives": [
+        "Explain the core ideas of Agile",
+        "Describe Scrum's roles, events and artefacts",
+        "Clarify the PM's role relative to the Product Owner"
+      ],
+      "prerequisites": ["l_user_stories"],
+      "related": ["l_kanban_estimation", "l_eng_collab", "l_pm_vs_project"],
+      "tags": ["agile", "scrum", "sprints"],
+      "quick": {
+        "explanation": {
+          "en": "Agile is a way of building software in small increments, getting feedback often and adapting, instead of planning everything up front. Scrum is a popular Agile framework: work happens in fixed-length sprints (often two weeks), with sprint planning, daily stand-ups, a sprint review to show what was built and a retrospective to improve how the team works.",
+          "ta": "Agile-na: ellathayum munnaadiye plan pannaama, chinna chinna increments-ah software build panni, adikkadi feedback vaangi, adapt panra murai. Scrum oru popular Agile framework: velai fixed-length sprints-la nadakkum (pala samayam 2 vaaram) — sprint planning, daily stand-up, enna build pannom-nu kaattura sprint review, team velai seiyura vidhatha improve panra retrospective."
+        },
+        "analogy": {
+          "en": "Cooking for guests by tasting and adjusting as you go, rather than following a recipe blindly for two hours and tasting only at the end.",
+          "ta": "Guests-ku samaikkumbodhu adikkadi taste panni adjust panra maadhiri; rendu mani neram recipe-a kanmoodithanamaa follow panni kadaisila mattum taste panradhu illa."
+        },
+        "takeaway": {
+          "en": "Agile's value comes from frequent feedback and adaptation, not from ceremonies; if you aren't learning each sprint, you're just doing mini-waterfalls.",
+          "ta": "Agile-oda value adikkadi varra feedback-um adaptation-um dhaan, ceremonies illa; ovvoru sprint-layum kathukkalaina, adhu chinna waterfall dhaan."
+        }
+      },
+      "deep": [
+        {
+          "title": "Why it exists",
+          "body": "Traditional ‘waterfall’ projects planned everything up front and delivered at the end, often discovering too late that requirements were wrong. The 2001 Agile Manifesto valued individuals and interactions, working software, customer collaboration and responding to change. Short cycles reduce the cost of being wrong."
+        },
+        {
+          "title": "Scrum basics",
+          "body": "Roles: Product Owner (owns and orders the backlog), Scrum Master (facilitates the process and removes impediments) and Developers (build the increment). Events: sprint planning, daily scrum, sprint review and retrospective. Artefacts: product backlog, sprint backlog and the increment, each with a commitment (product goal, sprint goal, definition of done)."
+        },
+        {
+          "title": "PM vs Product Owner",
+          "body": "In many companies, the PM also acts as the Product Owner. In others, the PM focuses on discovery, strategy and outcomes while a Product Owner handles backlog details with the team. Either way, someone must connect customer value to what's built each sprint."
+        },
+        {
+          "title": "Common anti-patterns",
+          "body": "Sprints full of work that isn't releasable; stand-ups as status reports to the PM; skipped retrospectives; no sprint goal; and ‘Agile’ used as an excuse for no planning at all. Agile still needs a direction, which is where strategy and roadmaps come in."
+        }
+      ],
+      "example": "Illustrative example: a team building a loan-eligibility checker sets a sprint goal: ‘users can check eligibility with PAN and income and see a clear result’. At the review they demo it to support staff, who point out confusing jargon; the next sprint fixes the language before adding features.",
+      "counterexample": "A team runs two-week sprints for six months but never shows anything to users until a ‘big launch’ — waterfall in disguise.",
+      "mistakes": [
+        "Treating ceremonies as the point instead of feedback",
+        "Using stand-ups as status reports to the PM",
+        "Changing sprint scope constantly"
+      ],
+      "keyTerms": [
+        { "term": "Sprint", "meaning": "A fixed time-box (usually 1–4 weeks) to build a usable increment." },
+        { "term": "Backlog", "meaning": "An ordered list of work the team may do." },
+        { "term": "Retrospective", "meaning": "A meeting where the team reflects and improves how it works." },
+        { "term": "Definition of done", "meaning": "The shared quality standard work must meet to be complete." }
+      ],
+      "questions": [
+        {
+          "id": "q_agile_1",
+          "kind": "RECALL",
+          "prompt": "What's the purpose of a sprint review?",
+          "options": [
+            { "text": "To inspect the increment with stakeholders and adapt the backlog", "correct": true, "why": "Correct." },
+            { "text": "To assign blame for missed work", "why": "No." },
+            { "text": "To plan the next year", "why": "Too broad." },
+            { "text": "To discuss team process", "why": "That's the retrospective." }
+          ],
+          "explanation": "Review = product feedback; retro = process improvement."
+        },
+        {
+          "id": "q_agile_2",
+          "kind": "RECALL",
+          "prompt": "Which value is part of the Agile Manifesto?",
+          "options": [
+            { "text": "Comprehensive documentation over working software", "why": "Reversed — working software is valued more." },
+            { "text": "Responding to change over following a plan", "correct": true, "why": "Yes." },
+            { "text": "Processes and tools over individuals", "why": "Reversed." },
+            { "text": "Contract negotiation over collaboration", "why": "Reversed." }
+          ],
+          "explanation": "Agile values adaptability and collaboration."
+        },
+        {
+          "id": "q_agile_3",
+          "kind": "APPLICATION",
+          "prompt": "Daily stand-ups have become 30-minute status updates to you. What should you do?",
+          "options": [
+            { "text": "Keep them; status is useful", "why": "Stand-ups are for the team to coordinate, not to report to the PM." },
+            { "text": "Raise it in the retro and refocus stand-ups on coordination and blockers within 15 minutes", "correct": true, "why": "Right — use the team's own improvement loop." },
+            { "text": "Cancel stand-ups", "why": "Coordination still matters." },
+            { "text": "Make them longer for more detail", "why": "Worse." }
+          ],
+          "explanation": "Stand-ups serve the team, not the manager."
+        },
+        {
+          "id": "q_agile_4",
+          "kind": "APPLICATION",
+          "prompt": "A stakeholder wants a new item added mid-sprint. It's not urgent. What's best?",
+          "options": [
+            { "text": "Add it to the product backlog and prioritise it for a future sprint", "correct": true, "why": "Protect sprint focus unless something is truly urgent." },
+            { "text": "Add it to the current sprint immediately", "why": "Disrupts the sprint goal." },
+            { "text": "Ignore it", "why": "Capture and prioritise it." },
+            { "text": "Start a parallel sprint", "why": "Not how Scrum works." }
+          ],
+          "explanation": "Sprints protect focus; the backlog absorbs change."
+        }
+      ],
+      "exercise": {
+        "scenario": "Your team is starting a two-week sprint on a ‘save for later’ feature in a shopping app.",
+        "prompt": "Write a sprint goal, list three backlog items, and describe what you'd demo at the sprint review and to whom.",
+        "modelAnswer": "Sprint goal: shoppers can save items from the cart for later and move them back in one tap. Backlog items: 1) save an item from the cart to a ‘saved’ list; 2) view the saved list with current prices and stock status; 3) move a saved item back to the cart. Demo: show the full flow on a real device to support, marketing and a few shoppers from the beta group, and ask whether stock and price changes are clear.",
+        "checklist": [
+          "Sprint goal describes user value",
+          "Backlog items are small and user-centred",
+          "Demo involves real stakeholders or users",
+          "Review aims to gather feedback"
+        ]
+      }
+    },
+    {
+      "id": "l_kanban_estimation",
+      "unitId": "u07",
+      "title": "Kanban, estimation and flow",
+      "level": "INTERMEDIATE",
+      "objectives": [
+        "Explain Kanban and work-in-progress limits",
+        "Understand story points and velocity — and their limits",
+        "Communicate delivery forecasts with ranges"
+      ],
+      "prerequisites": ["l_agile_scrum"],
+      "related": ["l_eng_collab", "l_roadmaps"],
+      "tags": ["kanban", "estimation", "story points", "flow"],
+      "quick": {
+        "explanation": {
+          "en": "Kanban visualises work on a board (To do → In progress → Review → Done) and limits how much work can be in progress at once (WIP limits), so items finish faster. Estimation helps forecasting: teams often use story points (relative effort) and track velocity (points completed per sprint). Estimates are uncertain, so communicate forecasts as ranges, not promises.",
+          "ta": "Kanban velaiya oru board-la kaattum (To do → In progress → Review → Done), ore samayathula evlo velai in progress-la irukkalaam-nu limit pannum (WIP limits) — appo items seekiram mudiyum. Estimation forecast panna help pannum: teams story points (relative effort) use panni, velocity (oru sprint-la mudicha points) track pannuvaanga. Estimates uruthiyillaadhavai, adhanaala forecasts-a ranges-ah sollunga, promises-ah illa."
+        },
+        "analogy": {
+          "en": "A kitchen that starts 20 dishes at once finishes none on time; one that limits itself to five at a time serves them steadily.",
+          "ta": "Ore samayathula 20 dishes aarambikkura kitchen edhayum time-la mudikkaadhu; anju anju-nu limit panra kitchen steady-ah serve pannum."
+        },
+        "takeaway": {
+          "en": "Finishing beats starting: limit work in progress, and forecast with ranges based on real history.",
+          "ta": "Aarambikkuradha vida mudikkuradhu mukkiyam: work in progress-a limit pannunga, real history adippadaiyila ranges-oda forecast pannunga."
+        }
+      },
+      "deep": [
+        {
+          "title": "Kanban principles",
+          "body": "Visualise work, limit WIP, manage flow and improve continuously. Key flow metrics: cycle time (how long an item takes from start to done) and throughput (items finished per week). Kanban suits teams with continuous, unpredictable inflow, like support engineering or operations."
+        },
+        {
+          "title": "Story points and velocity",
+          "body": "Story points estimate relative size (a 5 is roughly 2.5 times a 2), combining effort, complexity and uncertainty. Velocity is the average points completed per sprint, useful for the team's own forecasting. Points are not comparable across teams and should never be used to measure individual productivity; doing so causes inflation and gaming."
+        },
+        {
+          "title": "Forecasting honestly",
+          "body": "Use historical throughput or velocity ranges: ‘At 25–35 points per sprint, the remaining 120 points will take 4–5 sprints.’ Add buffers for unknowns, and re-forecast as you learn. Big uncertainties (new technology, unclear requirements) deserve a short investigation, often called a spike, before estimating."
+        },
+        {
+          "title": "The PM's role",
+          "body": "PMs shouldn't estimate on behalf of engineers or pressure estimates down. They help by clarifying requirements, cutting scope to fit dates and reporting forecasts transparently to stakeholders."
+        }
+      ],
+      "example": "Illustrative example: a team with 12 tickets in progress and slow delivery sets a WIP limit of 5. Engineers pair up to finish items, and cycle time drops from 9 days to 4 days.",
+      "counterexample": "A manager compares velocity between two teams and asks the ‘slower’ team to double its points — which it does by inflating estimates.",
+      "mistakes": [
+        "Using story points to measure individual productivity",
+        "Giving single-date promises for uncertain work",
+        "Starting too many things at once"
+      ],
+      "keyTerms": [
+        { "term": "WIP limit", "meaning": "A cap on how many items can be in progress at once." },
+        { "term": "Cycle time", "meaning": "Time taken from starting an item to finishing it." },
+        { "term": "Velocity", "meaning": "Average story points a team completes per sprint." },
+        { "term": "Spike", "meaning": "A time-boxed investigation to reduce uncertainty before estimating." }
+      ],
+      "questions": [
+        {
+          "id": "q_kanban_1",
+          "kind": "RECALL",
+          "prompt": "What do WIP limits primarily improve?",
+          "options": [
+            { "text": "Flow — items finish faster with less context switching", "correct": true, "why": "Correct." },
+            { "text": "The number of items started", "why": "They reduce starting." },
+            { "text": "Meeting frequency", "why": "Unrelated." },
+            { "text": "Story point totals", "why": "Unrelated." }
+          ],
+          "explanation": "Stop starting, start finishing."
+        },
+        {
+          "id": "q_kanban_2",
+          "kind": "RECALL",
+          "prompt": "Why shouldn't you compare velocity across teams?",
+          "options": [
+            { "text": "Points are relative to each team and not a standard unit", "correct": true, "why": "Yes — comparisons create gaming." },
+            { "text": "It's illegal", "why": "No." },
+            { "text": "Velocity doesn't exist", "why": "It exists for internal forecasting." },
+            { "text": "Teams have different sprint names", "why": "Irrelevant." }
+          ],
+          "explanation": "Velocity is a team-internal forecasting tool."
+        },
+        {
+          "id": "q_kanban_3",
+          "kind": "APPLICATION",
+          "prompt": "Leadership asks for an exact launch date for a feature with unclear technical requirements. Best response?",
+          "options": [
+            { "text": "Pick a date to keep them happy", "why": "Creates a promise you can't trust." },
+            { "text": "Run a short spike to reduce uncertainty, then give a range with confidence and update it as you learn", "correct": true, "why": "Right — honest and actionable." },
+            { "text": "Refuse to estimate", "why": "Stakeholders need forecasts." },
+            { "text": "Ask engineers to commit to an aggressive date", "why": "Pressured estimates fail." }
+          ],
+          "explanation": "Reduce uncertainty, then forecast in ranges."
+        },
+        {
+          "id": "q_kanban_4",
+          "kind": "APPLICATION",
+          "prompt": "Your support-engineering team gets unpredictable bug reports daily. Which approach fits best?",
+          "options": [
+            { "text": "Kanban with WIP limits and cycle-time tracking", "correct": true, "why": "Yes — continuous, unpredictable inflow suits Kanban." },
+            { "text": "Strict quarterly waterfall plans", "why": "Too rigid." },
+            { "text": "No process", "why": "Chaos." },
+            { "text": "Four-week sprints with no changes allowed", "why": "Bugs can't wait four weeks." }
+          ],
+          "explanation": "Choose the process that fits the work."
+        }
+      ],
+      "exercise": {
+        "scenario": "Your team's last five sprints delivered 22, 30, 26, 18 and 28 points. The remaining scope for a launch is 110 points.",
+        "prompt": "Forecast how many sprints remain as a range, explain your reasoning, and write the update you'd send to stakeholders.",
+        "modelAnswer": "Average velocity is about 25 points (range 18–30). At 30 points per sprint: about 4 sprints; at 18: about 6 sprints. Forecast: 4–6 sprints, most likely 5. Update: ‘Based on our recent pace, the remaining work will take 4–6 sprints (most likely 5, around mid-March). The main risk is the payments integration; we'll update the forecast after the next sprint. If the date is fixed, we can protect it by moving the referral screen to a follow-up release.’",
+        "checklist": [
+          "Uses historical data to forecast",
+          "Gives a range rather than one date",
+          "Names key risks",
+          "Offers scope options to protect dates"
+        ]
+      }
+    },
+    {
+      "id": "l_eng_collab",
+      "unitId": "u07",
+      "title": "Working with engineers",
+      "level": "INTERMEDIATE",
+      "objectives": [
+        "Build effective, trust-based partnerships with engineers",
+        "Discuss technical trade-offs and technical debt",
+        "Involve engineers early in discovery"
+      ],
+      "prerequisites": ["l_agile_scrum"],
+      "related": ["l_stakeholders", "l_prd", "l_ai_cost_latency"],
+      "tags": ["engineering", "tech debt", "collaboration"],
+      "quick": {
+        "explanation": {
+          "en": "Great PMs treat engineers as problem-solving partners, not order-takers. Share the problem and context early, invite their ideas, and respect their ownership of how things are built. Understand technical debt — shortcuts that make future changes slower — and make room to pay it down, because it directly affects how fast the product can improve.",
+          "ta": "Nalla PMs engineers-a problem-solving partners-ah paappaanga, order eduthukkuravanga-ah illa. Problem-ayum context-ayum munnaadiye share pannunga, avanga ideas-a kelunga, eppadi build pannanum-ngradhu avanga ownership-nu respect pannunga. Technical debt-a purinjukkonga — future changes-a slow aakkura shortcuts — adha kuraikka idam kudunga, yen-na product evlo vegama improve aagum-ngradha adhu nerdiyaa affect pannum."
+        },
+        "analogy": {
+          "en": "Technical debt is like a messy kitchen: you can cook faster tonight by not washing up, but every meal after that gets slower until you clean.",
+          "ta": "Technical debt oru kalaindha kitchen maadhiri: inniki paathiram kazhuvaama vegama samaikkalaam, aana clean pannra varai adutha ovvoru saapaadum slow aagum."
+        },
+        "takeaway": {
+          "en": "Bring engineers the problem, not just the solution — and protect time for technical health.",
+          "ta": "Engineers-kitta solution mattum illa, problem-a kondu vaanga — technical health-ku time-a protect pannunga."
+        }
+      },
+      "deep": [
+        {
+          "title": "Why it matters",
+          "body": "Engineers often see solutions PMs can't: a simpler approach, an existing component, a feasibility risk. Teams where engineers understand the why make better micro-decisions during build and catch problems earlier. The PM–engineering relationship is one of the strongest predictors of a team's success."
+        },
+        {
+          "title": "Practical habits",
+          "body": "Invite a tech lead to customer interviews and discovery. Share the problem and success metric before the solution. Ask ‘what would make this simpler?’ Give context on deadlines and why they exist. Be available for questions during the build. Celebrate shipped outcomes together, and take responsibility when product calls go wrong."
+        },
+        {
+          "title": "Technical debt",
+          "body": "Debt accumulates from rushed shortcuts, outdated dependencies or designs that no longer fit. Symptoms: features take longer each time, bugs reappear, outages rise. Make it visible (ask engineers to quantify the impact), budget capacity for it (many teams reserve 10–20% each sprint) and tie it to outcomes (‘refactoring search cuts latency, which improves conversion’)."
+        },
+        {
+          "title": "Technical literacy for PMs",
+          "body": "You don't need to code, but understand the basics: client vs server, APIs, databases, latency, caching, releases and feature flags. This lets you follow trade-off discussions and ask good questions such as ‘what's the risk if this fails?’ or ‘can we release it behind a flag?’"
+        }
+      ],
+      "example": "Illustrative example: a PM wants personalised recommendations on the home screen. In discovery, an engineer points out that the existing search ranking service can be reused to deliver a simple version in two weeks instead of building a new ML pipeline over three months. The team ships the simple version first and learns quickly.",
+      "counterexample": "A PM hands engineers a finished spec with pixel-perfect designs and a fixed deadline, without ever discussing the problem, then complains when the estimate is ‘too high’.",
+      "mistakes": [
+        "Bringing engineers in only after decisions are made",
+        "Ignoring technical debt until velocity collapses",
+        "Negotiating estimates down instead of cutting scope"
+      ],
+      "keyTerms": [
+        { "term": "Technical debt", "meaning": "The future cost of past shortcuts or outdated technical decisions." },
+        { "term": "Feature flag", "meaning": "A switch that turns features on or off for some users without a new release." },
+        { "term": "API", "meaning": "A defined way for software systems to talk to each other." },
+        { "term": "Latency", "meaning": "The delay between a request and its response." }
+      ],
+      "questions": [
+        {
+          "id": "q_eng_collab_1",
+          "kind": "RECALL",
+          "prompt": "What's a common symptom of rising technical debt?",
+          "options": [
+            { "text": "Similar features take longer to build each time and bugs reappear", "correct": true, "why": "Correct." },
+            { "text": "More users sign up", "why": "Unrelated." },
+            { "text": "Designers produce more mock-ups", "why": "Unrelated." },
+            { "text": "Marketing spend rises", "why": "Unrelated." }
+          ],
+          "explanation": "Debt slows future change."
+        },
+        {
+          "id": "q_eng_collab_2",
+          "kind": "RECALL",
+          "prompt": "What does a feature flag allow?",
+          "options": [
+            { "text": "Turning a feature on or off for some users without a new app release", "correct": true, "why": "Yes — useful for gradual rollouts and quick rollbacks." },
+            { "text": "Flagging bugs for QA", "why": "No." },
+            { "text": "Marking features as favourites", "why": "No." },
+            { "text": "Translating the app", "why": "No." }
+          ],
+          "explanation": "Flags decouple deployment from release."
+        },
+        {
+          "id": "q_eng_collab_3",
+          "kind": "APPLICATION",
+          "prompt": "Engineering says the payments code needs two sprints of refactoring, and you have urgent features. What's best?",
+          "options": [
+            { "text": "Refuse — features first", "why": "Ignoring debt slows everything later." },
+            { "text": "Understand the impact (risk, speed, incidents), then agree on a plan — perhaps dedicated capacity each sprint — tied to outcomes", "correct": true, "why": "Right — make the trade-off explicit and balanced." },
+            { "text": "Stop all features for six months", "why": "Overcorrection." },
+            { "text": "Let engineers decide alone without context", "why": "Shared trade-offs need shared context." }
+          ],
+          "explanation": "Technical health is product health."
+        },
+        {
+          "id": "q_eng_collab_4",
+          "kind": "APPLICATION",
+          "prompt": "When should a tech lead first get involved in a new initiative?",
+          "options": [
+            { "text": "During discovery, when the problem is being explored", "correct": true, "why": "Yes — early involvement improves solutions and feasibility." },
+            { "text": "After the PRD is final", "why": "Too late to shape the solution." },
+            { "text": "At launch", "why": "Far too late." },
+            { "text": "Never; the PM decides", "why": "Collaboration produces better outcomes." }
+          ],
+          "explanation": "Involve engineers early."
+        }
+      ],
+      "exercise": {
+        "scenario": "Your app's checkout is slow (4 seconds to load). Engineers say the code is old and fragile. Marketing wants a new coupon feature in checkout next month.",
+        "prompt": "Write how you'd facilitate the decision with engineering and marketing, and propose a plan.",
+        "modelAnswer": "1) Ask engineering to quantify the cost: load time, crash or error rate in checkout and how the fragile code affects building coupons. 2) Pull data on how load time affects checkout conversion. 3) Bring both teams together with the shared goal of checkout revenue. 4) Propose: first sprint — refactor the parts of checkout that coupons depend on and fix the biggest load-time issue, measured by load time; second sprint — build coupons on the cleaner base, released behind a feature flag. Communicate the reason to marketing: coupons on fragile code risk breaking checkout during the campaign.",
+        "checklist": [
+          "Quantifies technical debt in product terms",
+          "Brings teams together around a shared goal",
+          "Proposes a balanced, sequenced plan",
+          "Uses risk-reducing practices like feature flags"
+        ]
+      }
+    }
+  ],
+  "checkpoint": {
+    "id": "cp_u07",
+    "title": "Shipping under pressure",
+    "scenario": "Your team must deliver a new ‘order tracking’ experience before a big sale event in six weeks. The scope is large, engineers warn about old tracking code and leadership wants a firm date.",
+    "minutes": 8,
+    "debrief": "You protected focus with good sprint practice, forecast honestly, respected engineering realities and used scope and flags to hit a real deadline safely.",
+    "steps": [
+      {
+        "id": "cp_u07_1",
+        "lessonId": "l_kanban_estimation",
+        "kind": "APPLICATION",
+        "prompt": "How do you respond to leadership's request for a firm date?",
+        "options": [
+          { "text": "Give a range based on velocity, name the risks, and show which scope can flex to protect the sale date", "correct": true, "why": "Honest forecasting with options." },
+          { "text": "Promise everything in five weeks", "why": "Overpromising." },
+          { "text": "Say it's impossible to estimate", "why": "Unhelpful." }
+        ],
+        "explanation": "Forecast with ranges and scope options."
+      },
+      {
+        "id": "cp_u07_2",
+        "lessonId": "l_eng_collab",
+        "kind": "APPLICATION",
+        "prompt": "Engineers warn the old tracking code may break under sale-day traffic. What's wise?",
+        "options": [
+          { "text": "Prioritise stabilising the critical path first and plan load testing, even if some features move later", "correct": true, "why": "Reliability on sale day is the basic expectation." },
+          { "text": "Ignore it; the sale is more important", "why": "Breaking on sale day is the worst outcome." },
+          { "text": "Rewrite everything from scratch", "why": "Too risky in six weeks." }
+        ],
+        "explanation": "Technical risk is product risk."
+      },
+      {
+        "id": "cp_u07_3",
+        "lessonId": "l_agile_scrum",
+        "kind": "APPLICATION",
+        "prompt": "Halfway through, marketing wants a ‘share tracking link’ added. It isn't critical. What do you do?",
+        "options": [
+          { "text": "Add it to the backlog and consider it after the critical scope is done", "correct": true, "why": "Protect the sprint goal and the deadline." },
+          { "text": "Add it to the current sprint", "why": "Scope creep risks the date." },
+          { "text": "Reject it permanently", "why": "It may be valuable later." }
+        ],
+        "explanation": "The backlog absorbs change; sprints protect focus."
+      },
+      {
+        "id": "cp_u07_4",
+        "lessonId": "l_eng_collab",
+        "kind": "APPLICATION",
+        "prompt": "How do you reduce launch risk on sale day?",
+        "options": [
+          { "text": "Release behind a feature flag to a small percentage first, monitor, then ramp up, with rollback ready", "correct": true, "why": "Gradual rollout limits the blast radius." },
+          { "text": "Launch to 100% at midnight before the sale", "why": "Maximum risk." },
+          { "text": "Don't monitor; trust the tests", "why": "Monitoring catches what tests miss." }
+        ],
+        "explanation": "Flags and staged rollouts make releases safe."
+      }
+    ]
+  }
+}

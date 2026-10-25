@@ -1,0 +1,553 @@
+{
+  "unit": {
+    "id": "u03",
+    "order": 3,
+    "title": "Understanding Users",
+    "summary": "Model what users are trying to achieve: Jobs to Be Done, personas and segments, journey maps, and validating that a problem is worth solving.",
+    "level": "BEGINNER",
+    "prerequisites": ["u02"]
+  },
+  "lessons": [
+    {
+      "id": "l_jtbd",
+      "unitId": "u03",
+      "title": "Jobs to Be Done",
+      "level": "BEGINNER",
+      "objectives": [
+        "Explain the Jobs to Be Done idea",
+        "Write a job statement with situation, motivation and outcome",
+        "Identify functional, emotional and social dimensions of a job"
+      ],
+      "prerequisites": ["l_user_interviews"],
+      "related": ["l_personas_segments", "l_problem_first", "l_competitive"],
+      "tags": ["jtbd", "jobs", "motivation"],
+      "quick": {
+        "explanation": {
+          "en": "Jobs to Be Done (JTBD) says people ‘hire’ products to make progress in a specific situation. Instead of asking who the user is, ask what they're trying to get done and why. A job statement looks like: ‘When [situation], I want to [motivation], so I can [expected outcome].’ Your real competition is anything else people hire for that job — including doing nothing.",
+          "ta": "Jobs to Be Done (JTBD) sollradhu: makkal oru situation-la munneranum-nu oru product-a ‘hire’ pannuraanga. User yaaru-nu mattum kekkaama, avanga enna velai mudikka try pannuraanga, en-nu kelunga. Job statement: ‘[Situation] varumbodhu, naan [motivation] pannanum, appo dhaan [outcome] kidaikkum.’ Unga nijamana competition — andha job-ku makkal hire panra vera edhuvaa irundhaalum, onnum pannaama irukkuradhum serthu."
+        },
+        "analogy": {
+          "en": "People don't want a drill; they want a hole in the wall — and really, they want to hang a family photo. The drill is just one way to get that job done.",
+          "ta": "Makkalukku drill venaam; suvathula oru hole dhaan venum — innum sollanumna, family photo maattanum. Drill andha job-a mudikka oru vazhi mattum dhaan."
+        },
+        "takeaway": {
+          "en": "Focus on the progress people want in a situation; products and features are just ways to get the job done.",
+          "ta": "Oru situation-la makkal ethirpaakura progress mela focus pannunga; products, features ellaam andha job-a mudikkura vazhigal mattum dhaan."
+        }
+      },
+      "deep": [
+        {
+          "title": "Why it exists",
+          "body": "Demographics (age, city, income) rarely explain why people choose products. Two very different people may hire the same product for the same job, and the same person may hire different products in different situations. JTBD focuses on the causal driver: the situation and the desired progress."
+        },
+        {
+          "title": "How to write a job statement",
+          "body": "‘When I'm commuting for 40 minutes on a crowded train (situation), I want to make use of the dead time (motivation), so I can feel I'm improving myself instead of wasting the day (outcome).’ Notice that it's solution-free: podcasts, language apps, e-books or this PM app could all be hired for it."
+        },
+        {
+          "title": "Three dimensions of a job",
+          "body": "Functional: the practical task (get from A to B). Emotional: how the person wants to feel (safe, in control, not anxious). Social: how they want to be seen (responsible parent, savvy professional). Products that serve emotional and social dimensions often beat functionally superior competitors."
+        },
+        {
+          "title": "Competition through a JTBD lens",
+          "body": "For ‘something to eat during a late-night study session’, a delivery app competes with instant noodles, the hostel canteen and skipping dinner. That view reveals threats and opportunities that a narrow competitor list misses."
+        },
+        {
+          "title": "Limitations",
+          "body": "JTBD can become abstract if jobs are written too broadly (‘I want to be happy’). Keep jobs anchored to a concrete situation discovered in research. It also complements, rather than replaces, segmentation and personas."
+        }
+      ],
+      "example": "Illustrative example: a meal-kit service discovers its main job isn't ‘cook dinner’. It's ‘When weeknights are hectic, I want to put a home-cooked meal on the table without planning, so I feel like a good parent.’ This shifts focus to speed and family-friendly recipes rather than gourmet complexity.",
+      "counterexample": "‘Our user is a 25–34-year-old urban male’ describes demographics, not the job or the motivation.",
+      "mistakes": [
+        "Writing jobs that include your product or a feature",
+        "Making jobs so broad they guide nothing",
+        "Ignoring emotional and social dimensions"
+      ],
+      "keyTerms": [
+        { "term": "Job to be done", "meaning": "The progress a person seeks in a particular situation." },
+        { "term": "Hiring", "meaning": "Choosing a product to get a job done; ‘firing’ is switching away from it." },
+        { "term": "Non-consumption", "meaning": "When people choose to do nothing because existing options are too poor or costly." }
+      ],
+      "questions": [
+        {
+          "id": "q_jtbd_1",
+          "kind": "RECALL",
+          "prompt": "Which is a well-formed job statement?",
+          "options": [
+            { "text": "When I'm planning a weekend trip with friends, I want to agree on a plan quickly, so we don't waste the weekend arguing", "correct": true, "why": "Yes — situation, motivation and outcome, with no solution named." },
+            { "text": "I want to use the group-chat poll feature", "why": "It names a feature." },
+            { "text": "Users aged 18–24 who like travel", "why": "Demographics, not a job." },
+            { "text": "I want to be happy", "why": "Too broad to guide decisions." }
+          ],
+          "explanation": "Jobs are situational, motivational and solution-free."
+        },
+        {
+          "id": "q_jtbd_2",
+          "kind": "RECALL",
+          "prompt": "Wanting to ‘feel in control of my money’ is which dimension of a job?",
+          "options": [
+            { "text": "Functional", "why": "Functional is the practical task." },
+            { "text": "Emotional", "correct": true, "why": "Correct — it's about how the person wants to feel." },
+            { "text": "Social", "why": "Social is about how others see you." },
+            { "text": "Technical", "why": "Not a JTBD dimension." }
+          ],
+          "explanation": "Functional, emotional and social dimensions all shape choices."
+        },
+        {
+          "id": "q_jtbd_3",
+          "kind": "APPLICATION",
+          "prompt": "Through a JTBD lens, what is a key competitor of a PM-learning app for commuters?",
+          "options": [
+            { "text": "Only other PM-learning apps", "why": "Too narrow." },
+            { "text": "Anything commuters hire to use their travel time: podcasts, social media, games, sleep", "correct": true, "why": "Yes — competition is everything hired for the same job." },
+            { "text": "No one", "why": "There's always an alternative, even doing nothing." },
+            { "text": "Universities", "why": "A different situation and job." }
+          ],
+          "explanation": "JTBD widens your view of competition."
+        },
+        {
+          "id": "q_jtbd_4",
+          "kind": "APPLICATION",
+          "prompt": "A premium bank card sells well despite similar features to cheaper cards. Which job dimension likely explains it?",
+          "options": [
+            { "text": "Social — how the cardholder wants to be perceived", "correct": true, "why": "Right — status and identity can drive the choice." },
+            { "text": "Functional — it pays better", "why": "The features are similar." },
+            { "text": "Technical — better chip", "why": "Unlikely to drive the purchase." },
+            { "text": "None; it's random", "why": "Choices have reasons." }
+          ],
+          "explanation": "Social and emotional jobs often explain choices that features can't."
+        }
+      ],
+      "exercise": {
+        "scenario": "A tiffin (home-cooked lunch) subscription service in a big city wants to grow.",
+        "prompt": "Write two different job statements for two different situations, and list one non-obvious competitor for each.",
+        "modelAnswer": "Job 1: ‘When I've moved to a new city for work and miss home food, I want a reliable, healthy lunch without cooking, so I can feel cared for and stay healthy.’ Competitor: a nearby mess or a colleague's mother's cooking. Job 2: ‘When I'm a working parent with early meetings, I want my child's school lunch handled, so I'm not stressed every morning.’ Competitor: packing bread and jam, or the school canteen.",
+        "checklist": [
+          "Each job has a situation, motivation and outcome",
+          "No product or feature named in the job",
+          "Includes emotional or social elements",
+          "Competitors come from the job, not the category"
+        ]
+      }
+    },
+    {
+      "id": "l_personas_segments",
+      "unitId": "u03",
+      "title": "Personas and segmentation",
+      "level": "BEGINNER",
+      "objectives": [
+        "Explain the purpose of segmentation and personas",
+        "Choose segmentation criteria that predict behaviour",
+        "Pick a target segment to focus on"
+      ],
+      "prerequisites": ["l_jtbd"],
+      "related": ["l_journey_maps", "l_gtm_pmf", "l_retention_cohorts"],
+      "tags": ["personas", "segmentation", "target users"],
+      "quick": {
+        "explanation": {
+          "en": "Segmentation splits users into groups with different needs or behaviours, so you can decide whom to serve first. A persona is a realistic profile of one segment, based on research, that keeps the team focused on real people. The best segments are defined by behaviour and needs (‘first-time investors who fear losing money’), not just age or city.",
+          "ta": "Segmentation-na: users-a vera vera needs illa behaviour ulla groups-ah pirikkuradhu — yaarukku first serve pannanum-nu decide panna. Persona-na: research adippadaiyila oru segment-oda realistic profile; team-a real people mela focus-ah vekkum. Best segments behaviour, needs vechu define pannuvom (‘panam pogumo-nu bayappadura first-time investors’), age illa city mattum vechu illa."
+        },
+        "analogy": {
+          "en": "A tailor doesn't sew one size for everyone; they group customers by fit and style needs, then design for each group.",
+          "ta": "Tailor ellarukkum ore size thecha maattaanga; fit, style needs-padi customers-a group panni, ovvoru group-kkum design pannuvaanga."
+        },
+        "takeaway": {
+          "en": "Segment by needs and behaviour, then pick one segment to win first; designing for everyone means designing for no one.",
+          "ta": "Needs, behaviour-padi segment pannunga, apram jeyikka oru segment-a first choose pannunga; ellarukkum design panna, yaarukkume design pannala-nu artham."
+        }
+      },
+      "deep": [
+        {
+          "title": "Why it exists",
+          "body": "Users have conflicting needs. A trading app's day traders want speed and charts; first-time investors want guidance and safety. Serving both equally often serves neither well. Segmentation makes these differences explicit so you can make deliberate trade-offs."
+        },
+        {
+          "title": "Good segmentation criteria",
+          "body": "Useful segments are: distinct (different needs), sizeable (worth serving), reachable (you can find and market to them) and actionable (they imply different product decisions). Behavioural and needs-based criteria (frequency, goals, experience level, situation) usually predict behaviour better than demographics alone."
+        },
+        {
+          "title": "Building a persona",
+          "body": "Base personas on research, not imagination. Include: their goals and jobs, context (devices, environment, constraints), pain points, current alternatives and a representative quote. Keep it to one page. Avoid irrelevant details like favourite colours unless they affect product decisions."
+        },
+        {
+          "title": "Choosing a target segment",
+          "body": "Compare segments on pain intensity, size, willingness to pay or engage, your ability to win and strategic fit. Early-stage products should usually pick the segment with the most acute pain, where a focused solution can create strong pull."
+        },
+        {
+          "title": "Limitations",
+          "body": "Personas go stale and can become stereotypes. Revisit them with new research, and remember that real users move between segments; a beginner investor becomes intermediate."
+        }
+      ],
+      "example": "Illustrative example: a language-learning app segments by goal — exam preparation (deadline-driven, wants tests), relocation (wants practical conversation fast) and hobby learners (want fun, low pressure). It chooses relocation learners first because their pain is acute and they're willing to pay.",
+      "counterexample": "A persona named ‘Priya, 28, likes coffee and yoga’ with no goals, pain points or behaviours — it looks friendly but guides no decisions.",
+      "mistakes": [
+        "Building personas from assumptions rather than research",
+        "Segmenting only by demographics",
+        "Trying to serve every segment at once"
+      ],
+      "keyTerms": [
+        { "term": "Segment", "meaning": "A group of users with similar needs or behaviour." },
+        { "term": "Persona", "meaning": "A research-based profile representing a segment." },
+        { "term": "Target segment", "meaning": "The segment you deliberately prioritise." }
+      ],
+      "questions": [
+        {
+          "id": "q_personas_1",
+          "kind": "RECALL",
+          "prompt": "Which segmentation is most actionable for a fitness app?",
+          "options": [
+            { "text": "Users by zodiac sign", "why": "Doesn't predict needs." },
+            { "text": "Beginners seeking routine vs experienced athletes optimising performance", "correct": true, "why": "Yes — distinct needs that imply different product decisions." },
+            { "text": "Users by phone colour", "why": "Irrelevant." },
+            { "text": "Users whose names start with A–M vs N–Z", "why": "Arbitrary." }
+          ],
+          "explanation": "Actionable segments imply different product choices."
+        },
+        {
+          "id": "q_personas_2",
+          "kind": "RECALL",
+          "prompt": "What should a persona primarily be based on?",
+          "options": [
+            { "text": "The team's imagination", "why": "Assumption-based personas mislead." },
+            { "text": "Research about real users' goals, behaviours and pains", "correct": true, "why": "Correct." },
+            { "text": "Stock photos", "why": "Photos don't make personas real." },
+            { "text": "Competitor marketing", "why": "Not your users." }
+          ],
+          "explanation": "Personas summarise research; they're not fiction."
+        },
+        {
+          "id": "q_personas_3",
+          "kind": "APPLICATION",
+          "prompt": "An early-stage budgeting app can serve students, young professionals or retirees. Which factor should weigh most when choosing the first target?",
+          "options": [
+            { "text": "The segment with the most acute pain that your product can clearly solve", "correct": true, "why": "Right — strong pull in a focused segment builds early traction." },
+            { "text": "The largest segment, regardless of fit", "why": "Size without fit leads to weak adoption." },
+            { "text": "The segment the founder belongs to", "why": "That risks the false-consensus effect." },
+            { "text": "All three equally", "why": "Spreading thin early usually fails." }
+          ],
+          "explanation": "Focus wins early; expand later."
+        },
+        {
+          "id": "q_personas_4",
+          "kind": "APPLICATION",
+          "prompt": "Your trading app's power users want more advanced charts, while beginners say the app is overwhelming. What's a sensible approach?",
+          "options": [
+            { "text": "Add all advanced charts to the main screen", "why": "Worsens the beginner experience." },
+            { "text": "Decide on the target segment strategically and design progressive disclosure: simple by default, advanced on demand", "correct": true, "why": "Yes — an explicit segment choice plus a design that serves both without overwhelming." },
+            { "text": "Ignore power users", "why": "They may be valuable; consider their needs deliberately." },
+            { "text": "Build two separate apps immediately", "why": "An expensive first step." }
+          ],
+          "explanation": "Segments with conflicting needs require explicit trade-offs."
+        }
+      ],
+      "exercise": {
+        "scenario": "A job-search app for India's tier-2 cities is deciding whom to focus on.",
+        "prompt": "Propose three needs-based segments, compare them on pain, size and reachability, and pick one target with a reason.",
+        "modelAnswer": "Segments: 1) Fresh graduates seeking first jobs — high pain, large, reachable via colleges. 2) Skilled workers (electricians, drivers) seeking local gigs — high pain, very large, reachable via WhatsApp and local language, but they need simple, voice-friendly UX. 3) Mid-career professionals seeking relocation — moderate pain, smaller, already served by big job sites. Target: fresh graduates first, because pain is acute, colleges make them reachable, and their needs (first resume, interview prep) are distinct from incumbents' focus. Skilled workers are a strong second bet.",
+        "checklist": [
+          "Segments are defined by needs or behaviour",
+          "Compares pain, size and reachability",
+          "Picks one target with a reasoned choice",
+          "Acknowledges trade-offs"
+        ]
+      }
+    },
+    {
+      "id": "l_journey_maps",
+      "unitId": "u03",
+      "title": "Customer journey maps",
+      "level": "BEGINNER",
+      "objectives": [
+        "Map the stages a user goes through to complete a goal",
+        "Identify pain points and moments that matter",
+        "Use a journey map to find opportunities"
+      ],
+      "prerequisites": ["l_personas_segments"],
+      "related": ["l_funnels", "l_ux_fundamentals", "l_synthesis"],
+      "tags": ["journey map", "experience", "pain points"],
+      "quick": {
+        "explanation": {
+          "en": "A customer journey map shows the steps a specific user goes through to achieve a goal — before, during and after using your product — with what they do, think and feel at each step. It reveals pain points and ‘moments that matter’ that a single screen view hides.",
+          "ta": "Customer journey map-na: oru specific user oru goal-a achieve panna pogura steps — unga product use panradhukku munnaadi, use pannumbodhu, apram — ovvoru step-layum avanga enna pannuraanga, ninaikkiraanga, feel pannuraanga-nu kaattum. Oru screen-a mattum paathaa theriyaadha pain points, ‘moments that matter’ ellaam idhula theriyum."
+        },
+        "analogy": {
+          "en": "Like tracing a train trip end to end: booking, reaching the station, finding the platform, boarding, the journey, arriving. A great booking app is useless if finding the platform is a nightmare.",
+          "ta": "Oru train trip-a mudhal-la irundhu kadaisi varai trace panra maadhiri: booking, station-ku varadhu, platform kandupidikkuradhu, ezharadhu, payanam, poi serradhu. Booking app super-ah irundhaalum platform kandupidikkuradhu nightmare-na, use illa."
+        },
+        "takeaway": {
+          "en": "Map the whole experience, including what happens outside your app; the biggest opportunities are often between screens.",
+          "ta": "Full experience-a map pannunga, unga app-ku veliya nadakkuradhum serthu; periya opportunities pala samayam screens-ku naduvula dhaan irukkum."
+        }
+      },
+      "deep": [
+        {
+          "title": "Why it exists",
+          "body": "Teams usually own pieces of an experience: one team owns sign-up, another payments. Users experience the whole journey. Journey maps create a shared, end-to-end view so teams can fix the biggest breaks instead of polishing their own screens."
+        },
+        {
+          "title": "How to build one",
+          "body": "1) Choose one persona and one goal (for example, ‘first-time buyer orders a phone online’). 2) List stages: discover → compare → buy → wait → receive → use → get support. 3) For each stage capture actions, thoughts, emotions (high or low), touchpoints (app, SMS, delivery person) and pain points. 4) Mark the moments that matter: high-emotion points that shape the overall opinion. 5) Note opportunities. Build it from research, not assumptions."
+        },
+        {
+          "title": "Current-state vs future-state",
+          "body": "A current-state map documents today's reality and its pains. A future-state map designs the improved experience. Do the current state first; otherwise you're designing on guesses."
+        },
+        {
+          "title": "Limitations",
+          "body": "Journey maps simplify; real users loop back, skip steps and use multiple channels. And maps don't show scale, so pair them with funnel data to see how many users each pain point affects."
+        }
+      ],
+      "example": "Illustrative example: mapping an online grocery order reveals the lowest emotional point isn't checkout but the substitution call — when an item is out of stock and the shopper phones at an inconvenient moment. The opportunity: let customers set substitution preferences at checkout.",
+      "counterexample": "A journey map built in a meeting room in one hour without talking to any customer, showing a smooth, happy path everywhere.",
+      "mistakes": [
+        "Mapping a generic ‘user’ rather than a specific persona and goal",
+        "Ignoring steps outside the app (delivery, calls, offline)",
+        "Building maps without research evidence"
+      ],
+      "keyTerms": [
+        { "term": "Touchpoint", "meaning": "Any interaction between the customer and the company: app, SMS, call, delivery." },
+        { "term": "Moment that matters", "meaning": "A high-emotion point that disproportionately shapes the customer's perception." }
+      ],
+      "questions": [
+        {
+          "id": "q_journey_1",
+          "kind": "RECALL",
+          "prompt": "What does a journey map show that a screen-by-screen flow usually doesn't?",
+          "options": [
+            { "text": "Code structure", "why": "Not relevant." },
+            { "text": "The user's actions, thoughts and emotions across the whole experience, including outside the product", "correct": true, "why": "Correct." },
+            { "text": "Server costs", "why": "Not relevant." },
+            { "text": "The competitor's roadmap", "why": "Not relevant." }
+          ],
+          "explanation": "Journey maps are end-to-end and human-centred."
+        },
+        {
+          "id": "q_journey_2",
+          "kind": "RECALL",
+          "prompt": "Why do current-state maps come before future-state maps?",
+          "options": [
+            { "text": "Future-state maps are illegal", "why": "No." },
+            { "text": "You need evidence of today's pains before designing improvements", "correct": true, "why": "Yes." },
+            { "text": "Current-state maps are prettier", "why": "No." },
+            { "text": "They don't; order doesn't matter", "why": "Designing without understanding leads to guesswork." }
+          ],
+          "explanation": "Understand reality, then design the future."
+        },
+        {
+          "id": "q_journey_3",
+          "kind": "APPLICATION",
+          "prompt": "A hospital-appointment app's map shows users happy while booking but very stressed on arrival because they can't find the department. What's the opportunity?",
+          "options": [
+            { "text": "Redesign the booking screens", "why": "Booking is already a high point." },
+            { "text": "Help patients navigate on arrival, e.g. directions and check-in guidance sent before the visit", "correct": true, "why": "Right — fix the lowest point in the journey, even if it's outside the core app flow." },
+            { "text": "Nothing; it's outside our app", "why": "The overall experience still affects the app's value." },
+            { "text": "Add more doctors to the list", "why": "Doesn't address the stress point." }
+          ],
+          "explanation": "The biggest opportunities are often between or beyond screens."
+        },
+        {
+          "id": "q_journey_4",
+          "kind": "APPLICATION",
+          "prompt": "Your map shows five pain points. How do you decide which to tackle first?",
+          "options": [
+            { "text": "Pick the one that's easiest to fix", "why": "Effort matters, but impact first." },
+            { "text": "Combine emotional intensity, how many users are affected (from data) and business impact", "correct": true, "why": "Yes — pair the map with data to prioritise." },
+            { "text": "Pick the first one in the journey", "why": "Order isn't importance." },
+            { "text": "Fix all five at once", "why": "That spreads effort too thin." }
+          ],
+          "explanation": "Maps reveal pains; data sizes them; prioritisation chooses."
+        }
+      ],
+      "exercise": {
+        "scenario": "Map the journey of a student applying for an education loan through a fintech app.",
+        "prompt": "List 5–6 stages. For each give one action, one emotion and one pain point, and mark the moment that matters most.",
+        "modelAnswer": "1) Discover: hears from a friend; hopeful; unsure if eligible. 2) Check eligibility: enters details; anxious; confusing jargon about co-applicants. 3) Upload documents: photographs papers; frustrated; uploads fail on weak networks. 4) Wait for approval: checks status repeatedly; stressed; no clear timeline. 5) Approval and disbursement: relieved; unclear when money reaches the college. 6) Repayment begins: worried; unclear EMI schedule. Moment that matters: waiting for approval, because uncertainty during admission deadlines is the most stressful point. Opportunity: clear status steps and an expected timeline.",
+        "checklist": [
+          "Covers stages before, during and after core app use",
+          "Includes actions, emotions and pain points",
+          "Identifies a moment that matters with reasoning",
+          "Suggests an opportunity tied to the pain"
+        ]
+      }
+    },
+    {
+      "id": "l_problem_validation",
+      "unitId": "u03",
+      "title": "Validating problems and opportunities",
+      "level": "BEGINNER",
+      "objectives": [
+        "Assess whether a problem is worth solving",
+        "Use frequency, intensity and willingness to act as signals",
+        "Write a simple opportunity assessment"
+      ],
+      "prerequisites": ["l_synthesis", "l_jtbd"],
+      "related": ["l_opportunity_sizing", "l_mvp", "l_prioritisation_basics"],
+      "tags": ["validation", "opportunity", "assessment"],
+      "quickMinutes": 6,
+      "quick": {
+        "explanation": {
+          "en": "Not every real problem is worth solving. Validate a problem by checking how often it happens (frequency), how painful it is (intensity), how many people have it (size), whether people already try to solve it (workarounds show real pain), and whether solving it fits your strategy and business. Then write a short opportunity assessment before committing.",
+          "ta": "Ella real problem-um solve panna worth illa. Problem-a validate panna: evlo adikkadi nadakkudhu (frequency), evlo painful (intensity), evlo per-ku irukku (size), makkal already edhaavadhu workaround try pannuraangalaa (workaround irundhaa real pain), solve pannina unga strategy, business-ku fit aagudhaa — idhellam check pannunga. Commit panradhukku munnaadi oru chinna opportunity assessment ezhudhunga."
+        },
+        "analogy": {
+          "en": "A shop owner checks whether people regularly ask for an item and buy substitutes before stocking it, rather than stocking everything one person mentions.",
+          "ta": "Oru kadai owner, oru item-a stock panradhukku munnaadi makkal adikkadi kekkuraangalaa, substitute vaangiraangalaa-nu paappaar; yaaro oruthar sonnadhellaam stock panna maattaar."
+        },
+        "takeaway": {
+          "en": "Workarounds and spending (time or money) are the strongest signs a problem is real and painful.",
+          "ta": "Workarounds-um, time illa panam selavu pannuradhum dhaan problem real, painful-nu kaattura strong signs."
+        }
+      },
+      "deep": [
+        {
+          "title": "Why it exists",
+          "body": "Building costs months of team time. Most failed products didn't fail because they were badly built; they solved problems people didn't care enough about. Validation reduces this risk cheaply before you invest heavily."
+        },
+        {
+          "title": "Signals that a problem is worth solving",
+          "body": "Frequency: daily problems beat yearly ones. Intensity: does it cost money, time, safety or stress? Size: how many people, and is the group growing? Existing behaviour: workarounds, spreadsheets, paying for imperfect solutions. Urgency: is there a trigger that makes people act now? Strategic fit: does it strengthen your product and capabilities?"
+        },
+        {
+          "title": "Opportunity assessment",
+          "body": "A lightweight one-pager answering: 1) What problem are we solving, and for whom? 2) How do we know it's real (evidence)? 3) How big is the opportunity? 4) What alternatives exist? 5) Why are we well placed to win? 6) How will we measure success? 7) What are the key risks and assumptions? It forces clarity and makes the decision reviewable."
+        },
+        {
+          "title": "Cheap validation techniques",
+          "body": "Problem interviews, landing-page or ‘fake door’ tests (measure interest before building), concierge tests (deliver the service manually) and pre-orders. Each tests a different risk: whether the problem exists, whether there's demand, and whether people will pay. Be transparent and ethical — don't mislead users for long."
+        }
+      ],
+      "example": "Illustrative example: an app for splitting rent among flatmates finds that most flatmates already use spreadsheets and chase each other on WhatsApp monthly (frequent, a workaround exists, mild-to-moderate pain). Meanwhile, deposit disputes when moving out are rare but cause large financial stress. An opportunity assessment compares both before choosing.",
+      "counterexample": "Building a full app because ten friends said ‘nice idea!’ — politeness isn't validation.",
+      "mistakes": [
+        "Treating compliments as evidence",
+        "Ignoring whether people already spend time or money on the problem",
+        "Skipping strategic fit"
+      ],
+      "keyTerms": [
+        { "term": "Workaround", "meaning": "A makeshift solution people use today; strong evidence of real pain." },
+        { "term": "Fake door test", "meaning": "Offering a feature entry point before it exists to measure interest, then explaining it's coming." },
+        { "term": "Concierge test", "meaning": "Delivering the value manually to learn before automating." }
+      ],
+      "questions": [
+        {
+          "id": "q_problem_validation_1",
+          "kind": "RECALL",
+          "prompt": "Which is the strongest signal that a problem is real and painful?",
+          "options": [
+            { "text": "People say it's a good idea", "why": "Compliments are weak evidence." },
+            { "text": "People already pay or spend significant time on imperfect workarounds", "correct": true, "why": "Yes — behaviour and spending reveal real pain." },
+            { "text": "A competitor launched something similar", "why": "A signal, but not evidence about your users' pain." },
+            { "text": "The team finds it interesting", "why": "Team interest isn't user pain." }
+          ],
+          "explanation": "Look at behaviour, not opinions."
+        },
+        {
+          "id": "q_problem_validation_2",
+          "kind": "RECALL",
+          "prompt": "What does a concierge test validate?",
+          "options": [
+            { "text": "Whether servers can scale", "why": "No." },
+            { "text": "Whether the value is real, by delivering it manually before building automation", "correct": true, "why": "Correct." },
+            { "text": "The app's colour scheme", "why": "No." },
+            { "text": "Legal compliance", "why": "No." }
+          ],
+          "explanation": "Manual delivery tests value cheaply."
+        },
+        {
+          "id": "q_problem_validation_3",
+          "kind": "APPLICATION",
+          "prompt": "Two problems: A happens daily to many users and causes mild annoyance; B happens twice a year and causes major financial loss. How should you think about it?",
+          "options": [
+            { "text": "Always choose A because frequency wins", "why": "Ignores intensity." },
+            { "text": "Compare total impact (frequency × intensity × size), willingness to act, and strategic fit", "correct": true, "why": "Right — both can be valuable; compare the full picture." },
+            { "text": "Always choose B because money matters most", "why": "Ignores frequency and size." },
+            { "text": "Flip a coin", "why": "Decisions should be reasoned." }
+          ],
+          "explanation": "No single signal decides; combine them."
+        },
+        {
+          "id": "q_problem_validation_4",
+          "kind": "APPLICATION",
+          "prompt": "You want to test demand for a premium ‘priority support’ add-on before building it. What's a cheap, ethical test?",
+          "options": [
+            { "text": "Build the full system and launch", "why": "Expensive before validation." },
+            { "text": "Show an upgrade option, measure clicks, and tell interested users it's coming soon (optionally offering a waitlist)", "correct": true, "why": "Yes — a transparent fake-door test measures interest cheaply." },
+            { "text": "Charge users without providing the service", "why": "Unethical." },
+            { "text": "Ask the team if they'd buy it", "why": "The team isn't your market." }
+          ],
+          "explanation": "Fake doors measure intent; be transparent with users."
+        }
+      ],
+      "exercise": {
+        "scenario": "You believe working professionals in Chennai struggle to find reliable home cooks.",
+        "prompt": "Write a mini opportunity assessment covering problem, evidence you'd gather, size, alternatives, success metric and top risk.",
+        "modelAnswer": "Problem: working professionals in Chennai struggle to find reliable, hygienic home cooks, leading to expensive daily ordering and poor diet. Evidence: 10 interviews, WhatsApp-group and classified-ad activity, how much people spend on food delivery today. Size: estimate households with two working adults in target areas. Alternatives: word of mouth, agencies, food delivery, tiffin services. Success metric: matched cooks retained after 30 days. Top risk: trust and safety — users may not trust strangers in their homes; verification is essential and costly.",
+        "checklist": [
+          "Problem is specific and user-centred",
+          "Names concrete evidence to gather",
+          "Considers size and alternatives",
+          "Includes a success metric and key risk"
+        ]
+      }
+    }
+  ],
+  "checkpoint": {
+    "id": "cp_u03",
+    "title": "Should we build for gig workers?",
+    "scenario": "Your payments company wonders whether to build a savings product for gig workers (delivery riders, drivers) whose income varies week to week.",
+    "minutes": 8,
+    "debrief": "You framed the job, picked a precise segment, mapped where the pain peaks, and demanded behavioural evidence before committing — a complete user-understanding loop.",
+    "steps": [
+      {
+        "id": "cp_u03_1",
+        "lessonId": "l_jtbd",
+        "kind": "APPLICATION",
+        "prompt": "Which job statement best captures the opportunity?",
+        "options": [
+          { "text": "When my weekly earnings swing, I want to smooth out lean weeks, so I can pay rent and send money home without panic", "correct": true, "why": "Situational, motivational, includes the emotional outcome." },
+          { "text": "I want a savings account with a 7% interest rate", "why": "Solution-specific." },
+          { "text": "Gig workers aged 20–35", "why": "Demographics." }
+        ],
+        "explanation": "Start from progress, not product."
+      },
+      {
+        "id": "cp_u03_2",
+        "lessonId": "l_personas_segments",
+        "kind": "APPLICATION",
+        "prompt": "Which segment should you target first?",
+        "options": [
+          { "text": "Full-time gig workers who depend on it as their primary income and already use your payments app", "correct": true, "why": "Acute pain, reachable, and strong fit with existing users." },
+          { "text": "Every gig worker in India", "why": "Too broad." },
+          { "text": "Students doing occasional weekend gigs", "why": "Lower pain." }
+        ],
+        "explanation": "Pain plus reachability plus fit."
+      },
+      {
+        "id": "cp_u03_3",
+        "lessonId": "l_journey_maps",
+        "kind": "APPLICATION",
+        "prompt": "Your journey map shows the most stressful moment is the day rent is due after a lean week. What's the implication?",
+        "options": [
+          { "text": "The product must help before that moment, e.g. setting aside money automatically in good weeks", "correct": true, "why": "Design around the moment that matters." },
+          { "text": "Offer a loan on rent day", "why": "Possibly useful, but it addresses the symptom and adds debt risk." },
+          { "text": "Send motivational quotes", "why": "Doesn't address the job." }
+        ],
+        "explanation": "Moments that matter guide design."
+      },
+      {
+        "id": "cp_u03_4",
+        "lessonId": "l_problem_validation",
+        "kind": "APPLICATION",
+        "prompt": "What's the strongest evidence that this problem is worth solving?",
+        "options": [
+          { "text": "Riders already use informal chit funds or ask friends for loans during lean weeks", "correct": true, "why": "Existing workarounds show real pain and willingness to act." },
+          { "text": "Riders said ‘nice idea’ in a survey", "why": "Weak evidence." },
+          { "text": "A competitor launched a savings product", "why": "Not evidence of your users' pain." }
+        ],
+        "explanation": "Workarounds beat opinions."
+      }
+    ]
+  }
+}

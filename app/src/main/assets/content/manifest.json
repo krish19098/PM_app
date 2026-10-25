@@ -1,0 +1,21 @@
+{
+  "contentVersion": 1,
+  "reviewedOn": "2026-10-25",
+  "coverageNote": "This release covers 14 units and 56 core concepts, from PM foundations to AI product management and advanced strategy. It is a strong foundation, not the entire discipline: real mastery comes from applying these concepts to real products. New units can be added without affecting your progress.",
+  "unitFiles": [
+    "units/u01_foundations.json",
+    "units/u02_discovery.json",
+    "units/u03_users.json",
+    "units/u04_strategy.json",
+    "units/u05_prioritisation.json",
+    "units/u06_definition.json",
+    "units/u07_delivery.json",
+    "units/u08_ux.json",
+    "units/u09_analytics.json",
+    "units/u10_experimentation.json",
+    "units/u11_business.json",
+    "units/u12_leadership.json",
+    "units/u13_ai_pm.json",
+    "units/u14_advanced.json"
+  ]
+}

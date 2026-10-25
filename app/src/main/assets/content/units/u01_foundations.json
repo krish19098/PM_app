@@ -1,0 +1,559 @@
+{
+  "unit": {
+    "id": "u01",
+    "order": 1,
+    "title": "PM Foundations",
+    "summary": "What product managers actually do, how products create value, and how the product lifecycle shapes a PM's priorities.",
+    "level": "BEGINNER",
+    "prerequisites": []
+  },
+  "lessons": [
+    {
+      "id": "l_pm_role",
+      "unitId": "u01",
+      "title": "What a Product Manager does",
+      "level": "BEGINNER",
+      "objectives": [
+        "Describe the PM's core responsibility in one sentence",
+        "Distinguish what PMs own from what designers and engineers own",
+        "Recognise common myths about the PM role"
+      ],
+      "prerequisites": [],
+      "related": ["l_product_thinking", "l_pm_vs_project", "l_stakeholders"],
+      "tags": ["role", "responsibilities", "basics"],
+      "quickMinutes": 5,
+      "deepMinutes": 8,
+      "quick": {
+        "explanation": {
+          "en": "A Product Manager makes sure the team builds the right thing. They figure out which customer problems are worth solving, decide what to build first, and align designers, engineers and the business around a shared goal. Engineers decide how to build it and designers shape the experience; the PM owns the why and the what.",
+          "ta": "Product Manager-oda main velai: team sariyana vishayatha build pannudha-nu paathukaradhu. Endha customer problem solve panna worth-u, edha first build pannanum-nu decide panni, designers, engineers, business ellaraiyum oru common goal-ku align pannuvaanga. Eppadi build pannanum-nu engineers decide pannuvaanga, experience-a designers shape pannuvaanga; ‘why’ and ‘what’ — idhu PM-oda responsibility."
+        },
+        "analogy": {
+          "en": "A film director doesn't act, shoot or compose the music, but makes sure every department creates one coherent movie that the audience will love.",
+          "ta": "Oru film director act panna maataanga, camera handle panna maataanga, music poda maataanga — aana ella department-um serndhu audience-ku pudicha oru movie-a create panradha director paathukuvaanga. PM-um apdi dhaan."
+        },
+        "takeaway": {
+          "en": "PMs are accountable for outcomes (did customers and the business benefit?), not just for shipping features.",
+          "ta": "PM-ku important: feature ship pannadhu mattum illa — customer-ukkum business-ukkum nijamaave benefit aachaa-nu paakuradhu dhaan."
+        }
+      },
+      "deep": [
+        {
+          "title": "Why the role exists",
+          "body": "As teams grow, nobody naturally owns the question ‘are we working on the most valuable thing?’. Engineers optimise for building well, sales for closing deals, support for fixing complaints. The PM role exists to connect customer needs, business goals and technical reality into one prioritised direction, and to keep revisiting that direction as evidence changes."
+        },
+        {
+          "title": "What PMs actually do day to day",
+          "body": "1) Understand customers: interviews, data, support tickets. 2) Define problems and goals: write problem statements and success metrics. 3) Prioritise: choose what to do now, later or never. 4) Align: share context with design, engineering, marketing, leadership. 5) Unblock delivery: answer questions, make trade-off calls, cut scope. 6) Measure and learn: check whether the shipped work moved the metric, then iterate."
+        },
+        {
+          "title": "What PMs do not do",
+          "body": "PMs are not the boss of the team; engineers and designers usually report elsewhere. PMs do not write the code or create the final designs, and they should not dictate implementation details. They are also not just note-takers or ticket writers. Their authority comes from clarity, evidence and trust, which is why ‘influence without authority’ is a core PM skill."
+        },
+        {
+          "title": "When the role looks different",
+          "body": "In a startup, a PM may also do customer support, analytics and marketing. In a large company, the PM may own one feature area inside a bigger product. Technical PMs work on platforms and APIs where customers are other developers. AI PMs handle probabilistic behaviour and model quality. The core stays the same: own the problem, the priority and the outcome."
+        },
+        {
+          "title": "Interview angle",
+          "body": "‘What does a PM do?’ is often asked to test clarity. A strong answer: ‘A PM is accountable for delivering customer and business value. They discover the most important problems, decide priorities, align the team and measure outcomes.’ Back it with one concrete example of a decision you drove."
+        }
+      ],
+      "example": "Illustrative example: a food-delivery app sees many orders cancelled after checkout. The PM digs into data and support tickets, finds that customers cancel when the delivery estimate jumps after payment, frames the problem (‘estimates are not trustworthy’), sets a goal (reduce post-payment cancellations), works with engineering on a more accurate estimate and with design on how to show it, then measures the cancellation rate after launch.",
+      "counterexample": "A ‘PM’ who collects feature requests from sales, writes them as tickets and pushes engineers to ship by a date, without asking which customer problem each request solves or how success will be measured, is acting as a project coordinator, not a product manager.",
+      "mistakes": [
+        "Thinking the PM is the team's manager and can order people around",
+        "Measuring success by the number of features shipped instead of outcomes",
+        "Jumping to solutions before understanding the customer problem"
+      ],
+      "keyTerms": [
+        { "term": "Outcome", "meaning": "The change in customer behaviour or business result that work produces, e.g. fewer cancellations." },
+        { "term": "Output", "meaning": "The thing that was built or shipped, e.g. a new delivery-estimate screen." },
+        { "term": "Stakeholder", "meaning": "Anyone affected by or with influence over the product: users, leaders, sales, support, legal." }
+      ],
+      "questions": [
+        {
+          "id": "q_pm_role_1",
+          "kind": "RECALL",
+          "prompt": "Which of these is primarily the Product Manager's responsibility?",
+          "options": [
+            { "text": "Deciding which customer problem the team should solve next", "correct": true, "why": "Right — choosing the most valuable problem and priority is the heart of the PM role." },
+            { "text": "Choosing the database technology", "why": "Implementation choices belong to engineering. The PM shares constraints, not technical decisions." },
+            { "text": "Creating the final visual design", "why": "Designers own the experience and visuals; the PM provides the problem, goals and constraints." },
+            { "text": "Approving every engineer's leave", "why": "PMs usually aren't people managers for engineers." }
+          ],
+          "explanation": "PMs own the why and the what: which problem matters and what success looks like. Engineers own the how; designers own the experience."
+        },
+        {
+          "id": "q_pm_role_2",
+          "kind": "RECALL",
+          "prompt": "What is the best measure of a PM's success?",
+          "options": [
+            { "text": "Number of features shipped this quarter", "why": "That's output. Shipping lots of features that nobody uses is not success." },
+            { "text": "Improvement in customer and business outcomes", "correct": true, "why": "Correct — PMs are judged on whether their work created value." },
+            { "text": "How many meetings they lead", "why": "Activity isn't impact." },
+            { "text": "Whether the team never misses a deadline", "why": "Delivery matters, but hitting dates on the wrong things still fails customers." }
+          ],
+          "explanation": "Outcomes over outputs: the question is whether customers and the business are better off."
+        },
+        {
+          "id": "q_pm_role_3",
+          "kind": "APPLICATION",
+          "prompt": "Sales asks you to add a ‘dark mode’ because one large client requested it. What should you do first?",
+          "options": [
+            { "text": "Add it to the next sprint so the client stays happy", "why": "This skips understanding the need and its value relative to other work." },
+            { "text": "Understand the underlying need and how many customers share it, then compare its value with current priorities", "correct": true, "why": "Yes — validate the problem and weigh it against other opportunities before committing." },
+            { "text": "Refuse, because sales shouldn't influence the roadmap", "why": "Sales input is valuable evidence; the PM's job is to weigh it, not ignore it." },
+            { "text": "Ask engineering to estimate it and decide based only on effort", "why": "Effort matters, but value and strategic fit come first." }
+          ],
+          "explanation": "Every request is evidence about a problem. A PM clarifies the need, sizes it and prioritises it against everything else."
+        },
+        {
+          "id": "q_pm_role_4",
+          "kind": "APPLICATION",
+          "prompt": "An engineer proposes a technical approach you don't fully understand. As PM, what's the most appropriate response?",
+          "options": [
+            { "text": "Insist on the approach you read about online", "why": "Dictating implementation undermines engineering ownership." },
+            { "text": "Ask how each option affects user experience, timeline, risk and future flexibility, then help make the trade-off", "correct": true, "why": "Right — the PM brings product context to technical trade-offs without owning the implementation." },
+            { "text": "Approve anything engineering says without discussion", "why": "PMs should understand trade-offs that affect customers and timelines." },
+            { "text": "Escalate to your manager", "why": "Escalation is unnecessary for a normal design discussion." }
+          ],
+          "explanation": "Good PMs ask questions that connect technical choices to customer and business impact."
+        }
+      ],
+      "exercise": {
+        "scenario": "You join a ride-hailing app as an Associate PM. Your manager says: ‘Riders complain a lot; figure out what we should do.’",
+        "prompt": "Write the first five things you would do in your first two weeks, in order, and explain why each matters.",
+        "modelAnswer": "1) Read support tickets and app reviews to see the most frequent complaints. 2) Look at data on where riders drop off or cancel. 3) Interview 5–8 riders to understand the context behind the top complaints. 4) Write a short problem statement with a success metric for the biggest issue. 5) Share findings with engineering, design and your manager, and agree on the first problem to tackle. The order goes from evidence to framing to alignment, so the team commits to a problem before discussing solutions.",
+        "checklist": [
+          "Starts with evidence (tickets, data, interviews) rather than solutions",
+          "Defines a clear problem and a measurable goal",
+          "Involves the team and stakeholders before committing",
+          "Explains why the order matters"
+        ]
+      }
+    },
+    {
+      "id": "l_product_thinking",
+      "unitId": "u01",
+      "title": "Product thinking and value creation",
+      "level": "BEGINNER",
+      "objectives": [
+        "Explain value as the overlap of user value, business value and feasibility",
+        "Apply the problem → user → outcome lens to any feature",
+        "Spot features that create activity but not value"
+      ],
+      "prerequisites": ["l_pm_role"],
+      "related": ["l_problem_first", "l_jtbd", "l_metrics_basics"],
+      "tags": ["product sense", "value", "thinking"],
+      "quickMinutes": 5,
+      "deepMinutes": 8,
+      "quick": {
+        "explanation": {
+          "en": "Product thinking means looking at any feature and asking: whose problem does this solve, how painful is that problem, and what changes for them and for the business if we solve it? Great products sit where three things overlap: users want it (desirable), the business benefits (viable), and the team can build it (feasible).",
+          "ta": "Product thinking-na: endha feature-a paathaalum, ‘idhu yaaroda problem-a solve pannudhu? Andha problem evlo painful? Solve pannina user-kum business-kum enna maarum?’-nu kekkuradhu. Nalla product moonu vishayam overlap aagura idathula irukkum: users-ku venum (desirable), business-ku laabam (viable), team-aala build panna mudiyum (feasible)."
+        },
+        "analogy": {
+          "en": "A good doctor doesn't prescribe medicine just because a patient asks for it. They diagnose the problem first, then pick a treatment that works, is affordable and is safe.",
+          "ta": "Nalla doctor, patient ketta-nu medicine kudukka maataanga. Mudhalla enna problem-nu diagnose pannuvaanga, apram work aagura, afford panna mudiyura, safe-aana treatment-a choose pannuvaanga."
+        },
+        "takeaway": {
+          "en": "Before judging a solution, name the user, the problem and the outcome it should change.",
+          "ta": "Solution-a judge pannradhukku munnaadi: user yaaru, problem enna, endha outcome maaranum — idha clear-ah sollunga."
+        }
+      },
+      "deep": [
+        {
+          "title": "Why it exists",
+          "body": "Teams naturally fall in love with solutions: a new technology, a competitor's feature, a stakeholder's idea. Product thinking is the discipline of evaluating ideas by the value they create. It protects scarce engineering time from being spent on things that look impressive but change nothing."
+        },
+        {
+          "title": "How it works: the value lens",
+          "body": "For any idea ask four questions. 1) Who exactly is the user? 2) What problem or job are they struggling with, and how often? 3) How do they solve it today, and what does that cost them in time, money or frustration? 4) If we succeed, which measurable outcome changes for them and for us? If you can't answer these, you're not ready to build."
+        },
+        {
+          "title": "Desirable, viable, feasible",
+          "body": "Desirability: will people choose and keep using it? Viability: does it support the business through revenue, retention or reduced cost, and is it legal and ethical? Feasibility: can we build and run it with our skills, time and technology? Ideas strong on only one dimension (for example, a technically brilliant feature nobody needs) usually fail. Many teams add a fourth lens: usability — can people actually figure it out?"
+        },
+        {
+          "title": "Limitations",
+          "body": "Frameworks don't replace evidence. You can argue that an idea is desirable on paper and still be wrong. Product thinking gives you the right questions; discovery and experiments give you the answers."
+        },
+        {
+          "title": "Interview angle",
+          "body": "Product sense interviews (‘Design a product for X’ or ‘What's your favourite product and why?’) test product thinking. Show the chain: user → problem → why existing solutions fail → your solution → how you'd measure success → trade-offs."
+        }
+      ],
+      "example": "Illustrative example: a music app considers adding lyrics. Product thinking asks: who wants lyrics (people singing along, language learners)? What's the problem (they leave the app to search lyrics)? What outcome changes (longer sessions, fewer exits)? Is it viable (lyrics licensing costs)? Is it feasible (syncing lyrics to time)? The answers determine whether and how to build it.",
+      "counterexample": "Adding a chatbot to a banking app ‘because AI is trending’, without identifying which customer task it makes easier, is technology-led rather than problem-led.",
+      "mistakes": [
+        "Evaluating ideas by how exciting they sound instead of the problem they solve",
+        "Considering only user value and ignoring business viability or cost",
+        "Assuming you are the user"
+      ],
+      "keyTerms": [
+        { "term": "Desirability", "meaning": "Whether users actually want the product and will choose it." },
+        { "term": "Viability", "meaning": "Whether the product works for the business: revenue, cost, legal and ethical fit." },
+        { "term": "Feasibility", "meaning": "Whether the team can build and operate it with available technology and resources." }
+      ],
+      "questions": [
+        {
+          "id": "q_product_thinking_1",
+          "kind": "RECALL",
+          "prompt": "A product that users love but loses money on every transaction fails which test?",
+          "options": [
+            { "text": "Desirability", "why": "Users love it, so desirability is fine." },
+            { "text": "Viability", "correct": true, "why": "Correct — it doesn't work for the business." },
+            { "text": "Feasibility", "why": "It exists, so it can be built." },
+            { "text": "Usability", "why": "Nothing suggests users struggle to use it." }
+          ],
+          "explanation": "Viability is about whether the product sustains the business — revenue, costs, legal and ethical fit."
+        },
+        {
+          "id": "q_product_thinking_2",
+          "kind": "RECALL",
+          "prompt": "Which question should come first when evaluating a feature idea?",
+          "options": [
+            { "text": "Which technology should we use?", "why": "That's a how question; first establish whether the problem is worth solving." },
+            { "text": "Which user problem does it solve, and how painful is it?", "correct": true, "why": "Yes — value starts with a real problem for a specific user." },
+            { "text": "Does a competitor have it?", "why": "Competitor features are a signal, not a reason by themselves." },
+            { "text": "How long will it take?", "why": "Effort matters later, once value is clear." }
+          ],
+          "explanation": "Problem-first thinking prevents building solutions in search of a problem."
+        },
+        {
+          "id": "q_product_thinking_3",
+          "kind": "APPLICATION",
+          "prompt": "Your CEO wants to add social sharing to a personal-finance app. Which response shows the best product thinking?",
+          "options": [
+            { "text": "Build it — the CEO decided", "why": "Even CEO ideas deserve a value check; your job is to bring evidence." },
+            { "text": "Ask what outcome sharing should drive (e.g. referrals), whether users actually want to share financial data, and how to test that cheaply", "correct": true, "why": "Right — this links the idea to an outcome and tests desirability, which is doubtful for private financial data." },
+            { "text": "Reject it immediately because finance is private", "why": "There may be a valid version (e.g. sharing goals, not balances); test before dismissing." },
+            { "text": "Copy how a social media app does sharing", "why": "Context matters; finance users have different needs and risks." }
+          ],
+          "explanation": "Turn the idea into a hypothesis: the outcome it should drive, the user need behind it, and a cheap way to test it."
+        },
+        {
+          "id": "q_product_thinking_4",
+          "kind": "APPLICATION",
+          "prompt": "A feature increased ‘time spent in app’ by 20%, but support tickets about confusion also rose. What's the best interpretation?",
+          "options": [
+            { "text": "Clear success — engagement went up", "why": "More time could mean people are struggling, not enjoying." },
+            { "text": "The metric may reflect friction rather than value; investigate whether users complete their goals faster or slower", "correct": true, "why": "Yes — time spent is not automatically value. Check task success and satisfaction." },
+            { "text": "Roll it back immediately", "why": "Investigate first; the right fix might be a small usability change." },
+            { "text": "Ignore support tickets; they're anecdotal", "why": "Tickets are valuable qualitative evidence, especially when they rise together with a metric." }
+          ],
+          "explanation": "Value means users achieve their goals. Activity metrics can rise for bad reasons."
+        }
+      ],
+      "exercise": {
+        "scenario": "A grocery delivery app is considering a ‘recipe ideas’ section that suggests dishes based on items in your cart.",
+        "prompt": "Evaluate this idea using desirability, viability and feasibility. Name the user, the problem and one outcome metric.",
+        "modelAnswer": "User: home cooks who order groceries weekly. Problem: deciding what to cook and remembering all the ingredients causes forgotten items and extra orders. Desirability: likely for regular cooks; test with a prototype. Viability: could raise basket size by suggesting missing ingredients, but content creation costs money. Feasibility: matching recipes to items is achievable with a tagged recipe catalogue. Outcome metric: average basket value or items per order for users who view recipes, guarded by checkout conversion.",
+        "checklist": [
+          "Names a specific user segment",
+          "States the problem in the user's terms",
+          "Covers all three lenses: desirability, viability, feasibility",
+          "Picks a measurable outcome metric"
+        ]
+      }
+    },
+    {
+      "id": "l_pm_vs_project",
+      "unitId": "u01",
+      "title": "Product vs project vs program management",
+      "level": "BEGINNER",
+      "objectives": [
+        "Differentiate product, project and program management",
+        "Explain how these roles collaborate",
+        "Choose the right role for a given responsibility"
+      ],
+      "prerequisites": ["l_pm_role"],
+      "related": ["l_agile_scrum", "l_stakeholders"],
+      "tags": ["roles", "project management", "program management"],
+      "quickMinutes": 5,
+      "deepMinutes": 7,
+      "quick": {
+        "explanation": {
+          "en": "A product manager decides what to build and why, and stays with the product over its whole life. A project manager makes sure a defined piece of work is delivered on time, within budget and scope, and then the project ends. A program manager coordinates several related projects or teams so they reach a bigger goal together.",
+          "ta": "Product manager: enna build pannanum, en build pannanum-nu decide pannuvaanga; product-oda full life-la avanga kooda iruppaanga. Project manager: oru defined velai time-kulla, budget-kulla, scope-kulla mudiyudha-nu paathukuvaanga — project mudinjaa avanga velai-um mudiyum. Program manager: pala related projects/teams-a coordinate panni oru periya goal-a reach panna help pannuvaanga."
+        },
+        "analogy": {
+          "en": "Building a house: the product manager is like the family deciding what kind of home they need; the project manager is the contractor delivering it on schedule; the program manager coordinates building a whole housing colony.",
+          "ta": "Veedu kattura maadhiri: endha maadhiri veedu venum-nu decide panra family = product manager; schedule-padi kattitharra contractor = project manager; oru full housing colony-a coordinate panravar = program manager."
+        },
+        "takeaway": {
+          "en": "Product = right thing (value). Project = thing done right (delivery). Program = many things aligned (coordination).",
+          "ta": "Product = sariyana vishayam (value). Project = sariya mudikkuradhu (delivery). Program = pala vishayangal align aagradhu (coordination)."
+        }
+      },
+      "deep": [
+        {
+          "title": "Why the distinction matters",
+          "body": "Confusing these roles leads to teams that ship on time but build the wrong thing, or teams with great ideas that never get delivered. Knowing the difference helps you understand what's expected of you as a PM and when to lean on project or program managers."
+        },
+        {
+          "title": "How they differ",
+          "body": "Time horizon: product is ongoing; a project has a start and an end; a program spans multiple projects over months or years. Success measure: product = outcomes such as adoption, retention and revenue; project = on time, on budget, in scope; program = the combined strategic goal achieved. Key question: product asks ‘what and why?’; project asks ‘how and when?’; program asks ‘how do these pieces fit together?’"
+        },
+        {
+          "title": "How they collaborate",
+          "body": "On a large launch, such as entering a new city, the PM defines what the product must do for customers there, project managers run specific workstreams (payments integration, local partnerships), and a program manager tracks dependencies and risks across all of them. In smaller companies one person may wear several of these hats."
+        },
+        {
+          "title": "Technical program managers",
+          "body": "A TPM (technical program manager) coordinates complex cross-team engineering efforts: migrations, platform launches, infrastructure. They need strong technical understanding but, unlike PMs, typically don't own the product's direction or customer outcomes."
+        }
+      ],
+      "example": "Illustrative example: an e-commerce company launches same-day delivery. The PM decides which cities and customer segments to target first and what success means. A project manager runs the warehouse-software update with a fixed deadline. A program manager coordinates logistics, app, marketing and customer-support projects so they go live together.",
+      "counterexample": "Calling someone a ‘product manager’ when their whole job is tracking deadlines in a Gantt chart for work someone else defined is really project management.",
+      "mistakes": [
+        "Assuming a PM's main job is managing timelines",
+        "Thinking project managers are ‘less important’ — delivery skill is critical",
+        "Judging a product by whether it launched on time rather than whether it created value"
+      ],
+      "keyTerms": [
+        { "term": "Scope", "meaning": "The defined boundaries of what a project will deliver." },
+        { "term": "Dependency", "meaning": "When one piece of work can't proceed until another is done." },
+        { "term": "TPM", "meaning": "Technical Program Manager: coordinates complex cross-team technical efforts." }
+      ],
+      "questions": [
+        {
+          "id": "q_pm_vs_project_1",
+          "kind": "RECALL",
+          "prompt": "Which statement best describes a project manager's success?",
+          "options": [
+            { "text": "Delivering the defined scope on time and within budget", "correct": true, "why": "Correct — project success is about delivery against the plan." },
+            { "text": "Increasing customer retention", "why": "That's a product outcome." },
+            { "text": "Choosing the product vision", "why": "Vision is a product responsibility." },
+            { "text": "Coordinating ten projects toward a strategic goal", "why": "That describes program management." }
+          ],
+          "explanation": "Projects are temporary efforts with a defined scope, timeline and budget."
+        },
+        {
+          "id": "q_pm_vs_project_2",
+          "kind": "RECALL",
+          "prompt": "Which role typically has the longest time horizon on a single product?",
+          "options": [
+            { "text": "Project manager", "why": "Projects end once delivered." },
+            { "text": "Product manager", "correct": true, "why": "Yes — product management continues across the product's whole lifecycle." },
+            { "text": "Release manager", "why": "Release management focuses on specific releases." },
+            { "text": "Scrum master", "why": "Scrum masters facilitate the team's process, not product direction." }
+          ],
+          "explanation": "Products live on, so product management is continuous."
+        },
+        {
+          "id": "q_pm_vs_project_3",
+          "kind": "APPLICATION",
+          "prompt": "A payments-system migration spans five engineering teams with many dependencies and a hard regulatory deadline. Who is best placed to coordinate it?",
+          "options": [
+            { "text": "A technical program manager", "correct": true, "why": "Right — cross-team technical coordination with dependencies is classic TPM work." },
+            { "text": "A UX researcher", "why": "Research isn't the main need here." },
+            { "text": "The marketing lead", "why": "This is an engineering coordination problem." },
+            { "text": "Nobody; teams self-organise", "why": "Five teams with a hard deadline need explicit coordination." }
+          ],
+          "explanation": "Programs coordinate multiple projects; TPMs specialise in technical programs."
+        },
+        {
+          "id": "q_pm_vs_project_4",
+          "kind": "APPLICATION",
+          "prompt": "Your feature launched on time and on budget, but almost nobody uses it. From a product perspective, this is:",
+          "options": [
+            { "text": "A success, because delivery went perfectly", "why": "Delivery success isn't product success." },
+            { "text": "A product failure worth learning from: the problem, solution or targeting was likely wrong", "correct": true, "why": "Yes — product success is measured by outcomes; now investigate why adoption is low." },
+            { "text": "The project manager's fault", "why": "Low adoption is about value, which is the PM's responsibility." },
+            { "text": "Nothing to worry about; usage will come", "why": "Hope is not a strategy; investigate the reasons." }
+          ],
+          "explanation": "On-time delivery of the wrong thing is still the wrong thing."
+        }
+      ],
+      "exercise": {
+        "scenario": "Your company is launching its app in Tamil and Hindi in addition to English.",
+        "prompt": "List two responsibilities each for the product manager, a project manager and a program manager in this launch.",
+        "modelAnswer": "Product manager: decide which user segments and features to localise first based on demand; define success metrics such as activation in new-language users. Project manager: run the translation workstream to schedule and budget; track the testing plan for localised screens. Program manager: coordinate engineering, content, marketing and support teams; manage cross-team dependencies and the launch-readiness review.",
+        "checklist": [
+          "PM responsibilities focus on what/why and outcomes",
+          "Project responsibilities focus on delivery, schedule and scope",
+          "Program responsibilities focus on cross-team coordination"
+        ]
+      }
+    },
+    {
+      "id": "l_lifecycle",
+      "unitId": "u01",
+      "title": "The product lifecycle",
+      "level": "BEGINNER",
+      "objectives": [
+        "Name the stages of the product lifecycle",
+        "Explain how a PM's priorities change across stages",
+        "Identify the stage of a real product from its signals"
+      ],
+      "prerequisites": ["l_product_thinking"],
+      "related": ["l_gtm_pmf", "l_feedback_iteration", "l_north_star"],
+      "tags": ["lifecycle", "growth", "maturity"],
+      "quickMinutes": 5,
+      "deepMinutes": 8,
+      "quick": {
+        "explanation": {
+          "en": "Products move through stages: introduction (finding product-market fit), growth (scaling what works), maturity (optimising and defending), and decline (sunsetting or reinventing). What a PM should focus on depends on the stage: learning fast early, scaling and reliability during growth, efficiency and retention at maturity.",
+          "ta": "Product-ku stages irukku: introduction (product-market fit kandupidikkuradhu), growth (work aaguradha scale panradhu), maturity (optimise panni defend panradhu), decline (niruthuradhu illa reinvent panradhu). PM-oda focus stage-a poruthu maarum: aarambathula vegama kathukkanum, growth-la scale & reliability, maturity-la efficiency & retention."
+        },
+        "analogy": {
+          "en": "Like a person's life: a child learns and experiments, a young adult grows fast, a middle-aged adult optimises and protects what they've built, and later life is about legacy and transition.",
+          "ta": "Manushan vaazhkai maadhiri: kuzhandhai kathukittu experiment pannum, ilaignar vegama valaruvaanga, middle age-la irukkuradha optimise panni protect pannuvaanga, apram legacy & transition."
+        },
+        "takeaway": {
+          "en": "The right strategy depends on the stage — don't optimise conversion before you've proven anyone wants the product.",
+          "ta": "Stage-ku yetha strategy venum — yaarukkume product venum-nu prove pannaama conversion-a optimise pannaadheenga."
+        }
+      },
+      "deep": [
+        {
+          "title": "Why it matters",
+          "body": "The same action can be smart at one stage and wasteful at another. Spending months on tiny conversion improvements makes sense for a mature product with millions of users, but it is premature for a product still searching for product-market fit."
+        },
+        {
+          "title": "Stage by stage",
+          "body": "Introduction: few users, high uncertainty. Focus on discovery, rapid iteration and qualitative signals of strong pull. Growth: usage accelerates. Focus on scaling infrastructure, onboarding, new segments and keeping quality high. Maturity: growth slows and competition increases. Focus on retention, monetisation, efficiency and incremental innovation. Decline: usage falls. Decide whether to reinvent, harvest (minimal investment) or sunset responsibly by migrating users and communicating clearly."
+        },
+        {
+          "title": "Signals of each stage",
+          "body": "Look at growth rate, retention curves, competitive intensity and the kinds of requests coming in. Early: ‘does it do X at all?’. Growth: ‘it's slow and breaks under load’. Maturity: ‘competitors are cheaper’. Decline: shrinking cohorts and users moving to new alternatives."
+        },
+        {
+          "title": "Limitations",
+          "body": "Real products don't move in a clean line. A product can be mature in one market and introductory in another, and new features inside a mature product can have their own early-stage lifecycle. Use the lifecycle as a lens, not a rigid rule."
+        }
+      ],
+      "example": "Illustrative example: a messaging app in a new country is in the introduction stage there, so the team interviews early users and fixes local payment issues. In its home market it's mature, so the focus is reducing churn and adding business features to monetise.",
+      "counterexample": "A startup with 200 users that builds an elaborate pricing-tier system and A/B tests button colours is optimising for maturity while still in introduction.",
+      "mistakes": [
+        "Applying mature-product tactics (micro-optimisation) to an early product",
+        "Ignoring decline signals and investing heavily in a fading product",
+        "Treating the lifecycle as a fixed timeline"
+      ],
+      "keyTerms": [
+        { "term": "Product-market fit (PMF)", "meaning": "When a product satisfies a strong market need so well that users keep using it and recommend it." },
+        { "term": "Sunsetting", "meaning": "Retiring a product or feature in a planned, responsible way." }
+      ],
+      "questions": [
+        {
+          "id": "q_lifecycle_1",
+          "kind": "RECALL",
+          "prompt": "In the introduction stage, what should a PM prioritise most?",
+          "options": [
+            { "text": "Learning whether the product strongly solves a real need", "correct": true, "why": "Correct — proving product-market fit comes first." },
+            { "text": "Cost optimisation of infrastructure", "why": "Premature at this stage." },
+            { "text": "Defending against price competition", "why": "That's typical of maturity." },
+            { "text": "Planning the sunset", "why": "That's for decline." }
+          ],
+          "explanation": "Early stage = high uncertainty, so learning speed matters most."
+        },
+        {
+          "id": "q_lifecycle_2",
+          "kind": "RECALL",
+          "prompt": "Slowing growth, strong competitors and a focus on retention and efficiency suggest which stage?",
+          "options": [
+            { "text": "Introduction", "why": "Introduction has high uncertainty and few users." },
+            { "text": "Growth", "why": "Growth is characterised by accelerating adoption." },
+            { "text": "Maturity", "correct": true, "why": "Yes — these are classic maturity signals." },
+            { "text": "Decline", "why": "Decline shows shrinking usage, not just slower growth." }
+          ],
+          "explanation": "Maturity: growth plateaus, competition rises, optimisation matters."
+        },
+        {
+          "id": "q_lifecycle_3",
+          "kind": "APPLICATION",
+          "prompt": "Your app's sign-ups are doubling monthly, but the servers crash at peak times and onboarding confuses new user groups. What's the best focus?",
+          "options": [
+            { "text": "Reliability and onboarding for new segments", "correct": true, "why": "Right — growth-stage priorities are scaling and keeping quality high." },
+            { "text": "Raising prices", "why": "Raising prices while quality suffers risks the growth." },
+            { "text": "Running user interviews to see if anyone wants the product", "why": "Doubling sign-ups already show strong demand; scaling is the bottleneck." },
+            { "text": "Planning a replacement product", "why": "No sign of decline." }
+          ],
+          "explanation": "In growth, the risk is breaking under success."
+        },
+        {
+          "id": "q_lifecycle_4",
+          "kind": "APPLICATION",
+          "prompt": "A legacy desktop feature is used by 2% of users and costs significant maintenance. What's a responsible approach?",
+          "options": [
+            { "text": "Delete it tonight", "why": "Abrupt removal harms the users who rely on it." },
+            { "text": "Plan a sunset: understand who uses it, offer alternatives or migration, communicate timelines", "correct": true, "why": "Yes — responsible sunsetting respects existing users." },
+            { "text": "Keep investing heavily", "why": "Costs outweigh the value for a declining feature." },
+            { "text": "Ignore it", "why": "Maintenance costs keep growing; it needs a decision." }
+          ],
+          "explanation": "Decline-stage decisions are about reinvention, harvesting or careful sunsetting."
+        }
+      ],
+      "exercise": {
+        "scenario": "Pick an app you use often (for example a payments, food or music app).",
+        "prompt": "Which lifecycle stage is it in for you and your city? Give three signals and one priority you'd set as its PM.",
+        "modelAnswer": "Example: a UPI payments app in a large Indian city is in maturity. Signals: almost everyone already uses UPI, multiple strong competitors, and the app now pushes credit, insurance and offers to monetise. Priority: grow revenue per user through trusted financial services without hurting the reliability and speed of core payments.",
+        "checklist": [
+          "Names a stage clearly",
+          "Gives at least three observable signals",
+          "Sets a priority that fits that stage",
+          "Acknowledges context such as market or segment"
+        ]
+      }
+    }
+  ],
+  "checkpoint": {
+    "id": "cp_u01",
+    "title": "Your first week as a PM",
+    "scenario": "You've just joined a two-year-old fitness app as its first PM. Growth has slowed, the CEO has a long list of feature ideas, engineering feels pulled in many directions, and nobody is sure what success looks like.",
+    "minutes": 8,
+    "debrief": "Strong PMs bring clarity before adding features: understand the stage and the problem, connect ideas to outcomes, and respect the roles of others. Notice how each step built on the previous lesson.",
+    "steps": [
+      {
+        "id": "cp_u01_1",
+        "lessonId": "l_lifecycle",
+        "kind": "APPLICATION",
+        "prompt": "Growth has slowed after two years and competitors are rising. What stage is the product likely in, and what does that imply?",
+        "options": [
+          { "text": "Early maturity — focus on retention and finding the next growth driver", "correct": true, "why": "Slowing growth plus competition suggests maturity; retention and a focused bet on growth matter." },
+          { "text": "Introduction — rebuild from scratch", "why": "Two years of growth suggests the product found some fit." },
+          { "text": "Decline — sunset the app", "why": "Slower growth isn't decline." }
+        ],
+        "explanation": "Stage diagnosis shapes everything that follows."
+      },
+      {
+        "id": "cp_u01_2",
+        "lessonId": "l_product_thinking",
+        "kind": "APPLICATION",
+        "prompt": "The CEO's top idea is a social feed. How do you evaluate it?",
+        "options": [
+          { "text": "Ask which user problem and outcome it serves, check desirability with users, and weigh viability and cost", "correct": true, "why": "This applies the value lens rather than reacting to who suggested it." },
+          { "text": "Build it, because the CEO is the most experienced person", "why": "Seniority isn't evidence." },
+          { "text": "Reject it because feeds are distracting", "why": "Opinion without evidence is no better." }
+        ],
+        "explanation": "Every idea is a hypothesis about value."
+      },
+      {
+        "id": "cp_u01_3",
+        "lessonId": "l_pm_role",
+        "kind": "APPLICATION",
+        "prompt": "Engineering feels pulled in many directions. What's your most valuable contribution?",
+        "options": [
+          { "text": "Create clarity: one prioritised problem with a success metric, shared with everyone", "correct": true, "why": "Clarity and focus are what the PM uniquely provides." },
+          { "text": "Assign individual tasks to each engineer daily", "why": "Micromanaging isn't the PM role." },
+          { "text": "Tell engineering to work faster", "why": "Speed on unclear priorities makes the problem worse." }
+        ],
+        "explanation": "The PM aligns the team around the why and the what."
+      },
+      {
+        "id": "cp_u01_4",
+        "lessonId": "l_pm_vs_project",
+        "kind": "APPLICATION",
+        "prompt": "A partnership with gyms needs legal, sales and app teams to deliver together by a fixed date. Who should coordinate the cross-team delivery?",
+        "options": [
+          { "text": "A program or project manager, with you defining the product requirements and success metrics", "correct": true, "why": "Right — delivery coordination and product direction are complementary roles." },
+          { "text": "You alone, doing everything", "why": "Possible in a tiny company, but not the best use of roles when they exist." },
+          { "text": "Legal, because contracts matter most", "why": "Legal is one workstream, not the coordinator." }
+        ],
+        "explanation": "Know when to lean on delivery-focused roles."
+      }
+    ]
+  }
+}

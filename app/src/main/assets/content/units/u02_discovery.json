@@ -1,0 +1,550 @@
+{
+  "unit": {
+    "id": "u02",
+    "order": 2,
+    "title": "Customer Discovery",
+    "summary": "Find and understand real customer problems before building: problem statements, interviews, research methods and evidence synthesis.",
+    "level": "BEGINNER",
+    "prerequisites": ["u01"]
+  },
+  "lessons": [
+    {
+      "id": "l_problem_first",
+      "unitId": "u02",
+      "title": "Problems before solutions",
+      "level": "BEGINNER",
+      "objectives": [
+        "Write a clear problem statement",
+        "Separate a problem from a proposed solution",
+        "Explain why problem framing changes the solutions you consider"
+      ],
+      "prerequisites": ["l_product_thinking"],
+      "related": ["l_user_interviews", "l_jtbd", "l_problem_validation"],
+      "tags": ["discovery", "problem statement", "framing"],
+      "quick": {
+        "explanation": {
+          "en": "A problem statement describes who is struggling, with what, and why it matters — without mentioning a solution. ‘Users need a chatbot’ is a solution. ‘First-time borrowers abandon the loan form because they don't understand which documents they need’ is a problem. Good framing opens up many possible solutions and makes success measurable.",
+          "ta": "Problem statement-na: yaaru kashtapadraanga, edhula, adhu en important — idha solution solla-maa describe panradhu. ‘Users-ku chatbot venum’ — idhu solution. ‘First-time borrowers loan form-a paadhiyila vittuduraanga, enna documents venum-nu puriyala’ — idhu dhaan problem. Nalla framing pala solutions-ku vazhi thirakkum, success-a measure panna mudiyum."
+        },
+        "analogy": {
+          "en": "If you tell a mechanic ‘replace my battery’, they will. If you say ‘my car won't start on cold mornings’, they might find the real cause is the starter.",
+          "ta": "Mechanic-kitta ‘battery maathunga’-nu sonna, maathiduvaanga. ‘Kulir kaalaila car start aagala’-nu sonna, nijamana kaaranam starter-nu kandupidikkalaam."
+        },
+        "takeaway": {
+          "en": "State the problem in the user's world — who, what struggle, what impact — before discussing any solution.",
+          "ta": "Solution pesa munnaadi, user-oda ulagathula problem-a sollunga — yaaru, enna kashtam, enna impact."
+        }
+      },
+      "deep": [
+        {
+          "title": "Why it exists",
+          "body": "Teams that start from solutions anchor on the first idea, and every later discussion becomes about that idea's details. Starting from the problem keeps options open, aligns the team on what ‘better’ means and makes it possible to kill weak ideas early."
+        },
+        {
+          "title": "How to write one",
+          "body": "A useful template: ‘[Specific user] struggles to [goal or task] because [root cause or obstacle], which leads to [measurable impact on them and the business].’ Then add evidence: how you know this, and how often it happens. Example: ‘Small restaurant owners struggle to update their menu during rush hours because editing requires a laptop, which leads to orders for unavailable items and refunds (about 8% of their orders, from support data).’"
+        },
+        {
+          "title": "Five whys and root causes",
+          "body": "Ask ‘why?’ repeatedly to move from symptoms to causes. Orders get cancelled → why? Food arrives late → why? Riders wait at restaurants → why? Restaurants accept orders they can't prepare in time → why? They have no way to signal that they're busy. The root cause suggests very different solutions from ‘make riders faster’."
+        },
+        {
+          "title": "When not to over-frame",
+          "body": "For small, obvious fixes (a broken button, a typo) a full problem statement is overhead. Use lightweight framing for low-risk changes and rigorous framing for expensive or uncertain bets."
+        },
+        {
+          "title": "Interview angle",
+          "body": "In product-design interviews, interviewers watch whether you clarify the problem and user before proposing features. Say explicitly: ‘Before solutions, let me define who we're solving for and what problem matters most.’"
+        }
+      ],
+      "example": "Illustrative example: a college-fee payment app hears ‘add EMI options’. Reframed: ‘Parents of first-year students struggle to pay large fees at once because payment is due within two weeks of admission, which leads to late fees and drop-outs from the payment flow.’ That framing allows EMI, deadline reminders or partial payments as possible solutions.",
+      "counterexample": "‘We need to build an AI assistant for our app’ is a solution with no user, struggle or impact named.",
+      "mistakes": [
+        "Hiding a solution inside the problem statement (‘users lack a search bar’)",
+        "Describing the problem from the company's view only (‘we need more revenue’)",
+        "Skipping evidence of how often the problem occurs"
+      ],
+      "keyTerms": [
+        { "term": "Problem statement", "meaning": "A concise description of who struggles with what, why, and its impact — free of solutions." },
+        { "term": "Root cause", "meaning": "The underlying reason a problem occurs, as opposed to its visible symptoms." },
+        { "term": "Five whys", "meaning": "Asking ‘why?’ repeatedly to dig from symptoms to causes." }
+      ],
+      "questions": [
+        {
+          "id": "q_problem_first_1",
+          "kind": "RECALL",
+          "prompt": "Which of these is a problem statement rather than a solution?",
+          "options": [
+            { "text": "Add a dark mode toggle", "why": "This is a solution." },
+            { "text": "Night-shift nurses struggle to read the app in dim wards without disturbing patients", "correct": true, "why": "Correct — it names a user, a struggle and context, without prescribing a fix." },
+            { "text": "Build a chatbot for support", "why": "Solution-first." },
+            { "text": "Increase revenue by 20%", "why": "That's a business goal, not a user problem." }
+          ],
+          "explanation": "Problem statements describe the struggle, leaving room for several solutions."
+        },
+        {
+          "id": "q_problem_first_2",
+          "kind": "RECALL",
+          "prompt": "What is the main benefit of the five-whys technique?",
+          "options": [
+            { "text": "It produces five feature ideas", "why": "It's about causes, not ideas." },
+            { "text": "It moves from visible symptoms to underlying causes", "correct": true, "why": "Yes — it helps find the root cause." },
+            { "text": "It replaces user research", "why": "It should be grounded in evidence, not replace it." },
+            { "text": "It sets the project deadline", "why": "Unrelated." }
+          ],
+          "explanation": "Fixing root causes prevents symptoms from returning."
+        },
+        {
+          "id": "q_problem_first_3",
+          "kind": "APPLICATION",
+          "prompt": "A stakeholder says: ‘Our problem is that we don't have a referral program.’ What's the best reframe?",
+          "options": [
+            { "text": "‘We need a referral program with ₹100 rewards’", "why": "Still solution-first, and now more specific." },
+            { "text": "‘New-user growth has stalled; we don't know yet whether users would recommend us or what stops them’", "correct": true, "why": "Right — this states the underlying problem and opens up investigation." },
+            { "text": "‘Competitors have referral programs’", "why": "A competitor observation, not a problem." },
+            { "text": "‘Users want rewards’", "why": "An unverified assumption that's still solution-flavoured." }
+          ],
+          "explanation": "The absence of a solution is never the problem itself."
+        },
+        {
+          "id": "q_problem_first_4",
+          "kind": "APPLICATION",
+          "prompt": "A typo on the checkout button needs fixing. How much problem framing is needed?",
+          "options": [
+            { "text": "A full research study", "why": "Overkill for an obvious, low-risk fix." },
+            { "text": "Minimal — just fix it; rigorous framing is for expensive or uncertain bets", "correct": true, "why": "Yes — match the rigour to the risk." },
+            { "text": "A PRD and stakeholder review", "why": "Too heavy for a typo." },
+            { "text": "An A/B test", "why": "Unnecessary for an obvious bug." }
+          ],
+          "explanation": "Rigour should scale with uncertainty and cost."
+        }
+      ],
+      "exercise": {
+        "scenario": "A metro-rail ticketing app gets many complaints: ‘QR ticket doesn't scan at the gate’.",
+        "prompt": "Write a problem statement using the template, then list three ‘why’ questions you'd investigate.",
+        "modelAnswer": "Problem: ‘Daily commuters struggle to enter stations quickly because their QR tickets often fail to scan at gates, which leads to queues, missed trains and app abandonment for paper tickets.’ Whys: Why do scans fail — screen brightness, network-dependent QR loading, or gate hardware? Why does it happen more at certain stations or times? Why do users load the QR at the gate rather than before?",
+        "checklist": [
+          "Names a specific user",
+          "Describes the struggle without a solution",
+          "Includes the impact",
+          "Asks why questions that dig toward root causes"
+        ]
+      }
+    },
+    {
+      "id": "l_user_interviews",
+      "unitId": "u02",
+      "title": "Running user interviews",
+      "level": "BEGINNER",
+      "objectives": [
+        "Plan an interview around past behaviour, not opinions",
+        "Ask open, non-leading questions",
+        "Avoid the most common interview biases"
+      ],
+      "prerequisites": ["l_problem_first"],
+      "related": ["l_research_methods", "l_synthesis", "l_jtbd"],
+      "tags": ["research", "interviews", "discovery"],
+      "quickMinutes": 6,
+      "quick": {
+        "explanation": {
+          "en": "User interviews are conversations that uncover what people actually do, struggle with and care about. The golden rule: ask about specific past behaviour (‘Tell me about the last time you…’) rather than hypothetical opinions (‘Would you use…?’). People are poor at predicting their future behaviour but good at describing what really happened.",
+          "ta": "User interviews-na: makkal nijamaave enna pannuraanga, edhula kashtapadraanga, edhu avangalukku mukkiyam-nu kandupidikkura conversation. Golden rule: ‘Neenga kadaisiya eppo … pannineenga, sollunga’-nu past behaviour pathi kelunga; ‘Neenga idha use pannuveengalaa?’-nu hypothetical-ah kekkaadheenga. Future-la enna pannuvom-nu predict panna makkalukku theriyaadhu, aana nadandhadha nalla solluvaanga."
+        },
+        "analogy": {
+          "en": "A detective asks ‘where were you at 9 pm?’, not ‘are you the kind of person who would commit a crime?’.",
+          "ta": "Detective ‘Raathiri 9 manikku enga irundheenga?’-nu kekkuvaar; ‘Neenga crime pannura type-aa?’-nu kekka maattaar."
+        },
+        "takeaway": {
+          "en": "Ask about the last real time, listen more than you talk, and never pitch your idea during discovery.",
+          "ta": "Kadaisiya nadandha real situation pathi kelunga, pesuradha vida adhigama kelunga, discovery-la unga idea-va pitch pannaadheenga."
+        }
+      },
+      "deep": [
+        {
+          "title": "Why it exists",
+          "body": "Data tells you what users do; interviews tell you why. They reveal context, workarounds, emotions and vocabulary that dashboards can't. A handful of good interviews often reveals the biggest problems faster than weeks of analysis."
+        },
+        {
+          "title": "How to run one",
+          "body": "1) Define a learning goal: what decision will this inform? 2) Recruit the right people: actual or target users, not friends. 5–8 per segment usually reveals the main patterns. 3) Use a short guide: warm-up, the last time they did the task, the struggles, workarounds, what they tried. 4) Ask open questions: ‘walk me through’, ‘what happened next?’, ‘why was that hard?’. 5) Dig with follow-ups: ‘tell me more’, ‘can you show me?’. 6) Take notes on facts, quotes and emotions; record if they agree. 7) Debrief within 24 hours."
+        },
+        {
+          "title": "Biases to avoid",
+          "body": "Leading questions (‘Wouldn't it be great if…?’) produce polite agreement. Hypotheticals produce wishful answers. Pitching turns research into sales. Confirmation bias makes you hear only what supports your idea. Sampling bias means talking only to power users or people who love you. Counter these with neutral wording, past-behaviour questions and deliberately recruiting churned or non-users."
+        },
+        {
+          "title": "When interviews aren't enough",
+          "body": "Interviews reveal problems and context but not how common something is. Combine them with surveys or analytics to size what you found. And watch behaviour when you can, because what people say and what they do differ."
+        }
+      ],
+      "example": "Illustrative example: instead of asking ‘Would you use a feature to split restaurant bills?’, ask ‘Tell me about the last time you ate out with friends. How did you pay? What happened afterwards?’ You might learn that the real pain is chasing friends for money days later, not the split itself.",
+      "counterexample": "‘Our new budget feature is really useful, right? You'd pay ₹99 a month for it?’ — leading, hypothetical and pitching all at once.",
+      "mistakes": [
+        "Asking whether people would use or pay for something",
+        "Talking more than the participant",
+        "Only interviewing happy, highly engaged users"
+      ],
+      "keyTerms": [
+        { "term": "Leading question", "meaning": "A question that suggests the desired answer." },
+        { "term": "Discussion guide", "meaning": "A flexible list of topics and questions for an interview." },
+        { "term": "Confirmation bias", "meaning": "Noticing only evidence that supports what you already believe." }
+      ],
+      "questions": [
+        {
+          "id": "q_user_interviews_1",
+          "kind": "RECALL",
+          "prompt": "Which interview question is strongest?",
+          "options": [
+            { "text": "Would you use an app that tracks your water intake?", "why": "Hypothetical — people over-predict their future behaviour." },
+            { "text": "Tell me about the last time you tried to drink more water. What happened?", "correct": true, "why": "Yes — it asks about real past behaviour." },
+            { "text": "Don't you think staying hydrated is important?", "why": "Leading — it invites agreement." },
+            { "text": "How much would you pay for our app?", "why": "Hypothetical pricing answers are unreliable." }
+          ],
+          "explanation": "Past behaviour reveals truth; hypotheticals reveal wishes."
+        },
+        {
+          "id": "q_user_interviews_2",
+          "kind": "RECALL",
+          "prompt": "Why should you include churned users in interviews?",
+          "options": [
+            { "text": "To convince them to come back", "why": "That's sales, not research." },
+            { "text": "They reveal why the product failed for them, countering bias from happy users", "correct": true, "why": "Correct — they show the failure modes loyal users don't experience." },
+            { "text": "They're cheaper to recruit", "why": "Usually they're harder to recruit." },
+            { "text": "It isn't useful", "why": "It's one of the most useful groups." }
+          ],
+          "explanation": "Avoid sampling bias by talking to people with different experiences."
+        },
+        {
+          "id": "q_user_interviews_3",
+          "kind": "APPLICATION",
+          "prompt": "Mid-interview, a participant says ‘I'd love a feature that does X!’. What's your best follow-up?",
+          "options": [
+            { "text": "‘Great, we'll build it!’", "why": "Commits prematurely and stops learning." },
+            { "text": "‘Tell me about the last time you needed that. What did you do instead?’", "correct": true, "why": "Right — dig into the underlying need and current workaround." },
+            { "text": "‘That's a bad idea.’", "why": "Dismissive, and it shuts down honest sharing." },
+            { "text": "Write it on the roadmap and move on", "why": "You lose the why behind the request." }
+          ],
+          "explanation": "Feature requests are clues to needs. Explore the need, not the request."
+        },
+        {
+          "id": "q_user_interviews_4",
+          "kind": "APPLICATION",
+          "prompt": "After 6 interviews, 5 people mention the same pain. What can you conclude?",
+          "options": [
+            { "text": "83% of all users have this problem", "why": "Six interviews can't give reliable percentages." },
+            { "text": "It's a strong signal worth sizing with data or a survey before a big investment", "correct": true, "why": "Yes — interviews find patterns; quantitative methods size them." },
+            { "text": "Nothing; 6 is too few", "why": "Small samples are good for discovering patterns." },
+            { "text": "Build the solution immediately", "why": "Validate its size and the solution approach first." }
+          ],
+          "explanation": "Qualitative methods discover; quantitative methods measure."
+        }
+      ],
+      "exercise": {
+        "scenario": "You're researching why small shop owners don't use a digital inventory app.",
+        "prompt": "Write a learning goal and five interview questions that follow the past-behaviour rule.",
+        "modelAnswer": "Learning goal: understand how small shop owners track stock today and what makes digital tools hard to adopt. Questions: 1) Walk me through how you checked stock last week. 2) Tell me about the last time you ran out of an item. What happened? 3) What tools or notebooks do you use today, and how did you start using them? 4) Have you ever tried an app for this? What happened? 5) What was the most frustrating part of managing stock last month?",
+        "checklist": [
+          "Learning goal ties to a decision",
+          "Questions ask about past behaviour",
+          "No leading or hypothetical questions",
+          "Explores workarounds and earlier attempts"
+        ]
+      }
+    },
+    {
+      "id": "l_research_methods",
+      "unitId": "u02",
+      "title": "Choosing research methods",
+      "level": "BEGINNER",
+      "objectives": [
+        "Distinguish qualitative and quantitative research",
+        "Pick a method based on the question you need answered",
+        "Combine methods to reduce blind spots"
+      ],
+      "prerequisites": ["l_user_interviews"],
+      "related": ["l_synthesis", "l_usability_testing", "l_metrics_basics"],
+      "tags": ["research", "surveys", "analytics", "observation"],
+      "quick": {
+        "explanation": {
+          "en": "Qualitative research (interviews, observation, usability tests) explains why people behave as they do. Quantitative research (analytics, surveys, experiments) tells you how many and how much. Pick the method that answers your current question: exploring an unknown problem needs qualitative depth; sizing a known problem needs numbers.",
+          "ta": "Qualitative research (interviews, observation, usability tests) — makkal en apdi behave pannuraanga-nu explain pannum. Quantitative research (analytics, surveys, experiments) — evlo per, evlo alavu-nu sollum. Ippo unga kitta irukkura question-ku yetha method-a choose pannunga: theriyaadha problem-a explore panna qualitative depth venum; therinja problem-a size panna numbers venum."
+        },
+        "analogy": {
+          "en": "A doctor uses both a conversation (‘where does it hurt?’) and lab tests (blood counts). Each catches what the other misses.",
+          "ta": "Doctor pesi kettum (‘enga valikkudhu?’) lab test-um (blood count) use pannuvaanga. Onnu miss panradha innonnu pidikkum."
+        },
+        "takeaway": {
+          "en": "Start with the question, then choose the method — and combine why with how many.",
+          "ta": "Mudhalla question, apram method — ‘en’-um ‘evlo’-um serthu paarunga."
+        }
+      },
+      "deep": [
+        {
+          "title": "The main methods",
+          "body": "Interviews: deep why, small sample. Contextual inquiry or observation: watch people in their real environment; reveals workarounds they don't mention. Usability testing: watch people try tasks with your product or prototype. Surveys: measure attitudes and frequency across many people; weak at explaining why. Product analytics: what users actually do, at scale. Support tickets and reviews: free, continuous signals of pain. Experiments (A/B tests): establish cause and effect."
+        },
+        {
+          "title": "Choosing by question",
+          "body": "‘What problems do people have?’ → interviews, observation. ‘How many people have this problem?’ → survey, analytics. ‘Can people use this design?’ → usability test. ‘Did this change cause the improvement?’ → experiment. ‘Where do people drop off?’ → funnel analytics, then interviews to learn why."
+        },
+        {
+          "title": "Survey pitfalls",
+          "body": "Surveys look easy but are easy to get wrong: leading wording, double-barrelled questions (‘Is the app fast and easy?’), and biased samples (only engaged users respond). Keep them short, use neutral wording and pilot them with a few people first."
+        },
+        {
+          "title": "Triangulation",
+          "body": "When different methods point the same way, your confidence rises. If analytics shows drop-off on the address page, interviews reveal that users can't find their apartment, and support tickets mention wrong deliveries, you have strong, converging evidence."
+        }
+      ],
+      "example": "Illustrative example: an edtech app sees many students stop after lesson 3 (analytics: what). Interviews show lesson 4 assumes prior knowledge students lack (qualitative: why). A short survey estimates how many students feel lost (quantitative: how many). A redesigned lesson tested with an A/B test confirms the fix (experiment: cause).",
+      "counterexample": "Sending a 40-question survey asking ‘What features do you want?’ to decide the whole roadmap — it gives vague wish-lists from a biased sample.",
+      "mistakes": [
+        "Using surveys to discover problems you don't yet understand",
+        "Treating analytics as the full story without asking why",
+        "Running only the methods you're comfortable with"
+      ],
+      "keyTerms": [
+        { "term": "Qualitative", "meaning": "Research producing rich, non-numerical insight into why." },
+        { "term": "Quantitative", "meaning": "Research producing numbers about how many or how much." },
+        { "term": "Triangulation", "meaning": "Using several methods to confirm a finding." }
+      ],
+      "questions": [
+        {
+          "id": "q_research_methods_1",
+          "kind": "RECALL",
+          "prompt": "Which method best answers ‘Did the new onboarding cause higher activation?’",
+          "options": [
+            { "text": "User interviews", "why": "Interviews explain why but can't prove causation." },
+            { "text": "A controlled experiment (A/B test)", "correct": true, "why": "Correct — experiments establish cause and effect." },
+            { "text": "A satisfaction survey", "why": "Surveys measure attitudes, not causal impact." },
+            { "text": "Reading app reviews", "why": "Reviews are anecdotal." }
+          ],
+          "explanation": "Cause-and-effect questions need controlled experiments."
+        },
+        {
+          "id": "q_research_methods_2",
+          "kind": "RECALL",
+          "prompt": "What's a double-barrelled survey question?",
+          "options": [
+            { "text": "A question asked twice", "why": "No." },
+            { "text": "A question that asks about two things at once, such as ‘Is it fast and easy?’", "correct": true, "why": "Yes — respondents can't answer both parts accurately." },
+            { "text": "A question with two answer options", "why": "That's a binary question." },
+            { "text": "A question about money", "why": "No." }
+          ],
+          "explanation": "Ask one thing per question."
+        },
+        {
+          "id": "q_research_methods_3",
+          "kind": "APPLICATION",
+          "prompt": "Analytics shows 40% of users drop off at the payment step. What's the best next step?",
+          "options": [
+            { "text": "Redesign the payment page immediately", "why": "You don't yet know why they drop off." },
+            { "text": "Watch session recordings or run usability tests and interviews to learn why", "correct": true, "why": "Right — pair the what from analytics with qualitative why." },
+            { "text": "Send a survey asking if they like payments", "why": "Vague, and it doesn't target the drop-off." },
+            { "text": "Accept it as normal", "why": "Investigate before accepting a large drop." }
+          ],
+          "explanation": "Analytics finds where; qualitative methods find why."
+        },
+        {
+          "id": "q_research_methods_4",
+          "kind": "APPLICATION",
+          "prompt": "You want to understand how farmers check crop prices in villages with patchy internet. Which method gives the deepest insight?",
+          "options": [
+            { "text": "An online survey", "why": "Patchy internet biases the sample and gives shallow answers." },
+            { "text": "Contextual inquiry: observe and talk with farmers where they make these decisions", "correct": true, "why": "Yes — the context (markets, phones, intermediaries) matters enormously." },
+            { "text": "App analytics", "why": "If they don't use the app, there's no data." },
+            { "text": "An A/B test", "why": "There's nothing to test yet." }
+          ],
+          "explanation": "Unfamiliar contexts call for observation in the real environment."
+        }
+      ],
+      "exercise": {
+        "scenario": "A food-delivery app wants to know whether to add scheduled orders (order now, deliver at a chosen time).",
+        "prompt": "Design a two-step research plan. Name the methods, what each answers and the decision it informs.",
+        "modelAnswer": "Step 1 — Qualitative: 8 interviews with customers who order for events or office lunches, plus a review of support tickets mentioning ‘later’ or ‘schedule’. Answers: is there a real need, in which situations, and what workarounds exist? Step 2 — Quantitative: analyse how often users open the app at one time and order much later, and send a short survey to a random sample on how often they need scheduled delivery. Answers: how many users and how often. Decision: whether scheduled orders deserve a place on the roadmap and which segment to design for first.",
+        "checklist": [
+          "Includes both qualitative and quantitative methods",
+          "States what question each method answers",
+          "Connects the research to a decision",
+          "Considers sampling (who is asked)"
+        ]
+      }
+    },
+    {
+      "id": "l_synthesis",
+      "unitId": "u02",
+      "title": "Synthesising evidence into insights",
+      "level": "BEGINNER",
+      "objectives": [
+        "Turn raw notes into themes with affinity mapping",
+        "Write insights that combine observation and implication",
+        "Weigh evidence strength before acting"
+      ],
+      "prerequisites": ["l_research_methods"],
+      "related": ["l_problem_validation", "l_prioritisation_basics"],
+      "tags": ["synthesis", "insights", "affinity mapping"],
+      "quick": {
+        "explanation": {
+          "en": "Synthesis turns a pile of research notes into a few clear insights the team can act on. You group observations into themes (affinity mapping), look for patterns across participants, and write each insight as ‘what we saw + why it matters’. An insight isn't a quote; it's an interpretation backed by evidence.",
+          "ta": "Synthesis-na: research notes kuvila-va, team act panna mudiyura sila clear insights-ah maathuradhu. Observations-a themes-ah group pannuvom (affinity mapping), participants-kulla patterns paappom, ovvoru insight-ayum ‘naanga paathadhu + adhu en mukkiyam’-nu ezhudhuvom. Insight-na quote illa; evidence-oda irukkura interpretation."
+        },
+        "analogy": {
+          "en": "Like sorting a big box of jigsaw pieces by colour and edge before assembling — the picture emerges from the groupings.",
+          "ta": "Periya jigsaw box-a assemble panna munnaadi colour, edge-padi pirichu vekkura maadhiri — group pannumbodhu dhaan picture theriyum."
+        },
+        "takeaway": {
+          "en": "Good insights are patterns across people, backed by evidence, with a clear implication for the product.",
+          "ta": "Nalla insight = pala per kitta theriyura pattern + evidence + product-ku clear implication."
+        }
+      },
+      "deep": [
+        {
+          "title": "Why it exists",
+          "body": "Raw research is overwhelming and easy to cherry-pick. Without synthesis, teams remember the most dramatic quote rather than the most common problem. Structured synthesis makes research shareable, traceable and harder to bias."
+        },
+        {
+          "title": "How it works",
+          "body": "1) Capture: one observation per sticky note (fact, quote, behaviour, emotion) with the participant's ID. 2) Cluster: group similar notes without predefined categories. 3) Name themes: give each cluster a descriptive label. 4) Count and compare: how many participants, which segments? 5) Write insights: ‘Observation → Implication’, for example ‘Most new sellers photograph products at night under poor light (6 of 8), so listing quality suffers; guidance or auto-enhancement could help.’ 6) Rate confidence: strong (many sources and methods) or weak (a single anecdote)."
+        },
+        {
+          "title": "Evidence strength",
+          "body": "Not all evidence is equal. Weakest to strongest: a single opinion → repeated opinions → observed behaviour → behaviour at scale (analytics) → controlled experiments. Prefer decisions backed by observed behaviour, and be explicit when you act on weaker evidence."
+        },
+        {
+          "title": "Opportunity framing",
+          "body": "Turn insights into ‘How might we…?’ questions: ‘How might we help new sellers take good photos at night?’ These invite multiple solutions while staying anchored to the evidence."
+        }
+      ],
+      "example": "Illustrative example: after 10 interviews about a bus-ticket app, notes cluster into ‘unsure which bus to board’ (7 people), ‘payment failures’ (3) and ‘wants a seat map’ (2). The strongest insight: commuters at busy stops can't match the ticket to the physical bus, which causes anxiety and missed rides. Opportunity: ‘How might we make it obvious which bus is mine?’",
+      "counterexample": "Writing ‘Users want a seat map’ as the top insight because one articulate participant demanded it loudly.",
+      "mistakes": [
+        "Treating quotes as insights",
+        "Creating categories before looking at the data",
+        "Ignoring how many participants share a theme"
+      ],
+      "keyTerms": [
+        { "term": "Affinity mapping", "meaning": "Grouping observations into themes from the bottom up." },
+        { "term": "Insight", "meaning": "An evidence-backed interpretation of a pattern, with an implication." },
+        { "term": "How might we (HMW)", "meaning": "A question format that turns an insight into an open design challenge." }
+      ],
+      "questions": [
+        {
+          "id": "q_synthesis_1",
+          "kind": "RECALL",
+          "prompt": "Which is the best-written insight?",
+          "options": [
+            { "text": "‘I hate waiting for OTPs’ — Participant 3", "why": "A quote is raw data, not an insight." },
+            { "text": "Most participants (7/9) abandon login when the OTP takes over 30 seconds, so OTP delay is likely a major activation blocker", "correct": true, "why": "Yes — a pattern with evidence and an implication." },
+            { "text": "Build WhatsApp login", "why": "That's a solution." },
+            { "text": "Login is bad", "why": "Vague and without evidence." }
+          ],
+          "explanation": "Insight = pattern + evidence + implication."
+        },
+        {
+          "id": "q_synthesis_2",
+          "kind": "RECALL",
+          "prompt": "Which evidence is generally strongest?",
+          "options": [
+            { "text": "One stakeholder's strong opinion", "why": "Weakest form." },
+            { "text": "Results from a controlled experiment", "correct": true, "why": "Correct — controlled experiments show causation." },
+            { "text": "A viral tweet", "why": "Anecdotal and unrepresentative." },
+            { "text": "A competitor's press release", "why": "Not evidence about your users." }
+          ],
+          "explanation": "Stronger evidence = observed behaviour, at scale, with controls."
+        },
+        {
+          "id": "q_synthesis_3",
+          "kind": "APPLICATION",
+          "prompt": "The CEO heard one customer complain loudly about missing export features and wants it prioritised. Your research shows it's 1 of 20 interviewees. What do you do?",
+          "options": [
+            { "text": "Prioritise it because the CEO asked", "why": "Ignoring evidence leads to poor investment." },
+            { "text": "Share the evidence: how common each theme is and its impact, then discuss the trade-off", "correct": true, "why": "Right — make the decision transparent with data, while respecting the input." },
+            { "text": "Ignore the CEO", "why": "Don't dismiss; inform." },
+            { "text": "Delete the export feedback", "why": "Never discard evidence." }
+          ],
+          "explanation": "Synthesis makes evidence visible so decisions aren't driven by the loudest voice."
+        },
+        {
+          "id": "q_synthesis_4",
+          "kind": "APPLICATION",
+          "prompt": "Turn this insight into a ‘How might we’: ‘First-time investors abandon fund selection because there are too many options.’",
+          "options": [
+            { "text": "HMW remove all funds except one?", "why": "Too narrow and solution-led." },
+            { "text": "HMW help first-time investors confidently choose a suitable fund?", "correct": true, "why": "Yes — anchored to the user and outcome, open to many solutions." },
+            { "text": "HMW make more money?", "why": "Not anchored to the insight." },
+            { "text": "HMW build a recommendation AI?", "why": "Prescribes a solution." }
+          ],
+          "explanation": "Good HMWs are neither too broad nor solution-specific."
+        }
+      ],
+      "exercise": {
+        "scenario": "Notes from 6 interviews with users of a fitness app: ‘skips workouts on busy days’ (5), ‘workouts too long’ (4), ‘loves the music’ (3), ‘wants a diet plan’ (1), ‘unsure if exercises are done correctly’ (3).",
+        "prompt": "Cluster these into themes, write the top two insights with their implications, and one HMW question for each.",
+        "modelAnswer": "Themes: time constraints (skips on busy days, workouts too long), confidence in form (unsure about technique), enjoyment (music), adjacent needs (diet). Insight 1: most users (5/6) skip workouts on busy days because sessions feel too long, so rigid durations hurt consistency. HMW let users keep their routine on busy days? Insight 2: half the users are unsure whether they're doing exercises correctly, which may reduce confidence and results. HMW give users confidence in their form without a trainer? The diet request (1/6) is a weak signal to note but not prioritise.",
+        "checklist": [
+          "Groups notes into sensible themes",
+          "Uses participant counts to weigh themes",
+          "Each insight has an implication",
+          "HMW questions are open but anchored"
+        ]
+      }
+    }
+  ],
+  "checkpoint": {
+    "id": "cp_u02",
+    "title": "Discovery sprint: the cancelled cab",
+    "scenario": "A cab-booking app's cancellation rate has risen. Leadership wants a fix in a month. You have two weeks for discovery.",
+    "minutes": 8,
+    "debrief": "You moved from a vague symptom to a framed problem, gathered the right evidence with the right methods, and synthesised it without being swayed by anecdotes. This is the core discovery loop.",
+    "steps": [
+      {
+        "id": "cp_u02_1",
+        "lessonId": "l_problem_first",
+        "kind": "APPLICATION",
+        "prompt": "Which is the best initial problem framing?",
+        "options": [
+          { "text": "‘Riders cancel more often after being matched with a driver, which hurts completed trips; we don't yet know why’", "correct": true, "why": "Specific, solution-free and honest about what's unknown." },
+          { "text": "‘We need cancellation fees’", "why": "Solution-first." },
+          { "text": "‘Drivers are bad’", "why": "Blame, not a problem statement." }
+        ],
+        "explanation": "Frame the symptom precisely before diagnosing."
+      },
+      {
+        "id": "cp_u02_2",
+        "lessonId": "l_research_methods",
+        "kind": "APPLICATION",
+        "prompt": "What's the most efficient first research step?",
+        "options": [
+          { "text": "Segment cancellation data by time, city, wait estimate and driver distance to find where it's concentrated", "correct": true, "why": "Analytics shows where to look before you interview." },
+          { "text": "A survey of all users about their satisfaction", "why": "Too broad to explain cancellations." },
+          { "text": "An A/B test of a new button", "why": "Nothing to test yet." }
+        ],
+        "explanation": "Use data to locate the problem, then qualitative research to explain it."
+      },
+      {
+        "id": "cp_u02_3",
+        "lessonId": "l_user_interviews",
+        "kind": "APPLICATION",
+        "prompt": "You interview riders who cancelled. Which question is best?",
+        "options": [
+          { "text": "‘Walk me through your last cancelled ride — what happened after you were matched?’", "correct": true, "why": "Past behaviour, open-ended." },
+          { "text": "‘Would you cancel less if we showed driver ratings?’", "why": "Hypothetical and leading." },
+          { "text": "‘Don't you find cancellations annoying?’", "why": "Leading." }
+        ],
+        "explanation": "Ask about the last real time."
+      },
+      {
+        "id": "cp_u02_4",
+        "lessonId": "l_synthesis",
+        "kind": "APPLICATION",
+        "prompt": "Data shows cancellations spike when the pickup ETA grows after matching; 7 of 10 interviewees describe drivers moving away on the map. What's your insight?",
+        "options": [
+          { "text": "Riders cancel when ETA reliability breaks after matching, likely because drivers accept then drift; trustworthy ETAs are the opportunity", "correct": true, "why": "A converging pattern from two methods, with an implication." },
+          { "text": "Riders are impatient", "why": "Blames the user and ignores the evidence." },
+          { "text": "Add a cancellation fee", "why": "Jumps to a solution that may punish riders for a system issue." }
+        ],
+        "explanation": "Triangulated evidence makes a strong insight."
+      }
+    ]
+  }
+}

@@ -1,0 +1,550 @@
+{
+  "unit": {
+    "id": "u04",
+    "order": 4,
+    "title": "Product Strategy & Roadmaps",
+    "summary": "Set direction: vision and strategy, goals with OKRs, outcome-based roadmaps, and competitive positioning.",
+    "level": "INTERMEDIATE",
+    "prerequisites": ["u03"]
+  },
+  "lessons": [
+    {
+      "id": "l_vision_strategy",
+      "unitId": "u04",
+      "title": "Vision, strategy and goals",
+      "level": "INTERMEDIATE",
+      "objectives": [
+        "Distinguish vision, strategy, goals and tactics",
+        "Recognise a real strategy versus a list of goals",
+        "Write a short product strategy with clear choices"
+      ],
+      "prerequisites": ["l_problem_validation"],
+      "related": ["l_okrs", "l_roadmaps", "l_strategic_bets"],
+      "tags": ["vision", "strategy", "goals"],
+      "quickMinutes": 6,
+      "deepMinutes": 9,
+      "quick": {
+        "explanation": {
+          "en": "Vision is the long-term future you want to create for customers. Strategy is your chosen path to get there: which customers, which problems, and how you'll win — including what you will NOT do. Goals measure progress, and tactics are the specific projects. A strategy without trade-offs isn't a strategy; it's a wish list.",
+          "ta": "Vision-na: customers-ku neenga create panna aasaipadura long-term future. Strategy-na: angu poga neenga choose panra paadhai — endha customers, endha problems, eppadi jeyippeenga, enna PANNA MAATTEENGA-nu kooda. Goals progress-a measure pannum, tactics specific projects. Trade-offs illaadha strategy, strategy-e illa; adhu oru wish list."
+        },
+        "analogy": {
+          "en": "Vision: ‘reach the summit’. Strategy: ‘take the northern ridge because it's safer for our team's skills, accepting it's longer’. Goals: ‘reach base camp 2 by day 4’. Tactics: today's climbing plan.",
+          "ta": "Vision: ‘malai uchiya adaiyanum’. Strategy: ‘engal team skills-ku safe-aana north ridge vazhiya poganum, adhu neelamaa irundhaalum’. Goals: ‘naalaavadhu naalukkul base camp 2’. Tactics: inniki climbing plan."
+        },
+        "takeaway": {
+          "en": "A good strategy makes clear choices about where to play and how to win — and says what you won't do.",
+          "ta": "Nalla strategy: enga vilaiyaadanum, eppadi jeyikkanum-nu clear choices — enna pannamaatom-nu kooda sollum."
+        }
+      },
+      "deep": [
+        {
+          "title": "Why it exists",
+          "body": "Without strategy, teams chase every opportunity, respond to every competitor move and spread resources thin. Strategy creates focus so that hundreds of daily decisions point in the same direction without escalation."
+        },
+        {
+          "title": "The layers",
+          "body": "Mission: why the company exists. Vision: the future state for customers in 3–10 years. Strategy: the key choices — target customers, problems, differentiation, and what to say no to. Goals and objectives: measurable progress for this year or quarter. Roadmap and initiatives: what you'll work on. Tactics: specific features and tasks. Each layer should explain the one below it."
+        },
+        {
+          "title": "What makes strategy good",
+          "body": "A useful structure: diagnosis (what's the challenge?), guiding policy (the approach you'll take) and coherent actions (steps that reinforce each other). This idea is popularised by Richard Rumelt's ‘Good Strategy Bad Strategy’. Bad strategy includes fluff (‘be the best’), goals masquerading as strategy (‘grow 50%’) and failure to face the real challenge."
+        },
+        {
+          "title": "Product strategy one-pager",
+          "body": "1) Target customer and their key job. 2) The problem we focus on and why now. 3) Our differentiated approach and why we can win (assets, insight). 4) What we will not do. 5) How we'll measure success. 6) Key bets and risks. Keep it short enough that every team member can explain it."
+        },
+        {
+          "title": "Interview angle",
+          "body": "Strategy questions (‘Should X enter market Y?’) test whether you diagnose the situation, make choices and acknowledge trade-offs. Avoid listing everything the company could do; pick, justify and say what you'd deprioritise."
+        }
+      ],
+      "example": "Illustrative example: a learning app's vision is ‘anyone can learn a professional skill in 15 minutes a day’. Its strategy: focus on working professionals in India learning on phones during commutes; win through bite-sized, practice-first lessons in local language mixes; deliberately not build live classes or certification programmes this year.",
+      "counterexample": "‘Our strategy is to grow users 3x, improve retention and launch in five countries’ — those are goals with no choices about how or where.",
+      "mistakes": [
+        "Confusing goals with strategy",
+        "Saying yes to everything (no trade-offs)",
+        "Writing a vision so vague it guides nothing"
+      ],
+      "keyTerms": [
+        { "term": "Vision", "meaning": "The long-term future you want to create for customers." },
+        { "term": "Strategy", "meaning": "The coherent set of choices about where to play and how to win." },
+        { "term": "Guiding policy", "meaning": "The overall approach chosen to deal with the diagnosed challenge." }
+      ],
+      "questions": [
+        {
+          "id": "q_vision_strategy_1",
+          "kind": "RECALL",
+          "prompt": "Which statement is a strategy rather than a goal?",
+          "options": [
+            { "text": "Grow revenue by 40% this year", "why": "That's a goal." },
+            { "text": "Win small clinics by offering the simplest appointment tool on WhatsApp, and not build hospital-grade features", "correct": true, "why": "Yes — choices of target, approach and what not to do." },
+            { "text": "Be the best healthcare app", "why": "Fluff, with no choices." },
+            { "text": "Launch 20 features", "why": "Output, not strategy." }
+          ],
+          "explanation": "Strategy = choices and trade-offs."
+        },
+        {
+          "id": "q_vision_strategy_2",
+          "kind": "RECALL",
+          "prompt": "In Rumelt's framing, what comes first in a good strategy?",
+          "options": [
+            { "text": "A diagnosis of the challenge", "correct": true, "why": "Correct — then a guiding policy and coherent actions." },
+            { "text": "A list of features", "why": "Features are actions, which come last." },
+            { "text": "A revenue target", "why": "A goal, not a diagnosis." },
+            { "text": "A logo", "why": "No." }
+          ],
+          "explanation": "Diagnosis → guiding policy → coherent actions."
+        },
+        {
+          "id": "q_vision_strategy_3",
+          "kind": "APPLICATION",
+          "prompt": "Your team gets requests from enterprises, SMBs and consumers. Your strategy targets SMBs. An enterprise wants a custom feature with a large contract. What does the strategy suggest?",
+          "options": [
+            { "text": "Build it — money is money", "why": "That can quietly pull the product away from the chosen strategy." },
+            { "text": "Evaluate it against the strategy: does it also serve SMBs or strengthen the core? If not, the default is likely no, or a deliberate, explicit exception", "correct": true, "why": "Right — strategy gives a default answer and makes exceptions conscious." },
+            { "text": "Ignore the enterprise", "why": "Respond respectfully; deciding isn't ignoring." },
+            { "text": "Change the strategy to enterprise immediately", "why": "One deal shouldn't flip strategy without analysis." }
+          ],
+          "explanation": "Strategy helps you say no — or say yes deliberately."
+        },
+        {
+          "id": "q_vision_strategy_4",
+          "kind": "APPLICATION",
+          "prompt": "Which vision statement is most useful for a product team?",
+          "options": [
+            { "text": "‘Delight users with innovation’", "why": "Too vague to guide decisions." },
+            { "text": "‘Every small farmer can get a fair price by knowing live market rates before they sell’", "correct": true, "why": "Yes — clear customer, clear future and inspiring, but concrete." },
+            { "text": "‘Become a $1B company’", "why": "A company goal, not a customer vision." },
+            { "text": "‘Use AI everywhere’", "why": "Technology-led, not customer-led." }
+          ],
+          "explanation": "Useful visions are customer-centred and concrete enough to guide choices."
+        }
+      ],
+      "exercise": {
+        "scenario": "A regional-language news app competes with large social platforms for attention.",
+        "prompt": "Write a mini strategy: diagnosis, guiding policy, three coherent actions and two things you won't do.",
+        "modelAnswer": "Diagnosis: big platforms win on volume and entertainment, but regional readers struggle to find trustworthy local news. Guiding policy: be the most trusted source for verified hyperlocal news in Tamil and Telugu. Actions: 1) build a network of verified local reporters with visible credentials; 2) offer a district-level ‘today in 5 minutes’ briefing; 3) add clear fact-check labels and corrections. Won't do: compete on viral entertainment videos, or expand to national news aggregation this year.",
+        "checklist": [
+          "Diagnosis names the real challenge",
+          "Guiding policy is a clear choice",
+          "Actions reinforce each other",
+          "Explicitly says what you won't do"
+        ]
+      }
+    },
+    {
+      "id": "l_okrs",
+      "unitId": "u04",
+      "title": "OKRs and goal-setting",
+      "level": "INTERMEDIATE",
+      "objectives": [
+        "Write objectives and key results correctly",
+        "Distinguish key results from tasks",
+        "Avoid common OKR anti-patterns"
+      ],
+      "prerequisites": ["l_vision_strategy"],
+      "related": ["l_metrics_basics", "l_roadmaps", "l_north_star"],
+      "tags": ["okr", "goals", "alignment"],
+      "quick": {
+        "explanation": {
+          "en": "OKRs (Objectives and Key Results) are a goal-setting method. The Objective is a qualitative, inspiring statement of what you want to achieve. Key Results are 2–4 measurable outcomes that prove you got there. Key results measure outcomes (‘activation rises from 30% to 40%’), not tasks (‘launch new onboarding’).",
+          "ta": "OKRs (Objectives and Key Results) — oru goal-setting method. Objective: enna achieve pannanum-nu solra qualitative, inspiring statement. Key Results: angu poitom-nu prove panra 2–4 measurable outcomes. Key results outcomes-a measure pannanum (‘activation 30%-la irundhu 40%-ku’), tasks-a illa (‘pudhu onboarding launch pannuvom’)."
+        },
+        "analogy": {
+          "en": "Objective: ‘become healthier this quarter’. Key results: ‘resting heart rate below 70’, ‘walk 8,000 steps on 5 days a week’. ‘Buy running shoes’ is a task, not a key result.",
+          "ta": "Objective: ‘indha quarter-la innum healthy aaganum’. Key results: ‘resting heart rate 70-ku keezha’, ‘vaarathula 5 naal 8,000 steps’. ‘Running shoes vaanguradhu’ — adhu task, key result illa."
+        },
+        "takeaway": {
+          "en": "If you could complete it without changing any outcome, it's a task, not a key result.",
+          "ta": "Endha outcome-um maaraama mudikka mudinjaa, adhu task — key result illa."
+        }
+      },
+      "deep": [
+        {
+          "title": "Why it exists",
+          "body": "OKRs connect strategy to measurable progress and align teams. When each team's OKRs ladder up to company objectives, people can make decisions without waiting for instructions. They also make trade-offs visible: if it doesn't support an OKR, why are we doing it?"
+        },
+        {
+          "title": "How to write them",
+          "body": "Objective: qualitative, motivating, time-bound (usually a quarter). Example: ‘Make first-time ordering effortless for new users.’ Key results: specific, measurable, outcome-based, with a baseline and target. ‘Increase first-order completion from 45% to 55%’, ‘Reduce median time to first order from 9 to 5 minutes’, ‘First-week support tickets per new user below 0.1’. Initiatives (the work) are listed separately."
+        },
+        {
+          "title": "Committed vs aspirational",
+          "body": "Some organisations distinguish committed OKRs (must achieve) from aspirational ones (stretch goals where around 70% achievement is considered good). Be explicit about which is which so teams don't sandbag or burn out."
+        },
+        {
+          "title": "Anti-patterns",
+          "body": "Task lists disguised as KRs; too many OKRs (focus lost); KRs nobody can measure; metrics that are easy to game without real progress, such as counting app installs instead of active use; setting OKRs top-down without team input; and never revisiting them mid-quarter."
+        }
+      ],
+      "example": "Illustrative example — Objective: ‘Help new sellers make their first sale quickly.’ KR1: increase new sellers making a sale within 14 days from 20% to 30%. KR2: reduce listing-creation time from 25 to 10 minutes. KR3: keep listing-quality complaints below 2%. Initiatives: photo-guide tool, auto-filled categories, seller onboarding call.",
+      "counterexample": "‘KR1: launch the photo tool. KR2: hire two engineers. KR3: write documentation.’ — all tasks; you could finish them all and help no seller.",
+      "mistakes": [
+        "Writing tasks as key results",
+        "Setting more than 3–4 objectives per team",
+        "Choosing metrics that can be gamed"
+      ],
+      "keyTerms": [
+        { "term": "Objective", "meaning": "A qualitative, inspiring statement of what to achieve." },
+        { "term": "Key result", "meaning": "A measurable outcome that shows progress toward the objective." },
+        { "term": "Initiative", "meaning": "The work you do to move the key results." }
+      ],
+      "questions": [
+        {
+          "id": "q_okrs_1",
+          "kind": "RECALL",
+          "prompt": "Which is a well-formed key result?",
+          "options": [
+            { "text": "Launch the referral programme", "why": "A task." },
+            { "text": "Increase weekly active users referred by friends from 5% to 12%", "correct": true, "why": "Yes — a measurable outcome with a baseline and target." },
+            { "text": "Work hard on growth", "why": "Not measurable." },
+            { "text": "Hold three growth brainstorms", "why": "Activity, not outcome." }
+          ],
+          "explanation": "Key results measure outcomes, with baselines and targets."
+        },
+        {
+          "id": "q_okrs_2",
+          "kind": "RECALL",
+          "prompt": "What's the role of an objective?",
+          "options": [
+            { "text": "To be a precise number", "why": "That's the key result's job." },
+            { "text": "To state qualitatively, and inspiringly, what you want to achieve", "correct": true, "why": "Correct." },
+            { "text": "To list tasks", "why": "Tasks are initiatives." },
+            { "text": "To assign blame", "why": "No." }
+          ],
+          "explanation": "Objective = where; key results = how you know you got there."
+        },
+        {
+          "id": "q_okrs_3",
+          "kind": "APPLICATION",
+          "prompt": "A team proposes KR: ‘App downloads increase 50%’. Retention is the real challenge. What's the issue?",
+          "options": [
+            { "text": "None; downloads are good", "why": "Downloads don't show value if users leave." },
+            { "text": "It can be gamed with ads and doesn't reflect the retention challenge; use something like ‘week-4 retention from 15% to 22%’", "correct": true, "why": "Right — KRs should reflect the real problem and resist gaming." },
+            { "text": "It should be 100%", "why": "A bigger number doesn't fix a wrong metric." },
+            { "text": "OKRs shouldn't use numbers", "why": "KRs must be measurable." }
+          ],
+          "explanation": "Choose KRs that measure real progress on the actual challenge."
+        },
+        {
+          "id": "q_okrs_4",
+          "kind": "APPLICATION",
+          "prompt": "Mid-quarter, you learn your main KR depends on a partner that's delayed by three months. What's best?",
+          "options": [
+            { "text": "Silently continue and miss it", "why": "OKRs should be revisited when reality changes." },
+            { "text": "Raise it early, reassess the KR and agree on an adjusted target or focus", "correct": true, "why": "Yes — transparency and adaptation keep OKRs useful." },
+            { "text": "Blame the partner at quarter end", "why": "Unhelpful." },
+            { "text": "Change the KR to something easy without telling anyone", "why": "That's gaming the system." }
+          ],
+          "explanation": "OKRs are a tool for focus, not a rigid contract."
+        }
+      ],
+      "exercise": {
+        "scenario": "You're PM for the onboarding of a mutual-fund investing app. Many users sign up but never invest.",
+        "prompt": "Write one objective with three key results (with baselines and targets) and two initiatives.",
+        "modelAnswer": "Objective: help new users make their first investment confidently. KR1: increase sign-up to first investment within 7 days from 18% to 28%. KR2: reduce KYC completion time from a median 2 days to same day. KR3: increase new-user confidence score (in-app survey) from 3.1 to 3.8 out of 5. Initiatives: guided ‘first fund’ recommendations for beginners; instant video-KYC with clearer document guidance.",
+        "checklist": [
+          "Objective is qualitative and inspiring",
+          "KRs are outcome-based with baselines and targets",
+          "KRs relate to the actual problem",
+          "Initiatives are listed separately from KRs"
+        ]
+      }
+    },
+    {
+      "id": "l_roadmaps",
+      "unitId": "u04",
+      "title": "Outcome-based roadmaps",
+      "level": "INTERMEDIATE",
+      "objectives": [
+        "Explain the purpose of a roadmap",
+        "Build a Now/Next/Later roadmap organised around problems and outcomes",
+        "Communicate uncertainty without overpromising"
+      ],
+      "prerequisites": ["l_okrs"],
+      "related": ["l_rice", "l_stakeholders", "l_prd"],
+      "tags": ["roadmap", "planning", "now next later"],
+      "quick": {
+        "explanation": {
+          "en": "A roadmap communicates where the product is heading and why. Outcome-based roadmaps list problems to solve and the outcomes expected, not a calendar of features with exact dates. A popular format is Now / Next / Later: Now is committed and well understood, Next is likely, and Later is directional and flexible.",
+          "ta": "Roadmap-na: product enga poguthu, en-nu communicate pannuradhu. Outcome-based roadmap-la solve panna problems, ethirpaakura outcomes irukkum — exact dates-oda features calendar illa. Popular format: Now / Next / Later. Now — commit pannadhu, nalla purinjadhu; Next — nadakka vaaippu adhigam; Later — direction mattum, flexible."
+        },
+        "analogy": {
+          "en": "A road-trip plan: today's route is fixed, tomorrow's is likely, and next week's is ‘head towards the hills’ — because weather and discoveries will change the details.",
+          "ta": "Road trip plan maadhiri: inniki route fixed, naalaiku route almost fixed, adutha vaaram ‘malai pakkam polaam’ — weather, pudhu vishayangal details-a maathum."
+        },
+        "takeaway": {
+          "en": "Roadmaps are communication tools about priorities and outcomes, not delivery contracts; certainty should decrease the further out you go.",
+          "ta": "Roadmap priorities, outcomes pathi communicate panra tool — delivery contract illa; dhooram poga poga certainty kuraiyanum."
+        }
+      },
+      "deep": [
+        {
+          "title": "Why it exists",
+          "body": "Stakeholders need to know what's coming to plan sales, marketing and support. Teams need context for why they're working on things. A roadmap provides alignment. The danger: date-driven feature lists become promises that block learning, because teams ship the promised feature even when evidence says it's wrong."
+        },
+        {
+          "title": "How to build an outcome-based roadmap",
+          "body": "1) Start from strategy and OKRs. 2) List the problems or opportunities that matter, with evidence. 3) Prioritise them. 4) Place them in Now (committed, scoped), Next (likely, being explored) and Later (directional). 5) For each item show the problem, the target outcome and confidence, not detailed specs. 6) Review monthly or quarterly as you learn."
+        },
+        {
+          "title": "Handling date pressure",
+          "body": "Some dates are real: regulatory deadlines, events, contracts. Mark those explicitly. For everything else, communicate ranges and confidence levels (‘likely Q3, 60% confidence’). Explain trade-offs openly: adding X to Now means Y moves to Next."
+        },
+        {
+          "title": "Different audiences",
+          "body": "Executives want themes, outcomes and big bets. Sales wants to know what to tell customers, with appropriate caveats. Engineering wants enough detail to plan architecture. Customers, if public, should see only high-level direction. Same priorities, different views."
+        }
+      ],
+      "example": "Illustrative example — Now: ‘Reduce failed payments for UPI users (target: failures from 6% to 3%)’. Next: ‘Help repeat customers reorder faster (exploring one-tap reorder)’. Later: ‘Expand to grocery categories (validating demand)’. Each item shows the problem and outcome, not exact features.",
+      "counterexample": "A 12-month Gantt chart listing 40 features with exact launch dates, shared with customers as commitments.",
+      "mistakes": [
+        "Treating roadmaps as fixed feature-delivery promises",
+        "Listing features without the problem or outcome",
+        "Not updating the roadmap when priorities change"
+      ],
+      "keyTerms": [
+        { "term": "Now/Next/Later", "meaning": "A roadmap format grouping work by time horizon and certainty instead of exact dates." },
+        { "term": "Theme", "meaning": "A group of related problems or opportunities on the roadmap." }
+      ],
+      "questions": [
+        {
+          "id": "q_roadmaps_1",
+          "kind": "RECALL",
+          "prompt": "What should an item in the ‘Later’ column represent?",
+          "options": [
+            { "text": "A fixed feature with an exact date", "why": "Later should be flexible." },
+            { "text": "A directional problem or opportunity that may change as you learn", "correct": true, "why": "Correct." },
+            { "text": "Work that is already in progress", "why": "That's Now." },
+            { "text": "Things you'll never do", "why": "That's the ‘not doing’ list." }
+          ],
+          "explanation": "Certainty decreases from Now to Later."
+        },
+        {
+          "id": "q_roadmaps_2",
+          "kind": "RECALL",
+          "prompt": "What's the main risk of date-driven feature roadmaps?",
+          "options": [
+            { "text": "They're too short", "why": "Length isn't the issue." },
+            { "text": "Teams feel obliged to ship promised features even when evidence says they're wrong", "correct": true, "why": "Yes — promises block learning." },
+            { "text": "They have no colours", "why": "No." },
+            { "text": "Engineers can't read them", "why": "No." }
+          ],
+          "explanation": "Commit to outcomes; stay flexible on solutions."
+        },
+        {
+          "id": "q_roadmaps_3",
+          "kind": "APPLICATION",
+          "prompt": "Sales asks for exact dates for three ‘Next’ items to promise a client. What do you do?",
+          "options": [
+            { "text": "Give exact dates to win the deal", "why": "Creates promises you may not keep." },
+            { "text": "Share likely timeframes with confidence levels, explain what's committed, and agree how to communicate caveats", "correct": true, "why": "Right — honest, helpful and protects trust." },
+            { "text": "Refuse to share anything", "why": "Sales needs context to do their job." },
+            { "text": "Move all three items to Now", "why": "That changes priorities for one deal without analysis." }
+          ],
+          "explanation": "Be transparent about uncertainty."
+        },
+        {
+          "id": "q_roadmaps_4",
+          "kind": "APPLICATION",
+          "prompt": "A new regulation requires a consent feature by 1 March. How should it appear on the roadmap?",
+          "options": [
+            { "text": "In Later, like everything else", "why": "It has a hard external deadline." },
+            { "text": "In Now, explicitly marked as a fixed-date commitment, with the trade-offs it causes visible", "correct": true, "why": "Yes — real deadlines are flagged, and their cost on other work is shown." },
+            { "text": "Hidden from stakeholders", "why": "Transparency matters." },
+            { "text": "Not on the roadmap because it doesn't add customer value", "why": "Compliance is essential and must be planned." }
+          ],
+          "explanation": "Distinguish real deadlines from estimates."
+        }
+      ],
+      "exercise": {
+        "scenario": "You're PM for a pharmacy-delivery app. Strategy: become the most reliable option for chronic-medicine refills.",
+        "prompt": "Create a Now/Next/Later roadmap with two items each, stating the problem and target outcome for each.",
+        "modelAnswer": "Now: 1) Refill reminders miss timing — patients run out (target: on-time refills from 60% to 75%). 2) Prescription upload failures (target: upload success above 95%). Next: 1) Repeat orders take too many steps (exploring one-tap refills; target: refill time under 1 minute). 2) Out-of-stock substitutions confuse patients (target: substitution complaints down 50%). Later: 1) Caregivers managing parents' medicines (validating demand for family accounts). 2) Teleconsult for renewals (exploring partnerships).",
+        "checklist": [
+          "Items are problems or opportunities, not just features",
+          "Each item has a target outcome",
+          "Certainty decreases from Now to Later",
+          "Items connect to the strategy"
+        ]
+      }
+    },
+    {
+      "id": "l_competitive",
+      "unitId": "u04",
+      "title": "Competitive analysis and positioning",
+      "level": "INTERMEDIATE",
+      "objectives": [
+        "Identify direct, indirect and substitute competitors",
+        "Analyse competitors to find differentiation rather than to copy",
+        "Write a positioning statement"
+      ],
+      "prerequisites": ["l_vision_strategy", "l_jtbd"],
+      "related": ["l_gtm_pmf", "l_moats_platforms"],
+      "tags": ["competition", "positioning", "differentiation"],
+      "quick": {
+        "explanation": {
+          "en": "Competitive analysis helps you understand alternatives your customers have, so you can differentiate. Competitors include direct rivals (same product), indirect ones (different product, same job) and substitutes (including doing nothing). Positioning is the clear place you want to occupy in the customer's mind: for whom you're the best choice, and why.",
+          "ta": "Competitive analysis — unga customers-ku enna alternatives irukku-nu purinjukittu, neenga eppadi vera maadhiri irukkanum-nu kandupidikka help pannum. Competitors: direct (ore product), indirect (vera product, ore job), substitutes (onnum pannaama irukkuradhu-um serthu). Positioning-na: customer manasula neenga pidikka aasaipadura clear idam — yaarukku neenga best choice, en."
+        },
+        "analogy": {
+          "en": "Restaurants on the same street don't all compete on everything: one is fastest, one is cheapest, one is the special-occasion place. Each owns a position.",
+          "ta": "Ore street-la irukkura restaurants ellaame ellathulayum compete pannaadhu: onnu fast, onnu cheap, onnu special occasion-ku. Ovvonnum oru position-a own pannudhu."
+        },
+        "takeaway": {
+          "en": "Study competitors to find where you can be meaningfully different for a specific customer, not to build a feature checklist.",
+          "ta": "Competitors-a padinga — oru specific customer-ku neenga meaningful-ah vera maadhiri irukka mudiyura idam kandupidikka; feature checklist build panna illa."
+        }
+      },
+      "deep": [
+        {
+          "title": "Why it exists",
+          "body": "Customers judge you relative to alternatives. Understanding those alternatives reveals unmet needs, pricing expectations, threats and where you can win. But copying competitors leads to parity, not preference."
+        },
+        {
+          "title": "How to analyse competitors",
+          "body": "1) List direct, indirect and substitute competitors using the JTBD lens. 2) For each, capture target customer, core value proposition, strengths, weaknesses, pricing and recent moves. 3) Use real evidence: try their product, read reviews, talk to their users and to people who switched. 4) Compare on the dimensions customers actually care about, not on feature counts. 5) Identify gaps: needs nobody serves well."
+        },
+        {
+          "title": "Positioning statement",
+          "body": "A common template (from Geoffrey Moore's ‘Crossing the Chasm’): ‘For [target customer] who [need], [product] is a [category] that [key benefit]. Unlike [main alternative], we [key differentiator].’ It forces focus on one segment and one differentiator."
+        },
+        {
+          "title": "Pitfalls",
+          "body": "Feature-matrix envy (adding everything competitors have); ignoring substitutes (the spreadsheet is often the biggest competitor); overreacting to competitor launches; and relying on marketing claims instead of real user experience."
+        }
+      ],
+      "example": "Illustrative positioning: ‘For small-town tutors who want to run classes online without technical skills, ClassEasy is a teaching app that sets up a class in two minutes over WhatsApp links. Unlike general video-conferencing tools, we handle attendance, fees and homework in one place.’",
+      "counterexample": "‘We'll copy every feature of the market leader but make it cheaper’ — no unique reason to choose you, and the leader can easily cut prices.",
+      "mistakes": [
+        "Comparing only feature lists",
+        "Ignoring substitutes and non-consumption",
+        "Positioning for everyone"
+      ],
+      "keyTerms": [
+        { "term": "Substitute", "meaning": "A different way to get the same job done, including manual methods or doing nothing." },
+        { "term": "Positioning", "meaning": "The distinct place a product occupies in the target customer's mind." },
+        { "term": "Feature parity", "meaning": "Matching competitors' features — necessary sometimes, but rarely a reason to be chosen." }
+      ],
+      "questions": [
+        {
+          "id": "q_competitive_1",
+          "kind": "RECALL",
+          "prompt": "For an expense-tracking app, a paper notebook is best described as:",
+          "options": [
+            { "text": "Not a competitor", "why": "It competes for the same job." },
+            { "text": "A substitute competitor", "correct": true, "why": "Yes — a different way to get the same job done." },
+            { "text": "A direct competitor", "why": "Direct competitors are similar apps." },
+            { "text": "A partner", "why": "No." }
+          ],
+          "explanation": "Substitutes are often the biggest competitors."
+        },
+        {
+          "id": "q_competitive_2",
+          "kind": "RECALL",
+          "prompt": "What is the main goal of positioning?",
+          "options": [
+            { "text": "Have the most features", "why": "Feature counts don't create a position." },
+            { "text": "Own a clear, differentiated place in a target customer's mind", "correct": true, "why": "Correct." },
+            { "text": "Be cheapest", "why": "One possible position, not the goal itself." },
+            { "text": "Appeal to everyone", "why": "That means no clear position." }
+          ],
+          "explanation": "Positioning is focused differentiation."
+        },
+        {
+          "id": "q_competitive_3",
+          "kind": "APPLICATION",
+          "prompt": "A competitor launches a feature your sales team panics about. What's the best response?",
+          "options": [
+            { "text": "Copy it within a month", "why": "Reactive copying abandons your strategy." },
+            { "text": "Investigate whether your target customers value it and how it affects their choices, then decide in the context of your strategy", "correct": true, "why": "Right — evidence first, strategy-consistent decision." },
+            { "text": "Ignore it", "why": "Understand it; then decide." },
+            { "text": "Cut prices", "why": "A knee-jerk price war rarely helps." }
+          ],
+          "explanation": "Respond with evidence, not panic."
+        },
+        {
+          "id": "q_competitive_4",
+          "kind": "APPLICATION",
+          "prompt": "Which is the strongest evidence for competitive analysis?",
+          "options": [
+            { "text": "Competitors' marketing websites", "why": "Claims, not experience." },
+            { "text": "Interviews with users who switched to or from a competitor, plus hands-on use of the competitor's product", "correct": true, "why": "Yes — real behaviour and experience." },
+            { "text": "A guess in a meeting", "why": "Not evidence." },
+            { "text": "Social-media hype", "why": "Unreliable." }
+          ],
+          "explanation": "Switchers reveal what actually drives choice."
+        }
+      ],
+      "exercise": {
+        "scenario": "You're launching a budgeting app for young professionals in India.",
+        "prompt": "List one direct, one indirect and one substitute competitor; note a weakness of each; then write a positioning statement.",
+        "modelAnswer": "Direct: another budgeting app — weakness: generic, Western-style categories that don't fit Indian spending (rent advance, festivals, family support). Indirect: bank apps' spending summaries — weakness: they only see one bank account. Substitute: spreadsheets or nothing — weakness: manual and easy to abandon. Positioning: ‘For young professionals in India who want to save without tracking every rupee by hand, Paisa is a budgeting app that automatically categorises UPI spending across all accounts. Unlike bank apps, we show your whole financial picture, including family support and festival budgets.’",
+        "checklist": [
+          "Includes direct, indirect and substitute competitors",
+          "Weaknesses are customer-relevant",
+          "Positioning names a target, need and differentiator",
+          "Differentiator connects to competitor weaknesses"
+        ]
+      }
+    }
+  ],
+  "checkpoint": {
+    "id": "cp_u04",
+    "title": "Setting direction for a stalled product",
+    "scenario": "A fitness-tracking app has flat growth. Leadership wants ‘a strategy and roadmap for next year’. Competitors include big tech wearables and free YouTube workouts.",
+    "minutes": 8,
+    "debrief": "You connected diagnosis to choices, choices to measurable goals, goals to a flexible roadmap, and positioning to real alternatives. Each layer explained the one below it.",
+    "steps": [
+      {
+        "id": "cp_u04_1",
+        "lessonId": "l_competitive",
+        "kind": "APPLICATION",
+        "prompt": "What's the most useful framing of competition?",
+        "options": [
+          { "text": "Everything users hire to stay fit — wearables, YouTube, gyms, walking groups — and where each fails a target segment", "correct": true, "why": "JTBD-based competition reveals gaps." },
+          { "text": "Only other fitness-tracking apps", "why": "Too narrow." },
+          { "text": "Nobody, our app is unique", "why": "Never true." }
+        ],
+        "explanation": "Competition is defined by the job."
+      },
+      {
+        "id": "cp_u04_2",
+        "lessonId": "l_vision_strategy",
+        "kind": "APPLICATION",
+        "prompt": "Which strategy is strongest?",
+        "options": [
+          { "text": "Focus on beginners over 35 who want to start safely at home; win with guided, low-impact plans; stop competing on advanced athlete analytics", "correct": true, "why": "A clear target, approach and explicit trade-off." },
+          { "text": "Grow 2x and improve retention", "why": "Goals, not strategy." },
+          { "text": "Add every feature competitors have", "why": "Parity, not strategy." }
+        ],
+        "explanation": "Strategy is choice."
+      },
+      {
+        "id": "cp_u04_3",
+        "lessonId": "l_okrs",
+        "kind": "APPLICATION",
+        "prompt": "Pick the best key result for that strategy.",
+        "options": [
+          { "text": "Increase beginners completing 3+ sessions in their first two weeks from 25% to 40%", "correct": true, "why": "An outcome tied to the target segment." },
+          { "text": "Launch 10 beginner plans", "why": "Task." },
+          { "text": "Increase downloads 3x", "why": "Gameable and unrelated to the strategy." }
+        ],
+        "explanation": "KRs measure outcomes aligned with the strategy."
+      },
+      {
+        "id": "cp_u04_4",
+        "lessonId": "l_roadmaps",
+        "kind": "APPLICATION",
+        "prompt": "How should you present next year's work to leadership?",
+        "options": [
+          { "text": "Now/Next/Later themes tied to the beginner strategy and KRs, with confidence levels", "correct": true, "why": "Outcome-based and honest about uncertainty." },
+          { "text": "A fixed list of 30 features with dates", "why": "Overpromises and blocks learning." },
+          { "text": "No roadmap; we'll be agile", "why": "Stakeholders still need direction." }
+        ],
+        "explanation": "Roadmaps communicate priorities and outcomes."
+      }
+    ]
+  }
+}
