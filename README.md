@@ -45,8 +45,8 @@ Or open the folder in Android Studio and press **Run**.
 `tools/offline-check` is a separate Gradle build that needs only Maven Central. It runs the `:core` tests and type-checks the app's Kotlin sources against Compose Multiplatform desktop libraries plus androidx signature stubs. It does not build an APK.
 
 ```bash
-cd tools/offline-check
-gradle :core:test :uicheck:compileKotlin   # optionally -PandroidJar=<sdk>/platforms/android-35/android.jar
+./gradlew -p tools/offline-check :core:test :uicheck:compileKotlin
+# needs an android.jar for platform signatures: -PandroidJar=<sdk>/platforms/android-35/android.jar
 ```
 
 ## Project structure
