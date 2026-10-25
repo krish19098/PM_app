@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PM Bible</string>
+    <string name="channel_reminders">Learning reminders</string>
+    <string name="channel_reminders_desc">Daily lesson, review and accountability reminders you configure in Settings.</string>
+</resources>

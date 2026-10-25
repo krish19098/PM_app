@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- An open book with a rising path: learning one step at a time. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M30,38 C38,34 46,34 54,39 L54,74 C46,69 38,69 30,73 Z" />
+    <path
+        android:fillColor="#E6F2EF"
+        android:pathData="M78,38 C70,34 62,34 54,39 L54,74 C62,69 70,69 78,73 Z" />
+    <path
+        android:strokeColor="#F2B84B"
+        android:strokeWidth="3.5"
+        android:strokeLineCap="round"
+        android:pathData="M60,64 L66,56 L71,59 L76,48" />
+</vector>
