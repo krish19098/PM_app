@@ -75,9 +75,9 @@ Content is versioned JSON in `app/src/main/assets/content/`. To add a lesson, ad
 
 ## Testing status
 
-- **Run and passing here:** 44 JVM tests in `:core` (content validation, spaced repetition, mastery, gap detection, planner across 5–40 minute budgets and full-curriculum progression, placement, reminder timing incl. quiet hours/weekends/DST, accountability messaging, search, answer review, weekly recap).
-- **Type-checked here:** all app Kotlin sources (422 classes) against Compose Multiplatform 1.7.3 + Material 3 with androidx stubs.
-- **Not run here:** the Android build itself, `app/src/test` Robolectric tests (`ProgressRepositoryTest`, `AppFlowTest`), and any emulator or device testing. The development environment's network policy blocks Google's Maven repository and SDK downloads, so these need a normal Android setup. Run `./gradlew test assembleDebug` first.
+- **CI (GitHub Actions, `.github/workflows/android.yml`) on every push:** real `./gradlew :app:assembleDebug` with the Android Gradle Plugin, Android SDK and AndroidX/Compose — passing; the debug APK is uploaded as the `pm-bible-debug-apk` artifact.
+- **`./gradlew test` in CI — all passing:** 44 `:core` tests (content validation, spaced repetition, mastery, gaps, planner, placement, reminder timing incl. quiet hours/weekends/DST, accountability, search, recap) plus Robolectric `ProgressRepositoryTest` (7: assets load, lesson completion, review scheduling, checkpoint scoring, placement, minutes, notes/bookmarks) and `AppFlowTest` (onboarding → Today plan → Library search), each run for debug and release variants.
+- **Not performed:** emulator or physical-device testing (notification delivery, MIUI battery behaviour, reboot rescheduling on a real phone).
 
 ## Limitations
 
