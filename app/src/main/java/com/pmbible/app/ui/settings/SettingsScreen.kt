@@ -55,6 +55,7 @@ import com.pmbible.app.ui.components.TimePickerDialog
 import com.pmbible.app.ui.components.block
 import com.pmbible.app.ui.components.formatMinuteOfDay
 import com.pmbible.core.domain.ReminderCopy
+import com.pmbible.core.domain.ReminderPlanner
 import com.pmbible.core.model.LanguageMode
 import com.pmbible.core.model.NudgeTone
 import com.pmbible.core.model.Pace
@@ -120,7 +121,7 @@ fun SettingsScreen(app: AppViewModel, onBack: () -> Unit) {
             SectionHeader("Reminders")
             SwitchRow("Reminders on", p.remindersEnabled) { on -> update { it.copy(remindersEnabled = on) } }
             if (p.remindersEnabled) {
-                ReminderEditor(p.reminders, onChange = { list -> update { it.copy(reminders = list) } })
+                ReminderEditor(p.reminders, p.quietStartMinute, p.quietEndMinute, onChange = { list -> update { it.copy(reminders = list) } })
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                     OutlinedButton(onClick = { picker = "quietStart" to p.quietStartMinute }) { Text("Quiet from ${formatMinuteOfDay(p.quietStartMinute)}") }
                     OutlinedButton(onClick = { picker = "quietEnd" to p.quietEndMinute }) { Text("until ${formatMinuteOfDay(p.quietEndMinute)}") }
@@ -243,7 +244,7 @@ fun SwitchRow(label: String, checked: Boolean, onChange: (Boolean) -> Unit) {
 /** Edit the reminder list: time and type per reminder, add up to the scheduler's limit, or remove. */
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun ReminderEditor(reminders: List<Reminder>, onChange: (List<Reminder>) -> Unit) {
+fun ReminderEditor(reminders: List<Reminder>, quietStart: Int, quietEnd: Int, onChange: (List<Reminder>) -> Unit) {
     var editing by remember { mutableStateOf<Reminder?>(null) }
     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
         if (reminders.isEmpty()) Text("No reminders — that's fine. Learning never depends on notifications.", style = MaterialTheme.typography.bodyMedium)
@@ -252,6 +253,9 @@ fun ReminderEditor(reminders: List<Reminder>, onChange: (List<Reminder>) -> Unit
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     TextButton(onClick = { editing = r }) { Text(formatMinuteOfDay(r.minuteOfDay), style = MaterialTheme.typography.titleMedium) }
                     Spacer(Modifier.weight(1f))
+                    if (ReminderPlanner.isQuiet(r.minuteOfDay, quietStart, quietEnd)) {
+                        Text("In quiet hours — won't fire", style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.error)
+                    }
                     IconButton(onClick = { onChange(reminders - r) }) { Icon(Icons.Outlined.Delete, contentDescription = "Remove reminder") }
                 }
                 FlowRow(horizontalArrangement = Arrangement.spacedBy(6.dp)) {

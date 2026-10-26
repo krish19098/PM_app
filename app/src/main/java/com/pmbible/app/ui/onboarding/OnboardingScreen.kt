@@ -159,7 +159,7 @@ fun OnboardingScreen(app: AppViewModel) {
                         "Choose how many reminders you want — zero is fine. They respect quiet hours and stop once you've learned today.",
                         style = MaterialTheme.typography.bodyMedium,
                     )
-                    ReminderEditor(d.reminders) { vm.draft = d.copy(reminders = it, remindersEnabled = it.isNotEmpty()) }
+                    ReminderEditor(d.reminders, d.quietStartMinute, d.quietEndMinute) { vm.draft = d.copy(reminders = it, remindersEnabled = it.isNotEmpty()) }
                     Text("Accountability tone", style = MaterialTheme.typography.titleMedium)
                     ChipRow(NudgeTone.entries, d.tone, { it.label }) { vm.draft = d.copy(tone = it) }
                     SwitchRow("Light-hearted warnings if I miss planned days", d.creativeWarnings) { vm.draft = d.copy(creativeWarnings = it) }
